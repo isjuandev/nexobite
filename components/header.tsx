@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -10,6 +11,10 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const pathname = usePathname();
+
+  // Detectar si estamos en una página de propuesta
+  const isProposalPage = pathname?.startsWith("/propuesta-");
 
   // Función reutilizable para smooth scroll
   const scrollToSection = (sectionId: string) => {
@@ -32,7 +37,11 @@ export function Header() {
       const headerHeight = header ? header.getBoundingClientRect().height : 80;
       const offset = headerHeight + 100; // Agregar margen adicional
 
-      const sections = ["services", "how-it-works", "mini-plans", "packages"];
+      // Determinar las secciones según el tipo de página
+      const sections = isProposalPage 
+        ? ["proposals", "payment", "contact"]
+        : ["services", "how-it-works", "mini-plans", "packages"];
+      
       const scrollPosition = window.scrollY + offset;
 
       // Encontrar la sección actual basándose en la posición de scroll
@@ -56,7 +65,7 @@ export function Header() {
     handleScroll(); // Ejecutar al montar
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isProposalPage]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
@@ -90,94 +99,169 @@ export function Header() {
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex">
-            <Link
-              href="#services"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("services");
-              }}
-              className={`group relative text-sm font-medium transition-colors ${
-                activeSection === "services"
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <span>Servicios</span>
-              <span
-                className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
-                  activeSection === "services"
-                    ? "w-full scale-x-100"
-                    : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                }`}
-                style={{ transformOrigin: "center" }}
-              />
-            </Link>
-            <Link
-              href="#how-it-works"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("how-it-works");
-              }}
-              className={`group relative text-sm font-medium transition-colors ${
-                activeSection === "how-it-works"
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <span>Cómo Funciona</span>
-              <span
-                className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
-                  activeSection === "how-it-works"
-                    ? "w-full scale-x-100"
-                    : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                }`}
-                style={{ transformOrigin: "center" }}
-              />
-            </Link>
-            <Link
-              href="#mini-plans"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("mini-plans");
-              }}
-              className={`group relative text-sm font-medium transition-colors ${
-                activeSection === "mini-plans"
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <span>Planes</span>
-              <span
-                className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
-                  activeSection === "mini-plans"
-                    ? "w-full scale-x-100"
-                    : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                }`}
-                style={{ transformOrigin: "center" }}
-              />
-            </Link>
-            <Link
-              href="#packages"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("packages");
-              }}
-              className={`group relative text-sm font-medium transition-colors ${
-                activeSection === "packages"
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <span>Paquetes</span>
-              <span
-                className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
-                  activeSection === "packages"
-                    ? "w-full scale-x-100"
-                    : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                }`}
-                style={{ transformOrigin: "center" }}
-              />
-            </Link>
+            {isProposalPage ? (
+              // Navegación para páginas de propuestas
+              <>
+                <Link
+                  href="#proposals"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("proposals");
+                  }}
+                  className={`group relative text-sm font-medium transition-colors ${
+                    activeSection === "proposals"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <span>Propuestas</span>
+                  <span
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
+                      activeSection === "proposals"
+                        ? "w-full scale-x-100"
+                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                    }`}
+                    style={{ transformOrigin: "center" }}
+                  />
+                </Link>
+                <Link
+                  href="#payment"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("payment");
+                  }}
+                  className={`group relative text-sm font-medium transition-colors ${
+                    activeSection === "payment"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <span>Opciones de Pago</span>
+                  <span
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
+                      activeSection === "payment"
+                        ? "w-full scale-x-100"
+                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                    }`}
+                    style={{ transformOrigin: "center" }}
+                  />
+                </Link>
+                <Link
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("contact");
+                  }}
+                  className={`group relative text-sm font-medium transition-colors ${
+                    activeSection === "contact"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <span>Contacto</span>
+                  <span
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
+                      activeSection === "contact"
+                        ? "w-full scale-x-100"
+                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                    }`}
+                    style={{ transformOrigin: "center" }}
+                  />
+                </Link>
+              </>
+            ) : (
+              // Navegación normal para la página principal
+              <>
+                <Link
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("services");
+                  }}
+                  className={`group relative text-sm font-medium transition-colors ${
+                    activeSection === "services"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <span>Servicios</span>
+                  <span
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
+                      activeSection === "services"
+                        ? "w-full scale-x-100"
+                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                    }`}
+                    style={{ transformOrigin: "center" }}
+                  />
+                </Link>
+                <Link
+                  href="#how-it-works"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("how-it-works");
+                  }}
+                  className={`group relative text-sm font-medium transition-colors ${
+                    activeSection === "how-it-works"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <span>Cómo Funciona</span>
+                  <span
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
+                      activeSection === "how-it-works"
+                        ? "w-full scale-x-100"
+                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                    }`}
+                    style={{ transformOrigin: "center" }}
+                  />
+                </Link>
+                <Link
+                  href="#mini-plans"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("mini-plans");
+                  }}
+                  className={`group relative text-sm font-medium transition-colors ${
+                    activeSection === "mini-plans"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <span>Planes</span>
+                  <span
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
+                      activeSection === "mini-plans"
+                        ? "w-full scale-x-100"
+                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                    }`}
+                    style={{ transformOrigin: "center" }}
+                  />
+                </Link>
+                <Link
+                  href="#packages"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("packages");
+                  }}
+                  className={`group relative text-sm font-medium transition-colors ${
+                    activeSection === "packages"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <span>Paquetes</span>
+                  <span
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
+                      activeSection === "packages"
+                        ? "w-full scale-x-100"
+                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                    }`}
+                    style={{ transformOrigin: "center" }}
+                  />
+                </Link>
+              </>
+            )}
           </nav>
 
           <div className="hidden md:block">
@@ -213,66 +297,120 @@ export function Header() {
         {isMenuOpen && (
           <div className="border-t border-border/50 bg-card/50 backdrop-blur-sm md:hidden rounded-b-2xl">
             <nav className="flex flex-col gap-4 p-4">
-              <Link
-                href="#services"
-                className={`text-sm font-medium transition-colors py-2 ${
-                  activeSection === "services"
-                    ? "text-accent font-bold"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("services");
-                  setIsMenuOpen(false);
-                }}
-              >
-                Servicios
-              </Link>
-              <Link
-                href="#how-it-works"
-                className={`text-sm font-medium transition-colors py-2 ${
-                  activeSection === "how-it-works"
-                    ? "text-accent font-bold"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("how-it-works");
-                  setIsMenuOpen(false);
-                }}
-              >
-                Cómo Funciona
-              </Link>
-              <Link
-                href="#mini-plans"
-                className={`text-sm font-medium transition-colors py-2 ${
-                  activeSection === "mini-plans"
-                    ? "text-accent font-bold"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("mini-plans");
-                  setIsMenuOpen(false);
-                }}
-              >
-                Planes
-              </Link>
-              <Link
-                href="#packages"
-                className={`text-sm font-medium transition-colors py-2 ${
-                  activeSection === "packages"
-                    ? "text-accent font-bold"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("packages");
-                  setIsMenuOpen(false);
-                }}
-              >
-                Paquetes
-              </Link>
+              {isProposalPage ? (
+                // Navegación móvil para páginas de propuestas
+                <>
+                  <Link
+                    href="#proposals"
+                    className={`text-sm font-medium transition-colors py-2 ${
+                      activeSection === "proposals"
+                        ? "text-accent font-bold"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("proposals");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    Propuestas
+                  </Link>
+                  <Link
+                    href="#payment"
+                    className={`text-sm font-medium transition-colors py-2 ${
+                      activeSection === "payment"
+                        ? "text-accent font-bold"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("payment");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    Opciones de Pago
+                  </Link>
+                  <Link
+                    href="#contact"
+                    className={`text-sm font-medium transition-colors py-2 ${
+                      activeSection === "contact"
+                        ? "text-accent font-bold"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("contact");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    Contacto
+                  </Link>
+                </>
+              ) : (
+                // Navegación móvil normal
+                <>
+                  <Link
+                    href="#services"
+                    className={`text-sm font-medium transition-colors py-2 ${
+                      activeSection === "services"
+                        ? "text-accent font-bold"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("services");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    Servicios
+                  </Link>
+                  <Link
+                    href="#how-it-works"
+                    className={`text-sm font-medium transition-colors py-2 ${
+                      activeSection === "how-it-works"
+                        ? "text-accent font-bold"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("how-it-works");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    Cómo Funciona
+                  </Link>
+                  <Link
+                    href="#mini-plans"
+                    className={`text-sm font-medium transition-colors py-2 ${
+                      activeSection === "mini-plans"
+                        ? "text-accent font-bold"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("mini-plans");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    Planes
+                  </Link>
+                  <Link
+                    href="#packages"
+                    className={`text-sm font-medium transition-colors py-2 ${
+                      activeSection === "packages"
+                        ? "text-accent font-bold"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("packages");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    Paquetes
+                  </Link>
+                </>
+              )}
               <Button variant="gradient" asChild className="w-full">
                 <a
                   href="https://wa.me/+573116839099"
