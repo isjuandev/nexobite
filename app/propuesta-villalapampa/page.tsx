@@ -328,7 +328,7 @@ export default function PropuestaVillaPampa() {
                             asChild
                           >
                             <a
-                              href="https://wa.me/+573102817988"
+                              href={`https://wa.me/+573102817988?text=${encodeURIComponent(`Hola! Me interesa el plan "${proposal.name}" (${proposal.price}) para Villa La Pampa. Me gustaría recibir más información.`)}`}
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -418,7 +418,7 @@ export default function PropuestaVillaPampa() {
                         asChild
                       >
                         <a
-                          href="https://wa.me/+573102817988"
+                          href={`https://wa.me/+573116839099?text=${encodeURIComponent(`Hola! Me interesa el plan "${proposal.name}" (${proposal.price}) para Villa La Pampa. Me gustaría recibir más información.`)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -555,7 +555,7 @@ export default function PropuestaVillaPampa() {
                           asChild
                         >
                           <a
-                            href="https://wa.me/+573116839099"
+                            href={`https://wa.me/+573116839099?text=${encodeURIComponent(`Hola! Me interesa la opción de pago "${option.name}" para el proyecto de Villa La Pampa. ¿Podemos revisar los detalles?`)}`}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
@@ -638,7 +638,7 @@ export default function PropuestaVillaPampa() {
                 </CardContent>
                 <CardFooter>
                   <Button className="w-full" variant="default" asChild>
-                    <a href="https://wa.me/+573116839099" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/+573116839099?text=Hola!%20Me%20interesa%20la%20opci%C3%B3n%20de%20%22Pago%20%C3%9Anico%22%20con%20descuento%20del%205%25%20para%20el%20proyecto%20de%20Villa%20La%20Pampa.%20%C2%BFPodemos%20revisar%20los%20detalles%3F" target="_blank" rel="noopener noreferrer">
                       Consultar
                     </a>
                   </Button>
@@ -691,7 +691,7 @@ export default function PropuestaVillaPampa() {
                 </CardContent>
                 <CardFooter>
                   <Button className="w-full" variant="gradient" asChild>
-                    <a href="https://wa.me/+573116839099" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/+573116839099?text=Hola!%20Me%20interesa%20la%20opci%C3%B3n%20de%20pago%20%22Plan%2050%2F50%22%20para%20el%20proyecto%20de%20Villa%20La%20Pampa.%20%C2%BFPodemos%20revisar%20los%20detalles%3F" target="_blank" rel="noopener noreferrer">
                       Seleccionar
                     </a>
                   </Button>
@@ -741,7 +741,7 @@ export default function PropuestaVillaPampa() {
                 </CardContent>
                 <CardFooter>
                   <Button className="w-full" variant="default" asChild>
-                    <a href="https://wa.me/+573116839099" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/+573116839099?text=Hola!%20Me%20interesa%20la%20opci%C3%B3n%20de%20pago%20%22Plan%2030%2F40%2F30%22%20para%20el%20proyecto%20de%20Villa%20La%20Pampa.%20%C2%BFPodemos%20revisar%20los%20detalles%3F" target="_blank" rel="noopener noreferrer">
                       Consultar
                     </a>
                   </Button>
@@ -786,7 +786,7 @@ export default function PropuestaVillaPampa() {
                       asChild
                     >
                       <a
-                        href="https://wa.me/+573116839099"
+                        href="https://wa.me/+573116839099?text=Hola!%20Quisiera%20agendar%20una%20reuni%C3%B3n%20para%20revisar%20la%20propuesta%20de%20NexoHotel%20para%20Villa%20La%20Pampa%20en%20detalle.%20%C2%BFCu%C3%A1ndo%20podemos%20coordinar%3F"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
