@@ -19,134 +19,209 @@ const categories = [
   {
     id: "chatbots",
     title: "Chatbots Automatizados",
-    description: "Setup + mensualidad. Soporte y escalamiento.",
+    description: "Setup único + mensualidad. Soporte y escalamiento incluidos.",
     plans: [
       {
         name: "STARTER",
-        price: "$522.900",
-        priceNote: "$102.900/mes",
+        price: "$649.900",
+        priceNote: "$119.900/mes",
         includes: [
           "3 flujos conversacionales",
           "Integración WhatsApp",
           "1h capacitación",
+          "Soporte básico por email",
         ],
         highlighted: false,
+        savings: null,
+        originalPrice: null,
       },
       {
         name: "BUSINESS",
-        price: "$1.047.900",
-        priceNote: "$172.900/mes",
+        price: "$1.249.900",
+        priceNote: "$199.900/mes",
         includes: [
-          "6 flujos",
+          "6 flujos conversacionales",
           "WhatsApp + Web",
-          "CRM básico",
+          "CRM básico integrado",
           "2h capacitación",
+          "Soporte prioritario",
+          "Reportes mensuales",
         ],
         highlighted: true,
+        savings: "Ahorras $250.000",
+        originalPrice: "$1.499.900",
       },
       {
         name: "ENTERPRISE",
-        price: "$1.747.900",
-        priceNote: "$277.900/mes",
+        price: "$2.099.900",
+        priceNote: "$329.900/mes",
         includes: [
           "Flujos ilimitados",
-          "Multi-canal",
-          "Reportes + BI",
-          "Soporte prioritario",
+          "Multi-canal completo",
+          "Reportes + BI dashboard",
+          "Soporte 24/7 prioritario",
+          "Gestor de cuenta dedicado",
+          "Integraciones a medida",
         ],
         highlighted: false,
+        savings: null,
+        originalPrice: null,
       },
     ],
   },
   {
     id: "web",
     title: "Desarrollo Web",
-    description: "Sitios profesionales optimizados para PyMEs.",
+    description: "Sitios profesionales optimizados para PyMEs colombianas.",
     plans: [
       {
         name: "BÁSICO",
-        price: "$347.900",
+        price: "$397.900",
         priceNote: "Landing / Vitrina",
         includes: [
-          "1 página 4-5 secciones",
+          "1 página, 4-5 secciones",
           "Dominio + Hosting 1 año",
-          "WhatsApp directo",
+          "Botón WhatsApp directo",
+          "Responsive móvil",
         ],
         highlighted: false,
+        savings: null,
+        originalPrice: null,
       },
       {
         name: "PROFESIONAL",
-        price: "$522.900",
+        price: "$649.900",
         priceNote: "Web Corporativa",
         includes: [
           "3-5 páginas",
           "Dominio + Hosting 1 año",
-          "Galería portafolio",
+          "Galería / portafolio",
+          "Formulario de contacto",
+          "SEO básico",
+          "Google Analytics",
         ],
         highlighted: true,
+        savings: "Ahorras $150.000",
+        originalPrice: "$799.900",
       },
       {
         name: "EMPRESARIAL",
-        price: "$872.900",
+        price: "$1.099.900",
         priceNote: "Alto impacto",
-        includes: ["6-10 páginas", "Dominio + Hosting 1 año", "SEO avanzado"],
+        includes: [
+          "6-10 páginas",
+          "Dominio + Hosting 1 año",
+          "SEO avanzado",
+          "Blog integrado",
+          "Chat en vivo",
+          "Velocidad optimizada",
+        ],
         highlighted: false,
+        savings: null,
+        originalPrice: null,
       },
     ],
   },
   {
     id: "cm",
     title: "Community Management",
-    description: "Gestión mensual de redes, contenido y comunidad.",
+    description: "Gestión mensual de redes, contenido y comunidad activa.",
     plans: [
       {
         name: "STARTER",
-        price: "$347.900/mes",
+        price: "$429.900/mes",
         priceNote: "Presencia básica",
-        includes: ["1 plataforma", "8 posts", "8 stories"],
+        includes: [
+          "1 plataforma",
+          "8 posts diseñados",
+          "8 stories",
+          "Respuesta a comentarios",
+        ],
         highlighted: false,
+        savings: null,
+        originalPrice: null,
       },
       {
         name: "GROWTH",
-        price: "$578.900/mes",
+        price: "$719.900/mes",
         priceNote: "Crecimiento",
-        includes: ["2 plataformas", "12 posts", "4 reels"],
+        includes: [
+          "2 plataformas",
+          "12 posts diseñados",
+          "4 reels editados",
+          "Informe mensual",
+          "Estrategia de contenido",
+          "Gestión de mensajes",
+        ],
         highlighted: true,
+        savings: "Ahorras $130.000/mes",
+        originalPrice: "$849.900/mes",
       },
       {
         name: "SCALE",
-        price: "$963.900/mes",
+        price: "$1.199.900/mes",
         priceNote: "Estrategia completa",
-        includes: ["3 plataformas", "20 posts", "Ads básicos"],
+        includes: [
+          "3 plataformas",
+          "20 posts diseñados",
+          "8 reels + TikToks",
+          "Pauta básica incluida",
+          "Estrategia + calendario",
+          "Reunión mensual",
+        ],
         highlighted: false,
+        savings: null,
+        originalPrice: null,
       },
     ],
   },
   {
     id: "foto",
     title: "Fotografía de Producto",
-    description: "Sesiones, edición y formatos para e‑commerce.",
+    description: "Sesiones, edición profesional y formatos para e‑commerce.",
     plans: [
       {
         name: "ESENCIAL",
-        price: "$172.900",
+        price: "$199.900",
         priceNote: "Hasta 5 productos",
-        includes: ["10 fotos web", "Edición color + luz"],
+        includes: [
+          "10 fotos web entregadas",
+          "Edición color y luz",
+          "Fondo blanco o neutro",
+        ],
         highlighted: false,
+        savings: null,
+        originalPrice: null,
       },
       {
         name: "PROFESIONAL",
-        price: "$347.900",
+        price: "$399.900",
         priceNote: "Hasta 12 productos",
-        includes: ["25 fotos", "Retoque básico"],
+        includes: [
+          "25 fotos entregadas",
+          "Retoque básico",
+          "Fondo personalizable",
+          "Entrega en 48h",
+          "Formato web + RRSS",
+        ],
         highlighted: true,
+        savings: "Ahorras $100.000",
+        originalPrice: "$499.900",
       },
       {
         name: "CATÁLOGO",
-        price: "$578.900",
+        price: "$699.900",
         priceNote: "Hasta 25 productos",
-        includes: ["50 fotos", "RAW + alta resolución"],
+        includes: [
+          "50 fotos entregadas",
+          "RAW + alta resolución",
+          "Retoque avanzado",
+          "Múltiples ángulos",
+          "Catálogo digital PDF",
+        ],
         highlighted: false,
+        savings: null,
+        originalPrice: null,
       },
     ],
   },
@@ -157,24 +232,46 @@ const categories = [
     plans: [
       {
         name: "BÁSICO",
-        price: "$172.900",
+        price: "$199.900",
         priceNote: "3 videos",
-        includes: ["Edición básica", "Subtítulos"],
+        includes: [
+          "3 videos editados",
+          "Subtítulos incluidos",
+          "Música libre de regalías",
+        ],
         highlighted: false,
+        savings: null,
+        originalPrice: null,
       },
       {
         name: "CREADOR",
-        price: "$382.900",
+        price: "$449.900",
         priceNote: "6 videos",
-        includes: ["Edición dinámica", "Música stock"],
+        includes: [
+          "6 videos editados",
+          "Edición dinámica premium",
+          "Música stock curada",
+          "Subtítulos animados",
+          "Formatos multi-plataforma",
+        ],
         highlighted: true,
+        savings: "Ahorras $100.000",
+        originalPrice: "$549.900",
       },
       {
         name: "VIRAL",
-        price: "$732.900",
+        price: "$849.900",
         priceNote: "12 videos",
-        includes: ["Guión incluido", "Edición premium"],
+        includes: [
+          "12 videos editados",
+          "Guión y concepto incluido",
+          "Edición premium",
+          "Thumbnails diseñados",
+          "Estrategia de publicación",
+        ],
         highlighted: false,
+        savings: null,
+        originalPrice: null,
       },
     ],
   },
@@ -266,7 +363,7 @@ export function MiniPlansSection() {
 
           {/* Indicador de scroll en móvil */}
           <div className="md:hidden flex justify-center gap-1.5 mt-3">
-            {categories.map((cat, index) => (
+            {categories.map((cat) => (
               <div
                 key={cat.id}
                 className={`h-1 rounded-full transition-all duration-300 ${
@@ -351,7 +448,7 @@ export function MiniPlansSection() {
                             >
                               {p.highlighted && (
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
-                                  Más Popular
+                                  ⭐ Más Popular
                                 </div>
                               )}
                               <CardHeader>
@@ -363,10 +460,20 @@ export function MiniPlansSection() {
                                 </CardDescription>
                               </CardHeader>
                               <CardContent className="flex-1">
-                                <div className="mb-6">
+                                <div className="mb-6 flex flex-col items-start gap-2">
+                                  {p.originalPrice && (
+                                    <div className="text-sm text-muted-foreground line-through">
+                                      {p.originalPrice}
+                                    </div>
+                                  )}
                                   <span className="text-3xl font-bold text-foreground">
                                     {p.price}
                                   </span>
+                                  {p.savings && (
+                                    <div className="inline-flex items-center gap-1 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
+                                      ✓ {p.savings}
+                                    </div>
+                                  )}
                                 </div>
                                 <ul className="space-y-3">
                                   {p.includes.map((inc, i) => (
@@ -395,7 +502,7 @@ export function MiniPlansSection() {
                                     target="_blank"
                                     rel="noreferrer"
                                   >
-                                    Contactar
+                                    {p.highlighted ? "Empezar ahora" : "Contactar"}
                                   </a>
                                 </Button>
                               </CardFooter>
@@ -447,7 +554,7 @@ export function MiniPlansSection() {
                     >
                       {p.highlighted && (
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-3 py-1 text-xs font-medium text-white shadow-lg">
-                          Más Popular
+                          ⭐ Más Popular
                         </div>
                       )}
                       <CardHeader>
@@ -459,10 +566,20 @@ export function MiniPlansSection() {
                         </CardDescription>
                       </CardHeader>
                       <CardContent className="flex-1">
-                        <div className="mb-4">
+                        <div className="mb-4 flex flex-col items-start gap-2">
+                          {p.originalPrice && (
+                            <div className="text-sm text-muted-foreground line-through">
+                              {p.originalPrice}
+                            </div>
+                          )}
                           <span className="text-2xl font-bold text-foreground">
                             {p.price}
                           </span>
+                          {p.savings && (
+                            <div className="inline-flex items-center gap-1 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
+                              ✓ {p.savings}
+                            </div>
+                          )}
                         </div>
                         <ul className="space-y-3">
                           {p.includes.map((inc) => (
@@ -486,7 +603,7 @@ export function MiniPlansSection() {
                             target="_blank"
                             rel="noreferrer"
                           >
-                            Contactar
+                            {p.highlighted ? "Empezar ahora" : "Contactar"}
                           </a>
                         </Button>
                       </CardFooter>
