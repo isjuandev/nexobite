@@ -383,9 +383,9 @@ export function MiniPlansSection() {
             <AnimatedSection key={cat.id} delay={cIndex * 40}>
               <div>
                 <div className="mb-4">
-                  <h4 className="text-lg font-semibold text-foreground">
+                  <h3 className="text-lg font-semibold text-foreground">
                     {cat.title}
-                  </h4>
+                  </h3>
                   <p className="text-sm text-muted-foreground">
                     {cat.description}
                   </p>
