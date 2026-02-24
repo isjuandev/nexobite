@@ -142,7 +142,7 @@ export default function PoliticaDePrivacidad() {
               className="px-6 py-3 rounded-full bg-primary text-white hover-glow transition-all flex items-center gap-2 whitespace-nowrap"
             >
               <MessageCircle className="w-4 h-4" />
-              WhatsApp Oficial
+              Contactar Asesor
             </a>
           </div>
         </div>

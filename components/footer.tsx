@@ -56,7 +56,14 @@ export function Footer() {
               href="/politica-de-privacidad"
               className="text-sm text-muted-foreground hover:text-accent transition-colors"
             >
-              Política de Privacidad y Seguridad
+              Política de Privacidad
+            </Link>
+            <span className="text-muted-foreground hidden md:inline">·</span>
+            <Link
+              href="/condiciones-del-servicio"
+              className="text-sm text-muted-foreground hover:text-accent transition-colors"
+            >
+              Condiciones del Servicio
             </Link>
           </div>
         </div>
