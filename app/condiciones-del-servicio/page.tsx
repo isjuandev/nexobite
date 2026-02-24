@@ -12,7 +12,7 @@ export default function CondicionesDelServicio() {
         {
             id: "aceptacion",
             title: "1. Aceptación de los Términos",
-            icon: <FileText className="h-6 w-6 text-primary" />,
+            icon: <FileText className="h-6 w-6 text-accent" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -27,7 +27,7 @@ export default function CondicionesDelServicio() {
         {
             id: "descripcion",
             title: "2. Descripción de los Servicios",
-            icon: <Briefcase className="h-6 w-6 text-primary" />,
+            icon: <Briefcase className="h-6 w-6 text-accent" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -42,7 +42,7 @@ export default function CondicionesDelServicio() {
         {
             id: "obligaciones",
             title: "3. Obligaciones del Cliente",
-            icon: <ShieldCheck className="h-6 w-6 text-primary" />,
+            icon: <ShieldCheck className="h-6 w-6 text-accent" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -59,7 +59,7 @@ export default function CondicionesDelServicio() {
         {
             id: "pagos",
             title: "4. Pagos y Facturación",
-            icon: <CreditCard className="h-6 w-6 text-primary" />,
+            icon: <CreditCard className="h-6 w-6 text-accent" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -76,7 +76,7 @@ export default function CondicionesDelServicio() {
         {
             id: "propiedad-intelectual",
             title: "5. Propiedad Intelectual",
-            icon: <Copyright className="h-6 w-6 text-primary" />,
+            icon: <Copyright className="h-6 w-6 text-accent" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -91,7 +91,7 @@ export default function CondicionesDelServicio() {
         {
             id: "limitacion",
             title: "6. Limitación de Responsabilidad",
-            icon: <AlertTriangle className="h-6 w-6 text-primary" />,
+            icon: <AlertTriangle className="h-6 w-6 text-accent" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -106,7 +106,7 @@ export default function CondicionesDelServicio() {
         {
             id: "modificaciones",
             title: "7. Modificaciones a los Términos",
-            icon: <Scale className="h-6 w-6 text-primary" />,
+            icon: <Scale className="h-6 w-6 text-accent" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -132,11 +132,16 @@ export default function CondicionesDelServicio() {
                 <Container className="relative z-10">
                     <div className="max-w-4xl mx-auto text-center space-y-8">
                         <AnimatedSection>
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary mb-4">
-                                <ShieldAlert className="w-5 h-5" />
-                                <span className="text-sm font-semibold tracking-wider uppercase">Aspectos Legales</span>
+                            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-secondary/50 px-4 py-1.5 backdrop-blur-sm">
+                                <ShieldAlert className="w-4 h-4 text-accent animate-pulse" />
+                                <span className="text-sm font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                                    Aspectos Legales
+                                </span>
                             </div>
-                            <h1 className="text-4xl md:text-5xl lg:text-mdx font-bold tracking-tight mb-4">
+                        </AnimatedSection>
+
+                        <AnimatedSection delay={100}>
+                            <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight text-primary">
                                 Condiciones del <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Servicio</span>
                             </h1>
                         </AnimatedSection>
@@ -163,9 +168,9 @@ export default function CondicionesDelServicio() {
 
                                     <div className="flex flex-col md:flex-row gap-6">
                                         <div className="flex-shrink-0">
-                                            <div className="w-16 h-16 rounded-2xl bg-card border border-border flex items-center justify-center shadow-lg group-hover:shadow-primary/20 group-hover:border-primary/30 transition-all duration-300 relative z-10">
+                                            <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 shadow-lg group-hover:bg-accent/10 transition-all duration-300 relative z-10 overflow-hidden">
                                                 {section.icon}
-                                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                                             </div>
                                         </div>
 
@@ -173,8 +178,11 @@ export default function CondicionesDelServicio() {
                                             <h2 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
                                                 {section.title}
                                             </h2>
-                                            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 hover:bg-card/80 transition-colors duration-300 shadow-sm">
-                                                {section.content}
+                                            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 hover-lift hover:border-accent/30 transition-all duration-300 shadow-sm relative overflow-hidden">
+                                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                                                <div className="relative z-10 prose prose-slate dark:prose-invert max-w-none font-sans text-foreground/90">
+                                                    {section.content}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
