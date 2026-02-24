@@ -349,11 +349,10 @@ export function MiniPlansSection() {
               <button
                 key={cat.id}
                 onClick={() => setSelected(cat.id)}
-                className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 snap-center ${
-                  selected === cat.id
+                className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 snap-center ${selected === cat.id
                     ? "bg-gradient-to-r from-primary to-accent text-white shadow-md"
                     : "bg-card/40 text-muted-foreground hover:bg-card/60"
-                }`}
+                  }`}
                 aria-pressed={selected === cat.id}
               >
                 {cat.title}
@@ -366,11 +365,10 @@ export function MiniPlansSection() {
             {categories.map((cat) => (
               <div
                 key={cat.id}
-                className={`h-1 rounded-full transition-all duration-300 ${
-                  selected === cat.id
+                className={`h-1 rounded-full transition-all duration-300 ${selected === cat.id
                     ? "w-6 bg-gradient-to-r from-primary to-accent"
                     : "w-1 bg-muted"
-                }`}
+                  }`}
               />
             ))}
           </div>
@@ -440,11 +438,10 @@ export function MiniPlansSection() {
                             className="snap-center shrink-0 w-[85vw] max-w-sm"
                           >
                             <Card
-                              className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${
-                                p.highlighted
+                              className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${p.highlighted
                                   ? "border-accent bg-card shadow-lg shadow-accent/20"
                                   : "border-border/50 bg-card/50"
-                              }`}
+                                }`}
                             >
                               {p.highlighted && (
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
@@ -498,7 +495,7 @@ export function MiniPlansSection() {
                                   asChild
                                 >
                                   <a
-                                    href="https://wa.me/+573116839099"
+                                    href="https://wa.me/+573009459026"
                                     target="_blank"
                                     rel="noreferrer"
                                   >
@@ -530,11 +527,10 @@ export function MiniPlansSection() {
                             });
                           }
                         }}
-                        className={`h-2 rounded-full transition-all duration-300 ${
-                          activeIndex === index
+                        className={`h-2 rounded-full transition-all duration-300 ${activeIndex === index
                             ? "w-8 bg-gradient-to-r from-primary to-accent"
                             : "w-2 bg-muted hover:bg-muted-foreground"
-                        }`}
+                          }`}
                         aria-label={`Ir a ${cat.plans[index].name}`}
                       />
                     ))}
@@ -546,11 +542,10 @@ export function MiniPlansSection() {
                   {cat.plans.map((p) => (
                     <Card
                       key={p.name}
-                      className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${
-                        p.highlighted
+                      className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${p.highlighted
                           ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30"
                           : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"
-                      }`}
+                        }`}
                     >
                       {p.highlighted && (
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-3 py-1 text-xs font-medium text-white shadow-lg">
@@ -599,7 +594,7 @@ export function MiniPlansSection() {
                           asChild
                         >
                           <a
-                            href="https://wa.me/+573116839099"
+                            href="https://wa.me/+573009459026"
                             target="_blank"
                             rel="noreferrer"
                           >

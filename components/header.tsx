@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -12,12 +12,24 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const pathname = usePathname();
+  const router = useRouter();
 
   // Detectar si estamos en una página de propuesta
   const isProposalPage = pathname?.startsWith("/propuesta-");
+  // Detectar si NO estamos en la página principal
+  const isNotHomePage = pathname !== "/";
 
-  // Función reutilizable para smooth scroll
-  const scrollToSection = (sectionId: string) => {
+  // Función reutilizable para smooth scroll o redirección
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+
+    if (isNotHomePage && !isProposalPage) {
+      // Si no estamos en el home ni en propuestas, redirigir al home con un hash
+      router.push(`/#${sectionId}`);
+      return;
+    }
+
     const el = document.getElementById(sectionId);
     const header = document.querySelector("header");
     if (el) {
@@ -32,16 +44,22 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
+      // Si no estamos en la página principal ni en propuestas, no calcular scroll spy
+      if (isNotHomePage && !isProposalPage) {
+        setActiveSection("");
+        return;
+      }
+
       // Obtener la altura del header para ajustar el offset
       const header = document.querySelector("header");
       const headerHeight = header ? header.getBoundingClientRect().height : 80;
       const offset = headerHeight + 100; // Agregar margen adicional
 
       // Determinar las secciones según el tipo de página
-      const sections = isProposalPage 
+      const sections = isProposalPage
         ? ["proposals", "payment", "contact"]
         : ["services", "how-it-works", "mini-plans", "packages"];
-      
+
       const scrollPosition = window.scrollY + offset;
 
       // Encontrar la sección actual basándose en la posición de scroll
@@ -65,7 +83,7 @@ export function Header() {
     handleScroll(); // Ejecutar al montar
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isProposalPage]);
+  }, [isProposalPage, isNotHomePage]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
@@ -73,11 +91,10 @@ export function Header() {
       <div className="absolute inset-0 -z-10 backdrop-blur-sm" />
 
       <div
-        className={`mx-auto max-w-7xl transition-all duration-300 ${
-          isScrolled
-            ? "bg-card backdrop-blur-xl shadow-lg shadow-primary/5 border border-border/50"
-            : "bg-card/95 backdrop-blur-lg border border-border/30"
-        } rounded-2xl`}
+        className={`mx-auto max-w-7xl transition-all duration-300 ${isScrolled
+          ? "bg-card backdrop-blur-xl shadow-lg shadow-primary/5 border border-border/50"
+          : "bg-card/95 backdrop-blur-lg border border-border/30"
+          } rounded-2xl`}
       >
         <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link
@@ -104,67 +121,52 @@ export function Header() {
               <>
                 <Link
                   href="#proposals"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("proposals");
-                  }}
-                  className={`group relative text-sm font-medium transition-colors ${
-                    activeSection === "proposals"
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  onClick={(e) => handleNavClick(e, "proposals")}
+                  className={`group relative text-sm font-medium transition-colors ${activeSection === "proposals"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   <span>Propuestas</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
-                      activeSection === "proposals"
-                        ? "w-full scale-x-100"
-                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                    }`}
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "proposals"
+                      ? "w-full scale-x-100"
+                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                      }`}
                     style={{ transformOrigin: "center" }}
                   />
                 </Link>
                 <Link
                   href="#payment"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("payment");
-                  }}
-                  className={`group relative text-sm font-medium transition-colors ${
-                    activeSection === "payment"
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  onClick={(e) => handleNavClick(e, "payment")}
+                  className={`group relative text-sm font-medium transition-colors ${activeSection === "payment"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   <span>Opciones de Pago</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
-                      activeSection === "payment"
-                        ? "w-full scale-x-100"
-                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                    }`}
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "payment"
+                      ? "w-full scale-x-100"
+                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                      }`}
                     style={{ transformOrigin: "center" }}
                   />
                 </Link>
                 <Link
                   href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("contact");
-                  }}
-                  className={`group relative text-sm font-medium transition-colors ${
-                    activeSection === "contact"
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  onClick={(e) => handleNavClick(e, "contact")}
+                  className={`group relative text-sm font-medium transition-colors ${activeSection === "contact"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   <span>Contacto</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
-                      activeSection === "contact"
-                        ? "w-full scale-x-100"
-                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                    }`}
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "contact"
+                      ? "w-full scale-x-100"
+                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                      }`}
                     style={{ transformOrigin: "center" }}
                   />
                 </Link>
@@ -174,89 +176,69 @@ export function Header() {
               <>
                 <Link
                   href="#services"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("services");
-                  }}
-                  className={`group relative text-sm font-medium transition-colors ${
-                    activeSection === "services"
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  onClick={(e) => handleNavClick(e, "services")}
+                  className={`group relative text-sm font-medium transition-colors ${activeSection === "services"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   <span>Servicios</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
-                      activeSection === "services"
-                        ? "w-full scale-x-100"
-                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                    }`}
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "services"
+                      ? "w-full scale-x-100"
+                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                      }`}
                     style={{ transformOrigin: "center" }}
                   />
                 </Link>
                 <Link
                   href="#how-it-works"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("how-it-works");
-                  }}
-                  className={`group relative text-sm font-medium transition-colors ${
-                    activeSection === "how-it-works"
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  onClick={(e) => handleNavClick(e, "how-it-works")}
+                  className={`group relative text-sm font-medium transition-colors ${activeSection === "how-it-works"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   <span>Cómo Funciona</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
-                      activeSection === "how-it-works"
-                        ? "w-full scale-x-100"
-                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                    }`}
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "how-it-works"
+                      ? "w-full scale-x-100"
+                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                      }`}
                     style={{ transformOrigin: "center" }}
                   />
                 </Link>
                 <Link
                   href="#mini-plans"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("mini-plans");
-                  }}
-                  className={`group relative text-sm font-medium transition-colors ${
-                    activeSection === "mini-plans"
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  onClick={(e) => handleNavClick(e, "mini-plans")}
+                  className={`group relative text-sm font-medium transition-colors ${activeSection === "mini-plans"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   <span>Planes</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
-                      activeSection === "mini-plans"
-                        ? "w-full scale-x-100"
-                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                    }`}
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "mini-plans"
+                      ? "w-full scale-x-100"
+                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                      }`}
                     style={{ transformOrigin: "center" }}
                   />
                 </Link>
                 <Link
                   href="#packages"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("packages");
-                  }}
-                  className={`group relative text-sm font-medium transition-colors ${
-                    activeSection === "packages"
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  onClick={(e) => handleNavClick(e, "packages")}
+                  className={`group relative text-sm font-medium transition-colors ${activeSection === "packages"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   <span>Paquetes</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${
-                      activeSection === "packages"
-                        ? "w-full scale-x-100"
-                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                    }`}
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "packages"
+                      ? "w-full scale-x-100"
+                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                      }`}
                     style={{ transformOrigin: "center" }}
                   />
                 </Link>
@@ -271,7 +253,7 @@ export function Header() {
               className="relative overflow-hidden"
             >
               <a
-                href="https://wa.me/+573116839099"
+                href="https://wa.me/+573009459026"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -302,46 +284,31 @@ export function Header() {
                 <>
                   <Link
                     href="#proposals"
-                    className={`text-sm font-medium transition-colors py-2 ${
-                      activeSection === "proposals"
-                        ? "text-accent font-bold"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection("proposals");
-                      setIsMenuOpen(false);
-                    }}
+                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "proposals"
+                      ? "text-accent font-bold"
+                      : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    onClick={(e) => handleNavClick(e, "proposals")}
                   >
                     Propuestas
                   </Link>
                   <Link
                     href="#payment"
-                    className={`text-sm font-medium transition-colors py-2 ${
-                      activeSection === "payment"
-                        ? "text-accent font-bold"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection("payment");
-                      setIsMenuOpen(false);
-                    }}
+                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "payment"
+                      ? "text-accent font-bold"
+                      : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    onClick={(e) => handleNavClick(e, "payment")}
                   >
                     Opciones de Pago
                   </Link>
                   <Link
                     href="#contact"
-                    className={`text-sm font-medium transition-colors py-2 ${
-                      activeSection === "contact"
-                        ? "text-accent font-bold"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection("contact");
-                      setIsMenuOpen(false);
-                    }}
+                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "contact"
+                      ? "text-accent font-bold"
+                      : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    onClick={(e) => handleNavClick(e, "contact")}
                   >
                     Contacto
                   </Link>
@@ -350,62 +317,42 @@ export function Header() {
                 // Navegación móvil normal
                 <>
                   <Link
-                    href="#services"
-                    className={`text-sm font-medium transition-colors py-2 ${
-                      activeSection === "services"
-                        ? "text-accent font-bold"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection("services");
-                      setIsMenuOpen(false);
-                    }}
+                    href={isNotHomePage ? "/#services" : "#services"}
+                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "services"
+                      ? "text-accent font-bold"
+                      : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    onClick={(e) => handleNavClick(e, "services")}
                   >
                     Servicios
                   </Link>
                   <Link
-                    href="#how-it-works"
-                    className={`text-sm font-medium transition-colors py-2 ${
-                      activeSection === "how-it-works"
-                        ? "text-accent font-bold"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection("how-it-works");
-                      setIsMenuOpen(false);
-                    }}
+                    href={isNotHomePage ? "/#how-it-works" : "#how-it-works"}
+                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "how-it-works"
+                      ? "text-accent font-bold"
+                      : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    onClick={(e) => handleNavClick(e, "how-it-works")}
                   >
                     Cómo Funciona
                   </Link>
                   <Link
-                    href="#mini-plans"
-                    className={`text-sm font-medium transition-colors py-2 ${
-                      activeSection === "mini-plans"
-                        ? "text-accent font-bold"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection("mini-plans");
-                      setIsMenuOpen(false);
-                    }}
+                    href={isNotHomePage ? "/#mini-plans" : "#mini-plans"}
+                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "mini-plans"
+                      ? "text-accent font-bold"
+                      : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    onClick={(e) => handleNavClick(e, "mini-plans")}
                   >
                     Planes
                   </Link>
                   <Link
-                    href="#packages"
-                    className={`text-sm font-medium transition-colors py-2 ${
-                      activeSection === "packages"
-                        ? "text-accent font-bold"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection("packages");
-                      setIsMenuOpen(false);
-                    }}
+                    href={isNotHomePage ? "/#packages" : "#packages"}
+                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "packages"
+                      ? "text-accent font-bold"
+                      : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    onClick={(e) => handleNavClick(e, "packages")}
                   >
                     Paquetes
                   </Link>
@@ -413,7 +360,7 @@ export function Header() {
               )}
               <Button variant="gradient" asChild className="w-full">
                 <a
-                  href="https://wa.me/+573116839099"
+                  href="https://wa.me/+573009459026"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

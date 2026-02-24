@@ -38,7 +38,7 @@ export function CtaSection() {
         <AnimatedSection delay={300}>
           <Button size="lg" variant="gradient" asChild className="group">
             <a
-              href="https://wa.me/+573116839099"
+              href="https://wa.me/+573009459026"
               target="_blank"
               rel="noopener noreferrer"
             >

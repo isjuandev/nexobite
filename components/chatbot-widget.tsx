@@ -11,11 +11,10 @@ export function ChatbotWidget() {
     <div className="fixed bottom-6 right-6 z-50">
       {/* Chat Panel */}
       <div
-        className={`absolute bottom-20 right-0 w-80 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl transition-all duration-300 ${
-          isOpen
+        className={`absolute bottom-20 right-0 w-80 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl transition-all duration-300 ${isOpen
             ? "translate-y-0 scale-100 opacity-100"
             : "pointer-events-none translate-y-4 scale-95 opacity-0"
-        }`}
+          }`}
       >
         {/* Header */}
         <div className="flex items-center gap-3 border-b border-border bg-secondary/50 px-4 py-3">
@@ -66,7 +65,7 @@ export function ChatbotWidget() {
             asChild
           >
             <a
-              href="https://wa.me/+573116839099"
+              href="https://wa.me/+573009459026"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -81,21 +80,18 @@ export function ChatbotWidget() {
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`group relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-accent/50 ${
-          !isOpen ? "animate-pulse-glow" : ""
-        }`}
+        className={`group relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-accent/50 ${!isOpen ? "animate-pulse-glow" : ""
+          }`}
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
         <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
         <MessageCircle
-          className={`relative z-10 h-6 w-6 text-white transition-all duration-300 ${
-            isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100"
-          }`}
+          className={`relative z-10 h-6 w-6 text-white transition-all duration-300 ${isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100"
+            }`}
         />
         <X
-          className={`absolute z-10 h-6 w-6 text-white transition-all duration-300 ${
-            isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0"
-          }`}
+          className={`absolute z-10 h-6 w-6 text-white transition-all duration-300 ${isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0"
+            }`}
         />
 
         {/* Pulse ring when closed */}

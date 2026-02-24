@@ -52,7 +52,7 @@ export function HeroSection() {
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button size="lg" variant="gradient" asChild className="group">
                 <a
-                  href="https://wa.me/+573116839099"
+                  href="https://wa.me/+573009459026"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
