@@ -32,7 +32,7 @@ const INITIAL_FORM: ContactFormValues = {
 };
 
 const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL || "https://backend.nexobite.com";
+  process.env.NEXT_PUBLIC_API_URL || "https://crm-api.nexobite.com/";
 
 export function ChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -110,8 +110,8 @@ export function ChatbotWidget() {
       {/* Chat Panel */}
       <div
         className={`absolute bottom-20 right-0 w-[360px] overflow-hidden rounded-2xl border border-border/50 bg-card/95 backdrop-blur-xl shadow-2xl transition-all duration-400 ease-out ${isOpen
-            ? "translate-y-0 scale-100 opacity-100"
-            : "pointer-events-none translate-y-4 scale-95 opacity-0"
+          ? "translate-y-0 scale-100 opacity-100"
+          : "pointer-events-none translate-y-4 scale-95 opacity-0"
           }`}
         style={{
           boxShadow: isOpen
