@@ -44,7 +44,7 @@ export function HeroSection() {
                 marketing digital
               </span>{" "}
               en un solo equipo. Automatización inteligente con IA + contenido
-              visual de alto impacto para PYMEs colombianas.
+              visual de alto impacto para emprendedores colombianos.
             </p>
           </AnimatedSection>
 

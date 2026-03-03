@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Lead Capture (n8n webhook)
+
+El widget de chat envía leads (nombre, teléfono, correo y mensaje) al endpoint interno `POST /api/leads`, que a su vez reenvía la información a tu webhook de n8n.
+
+Configura esta variable en `.env.local`:
+
+```bash
+N8N_LEAD_WEBHOOK_URL=http://localhost:5678/webhook/ventas
+```
+
 ## Getting Started
 
 First, run the development server:
