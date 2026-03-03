@@ -22,7 +22,7 @@ export function CtaSection() {
           <h2 className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
             ¿Listo para{" "}
             <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-              vender más
+              impulsar tu negocio digital
             </span>
             ?
           </h2>
@@ -30,8 +30,9 @@ export function CtaSection() {
 
         <AnimatedSection delay={200}>
           <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg text-muted-foreground">
-            Agenda una consulta gratuita por WhatsApp. Te mostramos cómo
-            funciona todo en acción. Sin compromiso, sin letra pequeña.
+            Agenda una consulta gratuita por WhatsApp con nuestro equipo.
+            Te mostramos cómo un chatbot con IA o una página web profesional
+            puede transformar tu negocio. Sin compromiso, sin letra pequeña.
           </p>
         </AnimatedSection>
 

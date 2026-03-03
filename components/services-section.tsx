@@ -71,9 +71,9 @@ export function ServicesSection() {
           </div>
           <h2 className="mb-4 max-w-2xl text-balance text-3xl font-bold text-foreground sm:text-4xl">
             <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-              Código + Creatividad
+              Servicios de marketing digital y desarrollo web
             </span>{" "}
-            bajo un mismo techo
+            en un solo equipo
           </h2>
           <p className="mb-16 max-w-2xl text-pretty text-lg text-muted-foreground">
             Somos un equipo boutique que no terceriza nada. Hablas directo con

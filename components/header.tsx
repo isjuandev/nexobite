@@ -104,7 +104,7 @@ export function Header() {
             <div className="relative flex h-9 w-9 items-center justify-center transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/30 group-hover:scale-110 overflow-hidden">
               <Image
                 src="/nexobite-logo.png"
-                alt="Nexobite Logo"
+                alt="NexoBite - Agencia de marketing digital y desarrollo web en Colombia"
                 width={32}
                 height={32}
               />

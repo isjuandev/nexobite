@@ -26,25 +26,26 @@ export function HeroSection() {
 
           <AnimatedSection delay={100}>
             <h1 className="mb-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-              Transformamos tu{" "}
+              Transformamos la{" "}
               <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                 presencia digital
-              </span>
+              </span>{" "}
+              de tu negocio
             </h1>
           </AnimatedSection>
 
           <AnimatedSection delay={200}>
             <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg text-muted-foreground sm:text-xl">
-              Combinamos{" "}
+              Somos una{" "}
               <span className="text-foreground font-medium">
-                desarrollo de software
+                agencia de marketing digital y desarrollo web
               </span>{" "}
-              y{" "}
+              en Colombia. Combinamos{" "}
               <span className="text-foreground font-medium">
-                marketing digital
-              </span>{" "}
-              en un solo equipo. Automatización inteligente con IA + contenido
-              visual de alto impacto para emprendedores colombianos.
+                chatbots inteligentes con IA
+              </span>
+              , automatización y contenido visual de alto impacto para PYMEs y
+              emprendedores que quieren vender más.
             </p>
           </AnimatedSection>
 

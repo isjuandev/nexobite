@@ -12,7 +12,7 @@ export function Footer() {
             <div className="relative flex h-8 w-8 items-center justify-center rounded-md overflow-hidden">
               <Image
                 src="/nexobite-logo.png"
-                alt="Nexobite Logo"
+                alt="NexoBite - Soluciones digitales para PYMEs"
                 width={32}
                 height={32}
               />
@@ -51,7 +51,21 @@ export function Footer() {
             © {new Date().getFullYear()} NexoBite. Todos los derechos
             reservados.
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-end">
+            <Link
+              href="/#services"
+              className="text-sm text-muted-foreground hover:text-accent transition-colors"
+            >
+              Servicios
+            </Link>
+            <span className="text-muted-foreground hidden md:inline">·</span>
+            <Link
+              href="/#mini-plans"
+              className="text-sm text-muted-foreground hover:text-accent transition-colors"
+            >
+              Planes
+            </Link>
+            <span className="text-muted-foreground hidden md:inline">·</span>
             <Link
               href="/politica-de-privacidad"
               className="text-sm text-muted-foreground hover:text-accent transition-colors"
