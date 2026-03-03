@@ -32,7 +32,7 @@ const INITIAL_FORM: ContactFormValues = {
 };
 
 const BACKEND_URL =
-  process.env.NEXT_PUBLIC_API_URL || "https://crm-api.nexobite.com/";
+  process.env.NEXT_PUBLIC_API_URL || "https://crm-api.nexobite.com";
 
 export function ChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -131,10 +131,10 @@ export function ChatbotWidget() {
             </div>
             <div className="flex-1">
               <div className="font-semibold text-foreground tracking-tight">
-                Contáctanos
+                Soy Nex
               </div>
               <div className="text-xs text-muted-foreground">
-                Cuéntanos sobre tu proyecto
+                ¿En qué puedo ayudarte hoy?
               </div>
             </div>
             <button
@@ -349,7 +349,7 @@ export function ChatbotWidget() {
         {/* Footer — WhatsApp CTA */}
         <div className="border-t border-border/30 px-5 py-3 bg-secondary/20">
           <Button
-            className="w-full gap-2 rounded-xl text-xs font-medium"
+            className="w-full gap-2 rounded-xl text-xs font-medium hover:bg-transparent"
             variant="ghost"
             size="sm"
             asChild
