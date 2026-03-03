@@ -319,9 +319,10 @@ export function ChatbotWidget() {
 
               {/* Submit Button */}
               <Button
+                variant="gradient"
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full gap-2 rounded-xl bg-gradient-to-r from-primary to-accent py-5 text-sm font-medium text-white shadow-lg shadow-accent/20 transition-all duration-300 hover:shadow-xl hover:shadow-accent/30 hover:brightness-110 disabled:opacity-60 disabled:shadow-none border-0"
+                className="w-full gap-2 rounded-xl py-6 text-sm font-semibold"
               >
                 {isSubmitting ? (
                   <>
