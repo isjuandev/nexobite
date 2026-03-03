@@ -18,11 +18,11 @@ import { ParticleField } from "@/components/particle-field";
 const categories = [
   {
     id: "chatbots",
-    title: "Chatbots Automatizados",
+    title: "Chatbots con IA",
     description: "Setup único + mensualidad. Soporte y escalamiento incluidos.",
     plans: [
       {
-        name: "STARTER",
+        name: "ESENCIAL",
         price: "$649.900",
         priceNote: "$119.900/mes",
         includes: [
@@ -36,7 +36,7 @@ const categories = [
         originalPrice: null,
       },
       {
-        name: "BUSINESS",
+        name: "AVANZADO",
         price: "$1.249.900",
         priceNote: "$199.900/mes",
         includes: [
@@ -52,7 +52,7 @@ const categories = [
         originalPrice: "$1.499.900",
       },
       {
-        name: "ENTERPRISE",
+        name: "PREMIUM",
         price: "$2.099.900",
         priceNote: "$329.900/mes",
         includes: [
@@ -75,7 +75,7 @@ const categories = [
     description: "Sitios profesionales optimizados para PyMEs colombianas.",
     plans: [
       {
-        name: "BÁSICO",
+        name: "ESENCIAL",
         price: "$397.900",
         priceNote: "Landing / Vitrina",
         includes: [
@@ -89,7 +89,7 @@ const categories = [
         originalPrice: null,
       },
       {
-        name: "PROFESIONAL",
+        name: "AVANZADO",
         price: "$649.900",
         priceNote: "Web Corporativa",
         includes: [
@@ -105,7 +105,7 @@ const categories = [
         originalPrice: "$799.900",
       },
       {
-        name: "EMPRESARIAL",
+        name: "PREMIUM",
         price: "$1.099.900",
         priceNote: "Alto impacto",
         includes: [
@@ -128,7 +128,7 @@ const categories = [
     description: "Gestión mensual de redes, contenido y comunidad activa.",
     plans: [
       {
-        name: "STARTER",
+        name: "ESENCIAL",
         price: "$429.900/mes",
         priceNote: "Presencia básica",
         includes: [
@@ -142,7 +142,7 @@ const categories = [
         originalPrice: null,
       },
       {
-        name: "GROWTH",
+        name: "AVANZADO",
         price: "$719.900/mes",
         priceNote: "Crecimiento",
         includes: [
@@ -158,7 +158,7 @@ const categories = [
         originalPrice: "$849.900/mes",
       },
       {
-        name: "SCALE",
+        name: "PREMIUM",
         price: "$1.199.900/mes",
         priceNote: "Estrategia completa",
         includes: [
@@ -194,7 +194,7 @@ const categories = [
         originalPrice: null,
       },
       {
-        name: "PROFESIONAL",
+        name: "AVANZADO",
         price: "$399.900",
         priceNote: "Hasta 12 productos",
         includes: [
@@ -209,7 +209,7 @@ const categories = [
         originalPrice: "$499.900",
       },
       {
-        name: "CATÁLOGO",
+        name: "PREMIUM",
         price: "$699.900",
         priceNote: "Hasta 25 productos",
         includes: [
@@ -231,7 +231,7 @@ const categories = [
     description: "Reels, TikToks y contenido corto con edición profesional.",
     plans: [
       {
-        name: "BÁSICO",
+        name: "ESENCIAL",
         price: "$199.900",
         priceNote: "3 videos",
         includes: [
@@ -244,7 +244,7 @@ const categories = [
         originalPrice: null,
       },
       {
-        name: "CREADOR",
+        name: "AVANZADO",
         price: "$449.900",
         priceNote: "6 videos",
         includes: [
@@ -259,7 +259,7 @@ const categories = [
         originalPrice: "$549.900",
       },
       {
-        name: "VIRAL",
+        name: "PREMIUM",
         price: "$849.900",
         priceNote: "12 videos",
         includes: [
@@ -350,8 +350,8 @@ export function MiniPlansSection() {
                 key={cat.id}
                 onClick={() => setSelected(cat.id)}
                 className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 snap-center ${selected === cat.id
-                    ? "bg-gradient-to-r from-primary to-accent text-white shadow-md"
-                    : "bg-card/40 text-muted-foreground hover:bg-card/60"
+                  ? "bg-gradient-to-r from-primary to-accent text-white shadow-md"
+                  : "bg-card/40 text-muted-foreground hover:bg-card/60"
                   }`}
                 aria-pressed={selected === cat.id}
               >
@@ -366,8 +366,8 @@ export function MiniPlansSection() {
               <div
                 key={cat.id}
                 className={`h-1 rounded-full transition-all duration-300 ${selected === cat.id
-                    ? "w-6 bg-gradient-to-r from-primary to-accent"
-                    : "w-1 bg-muted"
+                  ? "w-6 bg-gradient-to-r from-primary to-accent"
+                  : "w-1 bg-muted"
                   }`}
               />
             ))}
@@ -439,8 +439,8 @@ export function MiniPlansSection() {
                           >
                             <Card
                               className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${p.highlighted
-                                  ? "border-accent bg-card shadow-lg shadow-accent/20"
-                                  : "border-border/50 bg-card/50"
+                                ? "border-accent bg-card shadow-lg shadow-accent/20"
+                                : "border-border/50 bg-card/50"
                                 }`}
                             >
                               {p.highlighted && (
@@ -528,8 +528,8 @@ export function MiniPlansSection() {
                           }
                         }}
                         className={`h-2 rounded-full transition-all duration-300 ${activeIndex === index
-                            ? "w-8 bg-gradient-to-r from-primary to-accent"
-                            : "w-2 bg-muted hover:bg-muted-foreground"
+                          ? "w-8 bg-gradient-to-r from-primary to-accent"
+                          : "w-2 bg-muted hover:bg-muted-foreground"
                           }`}
                         aria-label={`Ir a ${cat.plans[index].name}`}
                       />
@@ -543,8 +543,8 @@ export function MiniPlansSection() {
                     <Card
                       key={p.name}
                       className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${p.highlighted
-                          ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30"
-                          : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"
+                        ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30"
+                        : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"
                         }`}
                     >
                       {p.highlighted && (

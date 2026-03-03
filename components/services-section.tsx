@@ -15,7 +15,7 @@ import { Container } from "@/components/container";
 const services = [
   {
     icon: Bot,
-    title: "ChatBots Inteligentes con IA",
+    title: "ChatBots con IA",
     description:
       "Asistente virtual 24/7 en WhatsApp que responde preguntas, agenda citas, envía cotizaciones y captura leads automáticamente.",
     category: "Software",
@@ -36,9 +36,9 @@ const services = [
   },
   {
     icon: Share2,
-    title: "Gestión de Redes Sociales",
+    title: "Community Management",
     description:
-      "Community management, estrategia de contenido, calendario editorial y crecimiento orgánico de tu comunidad digital.",
+      "Gestión de redes sociales, estrategia de contenido, calendario editorial y crecimiento orgánico de tu comunidad digital.",
     category: "Marketing",
   },
   {
@@ -50,7 +50,7 @@ const services = [
   },
   {
     icon: Video,
-    title: "Contenido de Video",
+    title: "Producción de Video",
     description:
       "Producción de Reels y TikToks que capturan atención. Edición profesional con tendencias actuales.",
     category: "Marketing",
