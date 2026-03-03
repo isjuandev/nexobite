@@ -37,11 +37,11 @@ export function HowItWorksSection() {
       <ParticleField variant="subtle" density="low" speed="slow" />
       <Container className="relative z-10">
         <AnimatedSection>
-          <div className="mb-4 text-center text-sm font-medium uppercase tracking-wider bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <div className="mb-4 text-center text-sm font-medium uppercase tracking-wider bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
             Cómo funciona
           </div>
           <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               3 pasos
             </span>{" "}
             para transformar tu negocio
@@ -63,8 +63,8 @@ export function HowItWorksSection() {
                   />
                 )}
                 <div className="group relative flex flex-col items-center text-center md:items-start md:text-left px-4">
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-accent/50">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-primary to-accent transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-accent/50">
+                    <div className="absolute inset-0 rounded-full bg-linear-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
                     <step.icon className="relative z-10 h-6 w-6 text-white" />
                   </div>
                   <div className="mb-2 text-sm font-medium text-accent transition-colors duration-300 group-hover:text-accent">

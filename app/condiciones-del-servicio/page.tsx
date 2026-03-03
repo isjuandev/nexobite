@@ -127,14 +127,14 @@ export default function CondicionesDelServicio() {
 
             {/* Premium Hero Header Section */}
             <section className="relative pt-32 pb-16 overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none" />
 
                 <Container className="relative z-10">
                     <div className="max-w-4xl mx-auto text-center space-y-8">
                         <AnimatedSection>
                             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-secondary/50 px-4 py-1.5 backdrop-blur-sm">
                                 <ShieldAlert className="w-4 h-4 text-accent animate-pulse" />
-                                <span className="text-sm font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                                <span className="text-sm font-medium bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                                     Aspectos Legales
                                 </span>
                             </div>
@@ -142,7 +142,7 @@ export default function CondicionesDelServicio() {
 
                         <AnimatedSection delay={100}>
                             <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight text-primary">
-                                Condiciones del <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Servicio</span>
+                                Condiciones del <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">Servicio</span>
                             </h1>
                         </AnimatedSection>
                     </div>
@@ -150,7 +150,7 @@ export default function CondicionesDelServicio() {
             </section>
 
             {/* Content Section */}
-            <section className="py-12 relative z-10 flex-grow">
+            <section className="py-12 relative z-10 grow">
                 <Container>
                     <div className="max-w-4xl mx-auto">
 
@@ -163,23 +163,23 @@ export default function CondicionesDelServicio() {
                                 >
                                     {/* Decorative line connecting sections */}
                                     {index !== sections.length - 1 && (
-                                        <div className="absolute left-8 top-16 bottom-[-3rem] w-px bg-gradient-to-b from-primary/20 to-transparent group-hover:from-primary/40 transition-colors duration-500 hidden md:block" />
+                                        <div className="absolute left-8 top-16 -bottom-12 w-px bg-linear-to-b from-primary/20 to-transparent group-hover:from-primary/40 transition-colors duration-500 hidden md:block" />
                                     )}
 
                                     <div className="flex flex-col md:flex-row gap-6">
-                                        <div className="flex-shrink-0">
+                                        <div className="shrink-0">
                                             <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 shadow-lg group-hover:bg-accent/10 transition-all duration-300 relative z-10 overflow-hidden">
                                                 {section.icon}
-                                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                                                <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                                             </div>
                                         </div>
 
-                                        <div className="flex-grow pt-2">
+                                        <div className="grow pt-2">
                                             <h2 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
                                                 {section.title}
                                             </h2>
                                             <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 hover-lift hover:border-accent/30 transition-all duration-300 shadow-sm relative overflow-hidden">
-                                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                                                <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                                                 <div className="relative z-10 prose prose-slate dark:prose-invert max-w-none font-sans text-foreground/90">
                                                     {section.content}
                                                 </div>
@@ -192,15 +192,15 @@ export default function CondicionesDelServicio() {
 
                         {/* Contact Box */}
                         <AnimatedSection delay={800} className="mt-16">
-                            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-card to-card/50 border border-border p-8 md:p-12 text-center shadow-2xl">
-                                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 pointer-events-none" />
+                            <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-card to-card/50 border border-border p-8 md:p-12 text-center shadow-2xl">
+                                <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-accent/10 pointer-events-none" />
                                 <div className="relative z-10 max-w-2xl mx-auto space-y-6">
                                     <h3 className="text-2xl md:text-3xl font-bold">¿Tienes alguna pregunta sobre nuestros términos?</h3>
                                     <p className="text-lg text-muted-foreground">Estamos aquí para resolver cualquier inquietud antes de comenzar un proyecto juntos.</p>
 
                                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
                                         <a
-                                            href="https://wa.me/+573009459026"
+                                            href="https://wa.me/+573009459026?text=Hola!%20Tengo%20una%20duda%20sobre%20las%20condiciones%20del%20servicio%20de%20NexoBite."
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover-glow transition-all flex items-center gap-2 group"

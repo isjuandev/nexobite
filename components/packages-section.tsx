@@ -124,11 +124,11 @@ export function PackagesSection() {
       <ParticleField variant="mixed" density="high" speed="medium" />
       <Container className="relative z-10">
         <AnimatedSection>
-          <div className="mb-4 text-center text-sm font-medium uppercase tracking-wider bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <div className="mb-4 text-center text-sm font-medium uppercase tracking-wider bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
             Paquetes Integrales
           </div>
           <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               Ahorra hasta 25%
             </span>{" "}
             combinando servicios
@@ -187,12 +187,12 @@ export function PackagesSection() {
                 >
                   <Card
                     className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${pkg.highlighted
-                        ? "border-accent bg-card shadow-lg shadow-accent/20"
-                        : "border-border/50 bg-card/50"
+                      ? "border-accent bg-card shadow-lg shadow-accent/20"
+                      : "border-border/50 bg-card/50"
                       }`}
                   >
                     {pkg.highlighted && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
                         ⭐ Más Popular
                       </div>
                     )}
@@ -237,7 +237,7 @@ export function PackagesSection() {
                         asChild
                       >
                         <a
-                          href="https://wa.me/+573009459026"
+                          href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola! Me interesa el paquete ${pkg.name} de NexoBite.`)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -265,8 +265,8 @@ export function PackagesSection() {
                   }
                 }}
                 className={`h-2 rounded-full transition-all duration-300 ${activeIndex === index
-                    ? "w-8 bg-gradient-to-r from-primary to-accent"
-                    : "w-2 bg-muted hover:bg-muted-foreground"
+                  ? "w-8 bg-linear-to-r from-primary to-accent"
+                  : "w-2 bg-muted hover:bg-muted-foreground"
                   }`}
                 aria-label={`Ir a ${packages[index].name}`}
               />
@@ -280,12 +280,12 @@ export function PackagesSection() {
             <AnimatedSection key={pkg.name} delay={index * 100}>
               <Card
                 className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${pkg.highlighted
-                    ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30"
-                    : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"
+                  ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30"
+                  : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"
                   }`}
               >
                 {pkg.highlighted && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg">
                     ⭐ Más Popular
                   </div>
                 )}
@@ -325,7 +325,7 @@ export function PackagesSection() {
                     asChild
                   >
                     <a
-                      href="https://wa.me/+573009459026"
+                      href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola! Me interesa el paquete ${pkg.name} de NexoBite.`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

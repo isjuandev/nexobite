@@ -224,10 +224,10 @@ export default function PropuestaCliente() {
         <ParticleField variant="mixed" density="medium" speed="slow" />
         <Container className="relative z-10">
           <AnimatedSection className="text-center max-w-4xl mx-auto">
-            <div className="mb-4 text-sm font-medium uppercase tracking-wider bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <div className="mb-4 text-sm font-medium uppercase tracking-wider bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               {CLIENT_CONFIG.heroSubtitle}
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               {CLIENT_CONFIG.projectTitle}
             </h1>
             <div className="flex flex-wrap gap-4 justify-center text-sm text-muted-foreground">
@@ -254,7 +254,7 @@ export default function PropuestaCliente() {
         <Container className="relative z-10">
           <AnimatedSection>
             <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                 {CLIENT_CONFIG.proposalsSectionTitle}
               </span>{" "}
               {CLIENT_CONFIG.proposalsSectionSubtitle}
@@ -278,7 +278,7 @@ export default function PropuestaCliente() {
                   <div key={`${p.id}-${index}`} data-index={index} className="snap-center shrink-0 w-[85vw] max-w-sm">
                     <Card className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${p.highlighted ? "border-accent bg-card shadow-lg shadow-accent/20" : "border-border/50 bg-card/50"}`}>
                       {p.highlighted && (
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
                           ⭐ Más Popular
                         </div>
                       )}
@@ -317,7 +317,7 @@ export default function PropuestaCliente() {
             </div>
             <div className="flex justify-center gap-2 mt-2">
               {proposals.map((_, i) => (
-                <button key={i} onClick={() => scrollTo(carouselRef, proposals.length, i)} className={`h-2 rounded-full transition-all duration-300 ${activeIndex === i ? "w-8 bg-gradient-to-r from-primary to-accent" : "w-2 bg-muted hover:bg-muted-foreground"}`} aria-label={`Ir a ${proposals[i].name}`} />
+                <button key={i} onClick={() => scrollTo(carouselRef, proposals.length, i)} className={`h-2 rounded-full transition-all duration-300 ${activeIndex === i ? "w-8 bg-linear-to-r from-primary to-accent" : "w-2 bg-muted hover:bg-muted-foreground"}`} aria-label={`Ir a ${proposals[i].name}`} />
               ))}
             </div>
           </div>
@@ -328,7 +328,7 @@ export default function PropuestaCliente() {
               <AnimatedSection key={p.id} delay={index * 100}>
                 <Card className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${p.highlighted ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30" : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"}`}>
                   {p.highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg">
                       ⭐ Más Popular
                     </div>
                   )}
@@ -368,15 +368,15 @@ export default function PropuestaCliente() {
       </section>
 
       {/* ── Opciones de Pago ──────────────────────────────── */}
-      <section id="payment" className="relative py-20 bg-gradient-to-b from-primary/5 to-transparent border-b border-border/50">
+      <section id="payment" className="relative py-20 bg-linear-to-b from-primary/5 to-transparent border-b border-border/50">
         <ParticleField variant="mixed" density="medium" speed="slow" />
         <Container className="relative z-10">
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-12">
-            <div className="mb-4 text-sm font-medium uppercase tracking-wider bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <div className="mb-4 text-sm font-medium uppercase tracking-wider bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               Opciones de Inversión
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                 Facilidades de Pago
               </span>{" "}
               que se ajustan a tu presupuesto
@@ -400,7 +400,7 @@ export default function PropuestaCliente() {
                   <div key={`${opt.name}-${index}`} data-payment-index={index} className="snap-center shrink-0 w-[85vw] max-w-sm">
                     <Card className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${opt.highlight ? "border-accent bg-card shadow-lg shadow-accent/20" : "border-border/50 bg-card/50"}`}>
                       {opt.highlight && (
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
                           ⭐ Más Popular
                         </div>
                       )}
@@ -436,7 +436,7 @@ export default function PropuestaCliente() {
             </div>
             <div className="flex justify-center gap-2 mt-2">
               {paymentOptions.map((_, i) => (
-                <button key={i} onClick={() => scrollTo(paymentCarouselRef, paymentOptions.length, i)} className={`h-2 rounded-full transition-all duration-300 ${activePaymentIndex === i ? "w-8 bg-gradient-to-r from-primary to-accent" : "w-2 bg-muted hover:bg-muted-foreground"}`} aria-label={`Opción ${i + 1}`} />
+                <button key={i} onClick={() => scrollTo(paymentCarouselRef, paymentOptions.length, i)} className={`h-2 rounded-full transition-all duration-300 ${activePaymentIndex === i ? "w-8 bg-linear-to-r from-primary to-accent" : "w-2 bg-muted hover:bg-muted-foreground"}`} aria-label={`Opción ${i + 1}`} />
               ))}
             </div>
           </div>
@@ -447,7 +447,7 @@ export default function PropuestaCliente() {
               <AnimatedSection key={opt.name} delay={(index + 1) * 100}>
                 <Card className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${opt.highlight ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30" : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"}`}>
                   {opt.highlight && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap">
                       ⭐ Más Popular
                     </div>
                   )}
@@ -498,7 +498,7 @@ export default function PropuestaCliente() {
                 <div className="text-center max-w-3xl mx-auto mb-12">
                   <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                     {CLIENT_CONFIG.ctaTitle}{" "}
-                    <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                       {CLIENT_CONFIG.ctaHighlight}
                     </span>
                   </h2>

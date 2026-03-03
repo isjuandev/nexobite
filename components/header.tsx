@@ -108,9 +108,9 @@ export function Header() {
                 width={32}
                 height={32}
               />
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
+              <div className="absolute inset-0 rounded-xl bg-linear-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
             </div>
-            <span className="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-lg font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               NEXOBITE
             </span>
           </Link>
@@ -129,7 +129,7 @@ export function Header() {
                 >
                   <span>Propuestas</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "proposals"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "proposals"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -146,7 +146,7 @@ export function Header() {
                 >
                   <span>Opciones de Pago</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "payment"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "payment"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -163,7 +163,7 @@ export function Header() {
                 >
                   <span>Contacto</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "contact"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "contact"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -184,7 +184,7 @@ export function Header() {
                 >
                   <span>Servicios</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "services"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "services"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -201,7 +201,7 @@ export function Header() {
                 >
                   <span>Cómo Funciona</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "how-it-works"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "how-it-works"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -218,7 +218,7 @@ export function Header() {
                 >
                   <span>Planes</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "mini-plans"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "mini-plans"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -235,7 +235,7 @@ export function Header() {
                 >
                   <span>Paquetes</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "packages"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "packages"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -253,12 +253,12 @@ export function Header() {
               className="relative overflow-hidden"
             >
               <a
-                href="https://wa.me/+573009459026"
+                href="https://wa.me/+573009459026?text=Hola!%20Me%20gustar%C3%ADa%20hablar%20con%20un%20asesor%20de%20NexoBite."
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <span className="relative z-10">Contáctanos</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 transition-opacity duration-300 hover:opacity-100" />
+                <div className="absolute inset-0 bg-linear-to-r from-accent to-primary opacity-0 transition-opacity duration-300 hover:opacity-100" />
               </a>
             </Button>
           </div>
@@ -360,7 +360,7 @@ export function Header() {
               )}
               <Button variant="gradient" asChild className="w-full">
                 <a
-                  href="https://wa.me/+573009459026"
+                  href="https://wa.me/+573009459026?text=Hola!%20Me%20gustar%C3%ADa%20hablar%20con%20un%20asesor%20de%20NexoBite."
                   target="_blank"
                   rel="noopener noreferrer"
                 >

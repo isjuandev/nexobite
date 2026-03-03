@@ -323,11 +323,11 @@ export function MiniPlansSection() {
       <Container className="relative z-10">
         {/* Section Header */}
         <AnimatedSection>
-          <div className="mb-4 text-center text-sm font-medium uppercase tracking-wider bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <div className="mb-4 text-center text-sm font-medium uppercase tracking-wider bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
             Planes por Servicio
           </div>
           <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               Personaliza
             </span>{" "}
             tu estrategia digital
@@ -341,8 +341,8 @@ export function MiniPlansSection() {
         {/* Category buttons */}
         <div className="mb-8 relative">
           {/* Gradientes indicadores en móvil */}
-          <div className="md:hidden absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
-          <div className="md:hidden absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
+          <div className="md:hidden absolute left-0 top-0 bottom-0 w-8 bg-linear-to-r from-background to-transparent pointer-events-none z-10" />
+          <div className="md:hidden absolute right-0 top-0 bottom-0 w-8 bg-linear-to-l from-background to-transparent pointer-events-none z-10" />
 
           <div className="flex gap-3 overflow-x-auto scrollbar-hide py-2 md:justify-center snap-x snap-proximity">
             {categories.map((cat) => (
@@ -350,7 +350,7 @@ export function MiniPlansSection() {
                 key={cat.id}
                 onClick={() => setSelected(cat.id)}
                 className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 snap-center ${selected === cat.id
-                  ? "bg-gradient-to-r from-primary to-accent text-white shadow-md"
+                  ? "bg-linear-to-r from-primary to-accent text-white shadow-md"
                   : "bg-card/40 text-muted-foreground hover:bg-card/60"
                   }`}
                 aria-pressed={selected === cat.id}
@@ -366,7 +366,7 @@ export function MiniPlansSection() {
               <div
                 key={cat.id}
                 className={`h-1 rounded-full transition-all duration-300 ${selected === cat.id
-                  ? "w-6 bg-gradient-to-r from-primary to-accent"
+                  ? "w-6 bg-linear-to-r from-primary to-accent"
                   : "w-1 bg-muted"
                   }`}
               />
@@ -444,7 +444,7 @@ export function MiniPlansSection() {
                                 }`}
                             >
                               {p.highlighted && (
-                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
                                   ⭐ Más Popular
                                 </div>
                               )}
@@ -495,7 +495,7 @@ export function MiniPlansSection() {
                                   asChild
                                 >
                                   <a
-                                    href="https://wa.me/+573009459026"
+                                    href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola! Me interesa el plan ${p.name} de ${cat.title} en NexoBite.`)}`}
                                     target="_blank"
                                     rel="noreferrer"
                                   >
@@ -528,7 +528,7 @@ export function MiniPlansSection() {
                           }
                         }}
                         className={`h-2 rounded-full transition-all duration-300 ${activeIndex === index
-                          ? "w-8 bg-gradient-to-r from-primary to-accent"
+                          ? "w-8 bg-linear-to-r from-primary to-accent"
                           : "w-2 bg-muted hover:bg-muted-foreground"
                           }`}
                         aria-label={`Ir a ${cat.plans[index].name}`}
@@ -548,7 +548,7 @@ export function MiniPlansSection() {
                         }`}
                     >
                       {p.highlighted && (
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-accent px-3 py-1 text-xs font-medium text-white shadow-lg">
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-3 py-1 text-xs font-medium text-white shadow-lg">
                           ⭐ Más Popular
                         </div>
                       )}
@@ -594,7 +594,7 @@ export function MiniPlansSection() {
                           asChild
                         >
                           <a
-                            href="https://wa.me/+573009459026"
+                            href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola! Me interesa el plan ${p.name} de ${cat.title} en NexoBite.`)}`}
                             target="_blank"
                             rel="noreferrer"
                           >

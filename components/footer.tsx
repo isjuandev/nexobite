@@ -17,7 +17,7 @@ export function Footer() {
                 height={32}
               />
             </div>
-            <span className="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-lg font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               NEXOBITE
             </span>
           </div>
@@ -27,20 +27,20 @@ export function Footer() {
               href="https://instagram.com/nexobite"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-accent/50"
+              className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-primary to-accent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-accent/50"
               aria-label="Instagram"
             >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
+              <div className="absolute inset-0 rounded-full bg-linear-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
               <Instagram className="relative z-10 h-6 w-6 text-white" />
             </a>
             <a
-              href="https://wa.me/+573009459026"
+              href="https://wa.me/+573009459026?text=Hola!%20Vengo%20desde%20la%20p%C3%A1gina%20web%20de%20NexoBite%20y%20me%20gustar%C3%ADa%20contactarlos."
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-accent/50"
+              className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-primary to-accent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-accent/50"
               aria-label="WhatsApp"
             >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
+              <div className="absolute inset-0 rounded-full bg-linear-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
               <MessageCircle className="relative z-10 h-6 w-6 text-white" />
             </a>
           </div>

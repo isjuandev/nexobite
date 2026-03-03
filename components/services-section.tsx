@@ -66,11 +66,11 @@ export function ServicesSection() {
       <ParticleField variant="accent" density="medium" speed="slow" />
       <Container className="relative z-10">
         <AnimatedSection>
-          <div className="mb-4 text-sm font-medium uppercase tracking-wider bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <div className="mb-4 text-sm font-medium uppercase tracking-wider bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
             Nuestros Servicios
           </div>
           <h2 className="mb-4 max-w-2xl text-balance text-3xl font-bold text-foreground sm:text-4xl">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               Código + Creatividad
             </span>{" "}
             bajo un mismo techo
@@ -83,7 +83,7 @@ export function ServicesSection() {
 
         <AnimatedSection delay={100}>
           <div className="mb-8">
-            <h3 className="mb-6 text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <h3 className="mb-6 text-xl font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               Desarrollo y Automatización
             </h3>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -115,7 +115,7 @@ export function ServicesSection() {
 
         <AnimatedSection delay={200}>
           <div>
-            <h3 className="mb-6 text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <h3 className="mb-6 text-xl font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               Marketing y Contenido Digital
             </h3>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

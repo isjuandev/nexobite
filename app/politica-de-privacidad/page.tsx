@@ -130,13 +130,13 @@ export default function PoliticaDePrivacidad() {
           <p>
             NexoBite se reserva el derecho de actualizar o modificar esta política de privacidad en cualquier momento. Notificaremos cualquier cambio importante publicando la nueva versión en esta misma página.
           </p>
-          <div className="mt-6 p-6 rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-accent/5 flex flex-col sm:flex-row items-center justify-between gap-4 border border-primary/10">
+          <div className="mt-6 p-6 rounded-2xl bg-linear-to-br from-primary/10 via-primary/5 to-accent/5 flex flex-col sm:flex-row items-center justify-between gap-4 border border-primary/10">
             <div>
               <h4 className="font-display font-semibold text-primary mb-1">¿Tienes más dudas?</h4>
               <p className="text-sm text-muted-foreground">Estamos aquí para ayudarte a entender cómo protegemos tu información.</p>
             </div>
             <a
-              href="https://wa.me/+573009459026"
+              href="https://wa.me/+573009459026?text=Hola!%20Tengo%20una%20duda%20sobre%20la%20pol%C3%ADtica%20de%20privacidad%20de%20NexoBite."
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-full bg-primary text-white hover-glow transition-all flex items-center gap-2 whitespace-nowrap"
@@ -157,14 +157,14 @@ export default function PoliticaDePrivacidad() {
 
       {/* Premium Hero Header Section */}
       <section className="relative pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none" />
 
         <Container className="relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <AnimatedSection>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-secondary/50 px-4 py-1.5 backdrop-blur-sm">
                 <Shield className="w-4 h-4 text-accent animate-pulse" />
-                <span className="text-sm font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <span className="text-sm font-medium bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                   Legal y Seguridad
                 </span>
               </div>
@@ -172,7 +172,7 @@ export default function PoliticaDePrivacidad() {
 
             <AnimatedSection delay={100}>
               <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight text-primary">
-                Política de Privacidad y <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Seguridad</span>
+                Política de Privacidad y <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">Seguridad</span>
               </h1>
             </AnimatedSection>
           </div>
@@ -180,14 +180,14 @@ export default function PoliticaDePrivacidad() {
       </section>
 
       {/* Main Content Sections inside premium cards */}
-      <section className="flex-grow pb-24 relative z-10">
+      <section className="grow pb-24 relative z-10">
         <Container>
           <div className="max-w-4xl mx-auto space-y-8">
             {sections.map((section, index) => (
               <AnimatedSection key={index} delay={100 + (index * 50)}>
                 <div className="group relative bg-secondary/10 rounded-2xl p-6 md:p-8 shadow-sm border border-border/50 backdrop-blur-sm hover-lift hover:border-accent/30 transition-all duration-300">
                   {/* Subtle glow effect on hover behind the card */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                  <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">

@@ -121,10 +121,10 @@ export function ChatbotWidget() {
       >
         {/* Header */}
         <div className="relative overflow-hidden border-b border-border/30 px-5 py-4">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/5 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary/10 via-accent/5 to-transparent" />
           <div className="relative flex items-center gap-3">
             <div className="relative">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent shadow-lg shadow-primary/20">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-linear-to-br from-primary to-accent shadow-lg shadow-primary/20">
                 <MessageCircle className="h-5 w-5 text-white" />
               </div>
               <span className="absolute -bottom-0.5 -right-0.5 h-3.5 w-3.5 rounded-full border-2 border-card bg-emerald-400 shadow-sm shadow-emerald-400/50" />
@@ -297,7 +297,7 @@ export function ChatbotWidget() {
                     onChange={(e) => updateField("descripcion", e.target.value)}
                     onFocus={() => setFocusedField("descripcion")}
                     onBlur={() => setFocusedField(null)}
-                    className={`${inputClasses("descripcion")} h-24 resize-none !pl-10 pt-2.5`}
+                    className={`${inputClasses("descripcion")} h-24 resize-none pl-10! pt-2.5`}
                     placeholder="Cuéntanos qué necesitas y cómo podemos ayudarte..."
                     required
                     minLength={10}
@@ -355,7 +355,7 @@ export function ChatbotWidget() {
             asChild
           >
             <a
-              href="https://wa.me/+573009459026"
+              href="https://wa.me/+573009459026?text=Hola%20Nex!%20Tengo%20una%20duda%20sobre%20NexoBite%20y%20prefiero%20hablar%20por%20WhatsApp."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -374,11 +374,11 @@ export function ChatbotWidget() {
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`group relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-accent/50 ${!isOpen ? "animate-pulse-glow" : ""
+        className={`group relative flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-br from-primary to-accent shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-accent/50 ${!isOpen ? "animate-pulse-glow" : ""
           }`}
         aria-label={isOpen ? "Cerrar formulario" : "Abrir formulario de contacto"}
       >
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
+        <div className="absolute inset-0 rounded-full bg-linear-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
         <MessageCircle
           className={`relative z-10 h-6 w-6 text-white transition-all duration-300 ${isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100"
             }`}
@@ -390,7 +390,7 @@ export function ChatbotWidget() {
 
         {/* Pulse ring when closed */}
         {!isOpen && (
-          <span className="absolute inset-0 animate-ping rounded-full bg-gradient-to-br from-primary to-accent opacity-20" />
+          <span className="absolute inset-0 animate-ping rounded-full bg-linear-to-br from-primary to-accent opacity-20" />
         )}
       </button>
     </div>

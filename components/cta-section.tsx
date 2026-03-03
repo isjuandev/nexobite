@@ -12,8 +12,8 @@ export function CtaSection() {
       <ParticleField variant="primary" density="medium" speed="fast" />
       <Container className="relative z-10 text-center" size="md">
         <AnimatedSection>
-          <div className="relative mb-6 inline-flex h-16 w-16 animate-float items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-accent/20">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent opacity-20 blur-xl" />
+          <div className="relative mb-6 inline-flex h-16 w-16 animate-float items-center justify-center rounded-full bg-linear-to-br from-primary/20 to-accent/20">
+            <div className="absolute inset-0 rounded-full bg-linear-to-br from-primary to-accent opacity-20 blur-xl" />
             <MessageCircle className="relative z-10 h-8 w-8 text-accent" />
           </div>
         </AnimatedSection>
@@ -21,7 +21,7 @@ export function CtaSection() {
         <AnimatedSection delay={100}>
           <h2 className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
             ¿Listo para{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
               vender más
             </span>
             ?
@@ -38,7 +38,7 @@ export function CtaSection() {
         <AnimatedSection delay={300}>
           <Button size="lg" variant="gradient" asChild className="group">
             <a
-              href="https://wa.me/+573009459026"
+              href="https://wa.me/+573009459026?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20una%20consulta%20gratuita%20con%20NexoBite%20para%20mi%20negocio."
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -11,14 +11,14 @@ export function HeroSection() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
       <ParticleField variant="primary" density="high" speed="medium" />
 
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
 
       <Container className="relative z-10" size="md">
         <div className="text-center">
           <AnimatedSection>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-secondary/50 px-4 py-1.5 backdrop-blur-sm">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-gradient-to-r from-primary to-accent" />
-              <span className="text-sm font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-linear-to-r from-primary to-accent" />
+              <span className="text-sm font-medium bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                 Soluciones Digitales Inteligentes
               </span>
             </div>
@@ -27,7 +27,7 @@ export function HeroSection() {
           <AnimatedSection delay={100}>
             <h1 className="mb-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               Transformamos tu{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                 presencia digital
               </span>
             </h1>
@@ -52,7 +52,7 @@ export function HeroSection() {
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button size="lg" variant="gradient" asChild className="group">
                 <a
-                  href="https://wa.me/+573009459026"
+                  href="https://wa.me/+573009459026?text=Hola!%20Quiero%20iniciar%20un%20proyecto%20con%20NexoBite%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -83,7 +83,7 @@ export function HeroSection() {
                   key={stat.label}
                   className="text-center group hover:scale-105 transition-transform"
                 >
-                  <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent sm:text-3xl">
+                  <div className="text-2xl font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent sm:text-3xl">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
