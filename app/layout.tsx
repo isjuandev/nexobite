@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Poppins, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SchemaMarkup } from "../components/schema-markup";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 // Tipografías oficiales nexobite DIGITAL
@@ -110,12 +111,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
-        <SchemaMarkup />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <SchemaMarkup />
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

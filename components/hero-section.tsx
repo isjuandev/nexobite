@@ -16,7 +16,7 @@ export function HeroSection() {
       <Container className="relative z-10" size="md">
         <div className="text-center">
           <AnimatedSection>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/5 bg-secondary/50 px-4 py-1.5 backdrop-blur-sm hover-glow transition-all cursor-default">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/50 px-4 py-1.5 backdrop-blur-sm hover-glow transition-all cursor-default">
               <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
               <span className="text-sm font-medium bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                 Soluciones Digitales Inteligentes

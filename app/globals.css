@@ -49,37 +49,37 @@
 }
 
 .light {
-  /* Modo claro (opcional) */
-  --background: #ffffff;
-  /* Blanco limpio */
-  --foreground: #2d3748;
-  /* Gris oscuro para texto */
+  /* Modo claro — identidad visual NexoBite */
+  --background: #eef2f7;
+  /* Gris azulado muy suave para que los cards blancos destaquen */
+  --foreground: #1e293b;
+  /* Slate oscuro para texto legible */
   --card: #ffffff;
-  --card-foreground: #2d3748;
+  --card-foreground: #1e293b;
   --popover: #ffffff;
-  --popover-foreground: #2d3748;
-  --primary: #1a365d;
-  /* Azul Profundo nexobite */
+  --popover-foreground: #1e293b;
+  --primary: #2563eb;
+  /* Azul vibrante (más visible que #1a365d en fondos claros) */
   --primary-foreground: #ffffff;
-  --secondary: #edf2f7;
-  /* Azul muy claro */
-  --secondary-foreground: #1a365d;
-  --muted: #f7fafc;
+  --secondary: #f1f5f9;
+  /* Gris azulado claro */
+  --secondary-foreground: #1e293b;
+  --muted: #f1f5f9;
   --muted-foreground: #64748b;
-  --accent: #ed8936;
-  /* Naranja Energético nexobite */
+  --accent: #ea580c;
+  /* Naranja intenso (más saturado para light bg) */
   --accent-foreground: #ffffff;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
+  --border: #cbd5e1;
   --input: #e2e8f0;
-  --ring: #1a365d;
-  --chart-1: #1a365d;
+  --ring: #2563eb;
+  --chart-1: #2563eb;
   /* Azul */
-  --chart-2: #ed8936;
+  --chart-2: #ea580c;
   /* Naranja */
   --chart-3: #10b981;
-  /* Verde complementario */
+  /* Verde */
   --chart-4: #8b5cf6;
   /* Púrpura */
   --chart-5: #ec4899;

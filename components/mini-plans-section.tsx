@@ -444,8 +444,11 @@ export function MiniPlansSection() {
                                 }`}
                             >
                               {p.highlighted && (
-                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
-                                  ⭐ Más Popular
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
+                                  <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
+                                  <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                                    Más Popular
+                                  </span>
                                 </div>
                               )}
                               <CardHeader>
@@ -548,8 +551,11 @@ export function MiniPlansSection() {
                         }`}
                     >
                       {p.highlighted && (
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-3 py-1 text-xs font-medium text-white shadow-lg">
-                          ⭐ Más Popular
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
+                          <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
+                          <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                            Más Popular
+                          </span>
                         </div>
                       )}
                       <CardHeader>
