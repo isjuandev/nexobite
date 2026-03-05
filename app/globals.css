@@ -8,25 +8,32 @@
 /* MODO OSCURO PREDETERMINADO */
 :root {
   /* Colores de marca en formato RGB */
-  --nexobite-blue: 26 54 93; /* Azul Profundo #1a365d */
-  --nexobite-orange: 237 137 54; /* Naranja Energético #ed8936 */
-  --nexobite-gray-dark: 45 55 72; /* Gris Oscuro #2d3748 */
-  --nexobite-white: 255 255 255; /* Blanco #ffffff */
+  --nexobite-blue: 26 54 93;
+  /* Azul Profundo #1a365d */
+  --nexobite-orange: 237 137 54;
+  /* Naranja Energético #ed8936 */
+  --nexobite-gray-dark: 45 55 72;
+  /* Gris Oscuro #2d3748 */
+  --nexobite-white: 255 255 255;
+  /* Blanco #ffffff */
 
   /* Sistema de colores - MODO OSCURO */
-  --background: #0f172a; /* Azul muy oscuro */
+  --background: #0f172a;
+  /* Azul muy oscuro */
   --foreground: #f8fafc;
   --card: #1e293b;
   --card-foreground: #f8fafc;
   --popover: #1e293b;
   --popover-foreground: #f8fafc;
-  --primary: #3b82f6; /* Azul más brillante para contraste */
+  --primary: #3b82f6;
+  /* Azul más brillante para contraste */
   --primary-foreground: #ffffff;
   --secondary: #334155;
   --secondary-foreground: #f8fafc;
   --muted: #334155;
   --muted-foreground: #94a3b8;
-  --accent: #fb923c; /* Naranja brillante */
+  --accent: #fb923c;
+  /* Naranja brillante */
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
@@ -43,37 +50,50 @@
 
 .light {
   /* Modo claro (opcional) */
-  --background: #ffffff; /* Blanco limpio */
-  --foreground: #2d3748; /* Gris oscuro para texto */
+  --background: #ffffff;
+  /* Blanco limpio */
+  --foreground: #2d3748;
+  /* Gris oscuro para texto */
   --card: #ffffff;
   --card-foreground: #2d3748;
   --popover: #ffffff;
   --popover-foreground: #2d3748;
-  --primary: #1a365d; /* Azul Profundo nexobite */
+  --primary: #1a365d;
+  /* Azul Profundo nexobite */
   --primary-foreground: #ffffff;
-  --secondary: #edf2f7; /* Azul muy claro */
+  --secondary: #edf2f7;
+  /* Azul muy claro */
   --secondary-foreground: #1a365d;
   --muted: #f7fafc;
   --muted-foreground: #64748b;
-  --accent: #ed8936; /* Naranja Energético nexobite */
+  --accent: #ed8936;
+  /* Naranja Energético nexobite */
   --accent-foreground: #ffffff;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
   --border: #e2e8f0;
   --input: #e2e8f0;
   --ring: #1a365d;
-  --chart-1: #1a365d; /* Azul */
-  --chart-2: #ed8936; /* Naranja */
-  --chart-3: #10b981; /* Verde complementario */
-  --chart-4: #8b5cf6; /* Púrpura */
-  --chart-5: #ec4899; /* Rosa */
+  --chart-1: #1a365d;
+  /* Azul */
+  --chart-2: #ed8936;
+  /* Naranja */
+  --chart-3: #10b981;
+  /* Verde complementario */
+  --chart-4: #8b5cf6;
+  /* Púrpura */
+  --chart-5: #ec4899;
+  /* Rosa */
 }
 
 @theme inline {
   /* Tipografías oficiales nexobite */
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif; /* Cuerpo de texto */
-  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif; /* Títulos */
-  --font-mono: "JetBrains Mono", ui-monospace, monospace; /* Código/técnico */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  /* Cuerpo de texto */
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  /* Títulos */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  /* Código/técnico */
   /* Colores usando formato RGB para compatibilidad */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -122,20 +142,24 @@
   --animate-float: float 6s ease-in-out infinite;
 
   @keyframes pulse-glow {
+
     0%,
     100% {
-      box-shadow: 0 0 0 0 rgba(var(--nexobite-orange), 0.4);
+      box-shadow: 0 0 0 0 rgba(237, 137, 54, 0.4);
     }
+
     50% {
-      box-shadow: 0 0 20px 10px rgba(var(--nexobite-orange), 0.2);
+      box-shadow: 0 0 15px 8px rgba(237, 137, 54, 0.2);
     }
   }
 
   @keyframes float {
+
     0%,
     100% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-10px);
     }
@@ -149,7 +173,8 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 120px; /* Espacio suficiente para el navbar flotante */
+    scroll-padding-top: 120px;
+    /* Espacio suficiente para el navbar flotante */
   }
 
   body {
@@ -184,6 +209,7 @@
   .hover-lift {
     @apply transition-all duration-300;
   }
+
   .hover-lift:hover {
     @apply -translate-y-1 shadow-lg;
   }
@@ -191,17 +217,21 @@
   .hover-glow {
     @apply transition-all duration-300;
   }
+
   .hover-glow:hover {
-    box-shadow: 0 0 20px rgba(var(--nexobite-orange), 0.4);
+    box-shadow: 0 0 20px rgba(237, 137, 54, 0.4);
+    border-color: rgba(237, 137, 54, 0.5);
   }
 
   .link-underline {
     @apply relative;
   }
+
   .link-underline::after {
     content: "";
     @apply absolute bottom-0 left-0 h-px w-0 bg-primary transition-all duration-300;
   }
+
   .link-underline:hover::after {
     @apply w-full;
   }
@@ -215,6 +245,7 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;

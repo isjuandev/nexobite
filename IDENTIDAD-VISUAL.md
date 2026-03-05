@@ -1,44 +1,31 @@
-# 🎨 IDENTIDAD VISUAL - nexobite DIGITAL
+# 🎨 IDENTIDAD VISUAL - NexoBite DIGITAL
+
+## Concepto Visual y Filosofía
+**NexoBite DIGITAL** proyecta una imagen premium, moderna y altamente tecnológica, centrada en la inteligencia artificial y el desarrollo de software vanguardista. 
+Nuestra identidad visual se apoya en un enfoque **"Dark Mode First"** (Modo Oscuro por defecto), utilizando contrastes vibrantes, gradientes luminosos y micro-interacciones dinámicas que transmiten innovación, confianza y energía creativa.
+
+---
 
 ## Paleta de Colores Oficial
 
-### Colores Principales
+El sistema de colores está diseñado para interfaces oscuras, garantizando accesibilidad visual y un aspecto futurista.
 
-| Color                  | Código HEX | Código RGB           | Uso                                       |
-| ---------------------- | ---------- | -------------------- | ----------------------------------------- |
-| **Azul Profundo**      | `#1a365d`  | `rgb(26, 54, 93)`    | Color principal - Confianza y Tecnología  |
-| **Naranja Energético** | `#ed8936`  | `rgb(237, 137, 54)`  | Color de acento - Creatividad y Dinamismo |
-| **Blanco**             | `#ffffff`  | `rgb(255, 255, 255)` | Fondos - Limpieza                         |
-| **Gris Oscuro**        | `#2d3748`  | `rgb(45, 55, 72)`    | Textos - Legibilidad                      |
+### Colores Principales (Modo Oscuro Predeterminado)
 
-### Aplicación de Colores
+| Color                  | Variable CSS | Código HEX | Código RGB | Uso Principal                                  |
+| ---------------------- | ------------ | ---------- | ---------- | ---------------------------------------------- |
+| **Fondo Principal**     | `--background`| `#0f172a`  | `15, 23, 42`| Fondos generales - Azul espacial muy oscuro     |
+| **Azul Brillante**      | `--primary`   | `#3b82f6`  | `59, 130, 246`| Color principal - Confianza, Tecnología (Anillos, bordes) |
+| **Naranja Brillante**   | `--accent`    | `#fb923c`  | `251, 146, 60`| Color de acento - Llamados a la acción, Destacados, Glows |
+| **Gris Claro Texto**    | `--foreground`| `#f8fafc`  | `248, 250, 252`| Texto principal - Máxima legibilidad            |
+| **Fondo Tarjetas**      | `--card`      | `#1e293b`  | `30, 41, 59`| Superficies elevadas, paneles y cards          |
 
-- **Azul Profundo (#1a365d)**:
+### Gradientes de Marca
+El uso de gradientes es fundamental en la tipografía destacada y los fondos decorativos:
+- **Texto Gradient**: `bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent`. Usado consistentemente en títulos principales, badges y palabras clave.
+- **Fondo Radial**: `bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background`. Usado para iluminar secciones de fondo sutilmente tras los componentes principales.
 
-  - Botones principales
-  - Enlaces
-  - Encabezados importantes
-  - Iconos de tecnología
-  - Borde de elementos destacados
-
-- **Naranja Energético (#ed8936)**:
-
-  - Llamados a la acción (CTA)
-  - Efectos hover y glow
-  - Elementos interactivos
-  - Badges y etiquetas importantes
-  - Acentos visuales
-
-- **Blanco (#ffffff)**:
-
-  - Fondos principales
-  - Texto sobre colores oscuros
-  - Espacios negativos
-
-- **Gris Oscuro (#2d3748)**:
-  - Texto principal del cuerpo
-  - Descripciones
-  - Contenido secundario
+---
 
 ## Tipografía
 
@@ -46,203 +33,51 @@
 
 | Elemento            | Fuente         | Peso             | Uso                                         |
 | ------------------- | -------------- | ---------------- | ------------------------------------------- |
-| **Títulos** (h1-h6) | Poppins        | Bold (700-800)   | Encabezados principales, títulos de sección |
-| **Cuerpo**          | Inter          | Regular (400)    | Texto del cuerpo, descripciones, párrafos   |
-| **Énfasis**         | Inter          | Medium (500-600) | Subtítulos, texto destacado                 |
-| **Código/Técnico**  | JetBrains Mono | Regular (400)    | Fragmentos de código, elementos técnicos    |
-
-### Tamaños de Tipografía
-
-```css
-/* Títulos */
-h1: 2.5rem - 4rem (40px - 64px) - Poppins Bold
-h2: 2rem - 3rem (32px - 48px) - Poppins Bold
-h3: 1.5rem - 2rem (24px - 32px) - Poppins SemiBold
-h4: 1.25rem (20px) - Poppins SemiBold
-
-/* Cuerpo */
-body: 1rem (16px) - Inter Regular
-small: 0.875rem (14px) - Inter Regular
-```
-
-## Variables CSS
-
-### Colores de Marca
-
-```css
---nexobite-blue: 26 54 93;
---nexobite-orange: 237 137 54;
---nexobite-gray-dark: 45 55 72;
---nexobite-white: 255 255 255;
-```
-
-### Colores del Sistema
-
-```css
---primary: rgb(26, 54, 93); /* Azul Profundo */
---accent: rgb(237, 137, 54); /* Naranja Energético */
---foreground: rgb(45, 55, 72); /* Gris Oscuro */
---background: rgb(255, 255, 255); /* Blanco */
-```
-
-## Efectos y Animaciones
-
-### Hover Effects
-
-```css
-/* Hover Lift - Elevación suave */
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Hover Glow - Resplandor naranja */
-.hover-glow:hover {
-  box-shadow: 0 0 20px rgba(237, 137, 54, 0.4);
-}
-```
-
-### Animaciones
-
-```css
-/* Pulse Glow - Pulso con naranja nexobite */
-@keyframes pulse-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(237, 137, 54, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 20px 10px rgba(237, 137, 54, 0.2);
-  }
-}
-
-/* Float - Flotación suave */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-```
-
-## Espaciado y Layout
-
-### Sistema de Espaciado
-
-- **xs**: 0.25rem (4px)
-- **sm**: 0.5rem (8px)
-- **md**: 1rem (16px)
-- **lg**: 1.5rem (24px)
-- **xl**: 2rem (32px)
-- **2xl**: 3rem (48px)
-- **3xl**: 4rem (64px)
-
-### Border Radius
-
-- **Pequeño**: 0.25rem (4px)
-- **Medio**: 0.5rem (8px) - Default
-- **Grande**: 1rem (16px)
-- **Completo**: 9999px (círculos)
-
-## Componentes Clave
-
-### Botones
-
-#### Botón Principal (Primary)
-
-- Fondo: Azul Profundo (#1a365d)
-- Texto: Blanco (#ffffff)
-- Hover: Naranja Energético (#ed8936) con efecto glow
-
-#### Botón Secundario (Outline)
-
-- Borde: Azul Profundo (#1a365d)
-- Texto: Azul Profundo (#1a365d)
-- Hover: Fondo Azul Profundo, texto Blanco
-
-### Tarjetas (Cards)
-
-- Fondo: Blanco (#ffffff)
-- Borde: Gris claro (rgba)
-- Sombra: Suave y sutil
-- Hover: Elevación con borde naranja
-
-### Iconos
-
-- Color principal: Azul Profundo (#1a365d)
-- Color hover: Naranja Energético (#ed8936)
-- Tamaño estándar: 24px (h-6 w-6)
-
-## Accesibilidad
-
-### Contraste
-
-Todos los colores cumplen con WCAG 2.1 nivel AA:
-
-- Azul Profundo sobre Blanco: ✅ 9.5:1
-- Naranja Energético sobre Blanco: ✅ 3.8:1
-- Gris Oscuro sobre Blanco: ✅ 11.2:1
-
-### Estados de Foco
-
-```css
-focus-visible: {
-  outline: 2px solid rgb(237, 137, 54);
-  outline-offset: 2px;
-}
-```
-
-## Modo Oscuro (Dark Mode)
-
-### Ajustes de Color
-
-- **Background**: `#0f172a` (Azul muy oscuro)
-- **Primary**: `#3b82f6` (Azul más brillante para contraste)
-- **Accent**: `#fb923c` (Naranja brillante)
-- **Foreground**: `#f8fafc` (Gris muy claro)
-
-_Nota: El modo oscuro mantiene la identidad de nexobite mientras optimiza para legibilidad en pantallas oscuras._
-
-## Uso en Código
-
-### Importar Fuentes
-
-```tsx
-import { Poppins, Inter, JetBrains_Mono } from "next/font/google";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-display",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-```
-
-### Aplicar Clases
-
-```tsx
-<h1 className="font-display text-4xl font-bold text-primary">
-  Título Principal
-</h1>
-
-<p className="font-sans text-base text-foreground">
-  Texto del cuerpo
-</p>
-
-<button className="bg-primary text-primary-foreground hover-glow">
-  Llamado a la Acción
-</button>
-```
+| **Títulos** (h1-h6) | **Poppins**    | Bold (700)       | Encabezados principales (`font-display`). Transmiten solidez y modernidad. |
+| **Cuerpo**          | **Inter**      | Regular/Medium   | Texto general (`font-sans`), descripciones (`antialiased`). Transmite claridad técnica. |
+| **Código/Técnico**  | **JetBrains Mono**| Regular       | Fragmentos de código, interfaces técnicas (`font-mono`). |
 
 ---
 
-**Última actualización:** Diciembre 2024  
-**Versión:** 1.0  
-**Autor:** nexobite DIGITAL
+## Efectos, Animaciones y Micro-interacciones
+
+La interfaz de NexoBite es viva y altamente reactiva a la interacción del usuario.
+
+### Estilos de Interacción (Hover)
+- **Hover Lift (`.hover-lift`)**: Los componentes se elevan suavemente (`-translate-y-1`) y aumentan su sombra exterior (`shadow-lg`) con una transición fluida de 300ms.
+- **Hover Glow (`.hover-glow`)**: Genera un resplandor naranja vibrante y envolvente (`box-shadow: 0 0 20px rgba(var(--nexobite-orange), 0.4)`).
+- **Link Underline (`.link-underline`)**: Línea inferior animada y estilizada que se expande de izquierda a derecha en los hipervínculos usando el color `--primary`.
+
+### Animaciones Globales
+- **Pulse Glow (`animate-pulse-glow`)**: Un pulso suave de sombra naranja (2s ease-in-out) para llamar la atención sobre elementos clave de interacción.
+- **Float (`animate-float`)**: Flotación vertical sutil de 10px (6s ease-in-out) para elementos decorativos.
+- **Particle Field (Campo de Partículas)**: Componente base para fondos interactivos en canvas. Dibuja partículas luminosas conectadas por nodos que reaccionan de manera elástica y magnética al movimiento del cursor, reforzando la sensación visual de "red neuronal" y conectividad IA.
+
+---
+
+## Estructura de Componentes Clave
+
+### Botones Principales y CTA
+- **Variante Gradient**: Usado para el llamado a la acción principal ("Inicia tu Proyecto"). Suele acompañarse de íconos direccionales (flechas) que se desplazan al interactuar (`group-hover:translate-x-1`).
+- **Variante Outline**: Fondo transparente, borde sutil naranja (`border-accent/30`). Al hacer hover, el borde se ilumina completamente y el botón adquiere un fondo naranja muy tenue con efecto cristal (`hover:bg-accent/10`).
+
+### Tarjetas (Cards) de Servicio / Producto
+- **Fondo y Borde Base**: Tono base semi-transparente (`bg-card/50`) con un delineado sutil (`border-border/50`).
+- **Estados Activos (Hover)**: Las tarjetas se iluminan y se elevan del fondo. El borde cambia de inmediato al color de acento (`hover:border-accent`), adquieren una sombra tintada (`hover:shadow-accent/20`) y el fondo cobra fuerza colorida (`hover:bg-card`).
+- **Iconos en Cards**: Integrados de forma dinámica en una base cuadrada redondeada que crece al pasar el mouse (`group-hover:scale-110 group-hover:bg-primary/10`), mientras el ícono intercala dramáticamente su color de Naranja a Azul profundo (`text-accent group-hover:text-primary`).
+
+### Elementos Destacados de Sección (Badges)
+- Contenedores cápsula o píldora (`rounded-full`) que implementan fondos translúcidos y desenfocados (`backdrop-blur-sm`, `bg-secondary/50`) junto con delineados luminosos ligeros. Incluyen típicamente un pequeño punto indicador de luz parpadeante (`animate-pulse bg-gradient-to-r`).
+
+---
+
+## Espaciado, Formas y Accesibilidad
+
+- **Border Radius Central**: `.5rem` (8px). Las interfaces principales utilizan bordes ligeramente curvos. Este radio equilibra un aspecto moderno y contemporáneo, evitando la rigidez corporativa excesiva así como la informalidad de los círculos extremos, afianzándose como una imagen enfocada de forma premium hacia soluciones tecnológicas B2B y emprendedoras.
+- **Layout y Legibilidad**: Empleo de clases avanzadas para jerarquía y balance (`text-pretty`, `text-balance` frente a viudas y huérfanas). Construcción sobre fondos aislados (`isolation: isolate`) con fluidez unificada a lo largo del scroll (`scroll-behavior: smooth`).
+
+---
+
+**Última actualización:** Marzo 2026 (Reflejo del Repositorio de Código)  
+**Versión:** 2.0 (Dark Mode First & Componentes Reactivos)  
+**Autor:** NexoBite DIGITAL
