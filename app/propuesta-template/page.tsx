@@ -278,8 +278,11 @@ export default function PropuestaCliente() {
                   <div key={`${p.id}-${index}`} data-index={index} className="snap-center shrink-0 w-[85vw] max-w-sm">
                     <Card className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${p.highlighted ? "border-accent bg-card shadow-lg shadow-accent/20" : "border-border/50 bg-card/50"}`}>
                       {p.highlighted && (
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
-                          ⭐ Más Popular
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
+                          <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
+                          <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                            Más Popular
+                          </span>
                         </div>
                       )}
                       <CardHeader>
@@ -328,8 +331,11 @@ export default function PropuestaCliente() {
               <AnimatedSection key={p.id} delay={index * 100}>
                 <Card className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${p.highlighted ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30" : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"}`}>
                   {p.highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg">
-                      ⭐ Más Popular
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
+                      <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
+                      <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                        Más Popular
+                      </span>
                     </div>
                   )}
                   <CardHeader>
@@ -400,8 +406,11 @@ export default function PropuestaCliente() {
                   <div key={`${opt.name}-${index}`} data-payment-index={index} className="snap-center shrink-0 w-[85vw] max-w-sm">
                     <Card className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${opt.highlight ? "border-accent bg-card shadow-lg shadow-accent/20" : "border-border/50 bg-card/50"}`}>
                       {opt.highlight && (
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap z-10">
-                          ⭐ Más Popular
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
+                          <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
+                          <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                            Más Popular
+                          </span>
                         </div>
                       )}
                       <CardHeader>
@@ -447,8 +456,11 @@ export default function PropuestaCliente() {
               <AnimatedSection key={opt.name} delay={(index + 1) * 100}>
                 <Card className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${opt.highlight ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30" : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"}`}>
                   {opt.highlight && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-primary to-accent px-4 py-1 text-xs font-medium text-white shadow-lg whitespace-nowrap">
-                      ⭐ Más Popular
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
+                      <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
+                      <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                        Más Popular
+                      </span>
                     </div>
                   )}
                   <CardHeader>
@@ -490,7 +502,7 @@ export default function PropuestaCliente() {
           <AnimatedSection>
             <div className="relative rounded-2xl bg-card overflow-hidden border border-accent shadow-2xl shadow-accent/20">
               <div className="absolute inset-0 opacity-5">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-size-[4rem_4rem]" />
               </div>
               <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
