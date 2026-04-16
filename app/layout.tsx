@@ -29,11 +29,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: {
     default:
-      "NexoBite — Agencia de Marketing Digital, Chatbots IA y Desarrollo Web en Colombia",
+      "Chatbots para WhatsApp y Automatización de Ventas | Nexobite",
     template: "%s | NexoBite",
   },
   description:
-    "Somos una agencia boutique de soluciones digitales para PYMEs en Colombia. Chatbots inteligentes con IA para WhatsApp, desarrollo web moderno, gestión de redes sociales y automatización. Resultados medibles, equipo directo, sin terceros.",
+    "Automatiza tu WhatsApp y convierte más conversaciones en ventas. Chatbots para negocios, automatización y desarrollo web enfocado en resultados.",
   metadataBase: new URL("https://www.nexobite.com"),
   alternates: {
     canonical: "/",

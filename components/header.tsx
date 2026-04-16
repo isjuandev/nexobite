@@ -255,11 +255,11 @@ export function Header() {
               className="relative overflow-hidden"
             >
               <a
-                href="https://wa.me/+573009459026?text=Hola!%20Me%20gustar%C3%ADa%20hablar%20con%20un%20asesor%20de%20NexoBite."
+                href="https://wa.me/+573009459026?text=Hola,%20quiero%20entender%20c%C3%B3mo%20puedo%20mejorar%20la%20atenci%C3%B3n%20de%20mi%20negocio."
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="relative z-10">Contáctanos</span>
+                <span className="relative z-10">Hablar por WhatsApp</span>
                 <div className="absolute inset-0 bg-linear-to-r from-accent to-primary opacity-0 transition-opacity duration-300 hover:opacity-100" />
               </a>
             </Button>
@@ -362,11 +362,11 @@ export function Header() {
               )}
               <Button variant="gradient" asChild className="w-full">
                 <a
-                  href="https://wa.me/+573009459026?text=Hola!%20Me%20gustar%C3%ADa%20hablar%20con%20un%20asesor%20de%20NexoBite."
+                  href="https://wa.me/+573009459026?text=Hola,%20quiero%20entender%20c%C3%B3mo%20puedo%20mejorar%20la%20atenci%C3%B3n%20de%20mi%20negocio."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Contáctanos
+                  Hablar por WhatsApp
                 </a>
               </Button>
             </nav>

@@ -8,23 +8,23 @@ const steps = [
   {
     icon: MessageSquare,
     step: "01",
-    title: "Consulta Inicial",
+    title: "Entendemos tu operación",
     description:
-      "Comenzamos con una conversación para entender tus objetivos de negocio, desafíos y visión de crecimiento.",
+      "Analizamos cómo llegan tus clientes y dónde se generan cuellos de botella.",
   },
   {
     icon: Lightbulb,
     step: "02",
-    title: "Estrategia y Planificación",
+    title: "Diseñamos la automatización",
     description:
-      "Nuestro equipo desarrolla una estrategia digital personalizada adaptada a tus necesidades específicas y presupuesto.",
+      "Definimos flujos de respuesta y organización adaptados a tu negocio.",
   },
   {
     icon: Rocket,
     step: "03",
-    title: "Lanzamiento y Crecimiento",
+    title: "Implementamos y optimizamos",
     description:
-      "Implementamos tu solución y brindamos soporte continuo para asegurar el crecimiento y éxito sostenido.",
+      "Dejas de depender de respuestas manuales y empiezas a trabajar con un sistema más eficiente.",
   },
 ];
 
@@ -42,13 +42,13 @@ export function HowItWorksSection() {
           </div>
           <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
             <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-              3 pasos
+              Así implementamos
             </span>{" "}
-            para transformar tu negocio
+            la automatización en tu negocio
           </h2>
           <p className="mx-auto mb-16 max-w-2xl text-center text-pretty text-lg text-muted-foreground">
-            Transparencia total: te mostramos exactamente qué esperar, cuánto
-            cuesta y cuánto tarda. Sin sorpresas.
+            Proceso claro, sin complicaciones y enfocado en resultados desde el
+            inicio.
           </p>
         </AnimatedSection>
 

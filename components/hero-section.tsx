@@ -19,33 +19,32 @@ export function HeroSection() {
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/50 px-4 py-1.5 backdrop-blur-sm hover-glow transition-all cursor-default">
               <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
               <span className="text-sm font-medium bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-                Soluciones Digitales Inteligentes
+                Automatización de ventas para negocios
               </span>
             </div>
           </AnimatedSection>
 
           <AnimatedSection delay={100}>
             <h1 className="mb-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-              Transformamos la{" "}
+              Automatizamos tu{" "}
               <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-                presencia digital
+                WhatsApp para que cada
               </span>{" "}
-              de tu negocio
+               mensaje tenga respuesta
             </h1>
           </AnimatedSection>
 
           <AnimatedSection delay={200}>
             <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg text-muted-foreground sm:text-xl">
-              Somos una{" "}
+              Implementamos{" "}
               <span className="text-foreground font-medium">
-                agencia de marketing digital y desarrollo web
+                chatbots y automatización
               </span>{" "}
-              en Colombia. Combinamos{" "}
+              para que respondas en segundos, organices tus conversaciones {" "}
               <span className="text-foreground font-medium">
-                chatbots inteligentes con IA
+                y conviertas más contactos en clientes
               </span>
-              , automatización y contenido visual de alto impacto para PYMEs y
-              emprendedores que quieren vender más.
+              , sin depender de estar siempre disponible.
             </p>
           </AnimatedSection>
 
@@ -53,11 +52,11 @@ export function HeroSection() {
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button size="lg" variant="gradient" asChild className="group">
                 <a
-                  href="https://wa.me/+573009459026?text=Hola!%20Quiero%20iniciar%20un%20proyecto%20con%20NexoBite%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa."
+                  href="https://wa.me/+573009459026?text=Hola,%20quiero%20revisar%20c%C3%B3mo%20estoy%20gestionando%20mis%20mensajes%20y%20si%20puedo%20mejorarlo."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Inicia tu Proyecto
+                  Revisar mi caso por WhatsApp
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>
@@ -67,7 +66,7 @@ export function HeroSection() {
                 asChild
                 className="hover-lift bg-transparent border-accent/30 hover:border-accent hover:bg-accent/10"
               >
-                <a href="#services">Ver Servicios</a>
+                <a href="#services">Ver cómo funcionaría en mi negocio</a>
               </Button>
             </div>
           </AnimatedSection>
@@ -75,10 +74,10 @@ export function HeroSection() {
           <AnimatedSection delay={400}>
             <div className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-4">
               {[
-                { value: "100%", label: "Satisfacción del Cliente" },
-                { value: "24/7", label: "Soporte IA" },
-                { value: "2-3 sem", label: "Tiempo de Entrega" },
-                { value: "3x", label: "ROI Promedio" },
+                { value: "+3x", label: "Retorno promedio" },
+                { value: "<5s", label: "Tiempo de respuesta" },
+                { value: "7 días", label: "Implementación" },
+                { value: "24/7", label: "Atención automática" },
               ].map((stat) => (
                 <div
                   key={stat.label}

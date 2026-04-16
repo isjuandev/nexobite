@@ -19,17 +19,21 @@ const categories = [
   {
     id: "chatbots",
     title: "Chatbots con IA",
-    description: "Setup único + mensualidad. Soporte y escalamiento incluidos.",
+    description:
+      "Automatiza tu atención, convierte conversaciones en ventas y escala sin depender de tu equipo.",
     plans: [
       {
         name: "ESENCIAL",
-        price: "$649.900",
-        priceNote: "$119.900/mes",
+        price: "$650.000",
+        priceNote: "$120.000/mes",
+        impact: "Deja de perder clientes y responde automáticamente 24/7",
         includes: [
-          "3 flujos conversacionales",
-          "Integración WhatsApp",
-          "1h capacitación",
-          "Soporte básico por email",
+          "Sistema base de atención automatizada en WhatsApp",
+          "3 flujos diseñados para capturar y calificar leads",
+          "Mensajes de bienvenida + respuestas automáticas inteligentes",
+          "Integración directa con tu número de negocio",
+          "1h de capacitación para uso y control del sistema",
+          "Soporte en menos de 24h",
         ],
         highlighted: false,
         savings: null,
@@ -37,31 +41,36 @@ const categories = [
       },
       {
         name: "AVANZADO",
-        price: "$1.249.900",
-        priceNote: "$199.900/mes",
+        price: "$1.250.000",
+        priceNote: "$200.000/mes",
+        impact: "Convierte conversaciones en ventas con seguimiento automático",
         includes: [
-          "6 flujos conversacionales",
-          "WhatsApp + Web",
-          "CRM básico integrado",
-          "2h capacitación",
-          "Soporte prioritario",
-          "Reportes mensuales",
+          "Sistema de ventas automatizado en WhatsApp + Web",
+          "6 flujos optimizados para conversión y cierre",
+          "CRM integrado para seguimiento de prospectos",
+          "Automatización de respuestas, filtros y oportunidades",
+          "2h de capacitación operativa enfocada en ventas",
+          "Reportes mensuales de rendimiento y oportunidades",
+          "Soporte prioritario en menos de 4h",
         ],
         highlighted: true,
         savings: "Ahorras $250.000",
-        originalPrice: "$1.499.900",
+        originalPrice: "$1.500.000",
       },
       {
         name: "PREMIUM",
-        price: "$2.099.900",
-        priceNote: "$329.900/mes",
+        price: "$2.100.000",
+        priceNote: "$330.000/mes",
+        impact: "Escala tu negocio con un sistema de ventas automatizado y optimizado constantemente",
         includes: [
-          "Flujos ilimitados",
-          "Multi-canal completo",
-          "Reportes + BI dashboard",
-          "Soporte 24/7 prioritario",
+          "Ecosistema completo de automatización multi-canal",
+          "Flujos ilimitados para ventas, soporte y retención",
+          "WhatsApp + Instagram + Web integrados",
+          "Dashboard con métricas clave de negocio (leads, conversiones, atención)",
+          "Optimización mensual basada en datos reales",
+          "Integraciones a medida con tus herramientas",
           "Gestor de cuenta dedicado",
-          "Integraciones a medida",
+          "Soporte en menos de 1h",
         ],
         highlighted: false,
         savings: null,
@@ -72,17 +81,21 @@ const categories = [
   {
     id: "web",
     title: "Desarrollo Web",
-    description: "Sitios profesionales optimizados para PyMEs colombianas.",
+    description:
+      "Sitios web diseñados para atraer clientes, generar confianza y convertir visitas en ventas.",
     plans: [
       {
         name: "ESENCIAL",
-        price: "$397.900",
-        priceNote: "Landing / Vitrina",
+        price: "$400.000",
+        priceNote: "Landing",
+        impact: "Empieza a captar clientes con una página clara y directa",
         includes: [
-          "1 página, 4-5 secciones",
-          "Dominio + Hosting 1 año",
-          "Botón WhatsApp directo",
-          "Responsive móvil",
+          "Landing page enfocada en conversión (4-5 secciones)",
+          "Estructura diseñada para generar contactos",
+          "Botón de WhatsApp con CTA directa",
+          "Formulario de captura de leads",
+          "Diseño responsive (móvil + escritorio)",
+          "Dominio + hosting por 1 año",
         ],
         highlighted: false,
         savings: null,
@@ -90,184 +103,35 @@ const categories = [
       },
       {
         name: "AVANZADO",
-        price: "$649.900",
+        price: "$750.000",
         priceNote: "Web Corporativa",
+        impact: "Posiciona tu negocio y genera confianza para vender más",
         includes: [
-          "3-5 páginas",
-          "Dominio + Hosting 1 año",
-          "Galería / portafolio",
-          "Formulario de contacto",
-          "SEO básico",
-          "Google Analytics",
+          "Sitio web de 3-5 páginas con estructura comercial",
+          "Secciones optimizadas para credibilidad y conversión",
+          "Galería o portafolio para prueba social",
+          "Formulario conectado a tu operación",
+          "SEO optimizado para búsquedas locales",
+          "Google Analytics configurado",
+          "Dominio + hosting por 1 año",
         ],
         highlighted: true,
-        savings: "Ahorras $150.000",
-        originalPrice: "$799.900",
+        savings: "Ahorras $112.500 (15%)",
+        originalPrice: "$862.500",
       },
       {
         name: "PREMIUM",
-        price: "$1.099.900",
+        price: "$1.200.000",
         priceNote: "Alto impacto",
+        impact: "Convierte tu web en un canal constante de adquisición de clientes",
         includes: [
-          "6-10 páginas",
-          "Dominio + Hosting 1 año",
-          "SEO avanzado",
-          "Blog integrado",
-          "Chat en vivo",
-          "Velocidad optimizada",
-        ],
-        highlighted: false,
-        savings: null,
-        originalPrice: null,
-      },
-    ],
-  },
-  {
-    id: "cm",
-    title: "Community Management",
-    description: "Gestión mensual de redes, contenido y comunidad activa.",
-    plans: [
-      {
-        name: "ESENCIAL",
-        price: "$429.900/mes",
-        priceNote: "Presencia básica",
-        includes: [
-          "1 plataforma",
-          "8 posts diseñados",
-          "8 stories",
-          "Respuesta a comentarios",
-        ],
-        highlighted: false,
-        savings: null,
-        originalPrice: null,
-      },
-      {
-        name: "AVANZADO",
-        price: "$719.900/mes",
-        priceNote: "Crecimiento",
-        includes: [
-          "2 plataformas",
-          "12 posts diseñados",
-          "4 reels editados",
-          "Informe mensual",
-          "Estrategia de contenido",
-          "Gestión de mensajes",
-        ],
-        highlighted: true,
-        savings: "Ahorras $130.000/mes",
-        originalPrice: "$849.900/mes",
-      },
-      {
-        name: "PREMIUM",
-        price: "$1.199.900/mes",
-        priceNote: "Estrategia completa",
-        includes: [
-          "3 plataformas",
-          "20 posts diseñados",
-          "8 reels + TikToks",
-          "Pauta básica incluida",
-          "Estrategia + calendario",
-          "Reunión mensual",
-        ],
-        highlighted: false,
-        savings: null,
-        originalPrice: null,
-      },
-    ],
-  },
-  {
-    id: "foto",
-    title: "Fotografía de Producto",
-    description: "Sesiones, edición profesional y formatos para e‑commerce.",
-    plans: [
-      {
-        name: "ESENCIAL",
-        price: "$199.900",
-        priceNote: "Hasta 5 productos",
-        includes: [
-          "10 fotos web entregadas",
-          "Edición color y luz",
-          "Fondo blanco o neutro",
-        ],
-        highlighted: false,
-        savings: null,
-        originalPrice: null,
-      },
-      {
-        name: "AVANZADO",
-        price: "$399.900",
-        priceNote: "Hasta 12 productos",
-        includes: [
-          "25 fotos entregadas",
-          "Retoque básico",
-          "Fondo personalizable",
-          "Entrega en 48h",
-          "Formato web + RRSS",
-        ],
-        highlighted: true,
-        savings: "Ahorras $100.000",
-        originalPrice: "$499.900",
-      },
-      {
-        name: "PREMIUM",
-        price: "$699.900",
-        priceNote: "Hasta 25 productos",
-        includes: [
-          "50 fotos entregadas",
-          "RAW + alta resolución",
-          "Retoque avanzado",
-          "Múltiples ángulos",
-          "Catálogo digital PDF",
-        ],
-        highlighted: false,
-        savings: null,
-        originalPrice: null,
-      },
-    ],
-  },
-  {
-    id: "video",
-    title: "Producción de Video",
-    description: "Reels, TikToks y contenido corto con edición profesional.",
-    plans: [
-      {
-        name: "ESENCIAL",
-        price: "$199.900",
-        priceNote: "3 videos",
-        includes: [
-          "3 videos editados",
-          "Subtítulos incluidos",
-          "Música libre de regalías",
-        ],
-        highlighted: false,
-        savings: null,
-        originalPrice: null,
-      },
-      {
-        name: "AVANZADO",
-        price: "$449.900",
-        priceNote: "6 videos",
-        includes: [
-          "6 videos editados",
-          "Edición dinámica premium",
-          "Música stock curada",
-          "Subtítulos animados",
-          "Formatos multi-plataforma",
-        ],
-        highlighted: true,
-        savings: "Ahorras $100.000",
-        originalPrice: "$549.900",
-      },
-      {
-        name: "PREMIUM",
-        price: "$849.900",
-        priceNote: "12 videos",
-        includes: [
-          "12 videos editados",
-          "Guión y concepto incluido",
-          "Edición premium",
-          "Thumbnails diseñados",
-          "Estrategia de publicación",
+          "Sitio de 6-10 páginas con arquitectura orientada a ventas",
+          "SEO avanzado para posicionamiento y tráfico orgánico",
+          "Blog estratégico para atraer clientes de forma continua",
+          "Optimización de velocidad para mejorar conversión",
+          "Integración de chat o contacto inmediato",
+          "Estructura pensada para escalar marketing y campañas",
+          "Dominio + hosting por 1 año",
         ],
         highlighted: false,
         savings: null,
@@ -328,13 +192,13 @@ export function MiniPlansSection() {
           </div>
           <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
             <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-              Personaliza
+              Elige
             </span>{" "}
-            tu estrategia digital
+            cómo quieres empezar
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-pretty text-lg text-muted-foreground">
-            Elige el servicio que necesitas y el plan que mejor se ajuste a tu
-            negocio. Todos incluyen soporte y capacitación.
+            Puedes comenzar con un servicio puntual o construir un sistema más
+            completo según tu etapa.
           </p>
         </AnimatedSection>
 
@@ -380,7 +244,7 @@ export function MiniPlansSection() {
           .map((cat, cIndex) => (
             <AnimatedSection key={cat.id} delay={cIndex * 40}>
               <div>
-                <div className="mb-4">
+                <div className="mb-8">
                   <h3 className="text-lg font-semibold text-foreground">
                     {cat.title}
                   </h3>
@@ -498,11 +362,11 @@ export function MiniPlansSection() {
                                   asChild
                                 >
                                   <a
-                                    href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola! Me interesa el plan ${p.name} de ${cat.title} en NexoBite.`)}`}
+                                    href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, me interesa el plan ${p.name}. Quiero confirmar si es adecuado para mi negocio.`)}`}
                                     target="_blank"
                                     rel="noreferrer"
                                   >
-                                    {p.highlighted ? "Empezar ahora" : "Contactar"}
+                                    {p.highlighted ? "Quiero este plan" : "Quiero este plan"}
                                   </a>
                                 </Button>
                               </CardFooter>
@@ -600,11 +464,11 @@ export function MiniPlansSection() {
                           asChild
                         >
                           <a
-                            href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola! Me interesa el plan ${p.name} de ${cat.title} en NexoBite.`)}`}
+                            href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, me interesa el plan ${p.name}. Quiero confirmar si es adecuado para mi negocio.`)}`}
                             target="_blank"
                             rel="noreferrer"
                           >
-                            {p.highlighted ? "Empezar ahora" : "Contactar"}
+                            {p.highlighted ? "Quiero este plan" : "Quiero este plan"}
                           </a>
                         </Button>
                       </CardFooter>

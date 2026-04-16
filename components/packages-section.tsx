@@ -19,60 +19,67 @@ const packages = [
   {
     name: "Lanzamiento Digital",
     description:
-      "Para negocios que arrancan de cero y necesitan presencia básica.",
-    // Web Básica $397.900 + Foto Esencial $199.900 + Video Básico $199.900 + CM parcial ~$107.900
-    price: "$769.900",
-    originalPrice: "$905.900",
-    savings: "Ahorras $136.000 (15%)",
+      "Empieza a atraer clientes y responder automáticamente desde el primer día.",
+    impact:
+      "Activa tu presencia digital y deja de perder oportunidades por falta de respuesta",
+    price: "$892.500",
+    originalPrice: "$1.050.000",
+    savings: "Ahorras $157.500 (15%)",
     features: [
-      "Landing Page Básica (1 página)",
-      "Sesión de fotos Esencial (10 fotos)",
-      "10 posts diseñados para redes",
-      "1 Reel/TikTok de obsequio 🎁",
-      "Dominio + Hosting por 1 año",
-      "Formulario de contacto",
-      "Capacitación de 2 horas",
-      "Entrega en 2-3 semanas",
+      "Sistema base de atención automatizada en WhatsApp",
+      "Landing page enfocada en conversión (lista para captar leads)",
+      "3 flujos para captura y calificación de prospectos",
+      "Formulario + botón directo a WhatsApp",
+      "Dominio + hosting por 1 año",
+      "Capacitación para uso del sistema",
+      "Plantillas de respuestas comerciales listas para usar",
+      "Checklist de optimización para mejorar captación",
+      "Entrega en 1-2 semanas",
     ],
     highlighted: false,
   },
   {
-    name: "Presencia Completa",
-    description: "Todo lo que necesitas: web + redes + automatización.",
-    // Web Profesional $649.900 + Chatbot Business setup $1.249.900 + mensualidad ×3 ($199.900×3=$599.700) + CM Growth $719.900 + Foto Profesional $399.900 + Video Creador $449.900
-    price: "$3.255.900",
-    originalPrice: "$4.069.200",
-    savings: "Ahorras $813.300 (20%)",
+    name: "Sistema de Ventas",
+    description:
+      "Un sistema conectado para atraer, responder y convertir clientes de forma constante.",
+    impact:
+      "Convierte visitas y conversaciones en ventas con seguimiento automático",
+    price: "$1.600.000",
+    originalPrice: "$2.000.000",
+    savings: "Ahorras $400.000 (20%)",
     features: [
-      "Web Portafolio Profesional (3-5 páginas)",
-      "ChatBot Business (setup + 3 meses)",
-      "Community Management Growth (1 mes)",
-      "Sesión de fotos Profesional (25 fotos)",
-      "Pack Videos Creador (6 videos)",
-      "Dominio + Hosting premium por 1 año",
-      "Calendario editorial incluido",
-      "Capacitación completa",
-      "Entrega en 4-6 semanas",
+      "Sistema de ventas automatizado (WhatsApp + Web)",
+      "Sitio web corporativo optimizado para credibilidad y conversión",
+      "6 flujos enfocados en cierre y seguimiento de leads",
+      "CRM básico para organizar y no perder oportunidades",
+      "Formulario + chat integrado para contacto inmediato",
+      "SEO optimizado para atraer clientes locales",
+      "Secuencias automáticas de seguimiento",
+      "Reportes mensuales de conversaciones y conversiones",
+      "Capacitación enfocada en uso comercial del sistema",
+      "Entrega en 2-4 semanas",
     ],
     highlighted: true,
   },
   {
-    name: "Transformación Total",
-    description: "Todo incluido para máximo impacto y escalamiento.",
-    // Web Empresarial $1.099.900 + Chatbot Enterprise setup $2.099.900 + mensualidad ×3 ($329.900×3=$989.700) + CM Scale ×3 ($1.199.900×3=$3.599.700) + Foto Catálogo $699.900 + Video Viral $849.900
-    price: "$7.004.900",
-    originalPrice: "$9.339.000",
-    savings: "Ahorras $2.334.100 (25%)",
+    name: "Escalamiento Automatizado",
+    description:
+      "Un ecosistema completo para crecer con procesos claros, automatizados y medibles.",
+    impact:
+      "Convierte tu negocio en una máquina de adquisición de clientes predecible",
+    price: "$2.475.000",
+    originalPrice: "$3.300.000",
+    savings: "Ahorras $825.000 (25%)",
     features: [
-      "Web Empresarial (6-10 páginas + SEO avanzado)",
-      "ChatBot Enterprise (setup + 3 meses)",
-      "Community Management Scale (3 meses)",
-      "Sesión de fotos Catálogo (50 fotos)",
-      "Pack Videos Viral (12 videos)",
-      "Dominio + Hosting premium por 1 año",
-      "Reportes y BI completo",
-      "Soporte prioritario",
-      "Entrega en 6-8 semanas",
+      "Ecosistema completo multi-canal (WhatsApp + Web + Instagram)",
+      "Sitio web de alto impacto con arquitectura orientada a ventas",
+      "Flujos ilimitados para ventas, soporte y retención",
+      "Automatizaciones avanzadas de seguimiento y recuperación de clientes",
+      "Integraciones a medida con tus herramientas",
+      "Dashboard con métricas clave de negocio",
+      "Optimización mensual basada en datos",
+      "Soporte prioritario + acompañamiento estratégico",
+      "Entrega en 4-6 semanas",
     ],
     highlighted: false,
   },
@@ -129,13 +136,13 @@ export function PackagesSection() {
           </div>
           <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
             <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-              Ahorra hasta 25%
+              Combina servicios
             </span>{" "}
-            combinando servicios
+            y simplifica tu crecimiento
           </h2>
           <p className="mx-auto mb-16 max-w-2xl text-center text-pretty text-lg text-muted-foreground">
-            Todo incluido: desarrollo, contenido, capacitación y soporte. Un
-            solo proveedor, comunicación directa, precios transparentes.
+            Integra desarrollo, automatización y contenido en un solo flujo de
+            trabajo. Menos coordinación, más avance.
           </p>
         </AnimatedSection>
 
@@ -240,11 +247,11 @@ export function PackagesSection() {
                         asChild
                       >
                         <a
-                          href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola! Me interesa el paquete ${pkg.name} de NexoBite.`)}`}
+                          href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, quiero empezar con el paquete ${pkg.name}. ¿Cómo seguimos?`)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          {pkg.highlighted ? "Empezar ahora" : "Contactar"}
+                          {pkg.highlighted ? "Empezar con este paquete" : "Empezar con este paquete"}
                         </a>
                       </Button>
                     </CardFooter>
@@ -331,11 +338,11 @@ export function PackagesSection() {
                     asChild
                   >
                     <a
-                      href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola! Me interesa el paquete ${pkg.name} de NexoBite.`)}`}
+                      href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, quiero empezar con el paquete ${pkg.name}. ¿Cómo seguimos?`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {pkg.highlighted ? "Empezar ahora" : "Contactar"}
+                      {pkg.highlighted ? "Empezar con este paquete" : "Empezar con este paquete"}
                     </a>
                   </Button>
                 </CardFooter>

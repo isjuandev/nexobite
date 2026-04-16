@@ -8,21 +8,28 @@ export function Footer() {
     <footer className="border-t border-border/50 bg-background py-12">
       <Container>
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-          <div className="flex items-center gap-2">
-            <div className="relative flex h-8 w-8 items-center justify-center rounded-md overflow-hidden">
-              <Image
-                src="/nexobite-logo.png"
-                alt="NexoBite - Soluciones digitales para PYMEs"
-                width={32}
-                height={32}
-              />
+          <div className="flex flex-col items-center gap-3 md:items-start">
+            <div className="flex items-center gap-2">
+              <div className="relative flex h-8 w-8 items-center justify-center rounded-md overflow-hidden">
+                <Image
+                  src="/nexobite-logo.png"
+                  alt="NexoBite - Soluciones digitales para PYMEs"
+                  width={32}
+                  height={32}
+                />
+              </div>
+              <span className="text-lg font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                NEXOBITE
+              </span>
             </div>
-            <span className="text-lg font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-              NEXOBITE
-            </span>
+            <p className="max-w-md text-center text-sm text-muted-foreground md:text-left">
+              Automatización, desarrollo y sistemas digitales para negocios que
+              buscan operar mejor y vender más.
+            </p>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col items-center gap-3 md:items-end">
+            <div className="flex items-center gap-4">
             <a
               href="https://instagram.com/nexobite"
               target="_blank"
@@ -42,6 +49,15 @@ export function Footer() {
             >
               <div className="absolute inset-0 rounded-full bg-linear-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
               <MessageCircle className="relative z-10 h-6 w-6 text-white" />
+            </a>
+            </div>
+            <a
+              href="https://wa.me/+573009459026?text=Hola,%20vengo%20desde%20la%20web%20y%20quiero%20mejorar%20c%C3%B3mo%20gestiono%20mis%20clientes."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-accent hover:text-primary transition-colors"
+            >
+              Escribir por WhatsApp
             </a>
           </div>
         </div>
