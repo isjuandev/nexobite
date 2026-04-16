@@ -362,7 +362,7 @@ export function MiniPlansSection() {
                                   asChild
                                 >
                                   <a
-                                    href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, me interesa el plan ${p.name}. Quiero confirmar si es adecuado para mi negocio.`)}`}
+                                    href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, me interesa el plan ${p.name} de ${cat.title}. Quiero confirmar si es adecuado para mi negocio.`)}`}
                                     target="_blank"
                                     rel="noreferrer"
                                   >
@@ -464,7 +464,7 @@ export function MiniPlansSection() {
                           asChild
                         >
                           <a
-                            href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, me interesa el plan ${p.name}. Quiero confirmar si es adecuado para mi negocio.`)}`}
+                            href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, me interesa el plan ${p.name} de ${cat.title}. Quiero confirmar si es adecuado para mi negocio.`)}`}
                             target="_blank"
                             rel="noreferrer"
                           >
