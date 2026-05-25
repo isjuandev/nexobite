@@ -318,7 +318,7 @@ export function MiniPlansSection() {
           <div className="md:hidden absolute left-0 top-0 bottom-0 w-8 bg-linear-to-r from-background to-transparent pointer-events-none z-10" />
           <div className="md:hidden absolute right-0 top-0 bottom-0 w-8 bg-linear-to-l from-background to-transparent pointer-events-none z-10" />
 
-          <div className="flex gap-3 overflow-x-auto scrollbar-hide py-2 md:justify-center snap-x snap-proximity">
+          <div className="mx-auto flex w-max gap-3 overflow-x-auto scrollbar-hide py-2 snap-x snap-proximity md:justify-center">
             {categories.map((cat) => (
               <button
                 key={cat.id}
