@@ -12,7 +12,8 @@ import {
 } from "@/components/ui/card";
 import { AnimatedSection } from "@/components/animated-section";
 import { ParticleField } from "@/components/particle-field";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import { Container } from "@/components/container";
 
 const packages = [
@@ -86,42 +87,31 @@ const packages = [
 ];
 
 export function PackagesSection() {
-  const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(1);
+  const [carouselRef, carouselApi] = useEmblaCarousel({
+    loop: true,
+    startIndex: 1,
+  });
+
+  const handleSelect = useCallback(() => {
+    if (carouselApi) {
+      setActiveIndex(carouselApi.selectedScrollSnap());
+    }
+  }, [carouselApi]);
 
   useEffect(() => {
-    if (carouselRef.current) {
-      const popularIndex = 4;
-      const cardWidth = carouselRef.current.scrollWidth / 9;
-      carouselRef.current.scrollLeft =
-        cardWidth * popularIndex - window.innerWidth * 0.075;
+    if (!carouselApi) {
+      return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(
-              entry.target.getAttribute("data-index") || "0"
-            );
-            const actualIndex = index % 3;
-            setActiveIndex(actualIndex);
-          }
-        });
-      },
-      {
-        root: carouselRef.current,
-        threshold: 0.6,
-      }
-    );
+    carouselApi.on("select", handleSelect);
+    carouselApi.on("reInit", handleSelect);
 
-    if (carouselRef.current) {
-      const cards = carouselRef.current.querySelectorAll("[data-index]");
-      cards.forEach((card) => observer.observe(card));
-    }
-
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      carouselApi.off("select", handleSelect);
+      carouselApi.off("reInit", handleSelect);
+    };
+  }, [carouselApi, handleSelect]);
 
   return (
     <section
@@ -149,32 +139,16 @@ export function PackagesSection() {
         {/* Mobile Carousel */}
         <div className="lg:hidden relative pt-4">
           <button
-            onClick={() => {
-              if (carouselRef.current) {
-                const cardWidth = carouselRef.current.scrollWidth / 9;
-                const currentScroll = carouselRef.current.scrollLeft;
-                carouselRef.current.scrollTo({
-                  left: currentScroll - cardWidth,
-                  behavior: "smooth",
-                });
-              }
-            }}
+            type="button"
+            onClick={() => carouselApi?.scrollPrev()}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-lg hover:bg-card transition-all"
             aria-label="Anterior"
           >
             <ChevronLeft className="h-6 w-6 text-foreground" />
           </button>
           <button
-            onClick={() => {
-              if (carouselRef.current) {
-                const cardWidth = carouselRef.current.scrollWidth / 9;
-                const currentScroll = carouselRef.current.scrollLeft;
-                carouselRef.current.scrollTo({
-                  left: currentScroll + cardWidth,
-                  behavior: "smooth",
-                });
-              }
-            }}
+            type="button"
+            onClick={() => carouselApi?.scrollNext()}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-lg hover:bg-card transition-all"
             aria-label="Siguiente"
           >
@@ -183,14 +157,13 @@ export function PackagesSection() {
 
           <div
             ref={carouselRef}
-            className="overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8"
+            className="overflow-hidden pb-8"
           >
             <div className="flex gap-6 px-4">
-              {[...packages, ...packages, ...packages].map((pkg, index) => (
+              {packages.map((pkg) => (
                 <div
-                  key={`${pkg.name}-${index}`}
-                  data-index={index}
-                  className="snap-center shrink-0 w-[85vw] max-w-sm"
+                  key={pkg.name}
+                  className="min-w-0 shrink-0 basis-[85vw] max-w-sm"
                 >
                   <Card
                     className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${pkg.highlighted
@@ -263,17 +236,9 @@ export function PackagesSection() {
           <div className="flex justify-center gap-2 mt-2">
             {packages.map((_, index) => (
               <button
+                type="button"
                 key={index}
-                onClick={() => {
-                  if (carouselRef.current) {
-                    const cardWidth = carouselRef.current.scrollWidth / 9;
-                    const targetIndex = index + 3;
-                    carouselRef.current.scrollTo({
-                      left: cardWidth * targetIndex - window.innerWidth * 0.075,
-                      behavior: "smooth",
-                    });
-                  }
-                }}
+                onClick={() => carouselApi?.scrollTo(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${activeIndex === index
                   ? "w-8 bg-primary"
                   : "w-2 bg-muted hover:bg-muted-foreground"

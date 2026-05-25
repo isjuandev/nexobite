@@ -1,7 +1,6 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Container } from "@/components/container";
-import { ChatbotWidget } from "@/components/chatbot-widget";
 import { AnimatedSection } from "@/components/animated-section";
 import { ParticleField } from "@/components/particle-field";
 import { FileText, Briefcase, CreditCard, ShieldAlert, Copyright, AlertTriangle, ShieldCheck, Scale, MessageCircle } from "lucide-react";
@@ -16,7 +15,7 @@ export default function CondicionesDelServicio() {
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
-                        Al acceder y utilizar los servicios proporcionados por <strong><strong>NEXOBITE</strong></strong> ("la Agencia", "nosotros", "nuestro"), usted ("el Cliente", "usted") acepta estar sujeto a estos Términos y Condiciones de Servicio.
+                        Al acceder y utilizar los servicios proporcionados por <strong><strong>NEXOBITE</strong></strong> (&quot;la Agencia&quot;, &quot;nosotros&quot;, &quot;nuestro&quot;), usted (&quot;el Cliente&quot;, &quot;usted&quot;) acepta estar sujeto a estos Términos y Condiciones de Servicio.
                     </p>
                     <p>
                         Si no está de acuerdo con alguna parte de estos términos, le rogamos que no utilice nuestros servicios ni nuestra plataforma web. Estos términos constituyen un acuerdo legal vinculante entre usted y <strong>NEXOBITE</strong>.
@@ -31,7 +30,7 @@ export default function CondicionesDelServicio() {
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
-                        <strong><strong>NEXOBITE</strong></strong> ofrece servicios de consultoría, diseño, desarrollo tecnológico, inteligencia artificial, automatizaciones y marketing digital ("los Servicios").
+                        <strong><strong>NEXOBITE</strong></strong> ofrece servicios de consultoría, diseño, desarrollo tecnológico, inteligencia artificial, automatizaciones y marketing digital (&quot;los Servicios&quot;).
                     </p>
                     <p>
                         Los detalles específicos, entregables, plazos y costos de cada proyecto se definirán en una <strong>Propuesta Comercial</strong> o <strong>Contrato de Servicio</strong> individual, el cual deberá ser aprobado por escrito (o vía digital) por el Cliente antes del inicio de cualquier trabajo.
@@ -223,7 +222,6 @@ export default function CondicionesDelServicio() {
             </section>
 
             <Footer />
-            <ChatbotWidget />
         </main>
     );
 }

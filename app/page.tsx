@@ -6,7 +6,6 @@ import { MiniPlansSection } from "@/components/mini-plans-section";
 import { PackagesSection } from "@/components/packages-section";
 import { CtaSection } from "@/components/cta-section";
 import { Footer } from "@/components/footer";
-import { ChatbotWidget } from "@/components/chatbot-widget";
 
 export default function Home() {
   return (
@@ -19,7 +18,6 @@ export default function Home() {
       <PackagesSection />
       <CtaSection />
       <Footer />
-      <ChatbotWidget />
     </main>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { Bot, Globe, Share2, Camera, Video, Code } from "lucide-react";
+import { Bot, Globe, Code } from "lucide-react";
 import {
   Card,
   CardContent,

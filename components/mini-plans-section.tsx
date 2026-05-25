@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -141,42 +142,151 @@ const categories = [
   },
 ];
 
+type Category = (typeof categories)[number];
+
+function MobilePlansCarousel({ category }: { category: Category }) {
+  const [activeIndex, setActiveIndex] = useState(1);
+  const [carouselRef, carouselApi] = useEmblaCarousel({
+    loop: true,
+    startIndex: 1,
+  });
+
+  const handleSelect = useCallback(() => {
+    if (carouselApi) {
+      setActiveIndex(carouselApi.selectedScrollSnap());
+    }
+  }, [carouselApi]);
+
+  useEffect(() => {
+    if (!carouselApi) {
+      return;
+    }
+
+    carouselApi.on("select", handleSelect);
+    carouselApi.on("reInit", handleSelect);
+
+    return () => {
+      carouselApi.off("select", handleSelect);
+      carouselApi.off("reInit", handleSelect);
+    };
+  }, [carouselApi, handleSelect]);
+
+  return (
+    <div className="relative pt-2 lg:hidden">
+      <button
+        type="button"
+        onClick={() => carouselApi?.scrollPrev()}
+        className="absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full border border-border/50 bg-card/80 p-2 shadow-lg backdrop-blur-sm transition-all hover:bg-card"
+        aria-label="Anterior"
+      >
+        <ChevronLeft className="h-6 w-6 text-foreground" />
+      </button>
+      <button
+        type="button"
+        onClick={() => carouselApi?.scrollNext()}
+        className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full border border-border/50 bg-card/80 p-2 shadow-lg backdrop-blur-sm transition-all hover:bg-card"
+        aria-label="Siguiente"
+      >
+        <ChevronRight className="h-6 w-6 text-foreground" />
+      </button>
+
+      <div ref={carouselRef} className="overflow-hidden pb-8">
+        <div className="flex gap-6 px-4">
+          {category.plans.map((plan) => (
+            <div
+              key={plan.name}
+              className="min-w-0 shrink-0 basis-[85vw] max-w-sm"
+            >
+              <Card
+                className={`group relative mt-4 flex h-full flex-col transition-all duration-300 ${plan.highlighted
+                  ? "border-accent bg-card shadow-lg shadow-accent/20"
+                  : "border-border/50 bg-card/50"
+                  }`}
+              >
+                {plan.highlighted && (
+                  <div className="absolute -top-4 left-1/2 z-10 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 shadow-lg backdrop-blur-sm">
+                    <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
+                    <span className="text-xs font-semibold text-foreground">
+                      Más Popular
+                    </span>
+                  </div>
+                )}
+                <CardHeader>
+                  <CardTitle className="text-foreground">
+                    {plan.name}
+                  </CardTitle>
+                  <CardDescription className="text-muted-foreground">
+                    {plan.priceNote}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1">
+                  <div className="mb-6 flex flex-col items-start gap-2">
+                    {plan.originalPrice && (
+                      <div className="text-sm text-muted-foreground line-through">
+                        {plan.originalPrice}
+                      </div>
+                    )}
+                    <span className="text-3xl font-bold text-foreground">
+                      {plan.price}
+                    </span>
+                    {plan.savings && (
+                      <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                        ✓ {plan.savings}
+                      </div>
+                    )}
+                  </div>
+                  <ul className="space-y-3">
+                    {plan.includes.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                        <span className="text-sm text-muted-foreground">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter>
+                  <Button
+                    className="w-full"
+                    variant={plan.highlighted ? "gradient" : "default"}
+                    asChild
+                  >
+                    <a
+                      href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, me interesa el plan ${plan.name} de ${category.title}. Quiero confirmar si es adecuado para mi negocio.`)}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Quiero este plan
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-2 flex justify-center gap-2">
+        {category.plans.map((plan, index) => (
+          <button
+            type="button"
+            key={plan.name}
+            onClick={() => carouselApi?.scrollTo(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${activeIndex === index
+              ? "w-8 bg-primary"
+              : "w-2 bg-muted hover:bg-muted-foreground"
+              }`}
+            aria-label={`Ir a ${plan.name}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function MiniPlansSection() {
   const [selected, setSelected] = useState(categories[0].id);
-  const [activeIndex, setActiveIndex] = useState(1);
-  const carouselRef = useRef<HTMLDivElement>(null);
-
-  // Slider efecto y scroll al plan destacado
-  useEffect(() => {
-    if (carouselRef.current) {
-      const popularIndex = 4; // Segundo set, segundo elemento
-      const cardWidth = carouselRef.current.scrollWidth / 9;
-      carouselRef.current.scrollLeft =
-        cardWidth * popularIndex - window.innerWidth * 0.075;
-    }
-    const observer = new window.IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(
-              entry.target.getAttribute("data-index") || "0"
-            );
-            const actualIndex = index % 3;
-            setActiveIndex(actualIndex);
-          }
-        });
-      },
-      {
-        root: carouselRef.current,
-        threshold: 0.6,
-      }
-    );
-    if (carouselRef.current) {
-      const cards = carouselRef.current.querySelectorAll("[data-index]");
-      cards.forEach((card) => observer.observe(card));
-    }
-    return () => observer.disconnect();
-  }, [selected]);
 
   return (
     <section
@@ -253,156 +363,7 @@ export function MiniPlansSection() {
                   </p>
                 </div>
 
-                {/* Mobile slider */}
-                <div className="lg:hidden relative pt-2">
-                  {/* Navigation Arrows */}
-                  <button
-                    onClick={() => {
-                      if (carouselRef.current) {
-                        const cardWidth = carouselRef.current.scrollWidth / 9;
-                        const currentScroll = carouselRef.current.scrollLeft;
-                        carouselRef.current.scrollTo({
-                          left: currentScroll - cardWidth,
-                          behavior: "smooth",
-                        });
-                      }
-                    }}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-lg hover:bg-card transition-all"
-                    aria-label="Anterior"
-                  >
-                    <ChevronLeft className="h-6 w-6 text-foreground" />
-                  </button>
-                  <button
-                    onClick={() => {
-                      if (carouselRef.current) {
-                        const cardWidth = carouselRef.current.scrollWidth / 9;
-                        const currentScroll = carouselRef.current.scrollLeft;
-                        carouselRef.current.scrollTo({
-                          left: currentScroll + cardWidth,
-                          behavior: "smooth",
-                        });
-                      }
-                    }}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-lg hover:bg-card transition-all"
-                    aria-label="Siguiente"
-                  >
-                    <ChevronRight className="h-6 w-6 text-foreground" />
-                  </button>
-
-                  <div
-                    ref={carouselRef}
-                    className="overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8"
-                  >
-                    <div className="flex gap-6 px-4">
-                      {[...cat.plans, ...cat.plans, ...cat.plans].map(
-                        (p, index) => (
-                          <div
-                            key={`${p.name}-${index}`}
-                            data-index={index}
-                            className="snap-center shrink-0 w-[85vw] max-w-sm"
-                          >
-                            <Card
-                              className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${p.highlighted
-                                ? "border-accent bg-card shadow-lg shadow-accent/20"
-                                : "border-border/50 bg-card/50"
-                                }`}
-                            >
-                              {p.highlighted && (
-                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
-                                  <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
-                                  <span className="text-xs font-semibold text-foreground">
-                                    Más Popular
-                                  </span>
-                                </div>
-                              )}
-                              <CardHeader>
-                                <CardTitle className="text-foreground">
-                                  {p.name}
-                                </CardTitle>
-                                <CardDescription className="text-muted-foreground">
-                                  {p.priceNote}
-                                </CardDescription>
-                              </CardHeader>
-                              <CardContent className="flex-1">
-                                <div className="mb-6 flex flex-col items-start gap-2">
-                                  {p.originalPrice && (
-                                    <div className="text-sm text-muted-foreground line-through">
-                                      {p.originalPrice}
-                                    </div>
-                                  )}
-                                  <span className="text-3xl font-bold text-foreground">
-                                    {p.price}
-                                  </span>
-                                  {p.savings && (
-                                    <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
-                                      ✓ {p.savings}
-                                    </div>
-                                  )}
-                                </div>
-                                <ul className="space-y-3">
-                                  {p.includes.map((inc, i) => (
-                                    <li
-                                      key={inc + i}
-                                      className="flex items-start gap-3"
-                                    >
-                                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
-                                      <span className="text-sm text-muted-foreground">
-                                        {inc}
-                                      </span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </CardContent>
-                              <CardFooter>
-                                <Button
-                                  className="w-full"
-                                  variant={
-                                    p.highlighted ? "gradient" : "default"
-                                  }
-                                  asChild
-                                >
-                                  <a
-                                    href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, me interesa el plan ${p.name} de ${cat.title}. Quiero confirmar si es adecuado para mi negocio.`)}`}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                  >
-                                    {p.highlighted ? "Quiero este plan" : "Quiero este plan"}
-                                  </a>
-                                </Button>
-                              </CardFooter>
-                            </Card>
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </div>
-                  {/* Scroll Indicator */}
-                  <div className="flex justify-center gap-2 mt-2">
-                    {cat.plans.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => {
-                          if (carouselRef.current) {
-                            const cardWidth =
-                              carouselRef.current.scrollWidth / 9;
-                            const targetIndex = index + 3;
-                            carouselRef.current.scrollTo({
-                              left:
-                                cardWidth * targetIndex -
-                                window.innerWidth * 0.075,
-                              behavior: "smooth",
-                            });
-                          }
-                        }}
-                        className={`h-2 rounded-full transition-all duration-300 ${activeIndex === index
-                          ? "w-8 bg-primary"
-                          : "w-2 bg-muted hover:bg-muted-foreground"
-                          }`}
-                        aria-label={`Ir a ${cat.plans[index].name}`}
-                      />
-                    ))}
-                  </div>
-                </div>
+                <MobilePlansCarousel category={cat} />
 
                 {/* Desktop grid */}
                 <div className="hidden lg:grid gap-6 lg:grid-cols-3">

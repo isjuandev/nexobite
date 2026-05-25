@@ -1,7 +1,6 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Container } from "@/components/container";
-import { ChatbotWidget } from "@/components/chatbot-widget";
 import { ParticleField } from "@/components/particle-field";
 import { AnimatedSection } from "@/components/animated-section";
 import { Shield, Lock, Eye, CheckCircle2, Share2, UserCheck, RefreshCw, MessageCircle } from "lucide-react";
@@ -211,7 +210,6 @@ export default function PoliticaDePrivacidad() {
       </section>
 
       <Footer />
-      <ChatbotWidget />
     </main>
   );
 }
