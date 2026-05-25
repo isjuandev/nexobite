@@ -36,11 +36,11 @@ export function ChatbotWidget() {
       widgetPath: "/chat",
       launcher: {
         position: "right",
-        primaryColor: "#2563EB",
+        primaryColor: "#ED8936",
         secondaryColor: "#ED8936",
-        iconColor: "#FFFFFF",
+        iconColor: "#0F172A",
         glowColor: "#ED8936",
-        pulseColor: "#2563EB",
+        pulseColor: "#ED8936",
         shadowColor: "#0F172A",
         size: 56,
         iconSize: 24,
@@ -64,4 +64,3 @@ export function ChatbotWidget() {
 
   return null;
 }
-

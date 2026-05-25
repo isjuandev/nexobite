@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Instagram, Linkedin, Twitter, MessageCircle } from "lucide-react";
+import { Instagram, MessageCircle } from "lucide-react";
 import { Container } from "@/components/container";
+import { BrandLogo } from "@/components/brand-logo";
 
 export function Footer() {
   return (
@@ -9,19 +9,7 @@ export function Footer() {
       <Container>
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex flex-col items-center gap-3 md:items-start">
-            <div className="flex items-center gap-2">
-              <div className="relative flex h-8 w-8 items-center justify-center rounded-md overflow-hidden">
-                <Image
-                  src="/nexobite-logo.png"
-                  alt="NexoBite - Soluciones digitales para PYMEs"
-                  width={32}
-                  height={32}
-                />
-              </div>
-              <span className="text-lg font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-                NEXOBITE
-              </span>
-            </div>
+            <BrandLogo markClassName="h-8 w-8" />
             <p className="max-w-md text-center text-sm text-muted-foreground md:text-left">
               Automatización, desarrollo y sistemas digitales para negocios que
               buscan operar mejor y vender más.
@@ -34,28 +22,28 @@ export function Footer() {
               href="https://instagram.com/nexobite"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-primary to-accent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-accent/50"
+              className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/30"
               aria-label="Instagram"
             >
-              <div className="absolute inset-0 rounded-full bg-linear-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
-              <Instagram className="relative z-10 h-6 w-6 text-white" />
+              <div className="absolute inset-0 rounded-full bg-primary opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-40" />
+              <Instagram className="relative z-10 h-6 w-6 text-primary-foreground" />
             </a>
             <a
               href="https://wa.me/+573009459026?text=Hola!%20Vengo%20desde%20la%20p%C3%A1gina%20web%20de%20NexoBite%20y%20me%20gustar%C3%ADa%20contactarlos."
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-primary to-accent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-accent/50"
+              className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/30"
               aria-label="WhatsApp"
             >
-              <div className="absolute inset-0 rounded-full bg-linear-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
-              <MessageCircle className="relative z-10 h-6 w-6 text-white" />
+              <div className="absolute inset-0 rounded-full bg-primary opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-40" />
+              <MessageCircle className="relative z-10 h-6 w-6 text-primary-foreground" />
             </a>
             </div>
             <a
               href="https://wa.me/+573009459026?text=Hola,%20vengo%20desde%20la%20web%20y%20quiero%20mejorar%20c%C3%B3mo%20gestiono%20mis%20clientes."
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-accent hover:text-primary transition-colors"
+              className="text-sm font-medium text-foreground underline decoration-primary decoration-2 underline-offset-4 transition-colors"
             >
               Escribir por WhatsApp
             </a>
@@ -70,28 +58,28 @@ export function Footer() {
           <div className="flex flex-wrap gap-4 justify-center md:justify-end">
             <Link
               href="/#services"
-              className="text-sm text-muted-foreground hover:text-accent transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Servicios
             </Link>
             <span className="text-muted-foreground hidden md:inline">·</span>
             <Link
               href="/#mini-plans"
-              className="text-sm text-muted-foreground hover:text-accent transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Planes
             </Link>
             <span className="text-muted-foreground hidden md:inline">·</span>
             <Link
               href="/politica-de-privacidad"
-              className="text-sm text-muted-foreground hover:text-accent transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Política de Privacidad
             </Link>
             <span className="text-muted-foreground hidden md:inline">·</span>
             <Link
               href="/condiciones-del-servicio"
-              className="text-sm text-muted-foreground hover:text-accent transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Condiciones del Servicio
             </Link>

@@ -11,14 +11,14 @@ export function HeroSection() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
       <ParticleField variant="primary" density="high" speed="medium" />
 
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-primary/8 via-secondary/30 to-background" />
 
       <Container className="relative z-10" size="md">
         <div className="text-center">
           <AnimatedSection>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/50 px-4 py-1.5 backdrop-blur-sm hover-glow transition-all cursor-default">
-              <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
-              <span className="text-sm font-medium bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
+              <span className="brand-kicker text-sm font-medium">
                 Automatización de ventas para negocios
               </span>
             </div>
@@ -27,10 +27,10 @@ export function HeroSection() {
           <AnimatedSection delay={100}>
             <h1 className="mb-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               Automatizamos tu{" "}
-              <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-brand-orange">
                 WhatsApp para que cada
               </span>{" "}
-               mensaje tenga respuesta
+              mensaje tenga respuesta
             </h1>
           </AnimatedSection>
 
@@ -40,7 +40,7 @@ export function HeroSection() {
               <span className="text-foreground font-medium">
                 chatbots y automatización
               </span>{" "}
-              para que respondas en segundos, organices tus conversaciones {" "}
+              para que respondas en segundos, organices tus conversaciones{" "}
               <span className="text-foreground font-medium">
                 y conviertas más contactos en clientes
               </span>
@@ -83,7 +83,7 @@ export function HeroSection() {
                   key={stat.label}
                   className="text-center group hover:scale-105 transition-transform"
                 >
-                  <div className="text-2xl font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent sm:text-3xl">
+                  <div className="text-2xl font-bold text-foreground sm:text-3xl">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">

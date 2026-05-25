@@ -131,11 +131,11 @@ export function PackagesSection() {
       <ParticleField variant="mixed" density="high" speed="medium" />
       <Container className="relative z-10">
         <AnimatedSection>
-          <div className="mb-4 text-center text-sm font-medium uppercase tracking-wider bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+          <div className="brand-kicker mx-auto mb-4 w-fit text-center text-sm font-medium uppercase tracking-wider">
             Paquetes Integrales
           </div>
           <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
-            <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="brand-highlight">
               Combina servicios
             </span>{" "}
             y simplifica tu crecimiento
@@ -200,8 +200,8 @@ export function PackagesSection() {
                   >
                     {pkg.highlighted && (
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
-                        <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
-                        <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                        <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
+                        <span className="text-xs font-semibold text-foreground">
                           Más Popular
                         </span>
                       </div>
@@ -222,7 +222,7 @@ export function PackagesSection() {
                         <span className="text-3xl font-bold text-foreground">
                           {pkg.price}
                         </span>
-                        <div className="inline-flex items-center gap-1 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
+                        <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                           ✓ {pkg.savings}
                         </div>
                       </div>
@@ -232,7 +232,7 @@ export function PackagesSection() {
                             key={`${feature}-${featureIndex}`}
                             className="flex items-start gap-3"
                           >
-                            <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                            <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                             <span className="text-sm text-muted-foreground">
                               {feature}
                             </span>
@@ -275,7 +275,7 @@ export function PackagesSection() {
                   }
                 }}
                 className={`h-2 rounded-full transition-all duration-300 ${activeIndex === index
-                  ? "w-8 bg-linear-to-r from-primary to-accent"
+                  ? "w-8 bg-primary"
                   : "w-2 bg-muted hover:bg-muted-foreground"
                   }`}
                 aria-label={`Ir a ${packages[index].name}`}
@@ -296,8 +296,8 @@ export function PackagesSection() {
               >
                 {pkg.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
-                    <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
-                    <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                    <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
+                    <span className="text-xs font-semibold text-foreground">
                       Más Popular
                     </span>
                   </div>
@@ -316,14 +316,14 @@ export function PackagesSection() {
                     <span className="text-3xl font-bold text-foreground">
                       {pkg.price}
                     </span>
-                    <div className="inline-flex items-center gap-1 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
+                    <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                       ✓ {pkg.savings}
                     </div>
                   </div>
                   <ul className="space-y-3">
                     {pkg.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                        <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                         <span className="text-sm text-muted-foreground">
                           {feature}
                         </span>

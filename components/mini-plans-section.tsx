@@ -187,11 +187,11 @@ export function MiniPlansSection() {
       <Container className="relative z-10">
         {/* Section Header */}
         <AnimatedSection>
-          <div className="mb-4 text-center text-sm font-medium uppercase tracking-wider bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+          <div className="brand-kicker mx-auto mb-4 w-fit text-center text-sm font-medium uppercase tracking-wider">
             Planes por Servicio
           </div>
           <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
-            <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="brand-highlight">
               Elige
             </span>{" "}
             cómo quieres empezar
@@ -214,7 +214,7 @@ export function MiniPlansSection() {
                 key={cat.id}
                 onClick={() => setSelected(cat.id)}
                 className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 snap-center ${selected === cat.id
-                  ? "bg-linear-to-r from-primary to-accent text-white shadow-md"
+                  ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
                   : "bg-card/40 text-muted-foreground hover:bg-card/60"
                   }`}
                 aria-pressed={selected === cat.id}
@@ -230,7 +230,7 @@ export function MiniPlansSection() {
               <div
                 key={cat.id}
                 className={`h-1 rounded-full transition-all duration-300 ${selected === cat.id
-                  ? "w-6 bg-linear-to-r from-primary to-accent"
+                  ? "w-6 bg-primary"
                   : "w-1 bg-muted"
                   }`}
               />
@@ -309,8 +309,8 @@ export function MiniPlansSection() {
                             >
                               {p.highlighted && (
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
-                                  <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
-                                  <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                                  <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
+                                  <span className="text-xs font-semibold text-foreground">
                                     Más Popular
                                   </span>
                                 </div>
@@ -334,7 +334,7 @@ export function MiniPlansSection() {
                                     {p.price}
                                   </span>
                                   {p.savings && (
-                                    <div className="inline-flex items-center gap-1 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
+                                    <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                                       ✓ {p.savings}
                                     </div>
                                   )}
@@ -345,7 +345,7 @@ export function MiniPlansSection() {
                                       key={inc + i}
                                       className="flex items-start gap-3"
                                     >
-                                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                                       <span className="text-sm text-muted-foreground">
                                         {inc}
                                       </span>
@@ -395,7 +395,7 @@ export function MiniPlansSection() {
                           }
                         }}
                         className={`h-2 rounded-full transition-all duration-300 ${activeIndex === index
-                          ? "w-8 bg-linear-to-r from-primary to-accent"
+                          ? "w-8 bg-primary"
                           : "w-2 bg-muted hover:bg-muted-foreground"
                           }`}
                         aria-label={`Ir a ${cat.plans[index].name}`}
@@ -416,8 +416,8 @@ export function MiniPlansSection() {
                     >
                       {p.highlighted && (
                         <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
-                          <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
-                          <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                          <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
+                          <span className="text-xs font-semibold text-foreground">
                             Más Popular
                           </span>
                         </div>
@@ -441,7 +441,7 @@ export function MiniPlansSection() {
                             {p.price}
                           </span>
                           {p.savings && (
-                            <div className="inline-flex items-center gap-1 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
+                            <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                               ✓ {p.savings}
                             </div>
                           )}
@@ -449,7 +449,7 @@ export function MiniPlansSection() {
                         <ul className="space-y-3">
                           {p.includes.map((inc) => (
                             <li key={inc} className="flex items-start gap-3">
-                              <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                              <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                               <span className="text-sm text-muted-foreground">
                                 {inc}
                               </span>

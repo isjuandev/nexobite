@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useTheme } from "next-themes";
 
 interface Particle {
   x: number;
@@ -28,8 +27,6 @@ export function ParticleField({
 }: ParticleFieldProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
-  const { resolvedTheme } = useTheme();
-  const isLight = resolvedTheme === "light";
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -42,31 +39,17 @@ export function ParticleField({
     let particles: Particle[] = [];
     let time = 0;
 
-    // Configuración de colores según variante y tema
+    // La animacion usa la paleta oficial sobre el fondo oscuro.
     const getColors = () => {
-      if (isLight) {
-        // Colores más oscuros/saturados para fondo claro
-        switch (variant) {
-          case "primary":
-            return ["37, 99, 235", "79, 70, 229"]; // Azul vibrante + índigo
-          case "accent":
-            return ["234, 88, 12", "220, 38, 38"]; // Naranja intenso
-          case "subtle":
-            return ["148, 163, 184", "100, 116, 139"]; // Gris
-          case "mixed":
-            return ["37, 99, 235", "234, 88, 12", "100, 116, 139"];
-        }
-      }
-      // Dark mode — original colors
       switch (variant) {
         case "primary":
-          return ["59, 130, 246", "99, 102, 241"];
+          return ["237, 137, 54", "255, 255, 255"];
         case "accent":
-          return ["251, 146, 60", "249, 115, 22"];
+          return ["237, 137, 54"];
         case "subtle":
-          return ["148, 163, 184", "100, 116, 139"];
+          return ["148, 163, 184", "255, 255, 255"];
         case "mixed":
-          return ["59, 130, 246", "251, 146, 60", "148, 163, 184"];
+          return ["237, 137, 54", "148, 163, 184", "255, 255, 255"];
       }
     };
 
@@ -291,13 +274,13 @@ export function ParticleField({
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [variant, density, speed, isLight]);
+  }, [variant, density, speed]);
 
   return (
     <canvas
       ref={canvasRef}
       className="pointer-events-none absolute inset-0 h-full w-full"
-      style={{ opacity: isLight ? 0.45 : 0.7 }}
+      style={{ opacity: 0.7 }}
     />
   );
 }

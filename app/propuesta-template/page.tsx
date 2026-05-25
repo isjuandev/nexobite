@@ -224,10 +224,10 @@ export default function PropuestaCliente() {
         <ParticleField variant="mixed" density="medium" speed="slow" />
         <Container className="relative z-10">
           <AnimatedSection className="text-center max-w-4xl mx-auto">
-            <div className="mb-4 text-sm font-medium uppercase tracking-wider bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+            <div className="brand-kicker mx-auto mb-4 w-fit text-sm font-medium uppercase tracking-wider">
               {CLIENT_CONFIG.heroSubtitle}
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+            <h1 className="brand-highlight text-5xl md:text-6xl font-bold mb-6">
               {CLIENT_CONFIG.projectTitle}
             </h1>
             <div className="flex flex-wrap gap-4 justify-center text-sm text-muted-foreground">
@@ -254,7 +254,7 @@ export default function PropuestaCliente() {
         <Container className="relative z-10">
           <AnimatedSection>
             <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
-              <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="brand-highlight">
                 {CLIENT_CONFIG.proposalsSectionTitle}
               </span>{" "}
               {CLIENT_CONFIG.proposalsSectionSubtitle}
@@ -279,8 +279,8 @@ export default function PropuestaCliente() {
                     <Card className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${p.highlighted ? "border-accent bg-card shadow-lg shadow-accent/20" : "border-border/50 bg-card/50"}`}>
                       {p.highlighted && (
                         <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
-                          <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
-                          <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                          <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
+                          <span className="text-xs font-semibold text-foreground">
                             Más Popular
                           </span>
                         </div>
@@ -293,14 +293,14 @@ export default function PropuestaCliente() {
                         <div className="mb-6 flex flex-col items-start gap-2">
                           <span className="text-sm text-muted-foreground line-through">{p.originalPrice}</span>
                           <span className="text-3xl font-bold text-foreground">{p.price}</span>
-                          <div className="inline-flex items-center gap-1 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
+                          <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                             ✓ {p.savings}
                           </div>
                         </div>
                         <ul className="space-y-3">
                           {p.features.map((f, i) => (
                             <li key={i} className="flex items-start gap-3">
-                              <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                              <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                               <span className="text-sm text-muted-foreground">{f}</span>
                             </li>
                           ))}
@@ -320,7 +320,7 @@ export default function PropuestaCliente() {
             </div>
             <div className="flex justify-center gap-2 mt-2">
               {proposals.map((_, i) => (
-                <button key={i} onClick={() => scrollTo(carouselRef, proposals.length, i)} className={`h-2 rounded-full transition-all duration-300 ${activeIndex === i ? "w-8 bg-linear-to-r from-primary to-accent" : "w-2 bg-muted hover:bg-muted-foreground"}`} aria-label={`Ir a ${proposals[i].name}`} />
+                <button key={i} onClick={() => scrollTo(carouselRef, proposals.length, i)} className={`h-2 rounded-full transition-all duration-300 ${activeIndex === i ? "w-8 bg-primary" : "w-2 bg-muted hover:bg-muted-foreground"}`} aria-label={`Ir a ${proposals[i].name}`} />
               ))}
             </div>
           </div>
@@ -332,8 +332,8 @@ export default function PropuestaCliente() {
                 <Card className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${p.highlighted ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30" : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"}`}>
                   {p.highlighted && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
-                      <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
-                      <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                      <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
+                      <span className="text-xs font-semibold text-foreground">
                         Más Popular
                       </span>
                     </div>
@@ -346,14 +346,14 @@ export default function PropuestaCliente() {
                     <div className="mb-6 flex flex-col items-start gap-2">
                       <span className="text-sm text-muted-foreground line-through">{p.originalPrice}</span>
                       <span className="text-3xl font-bold text-foreground">{p.price}</span>
-                      <div className="inline-flex items-center gap-1 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
+                      <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                         ✓ {p.savings}
                       </div>
                     </div>
                     <ul className="space-y-3">
                       {p.features.map((f, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                          <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                           <span className="text-sm text-muted-foreground">{f}</span>
                         </li>
                       ))}
@@ -378,11 +378,11 @@ export default function PropuestaCliente() {
         <ParticleField variant="mixed" density="medium" speed="slow" />
         <Container className="relative z-10">
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-12">
-            <div className="mb-4 text-sm font-medium uppercase tracking-wider bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+            <div className="brand-kicker mx-auto mb-4 w-fit text-sm font-medium uppercase tracking-wider">
               Opciones de Inversión
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="brand-highlight">
                 Facilidades de Pago
               </span>{" "}
               que se ajustan a tu presupuesto
@@ -407,8 +407,8 @@ export default function PropuestaCliente() {
                     <Card className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${opt.highlight ? "border-accent bg-card shadow-lg shadow-accent/20" : "border-border/50 bg-card/50"}`}>
                       {opt.highlight && (
                         <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
-                          <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
-                          <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                          <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
+                          <span className="text-xs font-semibold text-foreground">
                             Más Popular
                           </span>
                         </div>
@@ -419,13 +419,13 @@ export default function PropuestaCliente() {
                       </CardHeader>
                       <CardContent className="flex-1">
                         <div className="mb-6">
-                          <span className="text-4xl font-bold text-accent">{opt.price}</span>
+                          <span className="text-4xl font-bold text-foreground">{opt.price}</span>
                           <span className="text-lg text-muted-foreground ml-2">{opt.priceLabel}</span>
                         </div>
                         <ul className="space-y-3">
                           {opt.features.map((f, i) => (
                             <li key={i} className="flex items-start gap-3">
-                              <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                              <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                               <span className="text-sm text-muted-foreground">{f}</span>
                             </li>
                           ))}
@@ -445,7 +445,7 @@ export default function PropuestaCliente() {
             </div>
             <div className="flex justify-center gap-2 mt-2">
               {paymentOptions.map((_, i) => (
-                <button key={i} onClick={() => scrollTo(paymentCarouselRef, paymentOptions.length, i)} className={`h-2 rounded-full transition-all duration-300 ${activePaymentIndex === i ? "w-8 bg-linear-to-r from-primary to-accent" : "w-2 bg-muted hover:bg-muted-foreground"}`} aria-label={`Opción ${i + 1}`} />
+                <button key={i} onClick={() => scrollTo(paymentCarouselRef, paymentOptions.length, i)} className={`h-2 rounded-full transition-all duration-300 ${activePaymentIndex === i ? "w-8 bg-primary" : "w-2 bg-muted hover:bg-muted-foreground"}`} aria-label={`Opción ${i + 1}`} />
               ))}
             </div>
           </div>
@@ -457,8 +457,8 @@ export default function PropuestaCliente() {
                 <Card className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${opt.highlight ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30" : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"}`}>
                   {opt.highlight && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
-                      <span className="h-2 w-2 animate-pulse-glow rounded-full bg-linear-to-r from-primary to-accent" />
-                      <span className="text-xs font-semibold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                      <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
+                      <span className="text-xs font-semibold text-foreground">
                         Más Popular
                       </span>
                     </div>
@@ -469,13 +469,13 @@ export default function PropuestaCliente() {
                   </CardHeader>
                   <CardContent className="flex-1">
                     <div className="mb-6">
-                      <span className="text-4xl font-bold text-accent">{opt.price}</span>
+                      <span className="text-4xl font-bold text-foreground">{opt.price}</span>
                       <span className="text-lg text-muted-foreground ml-2">{opt.priceLabel}</span>
                     </div>
                     <ul className="space-y-3">
                       {opt.features.map((f, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                          <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                           <span className="text-sm text-muted-foreground">{f}</span>
                         </li>
                       ))}
@@ -510,7 +510,7 @@ export default function PropuestaCliente() {
                 <div className="text-center max-w-3xl mx-auto mb-12">
                   <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                     {CLIENT_CONFIG.ctaTitle}{" "}
-                    <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                    <span className="brand-highlight">
                       {CLIENT_CONFIG.ctaHighlight}
                     </span>
                   </h2>
@@ -518,7 +518,7 @@ export default function PropuestaCliente() {
                     {CLIENT_CONFIG.ctaDescription}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                    <Button size="lg" className="bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40 transition-all hover:scale-105" asChild>
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all hover:scale-105" asChild>
                       <a href={buildWALink(CLIENT_CONFIG.executivePhoneRaw, `Hola! Quisiera agendar una reunión para revisar la propuesta de ${CLIENT_CONFIG.projectTitle} en detalle. ¿Cuándo podemos coordinar?`)} target="_blank" rel="noopener noreferrer">
                         Agendar Reunión
                         <ChevronRight className="w-5 h-5 ml-2" />
@@ -536,14 +536,14 @@ export default function PropuestaCliente() {
                   </div>
                   <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border hover:border-accent/50 hover:bg-card transition-all">
                     <div className="text-sm text-muted-foreground mb-2 font-medium uppercase tracking-wider">Teléfono</div>
-                    <a href={`tel:+${CLIENT_CONFIG.executivePhoneRaw}`} className="text-foreground font-bold text-lg hover:text-accent transition-colors inline-flex items-center gap-2 group">
+                    <a href={`tel:+${CLIENT_CONFIG.executivePhoneRaw}`} className="text-foreground font-bold text-lg underline decoration-transparent hover:decoration-primary decoration-2 underline-offset-4 transition-colors inline-flex items-center gap-2 group">
                       {CLIENT_CONFIG.executivePhone}
                       <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </div>
                   <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border hover:border-accent/50 hover:bg-card transition-all">
                     <div className="text-sm text-muted-foreground mb-2 font-medium uppercase tracking-wider">Email</div>
-                    <a href={`mailto:${CLIENT_CONFIG.executiveEmail}`} className="text-foreground font-bold text-lg hover:text-accent transition-colors inline-flex items-center gap-2 group">
+                    <a href={`mailto:${CLIENT_CONFIG.executiveEmail}`} className="text-foreground font-bold text-lg underline decoration-transparent hover:decoration-primary decoration-2 underline-offset-4 transition-colors inline-flex items-center gap-2 group">
                       {CLIENT_CONFIG.executiveEmail}
                       <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>

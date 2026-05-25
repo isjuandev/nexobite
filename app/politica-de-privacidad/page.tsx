@@ -11,7 +11,7 @@ export default function PoliticaDePrivacidad() {
   const sections = [
     {
       title: "1. Información General",
-      icon: <Shield className="w-6 h-6 text-accent" />,
+      icon: <Shield className="w-6 h-6 text-foreground" />,
       content: (
         <p>
           En NexoBite, valoramos y respetamos tu privacidad. Esta política de privacidad y seguridad describe cómo recopilamos, utilizamos, protegemos y compartimos la información personal de nuestros usuarios y clientes que visitan nuestro sitio web y utilizan nuestros servicios tecnológicos, de desarrollo web, chatbots, redes sociales, fotografía y video.
@@ -20,7 +20,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "2. Recopilación de Información",
-      icon: <Eye className="w-6 h-6 text-accent" />,
+      icon: <Eye className="w-6 h-6 text-foreground" />,
       content: (
         <>
           <p className="mb-4">Podemos recopilar información personal que nos proporcionas directamente cuando:</p>
@@ -32,7 +32,7 @@ export default function PoliticaDePrivacidad() {
               "Nos proporcionas datos como tu nombre, número de teléfono, correo electrónico o detalles de tu empresa para la prestación del servicio."
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-muted-foreground group">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 transition-transform group-hover:scale-110 group-hover:text-accent" />
+                <CheckCircle2 className="w-5 h-5 text-foreground shrink-0 transition-transform group-hover:scale-110" />
                 <span>{item}</span>
               </li>
             ))}
@@ -42,7 +42,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "3. Uso de la Información",
-      icon: <RefreshCw className="w-6 h-6 text-accent" />,
+      icon: <RefreshCw className="w-6 h-6 text-foreground" />,
       content: (
         <>
           <p className="mb-4">La información recopilada es utilizada para:</p>
@@ -55,7 +55,7 @@ export default function PoliticaDePrivacidad() {
               "Detectar y prevenir posibles fraudes u otras actividades ilícitas."
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-muted-foreground group">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 transition-transform group-hover:scale-110 group-hover:text-accent" />
+                <CheckCircle2 className="w-5 h-5 text-foreground shrink-0 transition-transform group-hover:scale-110" />
                 <span>{item}</span>
               </li>
             ))}
@@ -65,7 +65,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "4. Protección y Seguridad de los Datos",
-      icon: <Lock className="w-6 h-6 text-accent" />,
+      icon: <Lock className="w-6 h-6 text-foreground" />,
       content: (
         <div className="space-y-4">
           <p>
@@ -79,7 +79,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "5. Compartición de Información",
-      icon: <Share2 className="w-6 h-6 text-accent" />,
+      icon: <Share2 className="w-6 h-6 text-foreground" />,
       content: (
         <>
           <p className="mb-4">
@@ -87,11 +87,11 @@ export default function PoliticaDePrivacidad() {
           </p>
           <ul className="space-y-4">
             <li className="p-4 rounded-xl border border-border/50 bg-background hover-lift transition-all">
-              <strong className="block text-primary mb-1">Proveedores de Servicios:</strong>
+              <strong className="block text-foreground mb-1">Proveedores de Servicios:</strong>
               <span className="text-muted-foreground">Empresas externas que empleamos para facilitar nuestros servicios (como hosting, integraciones de IA o procesadores de pago), las cuales están obligadas a resguardar la confidencialidad de tus datos.</span>
             </li>
             <li className="p-4 rounded-xl border border-border/50 bg-background hover-lift transition-all">
-              <strong className="block text-primary mb-1">Cumplimiento de la Ley:</strong>
+              <strong className="block text-foreground mb-1">Cumplimiento de la Ley:</strong>
               <span className="text-muted-foreground">Cuando creemos de buena fe que es necesario para cumplir con un requerimiento legal o proteger nuestros derechos, propiedad o seguridad.</span>
             </li>
           </ul>
@@ -100,7 +100,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "6. Derechos del Usuario",
-      icon: <UserCheck className="w-6 h-6 text-accent" />,
+      icon: <UserCheck className="w-6 h-6 text-foreground" />,
       content: (
         <>
           <p className="mb-4">Tienes el derecho a:</p>
@@ -111,12 +111,12 @@ export default function PoliticaDePrivacidad() {
               "Retirar en cualquier momento el consentimiento previamente otorgado para recibir comunicaciones de marketing o contacto comercial."
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-muted-foreground group">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 transition-transform group-hover:scale-110 group-hover:text-accent" />
+                <CheckCircle2 className="w-5 h-5 text-foreground shrink-0 transition-transform group-hover:scale-110" />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
-          <p className="text-primary font-medium">
+          <p className="text-foreground font-medium">
             Para ejercer estos derechos, simplemente envíanos un mensaje a través de nuestros canales oficiales de atención por WhatsApp o correo electrónico.
           </p>
         </>
@@ -124,7 +124,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "7. Contacto y Cambios",
-      icon: <MessageCircle className="w-6 h-6 text-accent" />,
+      icon: <MessageCircle className="w-6 h-6 text-foreground" />,
       content: (
         <div className="space-y-4">
           <p>
@@ -132,14 +132,14 @@ export default function PoliticaDePrivacidad() {
           </p>
           <div className="mt-6 p-6 rounded-2xl bg-linear-to-br from-primary/10 via-primary/5 to-accent/5 flex flex-col sm:flex-row items-center justify-between gap-4 border border-primary/10">
             <div>
-              <h4 className="font-display font-semibold text-primary mb-1">¿Tienes más dudas?</h4>
+              <h4 className="font-display font-semibold text-foreground mb-1">¿Tienes más dudas?</h4>
               <p className="text-sm text-muted-foreground">Estamos aquí para ayudarte a entender cómo protegemos tu información.</p>
             </div>
             <a
               href="https://wa.me/+573009459026?text=Hola!%20Tengo%20una%20duda%20sobre%20la%20pol%C3%ADtica%20de%20privacidad%20de%20NexoBite."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full bg-primary text-white hover-glow transition-all flex items-center gap-2 whitespace-nowrap"
+              className="px-6 py-3 rounded-full bg-primary text-primary-foreground hover-glow transition-all flex items-center gap-2 whitespace-nowrap"
             >
               <MessageCircle className="w-4 h-4" />
               Contactar Asesor
@@ -163,16 +163,16 @@ export default function PoliticaDePrivacidad() {
           <div className="max-w-3xl mx-auto text-center">
             <AnimatedSection>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-secondary/50 px-4 py-1.5 backdrop-blur-sm">
-                <Shield className="w-4 h-4 text-accent animate-pulse" />
-                <span className="text-sm font-medium bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                <Shield className="w-4 h-4 text-foreground animate-pulse" />
+                <span className="brand-kicker text-sm font-medium">
                   Legal y Seguridad
                 </span>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={100}>
-              <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight text-primary">
-                Política de Privacidad y <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">Seguridad</span>
+              <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight text-foreground">
+                Política de Privacidad y <span className="brand-highlight">Seguridad</span>
               </h1>
             </AnimatedSection>
           </div>
@@ -194,12 +194,12 @@ export default function PoliticaDePrivacidad() {
                       <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-accent/10 transition-colors">
                         {section.icon}
                       </div>
-                      <h2 className="font-display text-2xl font-bold text-primary">
+                      <h2 className="font-display text-2xl font-bold text-foreground">
                         {section.title}
                       </h2>
                     </div>
 
-                    <div className="prose prose-slate dark:prose-invert max-w-none font-sans text-foreground/90 leading-relaxed">
+                    <div className="prose prose-slate prose-invert max-w-none font-sans text-foreground/90 leading-relaxed">
                       {section.content}
                     </div>
                   </div>

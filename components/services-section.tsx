@@ -45,11 +45,11 @@ export function ServicesSection() {
       <ParticleField variant="accent" density="medium" speed="slow" />
       <Container className="relative z-10">
         <AnimatedSection>
-          <div className="mb-4 text-sm font-medium uppercase tracking-wider bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+          <div className="brand-kicker mb-4 text-sm font-medium uppercase tracking-wider">
             Qué hacemos
           </div>
           <h2 className="mb-4 max-w-2xl text-balance text-3xl font-bold text-foreground sm:text-4xl">
-            <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="brand-highlight">
               Soluciones diseñadas para convertir más,
             </span>{" "}
             no solo para “estar online”
@@ -63,7 +63,7 @@ export function ServicesSection() {
 
         <AnimatedSection delay={100}>
           <div className="mb-8">
-            <h3 className="mb-6 text-xl font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+            <h3 className="brand-highlight mb-6 text-xl font-bold">
               Desarrollo y Automatización
             </h3>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -76,7 +76,7 @@ export function ServicesSection() {
                   >
                     <CardHeader>
                       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/10">
-                        <service.icon className="h-6 w-6 text-accent transition-colors duration-300 group-hover:text-primary" />
+                        <service.icon className="h-6 w-6 text-foreground transition-colors duration-300" />
                       </div>
                       <CardTitle className="text-foreground">
                         {service.title}

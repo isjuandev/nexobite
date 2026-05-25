@@ -1,171 +1,144 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* ============================================================
+   NEXOBITE — Identidad visual oficial: navy, naranja, blanco, slate
+   ============================================================ */
 
-/* nexobite DIGITAL - Identidad Visual Oficial */
-/* Paleta: Azul Profundo (#1a365d) + Naranja Energético (#ed8936) */
-/* MODO OSCURO PREDETERMINADO */
+/* ── Tokens de marca y modo oscuro único ── */
 :root {
-  /* Colores de marca en formato RGB */
-  --nexobite-blue: 26 54 93;
-  /* Azul Profundo #1a365d */
-  --nexobite-orange: 237 137 54;
-  /* Naranja Energético #ed8936 */
-  --nexobite-gray-dark: 45 55 72;
-  /* Gris Oscuro #2d3748 */
-  --nexobite-white: 255 255 255;
-  /* Blanco #ffffff */
-
-  /* Sistema de colores - MODO OSCURO */
-  --background: #0f172a;
-  /* Azul muy oscuro */
-  --foreground: #f8fafc;
-  --card: #1e293b;
-  --card-foreground: #f8fafc;
-  --popover: #1e293b;
-  --popover-foreground: #f8fafc;
-  --primary: #3b82f6;
-  /* Azul más brillante para contraste */
-  --primary-foreground: #ffffff;
-  --secondary: #334155;
-  --secondary-foreground: #f8fafc;
-  --muted: #334155;
-  --muted-foreground: #94a3b8;
-  --accent: #fb923c;
-  /* Naranja brillante */
-  --accent-foreground: #ffffff;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #334155;
-  --input: #334155;
-  --ring: #3b82f6;
-  --chart-1: #3b82f6;
-  --chart-2: #fb923c;
-  --chart-3: #22c55e;
-  --chart-4: #a855f7;
-  --chart-5: #f472b6;
+  --brand-navy:   #0f172a;
+  --brand-orange: #ed8936;
+  --brand-white:  #ffffff;
+  --brand-slate:  #94a3b8;
   --radius: 0.5rem;
-}
 
-.light {
-  /* Modo claro — identidad visual NexoBite */
-  --background: #eef2f7;
-  /* Gris azulado muy suave para que los cards blancos destaquen */
-  --foreground: #1e293b;
-  /* Slate oscuro para texto legible */
-  --card: #ffffff;
-  --card-foreground: #1e293b;
-  --popover: #ffffff;
-  --popover-foreground: #1e293b;
-  --primary: #2563eb;
-  /* Azul vibrante (más visible que #1a365d en fondos claros) */
-  --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  /* Gris azulado claro */
-  --secondary-foreground: #1e293b;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --accent: #ea580c;
-  /* Naranja intenso (más saturado para light bg) */
-  --accent-foreground: #ffffff;
-  --destructive: #dc2626;
+  --background:         #0f172a;
+  --foreground:         #ffffff;
+
+  --card:               #131f35;
+  --card-foreground:    #ffffff;
+
+  --popover:            #131f35;
+  --popover-foreground: #ffffff;
+
+  --primary:            #ed8936;
+  --primary-foreground: #0f172a;
+
+  --secondary:          #1a2744;
+  --secondary-foreground: #ffffff;
+
+  --muted:              #1a2744;
+  --muted-foreground:   #94a3b8;
+
+  --accent:             #ed8936;
+  --accent-foreground:  #0f172a;
+
+  --destructive:        #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #cbd5e1;
-  --input: #e2e8f0;
-  --ring: #2563eb;
-  --chart-1: #2563eb;
-  /* Azul */
-  --chart-2: #ea580c;
-  /* Naranja */
-  --chart-3: #10b981;
-  /* Verde */
-  --chart-4: #8b5cf6;
-  /* Púrpura */
-  --chart-5: #ec4899;
-  /* Rosa */
+
+  --border:             #1e3357;
+  --input:              #1c2f50;
+  --ring:               #ed8936;
+
+  --chart-1: #ed8936;
+  --chart-2: #ffffff;
+  --chart-3: #94a3b8;
+  --chart-4: #f0a865;
+  --chart-5: #263556;
+
+  --sidebar:                    #0c1526;
+  --sidebar-foreground:         #ffffff;
+  --sidebar-primary:            #ed8936;
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent:             #1a2744;
+  --sidebar-accent-foreground:  #ffffff;
+  --sidebar-border:             #1e3357;
+  --sidebar-ring:               #ed8936;
 }
 
+/* ============================================================
+   @theme inline — expone tokens de marca y semánticos a Tailwind.
+   ============================================================ */
 @theme inline {
-  /* Tipografías oficiales nexobite */
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  /* Cuerpo de texto */
-  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
-  /* Títulos */
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  /* Código/técnico */
-  /* Colores usando formato RGB para compatibilidad */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+  /* Tipografías */
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
 
-  /* Colores de marca accesibles */
-  --color-nexobite-blue: var(--nexobite-blue);
-  --color-nexobite-orange: var(--nexobite-orange);
-  --color-nexobite-gray-dark: var(--nexobite-gray-dark);
+  /* Colores de marca */
+  --color-brand-navy:   #0f172a;
+  --color-brand-orange: #ed8936;
+  --color-brand-white:  #ffffff;
+  --color-brand-slate:  #94a3b8;
+
+  /* Colores semánticos del modo oscuro */
+  --color-background:         var(--background);
+  --color-foreground:         var(--foreground);
+
+  --color-card:               var(--card);
+  --color-card-foreground:    var(--card-foreground);
+
+  --color-popover:            var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary:            var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary:            var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted:            var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent:            var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive:            var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input:  var(--input);
+  --color-ring:   var(--ring);
+
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
+
+  --color-sidebar:                    var(--sidebar);
+  --color-sidebar-foreground:         var(--sidebar-foreground);
+  --color-sidebar-primary:            var(--sidebar-primary);
   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-accent:             var(--sidebar-accent);
+  --color-sidebar-accent-foreground:  var(--sidebar-accent-foreground);
+  --color-sidebar-border:             var(--sidebar-border);
+  --color-sidebar-ring:               var(--sidebar-ring);
 
-  /* Added custom keyframes for animations */
+  /* Radio */
+  --radius-sm: calc(0.5rem - 4px);
+  --radius-md: calc(0.5rem - 2px);
+  --radius-lg: 0.5rem;
+  --radius-xl: calc(0.5rem + 4px);
+
+  /* Animaciones */
   --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
-  --animate-float: float 6s ease-in-out infinite;
-
-  @keyframes pulse-glow {
-
-    0%,
-    100% {
-      box-shadow: 0 0 0 0 rgba(237, 137, 54, 0.4);
-    }
-
-    50% {
-      box-shadow: 0 0 15px 8px rgba(237, 137, 54, 0.2);
-    }
-  }
-
-  @keyframes float {
-
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(-10px);
-    }
-  }
+  --animate-float:      float 6s ease-in-out infinite;
 }
 
+/* Keyframes fuera de @theme (scope global correcto) */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(237, 137, 54, 0.4); }
+  50%       { box-shadow: 0 0 15px 8px rgba(237, 137, 54, 0.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ── Base ── */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -173,43 +146,34 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 120px;
-    /* Espacio suficiente para el navbar flotante */
+    scroll-padding-top: 100px;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
   }
 
-  /* Tipografía: usar Poppins para títulos */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 700;
   }
 
-  /* Estilos mejorados para secciones */
   section {
     position: relative;
     isolation: isolate;
   }
 
-  /* Efecto visual sutil en bordes de sección */
   section[id] {
     scroll-margin-top: 100px;
   }
 }
 
-/* Added micro-interaction utility classes */
+/* ── Utilidades ── */
 @layer utilities {
+  /* Micro-interacciones */
   .hover-lift {
     @apply transition-all duration-300;
   }
-
   .hover-lift:hover {
     @apply -translate-y-1 shadow-lg;
   }
@@ -217,45 +181,51 @@
   .hover-glow {
     @apply transition-all duration-300;
   }
-
   .hover-glow:hover {
     box-shadow: 0 0 20px rgba(237, 137, 54, 0.4);
     border-color: rgba(237, 137, 54, 0.5);
   }
 
+  /* Tipografía de marca */
+  .brand-highlight {
+    color: var(--brand-orange);
+    text-decoration: none;
+  }
+
+  .brand-kicker {
+    color: var(--foreground);
+    border-left: 0.2rem solid var(--primary);
+    padding-left: 0.625rem;
+  }
+
+  /* Link con subrayado animado */
   .link-underline {
     @apply relative;
   }
-
   .link-underline::after {
     content: "";
     @apply absolute bottom-0 left-0 h-px w-0 bg-primary transition-all duration-300;
   }
-
   .link-underline:hover::after {
     @apply w-full;
   }
 
-  /* Asegurar que la navbar siempre esté por encima */
+  /* Navbar sobre todo */
   header {
     isolation: isolate;
   }
 
   /* Ocultar scrollbar en carruseles */
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
 
-  /* Animaciones personalizadas */
+  /* Clases de animación */
   .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
   }
-
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }

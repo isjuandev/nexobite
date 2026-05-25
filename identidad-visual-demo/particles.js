@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const particleCount = 70;
     const connectionDistance = 150;
     const mouseInfluence = 200;
-    const colors = ["59, 130, 246", "251, 146, 60"]; // Azul y Naranja RGB
+    const colors = ["237, 137, 54", "148, 163, 184"]; // Naranja y slate oficiales
 
     function resize() {
         canvas.width = window.innerWidth;

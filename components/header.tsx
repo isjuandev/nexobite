@@ -1,12 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/mode-toggle";
+import { BrandLogo } from "@/components/brand-logo";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,8 +92,8 @@ export function Header() {
 
       <div
         className={`mx-auto max-w-7xl transition-all duration-300 ${isScrolled
-          ? "bg-card backdrop-blur-xl shadow-lg shadow-primary/5 border border-border/50"
-          : "bg-card/95 backdrop-blur-lg border border-border/30"
+          ? "bg-card backdrop-blur-xl shadow-lg shadow-brand-navy/10 border border-border/60"
+          : "bg-card/95 backdrop-blur-lg border border-border/45"
           } rounded-2xl`}
       >
         <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -102,18 +101,7 @@ export function Header() {
             href="/"
             className="group flex items-center gap-2 transition-transform duration-300 hover:scale-105"
           >
-            <div className="relative flex h-9 w-9 items-center justify-center transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/30 group-hover:scale-110 overflow-hidden">
-              <Image
-                src="/nexobite-logo.png"
-                alt="NexoBite - Agencia de marketing digital y desarrollo web en Colombia"
-                width={32}
-                height={32}
-              />
-              <div className="absolute inset-0 rounded-xl bg-linear-to-br from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50" />
-            </div>
-            <span className="text-lg font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-              NEXOBITE
-            </span>
+            <BrandLogo markClassName="h-9 w-9" />
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex">
@@ -130,7 +118,7 @@ export function Header() {
                 >
                   <span>Propuestas</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "proposals"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "proposals"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -147,7 +135,7 @@ export function Header() {
                 >
                   <span>Opciones de Pago</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "payment"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "payment"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -164,7 +152,7 @@ export function Header() {
                 >
                   <span>Contacto</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "contact"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "contact"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -185,7 +173,7 @@ export function Header() {
                 >
                   <span>Servicios</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "services"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "services"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -202,7 +190,7 @@ export function Header() {
                 >
                   <span>Cómo Funciona</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "how-it-works"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "how-it-works"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -219,7 +207,7 @@ export function Header() {
                 >
                   <span>Planes</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "mini-plans"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "mini-plans"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -236,7 +224,7 @@ export function Header() {
                 >
                   <span>Paquetes</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-linear-to-r from-primary to-accent transition-all duration-300 transform -translate-x-1/2 ${activeSection === "packages"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "packages"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -248,7 +236,6 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            <ModeToggle />
             <Button
               variant="gradient"
               asChild
@@ -260,22 +247,24 @@ export function Header() {
                 rel="noopener noreferrer"
               >
                 <span className="relative z-10">Hablar por WhatsApp</span>
-                <div className="absolute inset-0 bg-linear-to-r from-accent to-primary opacity-0 transition-opacity duration-300 hover:opacity-100" />
+                <div className="absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 hover:opacity-100" />
               </a>
             </Button>
           </div>
 
-          <button
-            className="relative text-foreground md:hidden hover:text-primary transition-colors"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+          <div className="md:hidden">
+            <button
+              className="relative rounded-md p-2 text-foreground transition-colors hover:bg-primary/10"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
 
         {isMenuOpen && (
@@ -287,7 +276,7 @@ export function Header() {
                   <Link
                     href="#proposals"
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "proposals"
-                      ? "text-accent font-bold"
+                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "proposals")}
@@ -297,7 +286,7 @@ export function Header() {
                   <Link
                     href="#payment"
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "payment"
-                      ? "text-accent font-bold"
+                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "payment")}
@@ -307,7 +296,7 @@ export function Header() {
                   <Link
                     href="#contact"
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "contact"
-                      ? "text-accent font-bold"
+                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "contact")}
@@ -321,7 +310,7 @@ export function Header() {
                   <Link
                     href={isNotHomePage ? "/#services" : "#services"}
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "services"
-                      ? "text-accent font-bold"
+                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "services")}
@@ -331,7 +320,7 @@ export function Header() {
                   <Link
                     href={isNotHomePage ? "/#how-it-works" : "#how-it-works"}
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "how-it-works"
-                      ? "text-accent font-bold"
+                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "how-it-works")}
@@ -341,7 +330,7 @@ export function Header() {
                   <Link
                     href={isNotHomePage ? "/#mini-plans" : "#mini-plans"}
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "mini-plans"
-                      ? "text-accent font-bold"
+                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "mini-plans")}
@@ -351,7 +340,7 @@ export function Header() {
                   <Link
                     href={isNotHomePage ? "/#packages" : "#packages"}
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "packages"
-                      ? "text-accent font-bold"
+                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "packages")}
