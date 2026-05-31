@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/brand-logo";
 
@@ -259,16 +259,16 @@ export function Header() {
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6" />
+                <FaTimes className="h-6 w-6" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <FaBars className="h-6 w-6" />
               )}
             </button>
           </div>
         </div>
 
         {isMenuOpen && (
-          <div className="border-t border-border/50 bg-card/50 backdrop-blur-sm md:hidden rounded-b-2xl">
+          <div className="border-t border-border/50 bg-card backdrop-blur-sm md:hidden rounded-b-2xl">
             <nav className="flex flex-col gap-4 p-4">
               {isProposalPage ? (
                 // Navegación móvil para páginas de propuestas

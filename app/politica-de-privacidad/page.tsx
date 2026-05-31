@@ -3,14 +3,14 @@ import { Footer } from "@/components/footer";
 import { Container } from "@/components/container";
 import { ParticleField } from "@/components/particle-field";
 import { AnimatedSection } from "@/components/animated-section";
-import { Shield, Lock, Eye, CheckCircle2, Share2, UserCheck, RefreshCw, MessageCircle } from "lucide-react";
+import { FaShieldAlt, FaLock, FaEye, FaCheckCircle, FaShareAlt, FaUserCheck, FaSync, FaWhatsapp } from "react-icons/fa";
 
 export default function PoliticaDePrivacidad() {
 
   const sections = [
     {
       title: "1. Información General",
-      icon: <Shield className="w-6 h-6 text-foreground" />,
+      icon: <FaShieldAlt className="w-6 h-6 text-foreground" />,
       content: (
         <p>
           En NexoBite, valoramos y respetamos tu privacidad. Esta política de privacidad y seguridad describe cómo recopilamos, utilizamos, protegemos y compartimos la información personal de nuestros usuarios y clientes que visitan nuestro sitio web y utilizan nuestros servicios tecnológicos, de desarrollo web, chatbots, redes sociales, fotografía y video.
@@ -19,7 +19,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "2. Recopilación de Información",
-      icon: <Eye className="w-6 h-6 text-foreground" />,
+      icon: <FaEye className="w-6 h-6 text-foreground" />,
       content: (
         <>
           <p className="mb-4">Podemos recopilar información personal que nos proporcionas directamente cuando:</p>
@@ -31,7 +31,7 @@ export default function PoliticaDePrivacidad() {
               "Nos proporcionas datos como tu nombre, número de teléfono, correo electrónico o detalles de tu empresa para la prestación del servicio."
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-muted-foreground group">
-                <CheckCircle2 className="w-5 h-5 text-foreground shrink-0 transition-transform group-hover:scale-110" />
+                <FaCheckCircle className="w-5 h-5 text-foreground shrink-0 transition-transform group-hover:scale-110" />
                 <span>{item}</span>
               </li>
             ))}
@@ -41,7 +41,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "3. Uso de la Información",
-      icon: <RefreshCw className="w-6 h-6 text-foreground" />,
+      icon: <FaSync className="w-6 h-6 text-foreground" />,
       content: (
         <>
           <p className="mb-4">La información recopilada es utilizada para:</p>
@@ -54,7 +54,7 @@ export default function PoliticaDePrivacidad() {
               "Detectar y prevenir posibles fraudes u otras actividades ilícitas."
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-muted-foreground group">
-                <CheckCircle2 className="w-5 h-5 text-foreground shrink-0 transition-transform group-hover:scale-110" />
+                <FaCheckCircle className="w-5 h-5 text-foreground shrink-0 transition-transform group-hover:scale-110" />
                 <span>{item}</span>
               </li>
             ))}
@@ -64,7 +64,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "4. Protección y Seguridad de los Datos",
-      icon: <Lock className="w-6 h-6 text-foreground" />,
+      icon: <FaLock className="w-6 h-6 text-foreground" />,
       content: (
         <div className="space-y-4">
           <p>
@@ -78,7 +78,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "5. Compartición de Información",
-      icon: <Share2 className="w-6 h-6 text-foreground" />,
+      icon: <FaShareAlt className="w-6 h-6 text-foreground" />,
       content: (
         <>
           <p className="mb-4">
@@ -99,7 +99,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "6. Derechos del Usuario",
-      icon: <UserCheck className="w-6 h-6 text-foreground" />,
+      icon: <FaUserCheck className="w-6 h-6 text-foreground" />,
       content: (
         <>
           <p className="mb-4">Tienes el derecho a:</p>
@@ -110,7 +110,7 @@ export default function PoliticaDePrivacidad() {
               "Retirar en cualquier momento el consentimiento previamente otorgado para recibir comunicaciones de marketing o contacto comercial."
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-muted-foreground group">
-                <CheckCircle2 className="w-5 h-5 text-foreground shrink-0 transition-transform group-hover:scale-110" />
+                <FaCheckCircle className="w-5 h-5 text-foreground shrink-0 transition-transform group-hover:scale-110" />
                 <span>{item}</span>
               </li>
             ))}
@@ -123,13 +123,13 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "7. Contacto y Cambios",
-      icon: <MessageCircle className="w-6 h-6 text-foreground" />,
+      icon: <FaWhatsapp className="w-6 h-6 text-foreground" />,
       content: (
         <div className="space-y-4">
           <p>
             NexoBite se reserva el derecho de actualizar o modificar esta política de privacidad en cualquier momento. Notificaremos cualquier cambio importante publicando la nueva versión en esta misma página.
           </p>
-          <div className="mt-6 p-6 rounded-2xl bg-linear-to-br from-primary/10 via-primary/5 to-accent/5 flex flex-col sm:flex-row items-center justify-between gap-4 border border-primary/10">
+          <div className="mt-6 p-6 rounded-2xl bg-card flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <h4 className="font-display font-semibold text-foreground mb-1">¿Tienes más dudas?</h4>
               <p className="text-sm text-muted-foreground">Estamos aquí para ayudarte a entender cómo protegemos tu información.</p>
@@ -140,7 +140,7 @@ export default function PoliticaDePrivacidad() {
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-full bg-primary text-primary-foreground hover-glow transition-all flex items-center gap-2 whitespace-nowrap"
             >
-              <MessageCircle className="w-4 h-4" />
+              <FaWhatsapp className="w-4 h-4" />
               Contactar Asesor
             </a>
           </div>
@@ -162,7 +162,7 @@ export default function PoliticaDePrivacidad() {
           <div className="max-w-3xl mx-auto text-center">
             <AnimatedSection>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-secondary/50 px-4 py-1.5 backdrop-blur-sm">
-                <Shield className="w-4 h-4 text-foreground animate-pulse" />
+                <FaShieldAlt className="w-4 h-4 text-foreground animate-pulse" />
                 <span className="brand-kicker text-sm font-medium">
                   Legal y Seguridad
                 </span>
@@ -186,11 +186,11 @@ export default function PoliticaDePrivacidad() {
               <AnimatedSection key={index} delay={100 + (index * 50)}>
                 <div className="group relative bg-secondary/10 rounded-2xl p-6 md:p-8 shadow-sm border border-border/50 backdrop-blur-sm hover-lift hover:border-accent/30 transition-all duration-300">
                   {/* Subtle glow effect on hover behind the card */}
-                  <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                  <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-primary/5 to-accent/5 opacity-0 transition-opacity pointer-events-none" />
 
                   <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-accent/10 transition-colors">
+                      <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center border border-primary/10 transition-colors">
                         {section.icon}
                       </div>
                       <h2 className="font-display text-2xl font-bold text-foreground">

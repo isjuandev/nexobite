@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { FaCheck, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -144,7 +144,7 @@ export function PackagesSection() {
             className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-lg hover:bg-card transition-all"
             aria-label="Anterior"
           >
-            <ChevronLeft className="h-6 w-6 text-foreground" />
+            <FaChevronLeft className="h-6 w-6 text-foreground" />
           </button>
           <button
             type="button"
@@ -152,7 +152,7 @@ export function PackagesSection() {
             className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-lg hover:bg-card transition-all"
             aria-label="Siguiente"
           >
-            <ChevronRight className="h-6 w-6 text-foreground" />
+            <FaChevronRight className="h-6 w-6 text-foreground" />
           </button>
 
           <div
@@ -205,7 +205,7 @@ export function PackagesSection() {
                             key={`${feature}-${featureIndex}`}
                             className="flex items-start gap-3"
                           >
-                            <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                            <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                             <span className="text-sm text-muted-foreground">
                               {feature}
                             </span>
@@ -288,7 +288,7 @@ export function PackagesSection() {
                   <ul className="space-y-3">
                     {pkg.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                        <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                         <span className="text-sm text-muted-foreground">
                           {feature}
                         </span>

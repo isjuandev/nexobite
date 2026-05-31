@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { FaArrowRight } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { ParticleField } from "@/components/particle-field";
 import { AnimatedSection } from "@/components/animated-section";
@@ -57,7 +57,7 @@ export function HeroSection() {
                   rel="noopener noreferrer"
                 >
                   Revisar mi caso por WhatsApp
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <FaArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>
               <Button

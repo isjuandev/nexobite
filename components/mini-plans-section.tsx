@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { FaAccessibleIcon, FaCheck, FaCheckCircle, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -179,7 +179,7 @@ function MobilePlansCarousel({ category }: { category: Category }) {
         className="absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full border border-border/50 bg-card/80 p-2 shadow-lg backdrop-blur-sm transition-all hover:bg-card"
         aria-label="Anterior"
       >
-        <ChevronLeft className="h-6 w-6 text-foreground" />
+        <FaChevronLeft className="h-6 w-6 text-foreground" />
       </button>
       <button
         type="button"
@@ -187,7 +187,7 @@ function MobilePlansCarousel({ category }: { category: Category }) {
         className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full border border-border/50 bg-card/80 p-2 shadow-lg backdrop-blur-sm transition-all hover:bg-card"
         aria-label="Siguiente"
       >
-        <ChevronRight className="h-6 w-6 text-foreground" />
+        <FaChevronRight className="h-6 w-6 text-foreground" />
       </button>
 
       <div ref={carouselRef} className="overflow-hidden pb-8">
@@ -230,7 +230,7 @@ function MobilePlansCarousel({ category }: { category: Category }) {
                       {plan.price}
                     </span>
                     {plan.savings && (
-                      <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                      <div className="inline-flex items-center gap-1 rounded-full bg-primary px-2.5 py-0.5 text-xs font-semibold text-foreground">
                         ✓ {plan.savings}
                       </div>
                     )}
@@ -238,7 +238,7 @@ function MobilePlansCarousel({ category }: { category: Category }) {
                   <ul className="space-y-3">
                     {plan.includes.map((item) => (
                       <li key={item} className="flex items-start gap-3">
-                        <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                        <FaCheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
                         <span className="text-sm text-muted-foreground">
                           {item}
                         </span>
@@ -324,7 +324,7 @@ export function MiniPlansSection() {
                 key={cat.id}
                 onClick={() => setSelected(cat.id)}
                 className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 snap-center ${selected === cat.id
-                  ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
+                  ? "bg-primary text-foreground shadow-md shadow-primary/20"
                   : "bg-card/40 text-muted-foreground hover:bg-card/60"
                   }`}
                 aria-pressed={selected === cat.id}
@@ -410,7 +410,7 @@ export function MiniPlansSection() {
                         <ul className="space-y-3">
                           {p.includes.map((inc) => (
                             <li key={inc} className="flex items-start gap-3">
-                              <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                              <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                               <span className="text-sm text-muted-foreground">
                                 {inc}
                               </span>

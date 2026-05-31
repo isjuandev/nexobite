@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/animated-section";
 import { ParticleField } from "@/components/particle-field";
@@ -12,9 +12,9 @@ export function CtaSection() {
       <ParticleField variant="primary" density="medium" speed="fast" />
       <Container className="relative z-10 text-center" size="md">
         <AnimatedSection>
-          <div className="relative mb-6 inline-flex h-16 w-16 animate-float items-center justify-center rounded-full bg-linear-to-br from-primary/20 to-accent/20">
+          <div className="relative mb-6 inline-flex h-16 w-16 animate-float items-center justify-center rounded-full bg-primary">
             <div className="absolute inset-0 rounded-full bg-primary opacity-20 blur-xl" />
-            <MessageCircle className="relative z-10 h-8 w-8 text-foreground" />
+            <FaWhatsapp className="relative z-10 h-8 w-8 text-foreground" />
           </div>
         </AnimatedSection>
 
@@ -42,9 +42,9 @@ export function CtaSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <MessageCircle className="mr-2 h-5 w-5 text-primary-foreground" />
+              <FaWhatsapp className="mr-2 h-5 w-5 text-foreground" />
               Hablar con un especialista
-              <ArrowRight className="ml-2 h-4 w-4 text-primary-foreground transition-transform group-hover:translate-x-1" />
+              <FaArrowRight className="ml-2 h-4 w-4 text-foreground transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
         </AnimatedSection>

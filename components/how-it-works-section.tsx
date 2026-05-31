@@ -1,26 +1,26 @@
 "use client";
 
-import { MessageSquare, Lightbulb, Rocket } from "lucide-react";
+import { FaCommentDots, FaLightbulb, FaRocket } from "react-icons/fa";
 import { AnimatedSection } from "@/components/animated-section";
 import { ParticleField } from "@/components/particle-field";
 import { Container } from "@/components/container";
 const steps = [
   {
-    icon: MessageSquare,
+    icon: FaCommentDots,
     step: "01",
     title: "Entendemos tu operación",
     description:
       "Analizamos cómo llegan tus clientes y dónde se generan cuellos de botella.",
   },
   {
-    icon: Lightbulb,
+    icon: FaLightbulb,
     step: "02",
     title: "Diseñamos la automatización",
     description:
       "Definimos flujos de respuesta y organización adaptados a tu negocio.",
   },
   {
-    icon: Rocket,
+    icon: FaRocket,
     step: "03",
     title: "Implementamos y optimizamos",
     description:
@@ -63,11 +63,11 @@ export function HowItWorksSection() {
                   />
                 )}
                 <div className="group relative flex flex-col items-center text-center md:items-start md:text-left px-4">
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/30">
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-card/30">
                     <div className="absolute inset-0 rounded-full bg-primary opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-40" />
-                    <step.icon className="relative z-10 h-6 w-6 text-primary-foreground" />
+                    <step.icon className="relative z-10 h-6 w-6 text-foreground" />
                   </div>
-                  <div className="mb-2 inline-flex rounded-full bg-primary px-2 py-0.5 text-sm font-medium text-primary-foreground">
+                  <div className="mb-2 inline-flex rounded-full bg-card px-2 py-0.5 text-sm font-medium text-foreground">
                     {step.step}
                   </div>
                   <h3 className="mb-4 text-xl font-semibold text-foreground">

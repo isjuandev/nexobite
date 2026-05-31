@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer";
 import { Container } from "@/components/container";
 import { AnimatedSection } from "@/components/animated-section";
 import { ParticleField } from "@/components/particle-field";
-import { FileText, Briefcase, CreditCard, ShieldAlert, Copyright, AlertTriangle, ShieldCheck, Scale, MessageCircle } from "lucide-react";
+import { FaFileAlt, FaBriefcase, FaCreditCard, FaExclamationTriangle, FaCopyright, FaShieldAlt, FaBalanceScale, FaWhatsapp } from "react-icons/fa";
 
 export default function CondicionesDelServicio() {
 
@@ -11,7 +11,7 @@ export default function CondicionesDelServicio() {
         {
             id: "aceptacion",
             title: "1. Aceptación de los Términos",
-            icon: <FileText className="h-6 w-6 text-foreground" />,
+            icon: <FaFileAlt className="h-6 w-6 text-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -26,7 +26,7 @@ export default function CondicionesDelServicio() {
         {
             id: "descripcion",
             title: "2. Descripción de los Servicios",
-            icon: <Briefcase className="h-6 w-6 text-foreground" />,
+            icon: <FaBriefcase className="h-6 w-6 text-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -41,7 +41,7 @@ export default function CondicionesDelServicio() {
         {
             id: "obligaciones",
             title: "3. Obligaciones del Cliente",
-            icon: <ShieldCheck className="h-6 w-6 text-foreground" />,
+            icon: <FaShieldAlt className="h-6 w-6 text-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -58,7 +58,7 @@ export default function CondicionesDelServicio() {
         {
             id: "pagos",
             title: "4. Pagos y Facturación",
-            icon: <CreditCard className="h-6 w-6 text-foreground" />,
+            icon: <FaCreditCard className="h-6 w-6 text-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -75,7 +75,7 @@ export default function CondicionesDelServicio() {
         {
             id: "propiedad-intelectual",
             title: "5. Propiedad Intelectual",
-            icon: <Copyright className="h-6 w-6 text-foreground" />,
+            icon: <FaCopyright className="h-6 w-6 text-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -90,7 +90,7 @@ export default function CondicionesDelServicio() {
         {
             id: "limitacion",
             title: "6. Limitación de Responsabilidad",
-            icon: <AlertTriangle className="h-6 w-6 text-foreground" />,
+            icon: <FaExclamationTriangle className="h-6 w-6 text-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -105,7 +105,7 @@ export default function CondicionesDelServicio() {
         {
             id: "modificaciones",
             title: "7. Modificaciones a los Términos",
-            icon: <Scale className="h-6 w-6 text-foreground" />,
+            icon: <FaBalanceScale className="h-6 w-6 text-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -132,7 +132,7 @@ export default function CondicionesDelServicio() {
                     <div className="max-w-4xl mx-auto text-center space-y-8">
                         <AnimatedSection>
                             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-secondary/50 px-4 py-1.5 backdrop-blur-sm">
-                                <ShieldAlert className="w-4 h-4 text-foreground animate-pulse" />
+                                <FaExclamationTriangle className="w-4 h-4 text-foreground animate-pulse" />
                                 <span className="brand-kicker text-sm font-medium">
                                     Aspectos Legales
                                 </span>
@@ -167,9 +167,9 @@ export default function CondicionesDelServicio() {
 
                                     <div className="flex flex-col md:flex-row gap-6">
                                         <div className="shrink-0">
-                                            <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 shadow-lg group-hover:bg-accent/10 transition-all duration-300 relative z-10 overflow-hidden">
+                                            <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center border border-primary shadow-lg transition-all duration-300 relative z-10 overflow-hidden">
                                                 {section.icon}
-                                                <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                                                <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-accent/5 opacity-0 transition-opacity duration-300 pointer-events-none" />
                                             </div>
                                         </div>
 
@@ -177,8 +177,8 @@ export default function CondicionesDelServicio() {
                                             <h2 className="text-2xl font-bold mb-4 text-foreground transition-colors duration-300">
                                                 {section.title}
                                             </h2>
-                                            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 hover-lift hover:border-accent/30 transition-all duration-300 shadow-sm relative overflow-hidden">
-                                                <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                                            <div className="bg-card backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 hover-lift hover:border-accent/30 transition-all duration-300 shadow-sm relative overflow-hidden">
+                                                <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-accent/5 opacity-0 transition-opacity pointer-events-none" />
                                                 <div className="relative z-10 prose prose-slate prose-invert max-w-none font-sans text-foreground/90">
                                                     {section.content}
                                                 </div>
@@ -191,8 +191,8 @@ export default function CondicionesDelServicio() {
 
                         {/* Contact Box */}
                         <AnimatedSection delay={800} className="mt-16">
-                            <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-card to-card/50 border border-border p-8 md:p-12 text-center shadow-2xl">
-                                <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-accent/10 pointer-events-none" />
+                            <div className="relative overflow-hidden rounded-3xl bg-card border border-border p-8 md:p-12 text-center shadow-2xl">
+                                <div className="absolute inset-0 bg-card pointer-events-none" />
                                 <div className="relative z-10 max-w-2xl mx-auto space-y-6">
                                     <h3 className="text-2xl md:text-3xl font-bold">¿Tienes alguna pregunta sobre nuestros términos?</h3>
                                     <p className="text-lg text-muted-foreground">Estamos aquí para resolver cualquier inquietud antes de comenzar un proyecto juntos.</p>
@@ -204,7 +204,7 @@ export default function CondicionesDelServicio() {
                                             rel="noopener noreferrer"
                                             className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover-glow transition-all flex items-center gap-2 group"
                                         >
-                                            <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                            <FaWhatsapp className="w-5 h-5 group-hover:scale-110 transition-transform" />
                                             Contactar Asesor
                                         </a>
                                         <a

@@ -16,7 +16,7 @@ import { Container } from "@/components/container";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ParticleField } from "@/components/particle-field";
-import { Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { FaCheck, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 // ============================================================
 // ✏️ CONFIGURACIÓN DEL CLIENTE — Editar aquí
@@ -267,10 +267,10 @@ export default function PropuestaCliente() {
           {/* Mobile */}
           <div className="lg:hidden relative pt-4">
             <button onClick={() => scrollCarousel(carouselRef, proposals.length, -1)} className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-lg hover:bg-card transition-all" aria-label="Anterior">
-              <ChevronLeft className="h-6 w-6 text-foreground" />
+              <FaChevronLeft className="h-6 w-6 text-foreground" />
             </button>
             <button onClick={() => scrollCarousel(carouselRef, proposals.length, 1)} className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-lg hover:bg-card transition-all" aria-label="Siguiente">
-              <ChevronRight className="h-6 w-6 text-foreground" />
+              <FaChevronRight className="h-6 w-6 text-foreground" />
             </button>
             <div ref={carouselRef} className="overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8">
               <div className="flex gap-6 px-4">
@@ -300,7 +300,7 @@ export default function PropuestaCliente() {
                         <ul className="space-y-3">
                           {p.features.map((f, i) => (
                             <li key={i} className="flex items-start gap-3">
-                              <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                              <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                               <span className="text-sm text-muted-foreground">{f}</span>
                             </li>
                           ))}
@@ -353,7 +353,7 @@ export default function PropuestaCliente() {
                     <ul className="space-y-3">
                       {p.features.map((f, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                          <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                           <span className="text-sm text-muted-foreground">{f}</span>
                         </li>
                       ))}
@@ -395,10 +395,10 @@ export default function PropuestaCliente() {
           {/* Mobile */}
           <div className="lg:hidden relative pt-4">
             <button onClick={() => scrollCarousel(paymentCarouselRef, paymentOptions.length, -1)} className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-lg hover:bg-card transition-all" aria-label="Anterior">
-              <ChevronLeft className="h-6 w-6 text-foreground" />
+              <FaChevronLeft className="h-6 w-6 text-foreground" />
             </button>
             <button onClick={() => scrollCarousel(paymentCarouselRef, paymentOptions.length, 1)} className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-lg hover:bg-card transition-all" aria-label="Siguiente">
-              <ChevronRight className="h-6 w-6 text-foreground" />
+              <FaChevronRight className="h-6 w-6 text-foreground" />
             </button>
             <div ref={paymentCarouselRef} className="overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8">
               <div className="flex gap-6 px-4">
@@ -425,7 +425,7 @@ export default function PropuestaCliente() {
                         <ul className="space-y-3">
                           {opt.features.map((f, i) => (
                             <li key={i} className="flex items-start gap-3">
-                              <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                              <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                               <span className="text-sm text-muted-foreground">{f}</span>
                             </li>
                           ))}
@@ -475,7 +475,7 @@ export default function PropuestaCliente() {
                     <ul className="space-y-3">
                       {opt.features.map((f, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                          <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
                           <span className="text-sm text-muted-foreground">{f}</span>
                         </li>
                       ))}
@@ -521,7 +521,7 @@ export default function PropuestaCliente() {
                     <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all hover:scale-105" asChild>
                       <a href={buildWALink(CLIENT_CONFIG.executivePhoneRaw, `Hola! Quisiera agendar una reunión para revisar la propuesta de ${CLIENT_CONFIG.projectTitle} en detalle. ¿Cuándo podemos coordinar?`)} target="_blank" rel="noopener noreferrer">
                         Agendar Reunión
-                        <ChevronRight className="w-5 h-5 ml-2" />
+                        <FaChevronRight className="w-5 h-5 ml-2" />
                       </a>
                     </Button>
                     <Button size="lg" variant="outline" className="border-2 border-border hover:bg-accent/10 hover:border-accent backdrop-blur-sm transition-all hover:scale-105">
@@ -538,14 +538,14 @@ export default function PropuestaCliente() {
                     <div className="text-sm text-muted-foreground mb-2 font-medium uppercase tracking-wider">Teléfono</div>
                     <a href={`tel:+${CLIENT_CONFIG.executivePhoneRaw}`} className="text-foreground font-bold text-lg underline decoration-transparent hover:decoration-primary decoration-2 underline-offset-4 transition-colors inline-flex items-center gap-2 group">
                       {CLIENT_CONFIG.executivePhone}
-                      <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <FaChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </div>
                   <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border hover:border-accent/50 hover:bg-card transition-all">
                     <div className="text-sm text-muted-foreground mb-2 font-medium uppercase tracking-wider">Email</div>
                     <a href={`mailto:${CLIENT_CONFIG.executiveEmail}`} className="text-foreground font-bold text-lg underline decoration-transparent hover:decoration-primary decoration-2 underline-offset-4 transition-colors inline-flex items-center gap-2 group">
                       {CLIENT_CONFIG.executiveEmail}
-                      <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <FaChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </div>
                 </div>

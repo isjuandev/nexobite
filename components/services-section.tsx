@@ -1,6 +1,6 @@
 "use client";
 
-import { Bot, Globe, Code } from "lucide-react";
+import { FaRobot, FaGlobeAmericas, FaCode } from "react-icons/fa";
 import {
   Card,
   CardContent,
@@ -14,21 +14,21 @@ import { Container } from "@/components/container";
 
 const services = [
   {
-    icon: Bot,
+    icon: FaRobot,
     title: "ChatBots con IA",
     description:
       "Automatiza tus conversaciones en WhatsApp o Instagram para responder al instante, organizar clientes y no dejar oportunidades sin seguimiento.",
     category: "Software",
   },
   {
-    icon: Globe,
+    icon: FaGlobeAmericas,
     title: "Desarrollo Web",
     description:
       "Creamos sitios web pensados para convertir visitas en ventas, integrados con WhatsApp o Instagram y optimizados para rendimiento.",
     category: "Software",
   },
   {
-    icon: Code,
+    icon: FaCode,
     title: "Software a Medida",
     description:
       "Desarrollamos herramientas que automatizan tareas repetitivas y te permiten operar con más control y menos fricción.",
@@ -75,7 +75,7 @@ export function ServicesSection() {
                     className="group hover-lift border-border/50 bg-card/50 transition-all hover:border-accent hover:shadow-lg hover:shadow-accent/20 hover:bg-card"
                   >
                     <CardHeader>
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/10">
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary transition-all duration-300 group-hover:scale-110">
                         <service.icon className="h-6 w-6 text-foreground transition-colors duration-300" />
                       </div>
                       <CardTitle className="text-foreground">
