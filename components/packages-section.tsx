@@ -124,7 +124,7 @@ export function PackagesSection() {
           <div className="brand-kicker mx-auto mb-4 w-fit text-center text-sm font-medium uppercase tracking-wider">
             Paquetes Integrales
           </div>
-          <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="mb-4 text-center text-3xl font-medium text-foreground sm:text-4xl">
             <span className="brand-highlight">
               Combina servicios
             </span>{" "}
@@ -167,8 +167,8 @@ export function PackagesSection() {
                 >
                   <Card
                     className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${pkg.highlighted
-                      ? "border-accent bg-card shadow-lg shadow-accent/20"
-                      : "border-border/50 bg-card/50"
+                      ? "border-primary bg-card shadow-lg shadow-primary/20"
+                      : "border-border bg-card/50"
                       }`}
                   >
                     {pkg.highlighted && (
@@ -192,10 +192,10 @@ export function PackagesSection() {
                         <span className="text-sm text-muted-foreground line-through">
                           {pkg.originalPrice}
                         </span>
-                        <span className="text-3xl font-bold text-foreground">
+                        <span className="text-3xl font-medium text-foreground">
                           {pkg.price}
                         </span>
-                        <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                        <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                           ✓ {pkg.savings}
                         </div>
                       </div>
@@ -205,7 +205,7 @@ export function PackagesSection() {
                             key={`${feature}-${featureIndex}`}
                             className="flex items-start gap-3"
                           >
-                            <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                            <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                             <span className="text-sm text-muted-foreground">
                               {feature}
                             </span>
@@ -255,8 +255,8 @@ export function PackagesSection() {
             <AnimatedSection key={pkg.name} delay={index * 100}>
               <Card
                 className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${pkg.highlighted
-                  ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30"
-                  : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"
+                  ? "border-primary bg-card shadow-lg shadow-primary/20 hover:shadow-primary/30"
+                  : "border-border bg-card/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
                   }`}
               >
                 {pkg.highlighted && (
@@ -278,17 +278,17 @@ export function PackagesSection() {
                     <span className="text-sm text-muted-foreground line-through">
                       {pkg.originalPrice}
                     </span>
-                    <span className="text-3xl font-bold text-foreground">
+                    <span className="text-3xl font-medium text-foreground">
                       {pkg.price}
                     </span>
-                    <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                    <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                       ✓ {pkg.savings}
                     </div>
                   </div>
                   <ul className="space-y-3">
                     {pkg.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                        <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                         <span className="text-sm text-muted-foreground">
                           {feature}
                         </span>
