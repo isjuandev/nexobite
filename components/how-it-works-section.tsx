@@ -40,7 +40,7 @@ export function HowItWorksSection() {
           <div className="brand-kicker mx-auto mb-4 w-fit text-center text-sm font-medium uppercase tracking-wider">
             Cómo funciona
           </div>
-          <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="mb-4 text-center text-3xl font-medium text-foreground sm:text-4xl">
             <span className="brand-highlight">
               Así implementamos
             </span>{" "}
@@ -65,12 +65,12 @@ export function HowItWorksSection() {
                 <div className="group relative flex flex-col items-center text-center md:items-start md:text-left px-4">
                   <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-card/30">
                     <div className="absolute inset-0 rounded-full bg-primary opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-40" />
-                    <step.icon className="relative z-10 h-6 w-6 text-foreground" />
+                    <step.icon className="relative z-10 h-6 w-6 text-primary-foreground" />
                   </div>
                   <div className="mb-2 inline-flex rounded-full bg-card px-2 py-0.5 text-sm font-medium text-foreground">
                     {step.step}
                   </div>
-                  <h3 className="mb-4 text-xl font-semibold text-foreground">
+                  <h3 className="mb-4 text-xl font-medium text-foreground">
                     {step.title}
                   </h3>
                   <p className="text-base text-muted-foreground leading-relaxed">
