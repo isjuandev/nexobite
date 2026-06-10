@@ -276,7 +276,7 @@ export function Header() {
                   <Link
                     href="#proposals"
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "proposals"
-                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "proposals")}
@@ -286,7 +286,7 @@ export function Header() {
                   <Link
                     href="#payment"
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "payment"
-                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "payment")}
@@ -296,7 +296,7 @@ export function Header() {
                   <Link
                     href="#contact"
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "contact"
-                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "contact")}
@@ -310,7 +310,7 @@ export function Header() {
                   <Link
                     href={isNotHomePage ? "/#services" : "#services"}
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "services"
-                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "services")}
@@ -320,7 +320,7 @@ export function Header() {
                   <Link
                     href={isNotHomePage ? "/#how-it-works" : "#how-it-works"}
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "how-it-works"
-                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "how-it-works")}
@@ -330,7 +330,7 @@ export function Header() {
                   <Link
                     href={isNotHomePage ? "/#mini-plans" : "#mini-plans"}
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "mini-plans"
-                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "mini-plans")}
@@ -340,7 +340,7 @@ export function Header() {
                   <Link
                     href={isNotHomePage ? "/#packages" : "#packages"}
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "packages"
-                      ? "text-foreground font-bold underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "packages")}
