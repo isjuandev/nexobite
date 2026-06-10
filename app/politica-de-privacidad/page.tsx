@@ -10,7 +10,7 @@ export default function PoliticaDePrivacidad() {
   const sections = [
     {
       title: "1. Información General",
-      icon: <FaShieldAlt className="w-6 h-6 text-foreground" />,
+      icon: <FaShieldAlt className="w-6 h-6 text-primary-foreground" />,
       content: (
         <p>
           En NexoBite, valoramos y respetamos tu privacidad. Esta política de privacidad y seguridad describe cómo recopilamos, utilizamos, protegemos y compartimos la información personal de nuestros usuarios y clientes que visitan nuestro sitio web y utilizan nuestros servicios tecnológicos, de desarrollo web, chatbots, redes sociales, fotografía y video.
@@ -19,7 +19,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "2. Recopilación de Información",
-      icon: <FaEye className="w-6 h-6 text-foreground" />,
+      icon: <FaEye className="w-6 h-6 text-primary-foreground" />,
       content: (
         <>
           <p className="mb-4">Podemos recopilar información personal que nos proporcionas directamente cuando:</p>
@@ -31,7 +31,7 @@ export default function PoliticaDePrivacidad() {
               "Nos proporcionas datos como tu nombre, número de teléfono, correo electrónico o detalles de tu empresa para la prestación del servicio."
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-muted-foreground group">
-                <FaCheckCircle className="w-5 h-5 text-foreground shrink-0 transition-transform group-hover:scale-110" />
+                <FaCheckCircle className="w-5 h-5 text-primary shrink-0 transition-transform group-hover:scale-110" />
                 <span>{item}</span>
               </li>
             ))}
@@ -41,7 +41,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "3. Uso de la Información",
-      icon: <FaSync className="w-6 h-6 text-foreground" />,
+      icon: <FaSync className="w-6 h-6 text-primary-foreground" />,
       content: (
         <>
           <p className="mb-4">La información recopilada es utilizada para:</p>
@@ -54,7 +54,7 @@ export default function PoliticaDePrivacidad() {
               "Detectar y prevenir posibles fraudes u otras actividades ilícitas."
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-muted-foreground group">
-                <FaCheckCircle className="w-5 h-5 text-foreground shrink-0 transition-transform group-hover:scale-110" />
+                <FaCheckCircle className="w-5 h-5 text-primary shrink-0 transition-transform group-hover:scale-110" />
                 <span>{item}</span>
               </li>
             ))}
@@ -64,7 +64,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "4. Protección y Seguridad de los Datos",
-      icon: <FaLock className="w-6 h-6 text-foreground" />,
+      icon: <FaLock className="w-6 h-6 text-primary-foreground" />,
       content: (
         <div className="space-y-4">
           <p>
@@ -78,7 +78,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "5. Compartición de Información",
-      icon: <FaShareAlt className="w-6 h-6 text-foreground" />,
+      icon: <FaShareAlt className="w-6 h-6 text-primary-foreground" />,
       content: (
         <>
           <p className="mb-4">
@@ -99,7 +99,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "6. Derechos del Usuario",
-      icon: <FaUserCheck className="w-6 h-6 text-foreground" />,
+      icon: <FaUserCheck className="w-6 h-6 text-primary-foreground" />,
       content: (
         <>
           <p className="mb-4">Tienes el derecho a:</p>
@@ -110,7 +110,7 @@ export default function PoliticaDePrivacidad() {
               "Retirar en cualquier momento el consentimiento previamente otorgado para recibir comunicaciones de marketing o contacto comercial."
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-muted-foreground group">
-                <FaCheckCircle className="w-5 h-5 text-foreground shrink-0 transition-transform group-hover:scale-110" />
+                <FaCheckCircle className="w-5 h-5 text-primary shrink-0 transition-transform group-hover:scale-110" />
                 <span>{item}</span>
               </li>
             ))}
@@ -123,7 +123,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "7. Contacto y Cambios",
-      icon: <FaWhatsapp className="w-6 h-6 text-foreground" />,
+      icon: <FaWhatsapp className="w-6 h-6 text-primary-foreground" />,
       content: (
         <div className="space-y-4">
           <p>
@@ -131,14 +131,14 @@ export default function PoliticaDePrivacidad() {
           </p>
           <div className="mt-6 p-6 rounded-2xl bg-card flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <h4 className="font-display font-semibold text-foreground mb-1">¿Tienes más dudas?</h4>
+              <h4 className="font-display font-medium text-foreground mb-1">¿Tienes más dudas?</h4>
               <p className="text-sm text-muted-foreground">Estamos aquí para ayudarte a entender cómo protegemos tu información.</p>
             </div>
             <a
               href="https://wa.me/+573009459026?text=Hola!%20Tengo%20una%20duda%20sobre%20la%20pol%C3%ADtica%20de%20privacidad%20de%20NexoBite."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full bg-primary text-primary-foreground hover-glow transition-all flex items-center gap-2 whitespace-nowrap"
+              className="px-6 py-3 rounded-sm bg-primary text-primary-foreground hover-glow transition-all flex items-center gap-2 whitespace-nowrap"
             >
               <FaWhatsapp className="w-4 h-4" />
               Contactar Asesor
@@ -170,7 +170,7 @@ export default function PoliticaDePrivacidad() {
             </AnimatedSection>
 
             <AnimatedSection delay={100}>
-              <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight text-foreground">
+              <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-medium font-display tracking-tight text-foreground">
                 Política de Privacidad y <span className="brand-highlight">Seguridad</span>
               </h1>
             </AnimatedSection>
@@ -193,7 +193,7 @@ export default function PoliticaDePrivacidad() {
                       <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center border border-primary/10 transition-colors">
                         {section.icon}
                       </div>
-                      <h2 className="font-display text-2xl font-bold text-foreground">
+                      <h2 className="font-display text-2xl font-medium text-foreground">
                         {section.title}
                       </h2>
                     </div>

@@ -227,7 +227,7 @@ export default function PropuestaCliente() {
             <div className="brand-kicker mx-auto mb-4 w-fit text-sm font-medium uppercase tracking-wider">
               {CLIENT_CONFIG.heroSubtitle}
             </div>
-            <h1 className="brand-highlight text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="brand-highlight text-5xl md:text-6xl font-medium mb-6">
               {CLIENT_CONFIG.projectTitle}
             </h1>
             <div className="flex flex-wrap gap-4 justify-center text-sm text-muted-foreground">
@@ -253,7 +253,7 @@ export default function PropuestaCliente() {
         <ParticleField variant="mixed" density="high" speed="medium" />
         <Container className="relative z-10">
           <AnimatedSection>
-            <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
+            <h2 className="mb-4 text-center text-3xl font-medium text-foreground sm:text-4xl">
               <span className="brand-highlight">
                 {CLIENT_CONFIG.proposalsSectionTitle}
               </span>{" "}
@@ -276,7 +276,7 @@ export default function PropuestaCliente() {
               <div className="flex gap-6 px-4">
                 {[...proposals, ...proposals, ...proposals].map((p, index) => (
                   <div key={`${p.id}-${index}`} data-index={index} className="snap-center shrink-0 w-[85vw] max-w-sm">
-                    <Card className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${p.highlighted ? "border-accent bg-card shadow-lg shadow-accent/20" : "border-border/50 bg-card/50"}`}>
+                    <Card className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${p.highlighted ? "border-primary bg-card shadow-lg shadow-primary/20" : "border-border bg-card/50"}`}>
                       {p.highlighted && (
                         <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
                           <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
@@ -292,15 +292,15 @@ export default function PropuestaCliente() {
                       <CardContent className="flex-1">
                         <div className="mb-6 flex flex-col items-start gap-2">
                           <span className="text-sm text-muted-foreground line-through">{p.originalPrice}</span>
-                          <span className="text-3xl font-bold text-foreground">{p.price}</span>
-                          <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                          <span className="text-3xl font-medium text-foreground">{p.price}</span>
+                          <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                             ✓ {p.savings}
                           </div>
                         </div>
                         <ul className="space-y-3">
                           {p.features.map((f, i) => (
                             <li key={i} className="flex items-start gap-3">
-                              <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                              <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                               <span className="text-sm text-muted-foreground">{f}</span>
                             </li>
                           ))}
@@ -329,7 +329,7 @@ export default function PropuestaCliente() {
           <div className="hidden lg:grid gap-8 lg:grid-cols-3">
             {proposals.map((p, index) => (
               <AnimatedSection key={p.id} delay={index * 100}>
-                <Card className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${p.highlighted ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30" : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"}`}>
+                <Card className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${p.highlighted ? "border-primary bg-card shadow-lg shadow-primary/20 hover:shadow-primary/30" : "border-border bg-card/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"}`}>
                   {p.highlighted && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
                       <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
@@ -345,15 +345,15 @@ export default function PropuestaCliente() {
                   <CardContent className="flex-1">
                     <div className="mb-6 flex flex-col items-start gap-2">
                       <span className="text-sm text-muted-foreground line-through">{p.originalPrice}</span>
-                      <span className="text-3xl font-bold text-foreground">{p.price}</span>
-                      <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                      <span className="text-3xl font-medium text-foreground">{p.price}</span>
+                      <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                         ✓ {p.savings}
                       </div>
                     </div>
                     <ul className="space-y-3">
                       {p.features.map((f, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                          <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                           <span className="text-sm text-muted-foreground">{f}</span>
                         </li>
                       ))}
@@ -381,7 +381,7 @@ export default function PropuestaCliente() {
             <div className="brand-kicker mx-auto mb-4 w-fit text-sm font-medium uppercase tracking-wider">
               Opciones de Inversión
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-medium mb-4">
               <span className="brand-highlight">
                 Facilidades de Pago
               </span>{" "}
@@ -404,7 +404,7 @@ export default function PropuestaCliente() {
               <div className="flex gap-6 px-4">
                 {[...paymentOptions, ...paymentOptions, ...paymentOptions].map((opt, index) => (
                   <div key={`${opt.name}-${index}`} data-payment-index={index} className="snap-center shrink-0 w-[85vw] max-w-sm">
-                    <Card className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${opt.highlight ? "border-accent bg-card shadow-lg shadow-accent/20" : "border-border/50 bg-card/50"}`}>
+                    <Card className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${opt.highlight ? "border-primary bg-card shadow-lg shadow-primary/20" : "border-border bg-card/50"}`}>
                       {opt.highlight && (
                         <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
                           <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
@@ -419,13 +419,13 @@ export default function PropuestaCliente() {
                       </CardHeader>
                       <CardContent className="flex-1">
                         <div className="mb-6">
-                          <span className="text-4xl font-bold text-foreground">{opt.price}</span>
+                          <span className="text-4xl font-medium text-foreground">{opt.price}</span>
                           <span className="text-lg text-muted-foreground ml-2">{opt.priceLabel}</span>
                         </div>
                         <ul className="space-y-3">
                           {opt.features.map((f, i) => (
                             <li key={i} className="flex items-start gap-3">
-                              <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                              <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                               <span className="text-sm text-muted-foreground">{f}</span>
                             </li>
                           ))}
@@ -454,7 +454,7 @@ export default function PropuestaCliente() {
           <div className="hidden lg:grid grid-cols-3 gap-8 max-w-5xl mx-auto">
             {paymentOptions.map((opt, index) => (
               <AnimatedSection key={opt.name} delay={(index + 1) * 100}>
-                <Card className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${opt.highlight ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30" : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"}`}>
+                <Card className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${opt.highlight ? "border-primary bg-card shadow-lg shadow-primary/20 hover:shadow-primary/30" : "border-border bg-card/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"}`}>
                   {opt.highlight && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
                       <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
@@ -469,13 +469,13 @@ export default function PropuestaCliente() {
                   </CardHeader>
                   <CardContent className="flex-1">
                     <div className="mb-6">
-                      <span className="text-4xl font-bold text-foreground">{opt.price}</span>
+                      <span className="text-4xl font-medium text-foreground">{opt.price}</span>
                       <span className="text-lg text-muted-foreground ml-2">{opt.priceLabel}</span>
                     </div>
                     <ul className="space-y-3">
                       {opt.features.map((f, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                          <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                           <span className="text-sm text-muted-foreground">{f}</span>
                         </li>
                       ))}
@@ -500,7 +500,7 @@ export default function PropuestaCliente() {
         <ParticleField variant="mixed" density="low" speed="slow" />
         <Container className="relative z-10">
           <AnimatedSection>
-            <div className="relative rounded-2xl bg-card overflow-hidden border border-accent shadow-2xl shadow-accent/20">
+            <div className="relative rounded-2xl bg-card overflow-hidden border border-primary shadow-2xl shadow-primary/20">
               <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-size-[4rem_4rem]" />
               </div>
@@ -508,7 +508,7 @@ export default function PropuestaCliente() {
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
               <div className="relative z-10 px-6 py-16 md:px-12 md:py-20">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                  <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+                  <h2 className="text-3xl md:text-5xl font-medium text-foreground mb-6 leading-tight">
                     {CLIENT_CONFIG.ctaTitle}{" "}
                     <span className="brand-highlight">
                       {CLIENT_CONFIG.ctaHighlight}
@@ -530,20 +530,20 @@ export default function PropuestaCliente() {
                   </div>
                 </div>
                 <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                  <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border hover:border-accent/50 hover:bg-card transition-all">
+                  <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border hover:border-primary/50 hover:bg-card transition-all">
                     <div className="text-sm text-muted-foreground mb-2 font-medium uppercase tracking-wider">Contacto</div>
-                    <div className="text-foreground font-bold text-lg">{CLIENT_CONFIG.executiveName}</div>
+                    <div className="text-foreground font-medium text-lg">{CLIENT_CONFIG.executiveName}</div>
                   </div>
-                  <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border hover:border-accent/50 hover:bg-card transition-all">
+                  <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border hover:border-primary/50 hover:bg-card transition-all">
                     <div className="text-sm text-muted-foreground mb-2 font-medium uppercase tracking-wider">Teléfono</div>
-                    <a href={`tel:+${CLIENT_CONFIG.executivePhoneRaw}`} className="text-foreground font-bold text-lg underline decoration-transparent hover:decoration-primary decoration-2 underline-offset-4 transition-colors inline-flex items-center gap-2 group">
+                    <a href={`tel:+${CLIENT_CONFIG.executivePhoneRaw}`} className="text-foreground font-medium text-lg underline decoration-transparent hover:decoration-primary decoration-2 underline-offset-4 transition-colors inline-flex items-center gap-2 group">
                       {CLIENT_CONFIG.executivePhone}
                       <FaChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </div>
-                  <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border hover:border-accent/50 hover:bg-card transition-all">
+                  <div className="bg-card/50 backdrop-blur-md rounded-xl p-6 border border-border hover:border-primary/50 hover:bg-card transition-all">
                     <div className="text-sm text-muted-foreground mb-2 font-medium uppercase tracking-wider">Email</div>
-                    <a href={`mailto:${CLIENT_CONFIG.executiveEmail}`} className="text-foreground font-bold text-lg underline decoration-transparent hover:decoration-primary decoration-2 underline-offset-4 transition-colors inline-flex items-center gap-2 group">
+                    <a href={`mailto:${CLIENT_CONFIG.executiveEmail}`} className="text-foreground font-medium text-lg underline decoration-transparent hover:decoration-primary decoration-2 underline-offset-4 transition-colors inline-flex items-center gap-2 group">
                       {CLIENT_CONFIG.executiveEmail}
                       <FaChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>

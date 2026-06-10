@@ -11,7 +11,7 @@ export default function CondicionesDelServicio() {
         {
             id: "aceptacion",
             title: "1. Aceptación de los Términos",
-            icon: <FaFileAlt className="h-6 w-6 text-foreground" />,
+            icon: <FaFileAlt className="h-6 w-6 text-primary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -26,7 +26,7 @@ export default function CondicionesDelServicio() {
         {
             id: "descripcion",
             title: "2. Descripción de los Servicios",
-            icon: <FaBriefcase className="h-6 w-6 text-foreground" />,
+            icon: <FaBriefcase className="h-6 w-6 text-primary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -41,7 +41,7 @@ export default function CondicionesDelServicio() {
         {
             id: "obligaciones",
             title: "3. Obligaciones del Cliente",
-            icon: <FaShieldAlt className="h-6 w-6 text-foreground" />,
+            icon: <FaShieldAlt className="h-6 w-6 text-primary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -58,7 +58,7 @@ export default function CondicionesDelServicio() {
         {
             id: "pagos",
             title: "4. Pagos y Facturación",
-            icon: <FaCreditCard className="h-6 w-6 text-foreground" />,
+            icon: <FaCreditCard className="h-6 w-6 text-primary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -75,7 +75,7 @@ export default function CondicionesDelServicio() {
         {
             id: "propiedad-intelectual",
             title: "5. Propiedad Intelectual",
-            icon: <FaCopyright className="h-6 w-6 text-foreground" />,
+            icon: <FaCopyright className="h-6 w-6 text-primary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -90,7 +90,7 @@ export default function CondicionesDelServicio() {
         {
             id: "limitacion",
             title: "6. Limitación de Responsabilidad",
-            icon: <FaExclamationTriangle className="h-6 w-6 text-foreground" />,
+            icon: <FaExclamationTriangle className="h-6 w-6 text-primary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -105,7 +105,7 @@ export default function CondicionesDelServicio() {
         {
             id: "modificaciones",
             title: "7. Modificaciones a los Términos",
-            icon: <FaBalanceScale className="h-6 w-6 text-foreground" />,
+            icon: <FaBalanceScale className="h-6 w-6 text-primary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -140,7 +140,7 @@ export default function CondicionesDelServicio() {
                         </AnimatedSection>
 
                         <AnimatedSection delay={100}>
-                            <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight text-foreground">
+                            <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-medium font-display tracking-tight text-foreground">
                                 Condiciones del <span className="brand-highlight">Servicio</span>
                             </h1>
                         </AnimatedSection>
@@ -174,10 +174,10 @@ export default function CondicionesDelServicio() {
                                         </div>
 
                                         <div className="grow pt-2">
-                                            <h2 className="text-2xl font-bold mb-4 text-foreground transition-colors duration-300">
+                                            <h2 className="text-2xl font-medium mb-4 text-foreground transition-colors duration-300">
                                                 {section.title}
                                             </h2>
-                                            <div className="bg-card backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 hover-lift hover:border-accent/30 transition-all duration-300 shadow-sm relative overflow-hidden">
+                                            <div className="bg-card backdrop-blur-sm border border-border rounded-2xl p-6 md:p-8 hover-lift hover:border-primary/30 transition-all duration-300 shadow-sm relative overflow-hidden">
                                                 <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-accent/5 opacity-0 transition-opacity pointer-events-none" />
                                                 <div className="relative z-10 prose prose-slate prose-invert max-w-none font-sans text-foreground/90">
                                                     {section.content}
@@ -194,7 +194,7 @@ export default function CondicionesDelServicio() {
                             <div className="relative overflow-hidden rounded-3xl bg-card border border-border p-8 md:p-12 text-center shadow-2xl">
                                 <div className="absolute inset-0 bg-card pointer-events-none" />
                                 <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-                                    <h3 className="text-2xl md:text-3xl font-bold">¿Tienes alguna pregunta sobre nuestros términos?</h3>
+                                    <h3 className="text-2xl md:text-3xl font-medium">¿Tienes alguna pregunta sobre nuestros términos?</h3>
                                     <p className="text-lg text-muted-foreground">Estamos aquí para resolver cualquier inquietud antes de comenzar un proyecto juntos.</p>
 
                                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
@@ -202,14 +202,14 @@ export default function CondicionesDelServicio() {
                                             href="https://wa.me/+573009459026?text=Hola!%20Tengo%20una%20duda%20sobre%20las%20condiciones%20del%20servicio%20de%20NexoBite."
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover-glow transition-all flex items-center gap-2 group"
+                                            className="px-8 py-4 rounded-sm bg-primary text-primary-foreground font-medium hover-glow transition-all flex items-center gap-2 group"
                                         >
                                             <FaWhatsapp className="w-5 h-5 group-hover:scale-110 transition-transform" />
                                             Contactar Asesor
                                         </a>
                                         <a
                                             href="mailto:contacto@nexobite.com"
-                                            className="px-8 py-4 rounded-full bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/80 transition-all"
+                                            className="px-8 py-4 rounded-sm bg-secondary text-secondary-foreground font-medium hover:bg-secondary/80 transition-all"
                                         >
                                             contacto@nexobite.com
                                         </a>
