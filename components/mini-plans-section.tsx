@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { FaAccessibleIcon, FaCheck, FaCheckCircle, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaCheck, FaCheckCircle, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -199,8 +199,8 @@ function MobilePlansCarousel({ category }: { category: Category }) {
             >
               <Card
                 className={`group relative mt-4 flex h-full flex-col transition-all duration-300 ${plan.highlighted
-                  ? "border-accent bg-card shadow-lg shadow-accent/20"
-                  : "border-border/50 bg-card/50"
+                  ? "border-primary bg-card shadow-lg shadow-primary/20"
+                  : "border-border bg-card/50"
                   }`}
               >
                 {plan.highlighted && (
@@ -226,11 +226,11 @@ function MobilePlansCarousel({ category }: { category: Category }) {
                         {plan.originalPrice}
                       </div>
                     )}
-                    <span className="text-3xl font-bold text-foreground">
+                    <span className="text-3xl font-medium text-foreground">
                       {plan.price}
                     </span>
                     {plan.savings && (
-                      <div className="inline-flex items-center gap-1 rounded-full bg-primary px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                      <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                         ✓ {plan.savings}
                       </div>
                     )}
@@ -238,7 +238,7 @@ function MobilePlansCarousel({ category }: { category: Category }) {
                   <ul className="space-y-3">
                     {plan.includes.map((item) => (
                       <li key={item} className="flex items-start gap-3">
-                        <FaCheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
+                        <FaCheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                         <span className="text-sm text-muted-foreground">
                           {item}
                         </span>
@@ -300,7 +300,7 @@ export function MiniPlansSection() {
           <div className="brand-kicker mx-auto mb-4 w-fit text-center text-sm font-medium uppercase tracking-wider">
             Planes por Servicio
           </div>
-          <h2 className="mb-4 text-center text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="mb-4 text-center text-3xl font-medium text-foreground sm:text-4xl">
             <span className="brand-highlight">
               Elige
             </span>{" "}
@@ -324,7 +324,7 @@ export function MiniPlansSection() {
                 key={cat.id}
                 onClick={() => setSelected(cat.id)}
                 className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 snap-center ${selected === cat.id
-                  ? "bg-primary text-foreground shadow-md shadow-primary/20"
+                  ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
                   : "bg-card/40 text-muted-foreground hover:bg-card/60"
                   }`}
                 aria-pressed={selected === cat.id}
@@ -355,7 +355,7 @@ export function MiniPlansSection() {
             <AnimatedSection key={cat.id} delay={cIndex * 40}>
               <div>
                 <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-foreground">
+                  <h3 className="text-lg font-medium text-foreground">
                     {cat.title}
                   </h3>
                   <p className="text-sm text-muted-foreground">
@@ -371,8 +371,8 @@ export function MiniPlansSection() {
                     <Card
                       key={p.name}
                       className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${p.highlighted
-                        ? "border-accent bg-card shadow-lg shadow-accent/20 hover:shadow-accent/30"
-                        : "border-border/50 bg-card/50 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10"
+                        ? "border-primary bg-card shadow-lg shadow-primary/20 hover:shadow-primary/30"
+                        : "border-border bg-card/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
                         }`}
                     >
                       {p.highlighted && (
@@ -398,11 +398,11 @@ export function MiniPlansSection() {
                               {p.originalPrice}
                             </div>
                           )}
-                          <span className="text-2xl font-bold text-foreground">
+                          <span className="text-2xl font-medium text-foreground">
                             {p.price}
                           </span>
                           {p.savings && (
-                            <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                            <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                               ✓ {p.savings}
                             </div>
                           )}
@@ -410,7 +410,7 @@ export function MiniPlansSection() {
                         <ul className="space-y-3">
                           {p.includes.map((inc) => (
                             <li key={inc} className="flex items-start gap-3">
-                              <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                              <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                               <span className="text-sm text-muted-foreground">
                                 {inc}
                               </span>
