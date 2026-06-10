@@ -518,7 +518,7 @@ export default function PropuestaCliente() {
                     {CLIENT_CONFIG.ctaDescription}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all hover:scale-105" asChild>
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary-foreground shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all hover:scale-105" asChild>
                       <a href={buildWALink(CLIENT_CONFIG.executivePhoneRaw, `Hola! Quisiera agendar una reunión para revisar la propuesta de ${CLIENT_CONFIG.projectTitle} en detalle. ¿Cuándo podemos coordinar?`)} target="_blank" rel="noopener noreferrer">
                         Agendar Reunión
                         <FaChevronRight className="w-5 h-5 ml-2" />

@@ -324,7 +324,7 @@ export function MiniPlansSection() {
                 key={cat.id}
                 onClick={() => setSelected(cat.id)}
                 className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 snap-center ${selected === cat.id
-                  ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
+                  ? "bg-primary text-secondary-foreground shadow-md shadow-primary/20"
                   : "bg-card/40 text-muted-foreground hover:bg-card/60"
                   }`}
                 aria-pressed={selected === cat.id}

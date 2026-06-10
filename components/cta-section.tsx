@@ -14,7 +14,7 @@ export function CtaSection() {
         <AnimatedSection>
           <div className="relative mb-6 inline-flex h-16 w-16 animate-float items-center justify-center rounded-full bg-primary">
             <div className="absolute inset-0 rounded-full bg-primary opacity-20 blur-xl" />
-            <FaWhatsapp className="relative z-10 h-8 w-8 text-primary-foreground" />
+            <FaWhatsapp className="relative z-10 h-8 w-8 text-secondary-foreground" />
           </div>
         </AnimatedSection>
 
@@ -42,9 +42,9 @@ export function CtaSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaWhatsapp className="mr-2 h-5 w-5 text-primary-foreground" />
+              <FaWhatsapp className="mr-2 h-5 w-5 text-secondary-foreground" />
               Hablar con un especialista
-              <FaArrowRight className="ml-2 h-4 w-4 text-primary-foreground transition-transform group-hover:translate-x-1" />
+              <FaArrowRight className="ml-2 h-4 w-4 text-secondary-foreground transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
         </AnimatedSection>

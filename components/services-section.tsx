@@ -76,7 +76,7 @@ export function ServicesSection() {
                   >
                     <CardHeader>
                       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary transition-all duration-300 group-hover:scale-110">
-                        <service.icon className="h-6 w-6 text-primary-foreground transition-colors duration-300" />
+                        <service.icon className="h-6 w-6 text-secondary-foreground transition-colors duration-300" />
                       </div>
                       <CardTitle className="text-foreground">
                         {service.title}

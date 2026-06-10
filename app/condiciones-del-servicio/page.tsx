@@ -11,7 +11,7 @@ export default function CondicionesDelServicio() {
         {
             id: "aceptacion",
             title: "1. Aceptación de los Términos",
-            icon: <FaFileAlt className="h-6 w-6 text-primary-foreground" />,
+            icon: <FaFileAlt className="h-6 w-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -26,7 +26,7 @@ export default function CondicionesDelServicio() {
         {
             id: "descripcion",
             title: "2. Descripción de los Servicios",
-            icon: <FaBriefcase className="h-6 w-6 text-primary-foreground" />,
+            icon: <FaBriefcase className="h-6 w-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -41,7 +41,7 @@ export default function CondicionesDelServicio() {
         {
             id: "obligaciones",
             title: "3. Obligaciones del Cliente",
-            icon: <FaShieldAlt className="h-6 w-6 text-primary-foreground" />,
+            icon: <FaShieldAlt className="h-6 w-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -58,7 +58,7 @@ export default function CondicionesDelServicio() {
         {
             id: "pagos",
             title: "4. Pagos y Facturación",
-            icon: <FaCreditCard className="h-6 w-6 text-primary-foreground" />,
+            icon: <FaCreditCard className="h-6 w-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -75,7 +75,7 @@ export default function CondicionesDelServicio() {
         {
             id: "propiedad-intelectual",
             title: "5. Propiedad Intelectual",
-            icon: <FaCopyright className="h-6 w-6 text-primary-foreground" />,
+            icon: <FaCopyright className="h-6 w-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -90,7 +90,7 @@ export default function CondicionesDelServicio() {
         {
             id: "limitacion",
             title: "6. Limitación de Responsabilidad",
-            icon: <FaExclamationTriangle className="h-6 w-6 text-primary-foreground" />,
+            icon: <FaExclamationTriangle className="h-6 w-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -105,7 +105,7 @@ export default function CondicionesDelServicio() {
         {
             id: "modificaciones",
             title: "7. Modificaciones a los Términos",
-            icon: <FaBalanceScale className="h-6 w-6 text-primary-foreground" />,
+            icon: <FaBalanceScale className="h-6 w-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
@@ -202,7 +202,7 @@ export default function CondicionesDelServicio() {
                                             href="https://wa.me/+573009459026?text=Hola!%20Tengo%20una%20duda%20sobre%20las%20condiciones%20del%20servicio%20de%20NexoBite."
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="px-8 py-4 rounded-sm bg-primary text-primary-foreground font-medium hover-glow transition-all flex items-center gap-2 group"
+                                            className="px-8 py-4 rounded-sm bg-primary text-secondary-foreground font-medium hover-glow transition-all flex items-center gap-2 group"
                                         >
                                             <FaWhatsapp className="w-5 h-5 group-hover:scale-110 transition-transform" />
                                             Contactar Asesor

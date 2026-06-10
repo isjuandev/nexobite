@@ -10,7 +10,7 @@ export default function PoliticaDePrivacidad() {
   const sections = [
     {
       title: "1. Información General",
-      icon: <FaShieldAlt className="w-6 h-6 text-primary-foreground" />,
+      icon: <FaShieldAlt className="w-6 h-6 text-secondary-foreground" />,
       content: (
         <p>
           En NexoBite, valoramos y respetamos tu privacidad. Esta política de privacidad y seguridad describe cómo recopilamos, utilizamos, protegemos y compartimos la información personal de nuestros usuarios y clientes que visitan nuestro sitio web y utilizan nuestros servicios tecnológicos, de desarrollo web, chatbots, redes sociales, fotografía y video.
@@ -19,7 +19,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "2. Recopilación de Información",
-      icon: <FaEye className="w-6 h-6 text-primary-foreground" />,
+      icon: <FaEye className="w-6 h-6 text-secondary-foreground" />,
       content: (
         <>
           <p className="mb-4">Podemos recopilar información personal que nos proporcionas directamente cuando:</p>
@@ -41,7 +41,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "3. Uso de la Información",
-      icon: <FaSync className="w-6 h-6 text-primary-foreground" />,
+      icon: <FaSync className="w-6 h-6 text-secondary-foreground" />,
       content: (
         <>
           <p className="mb-4">La información recopilada es utilizada para:</p>
@@ -64,7 +64,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "4. Protección y Seguridad de los Datos",
-      icon: <FaLock className="w-6 h-6 text-primary-foreground" />,
+      icon: <FaLock className="w-6 h-6 text-secondary-foreground" />,
       content: (
         <div className="space-y-4">
           <p>
@@ -78,7 +78,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "5. Compartición de Información",
-      icon: <FaShareAlt className="w-6 h-6 text-primary-foreground" />,
+      icon: <FaShareAlt className="w-6 h-6 text-secondary-foreground" />,
       content: (
         <>
           <p className="mb-4">
@@ -99,7 +99,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "6. Derechos del Usuario",
-      icon: <FaUserCheck className="w-6 h-6 text-primary-foreground" />,
+      icon: <FaUserCheck className="w-6 h-6 text-secondary-foreground" />,
       content: (
         <>
           <p className="mb-4">Tienes el derecho a:</p>
@@ -123,7 +123,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "7. Contacto y Cambios",
-      icon: <FaWhatsapp className="w-6 h-6 text-primary-foreground" />,
+      icon: <FaWhatsapp className="w-6 h-6 text-secondary-foreground" />,
       content: (
         <div className="space-y-4">
           <p>
@@ -138,7 +138,7 @@ export default function PoliticaDePrivacidad() {
               href="https://wa.me/+573009459026?text=Hola!%20Tengo%20una%20duda%20sobre%20la%20pol%C3%ADtica%20de%20privacidad%20de%20NexoBite."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-sm bg-primary text-primary-foreground hover-glow transition-all flex items-center gap-2 whitespace-nowrap"
+              className="px-6 py-3 rounded-sm bg-primary text-secondary-foreground hover-glow transition-all flex items-center gap-2 whitespace-nowrap"
             >
               <FaWhatsapp className="w-4 h-4" />
               Contactar Asesor
