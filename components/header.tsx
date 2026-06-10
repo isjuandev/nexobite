@@ -92,9 +92,9 @@ export function Header() {
 
       <div
         className={`mx-auto max-w-7xl transition-all duration-300 ${isScrolled
-          ? "bg-card backdrop-blur-xl shadow-lg shadow-brand-navy/10 border border-border/60"
+          ? "bg-card backdrop-blur-xl shadow-lg shadow-black/20 border border-border/60"
           : "bg-card/95 backdrop-blur-lg border border-border/45"
-          } rounded-2xl`}
+          } rounded-lg`}
       >
         <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link
@@ -254,7 +254,7 @@ export function Header() {
 
           <div className="md:hidden">
             <button
-              className="relative rounded-md p-2 text-foreground transition-colors hover:bg-primary/10"
+              className="relative rounded-sm p-2 text-foreground transition-colors hover:bg-primary/10"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -268,7 +268,7 @@ export function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="border-t border-border/50 bg-card backdrop-blur-sm md:hidden rounded-b-2xl">
+          <div className="border-t border-border/50 bg-card backdrop-blur-sm md:hidden rounded-b-lg">
             <nav className="flex flex-col gap-4 p-4">
               {isProposalPage ? (
                 // Navegación móvil para páginas de propuestas

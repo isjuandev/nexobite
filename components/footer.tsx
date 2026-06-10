@@ -26,7 +26,7 @@ export function Footer() {
               aria-label="Instagram"
             >
               <div className="absolute inset-0 rounded-full bg-primary opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-40" />
-              <FaInstagram className="relative z-10 h-6 w-6 text-foreground" />
+              <FaInstagram className="relative z-10 h-6 w-6 text-primary-foreground" />
             </a>
             <a
               href="https://wa.me/+573009459026?text=Hola!%20Vengo%20desde%20la%20p%C3%A1gina%20web%20de%20NexoBite%20y%20me%20gustar%C3%ADa%20contactarlos."
@@ -36,7 +36,7 @@ export function Footer() {
               aria-label="WhatsApp"
             >
               <div className="absolute inset-0 rounded-full bg-primary opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-40" />
-              <FaWhatsapp className="relative z-10 h-6 w-6 text-foreground" />
+              <FaWhatsapp className="relative z-10 h-6 w-6 text-primary-foreground" />
             </a>
             </div>
             <a

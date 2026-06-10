@@ -25,7 +25,7 @@ export function BrandLogo({
         />
       </span>
       {showWordmark && (
-        <span className="font-display text-lg font-bold tracking-tight text-foreground">
+        <span className="font-display text-lg font-medium tracking-tight text-foreground">
           Nexobite
         </span>
       )}
