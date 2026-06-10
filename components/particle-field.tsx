@@ -43,13 +43,13 @@ export function ParticleField({
     const getColors = () => {
       switch (variant) {
         case "primary":
-          return ["237, 137, 54", "255, 255, 255"];
+          return ["62, 207, 142", "255, 255, 255"];
         case "accent":
-          return ["237, 137, 54"];
+          return ["62, 207, 142"];
         case "subtle":
-          return ["148, 163, 184", "255, 255, 255"];
+          return ["154, 154, 154", "255, 255, 255"];
         case "mixed":
-          return ["237, 137, 54", "148, 163, 184", "255, 255, 255"];
+          return ["62, 207, 142", "154, 154, 154", "255, 255, 255"];
       }
     };
 

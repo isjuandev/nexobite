@@ -11,7 +11,7 @@ export function HeroSection() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
       <ParticleField variant="primary" density="high" speed="medium" />
 
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-primary/8 via-secondary/30 to-background" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-primary/5 via-secondary/20 to-background" />
 
       <Container className="relative z-10" size="md">
         <div className="text-center">
@@ -25,9 +25,9 @@ export function HeroSection() {
           </AnimatedSection>
 
           <AnimatedSection delay={100}>
-            <h1 className="mb-6 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="mb-6 text-balance text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               Automatizamos tu{" "}
-              <span className="text-brand-orange">
+              <span className="text-primary">
                 WhatsApp para que cada
               </span>{" "}
               mensaje tenga respuesta
@@ -64,7 +64,7 @@ export function HeroSection() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="hover-lift bg-transparent border-accent/30 hover:border-accent hover:bg-accent/10"
+                className="hover-lift bg-transparent hover:border-primary/50 hover:bg-primary/10"
               >
                 <a href="#services">Ver cómo funcionaría en mi negocio</a>
               </Button>
@@ -83,7 +83,7 @@ export function HeroSection() {
                   key={stat.label}
                   className="text-center group hover:scale-105 transition-transform"
                 >
-                  <div className="text-2xl font-bold text-foreground sm:text-3xl">
+                  <div className="text-2xl font-medium text-foreground sm:text-3xl">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
