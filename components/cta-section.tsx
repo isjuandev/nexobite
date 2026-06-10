@@ -14,12 +14,12 @@ export function CtaSection() {
         <AnimatedSection>
           <div className="relative mb-6 inline-flex h-16 w-16 animate-float items-center justify-center rounded-full bg-primary">
             <div className="absolute inset-0 rounded-full bg-primary opacity-20 blur-xl" />
-            <FaWhatsapp className="relative z-10 h-8 w-8 text-foreground" />
+            <FaWhatsapp className="relative z-10 h-8 w-8 text-primary-foreground" />
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={100}>
-          <h2 className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="mb-4 text-3xl font-medium text-foreground sm:text-4xl">
             Empieza a{" "}
             <span className="brand-highlight">
               organizar mejor
@@ -42,9 +42,9 @@ export function CtaSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaWhatsapp className="mr-2 h-5 w-5 text-foreground" />
+              <FaWhatsapp className="mr-2 h-5 w-5 text-primary-foreground" />
               Hablar con un especialista
-              <FaArrowRight className="ml-2 h-4 w-4 text-foreground transition-transform group-hover:translate-x-1" />
+              <FaArrowRight className="ml-2 h-4 w-4 text-primary-foreground transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
         </AnimatedSection>
