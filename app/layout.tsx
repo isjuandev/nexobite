@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SchemaMarkup } from "../components/schema-markup";
 import "./globals.css";
 
-// Tipografías oficiales nexobite DIGITAL
+// Tipografías oficiales NexoBite — Satoshi (weight 500 para display)
 const satoshiSans = localFont({
   src: [
     {

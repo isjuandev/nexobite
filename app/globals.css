@@ -2,59 +2,78 @@
 @import "tw-animate-css";
 
 /* ============================================================
-   NEXOBITE — Identidad visual oficial: navy, naranja, blanco, slate
+   NEXOBITE — Supabase-inspired dark mode: emerald + canvas-night
    ============================================================ */
 
 /* ── Tokens de marca y modo oscuro único ── */
 :root {
-  --brand-navy:   #0f172a;
-  --brand-orange: #ed8936;
-  --brand-white:  #ffffff;
-  --brand-slate:  #94a3b8;
-  --radius: 0.5rem;
+  /* Brand colors */
+  --brand-emerald: #3ecf8e;
+  --brand-emerald-deep: #24b47e;
+  --brand-emerald-soft: #4ade80;
+  --brand-dark: #1c1c1c;
+  --brand-dark-soft: #202020;
+  --brand-white: #ffffff;
+  --brand-slate: #9a9a9a;
 
-  --background:         #0f172a;
-  --foreground:         #ffffff;
+  /* Ink (text) scale */
+  --ink: #171717;
+  --ink-secondary: #212121;
+  --ink-mute: #707070;
+  --ink-mute-2: #9a9a9a;
+  --ink-faint: #b2b2b2;
 
-  --card:               #131f35;
-  --card-foreground:    #ffffff;
+  /* Surface scale */
+  --canvas-night: #1c1c1c;
+  --canvas-night-soft: #202020;
+  --hairline: #2a2a2a;
+  --hairline-strong: #3a3a3a;
 
-  --popover:            #131f35;
+  --radius: 6px;
+
+  /* Semantic tokens — dark mode */
+  --background: #1c1c1c;
+  --foreground: #ffffff;
+
+  --card: #202020;
+  --card-foreground: #ffffff;
+
+  --popover: #202020;
   --popover-foreground: #ffffff;
 
-  --primary:            #ed8936;
-  --primary-foreground: #0f172a;
+  --primary: #3ecf8e;
+  --primary-foreground: #171717;
 
-  --secondary:          #1a2744;
+  --secondary: #252525;
   --secondary-foreground: #ffffff;
 
-  --muted:              #1a2744;
-  --muted-foreground:   #94a3b8;
+  --muted: #252525;
+  --muted-foreground: #9a9a9a;
 
-  --accent:             #ed8936;
-  --accent-foreground:  #0f172a;
+  --accent: #3ecf8e;
+  --accent-foreground: #171717;
 
-  --destructive:        #ef4444;
+  --destructive: #ef4444;
   --destructive-foreground: #ffffff;
 
-  --border:             #1e3357;
-  --input:              #1c2f50;
-  --ring:               #ed8936;
+  --border: #2a2a2a;
+  --input: #2a2a2a;
+  --ring: #3ecf8e;
 
-  --chart-1: #ed8936;
+  --chart-1: #3ecf8e;
   --chart-2: #ffffff;
-  --chart-3: #94a3b8;
-  --chart-4: #f0a865;
-  --chart-5: #263556;
+  --chart-3: #9a9a9a;
+  --chart-4: #4ade80;
+  --chart-5: #2a2a2a;
 
-  --sidebar:                    #0c1526;
-  --sidebar-foreground:         #ffffff;
-  --sidebar-primary:            #ed8936;
-  --sidebar-primary-foreground: #0f172a;
-  --sidebar-accent:             #1a2744;
-  --sidebar-accent-foreground:  #ffffff;
-  --sidebar-border:             #1e3357;
-  --sidebar-ring:               #ed8936;
+  --sidebar: #181818;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #3ecf8e;
+  --sidebar-primary-foreground: #171717;
+  --sidebar-accent: #252525;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #2a2a2a;
+  --sidebar-ring: #3ecf8e;
 }
 
 /* ============================================================
@@ -67,39 +86,42 @@
   --font-mono: var(--font-mono), ui-monospace, monospace;
 
   /* Colores de marca */
-  --color-brand-navy:   #0f172a;
-  --color-brand-orange: #ed8936;
-  --color-brand-white:  #ffffff;
-  --color-brand-slate:  #94a3b8;
+  --color-brand-emerald: #3ecf8e;
+  --color-brand-emerald-deep: #24b47e;
+  --color-brand-emerald-soft: #4ade80;
+  --color-brand-dark: #1c1c1c;
+  --color-brand-dark-soft: #202020;
+  --color-brand-white: #ffffff;
+  --color-brand-slate: #9a9a9a;
 
   /* Colores semánticos del modo oscuro */
-  --color-background:         var(--background);
-  --color-foreground:         var(--foreground);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
-  --color-card:               var(--card);
-  --color-card-foreground:    var(--card-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
 
-  --color-popover:            var(--popover);
+  --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
 
-  --color-primary:            var(--primary);
+  --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
 
-  --color-secondary:            var(--secondary);
+  --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
 
-  --color-muted:            var(--muted);
+  --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
 
-  --color-accent:            var(--accent);
+  --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
 
-  --color-destructive:            var(--destructive);
+  --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
 
   --color-border: var(--border);
-  --color-input:  var(--input);
-  --color-ring:   var(--ring);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -107,30 +129,30 @@
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
 
-  --color-sidebar:                    var(--sidebar);
-  --color-sidebar-foreground:         var(--sidebar-foreground);
-  --color-sidebar-primary:            var(--sidebar-primary);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent:             var(--sidebar-accent);
-  --color-sidebar-accent-foreground:  var(--sidebar-accent-foreground);
-  --color-sidebar-border:             var(--sidebar-border);
-  --color-sidebar-ring:               var(--sidebar-ring);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 
   /* Radio */
-  --radius-sm: calc(0.5rem - 4px);
-  --radius-md: calc(0.5rem - 2px);
-  --radius-lg: 0.5rem;
-  --radius-xl: calc(0.5rem + 4px);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
 
   /* Animaciones */
   --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
-  --animate-float:      float 6s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
 }
 
 /* Keyframes fuera de @theme (scope global correcto) */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(237, 137, 54, 0.4); }
-  50%       { box-shadow: 0 0 15px 8px rgba(237, 137, 54, 0.2); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(62, 207, 142, 0.4); }
+  50%       { box-shadow: 0 0 15px 8px rgba(62, 207, 142, 0.2); }
 }
 
 @keyframes float {
@@ -155,7 +177,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 700;
+    font-weight: 500;
+    letter-spacing: -0.02em;
   }
 
   section {
@@ -182,13 +205,13 @@
     @apply transition-all duration-300;
   }
   .hover-glow:hover {
-    box-shadow: 0 0 20px rgba(237, 137, 54, 0.4);
-    border-color: rgba(237, 137, 54, 0.5);
+    box-shadow: 0 0 20px rgba(62, 207, 142, 0.4);
+    border-color: rgba(62, 207, 142, 0.5);
   }
 
   /* Tipografía de marca */
   .brand-highlight {
-    color: var(--brand-orange);
+    color: var(--brand-emerald);
     text-decoration: none;
   }
 
