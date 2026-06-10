@@ -48,7 +48,7 @@ export function ServicesSection() {
           <div className="brand-kicker mb-4 text-sm font-medium uppercase tracking-wider">
             Qué hacemos
           </div>
-          <h2 className="mb-4 max-w-2xl text-balance text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="mb-4 max-w-2xl text-balance text-3xl font-medium text-foreground sm:text-4xl">
             <span className="brand-highlight">
               Soluciones diseñadas para convertir más,
             </span>{" "}
@@ -63,7 +63,7 @@ export function ServicesSection() {
 
         <AnimatedSection delay={100}>
           <div className="mb-8">
-            <h3 className="brand-highlight mb-6 text-xl font-bold">
+            <h3 className="brand-highlight mb-6 text-xl font-medium">
               Desarrollo y Automatización
             </h3>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -72,11 +72,11 @@ export function ServicesSection() {
                 .map((service) => (
                   <Card
                     key={service.title}
-                    className="group hover-lift border-border/50 bg-card/50 transition-all hover:border-accent hover:shadow-lg hover:shadow-accent/20 hover:bg-card"
+                    className="group hover-lift border-border bg-card/50 transition-all hover:border-primary hover:shadow-lg hover:shadow-primary/20 hover:bg-card"
                   >
                     <CardHeader>
                       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary transition-all duration-300 group-hover:scale-110">
-                        <service.icon className="h-6 w-6 text-foreground transition-colors duration-300" />
+                        <service.icon className="h-6 w-6 text-primary-foreground transition-colors duration-300" />
                       </div>
                       <CardTitle className="text-foreground">
                         {service.title}
