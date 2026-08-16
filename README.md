@@ -1,46 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NexoBite
 
-## Lead Capture (n8n webhook)
+Sitio web corporativo y de captación de clientes de **NexoBite**, agencia boutique colombiana de automatización y desarrollo digital para PYMEs. Construido con **Next.js 16**, **React 19** y **Tailwind CSS 4**.
 
-El widget de chat envía leads (nombre, teléfono, correo y mensaje) al endpoint interno `POST /api/leads`, que a su vez reenvía la información a tu webhook de n8n.
+## Sobre el proyecto
 
-Configura esta variable en `.env.local`:
+NexoBite es una landing page orientada a conversión que presenta la oferta de servicios de la agencia: **chatbots con IA para WhatsApp**, **desarrollo web** y **software a medida**. El sitio está pensado para que un visitante pase de "ver qué hace la agencia" a "iniciar una conversación comercial" en el menor número de pasos posible: todos los CTAs conducen directamente a WhatsApp.
+
+El sitio incluye una plantilla de **propuestas comerciales** reutilizable, páginas legales (política de privacidad y condiciones del servicio) y una ruta API para la captura de leads hacia n8n.
+
+## Características
+
+- **Landing page one-page** con secciones: Hero, Servicios, Cómo funciona, Planes por Servicio, Paquetes Integrales y CTA final.
+- **Planes por servicio** (Chatbots con IA y Desarrollo Web) en tres niveles (Esencial / Avanzado / Premium) con precios en COP.
+- **Paquetes integrales** con carrusel (Embla) en móvil y grilla en escritorio.
+- **Captura de leads hacia n8n** mediante la API interna `POST /api/leads`, que valida la información y la reenvía a un webhook.
+- **Integración con WhatsApp** en todos los puntos de contacto (`wa.me`) y widget de chatbot (OmniChat) listo para montar.
+- **SEO completo**: `sitemap.xml`, `robots.txt`, schema markup (JSON-LD), metadata Open Graph y Twitter, título/descripción por página.
+- **Analítica** de Vercel (`@vercel/analytics`).
+- **Encabezados de seguridad** vía `next.config.ts` (nosniff, X-Frame-Options, Referrer-Policy).
+- **Tema oscuro** inspirado en Supabase, con color primario naranja `#FF7400` y tipografías Satoshi (display/cuerpo) y JetBrains Mono (técnica).
+
+## Stack tecnológico
+
+| Capa | Tecnología |
+| --- | --- |
+| Framework | Next.js 16 (App Router), React 19, TypeScript |
+| Estilos | Tailwind CSS 4, Tailwind Animate, shadcn/ui + Radix UI |
+| Componentes | Embla Carousel, React Icons, CVA + Tailwind Merge |
+| API | Next.js Route Handlers (`app/api/leads`) |
+| Despliegue | Vercel |
+| Package manager | pnpm |
+
+El resto de dependencias declaradas (react-hook-form, zod, recharts, sonner, vaul, date-fns, etc.) están disponibles para usos futuros en `package.json`.
+
+## Estructura del proyecto
+
+```
+app/
+├── api/leads/route.ts          # API de captura de leads hacia n8n
+├── condiciones-del-servicio/   # Página legal de condiciones
+├── politica-de-privacidad/     # Página legal de privacidad
+├── propuesta-template/         # Plantilla de propuesta comercial
+├── layout.tsx                  # Layout raíz (SEO, fuentes, analytics)
+├── page.tsx                    # Landing page principal
+├── robots.ts                   # robots.txt
+└── sitemap.ts                  # sitemap.xml
+components/
+├── ui/                         # Botones y cards (shadcn/ui)
+├── hero-section.tsx            # Hero con estadísticas
+├── services-section.tsx        # Servicios (Chatbots, Web, Software)
+├── how-it-works-section.tsx    # Proceso en 3 pasos
+├── mini-plans-section.tsx      # Planes por servicio
+├── packages-section.tsx        # Paquetes integrales
+├── cta-section.tsx             # Llamado a la acción final
+├── chatbot-widget.tsx          # Widget OmniChat (nex.nexobite.com)
+├── particle-field.tsx          # Fondo de partículas
+├── schema-markup.tsx           # Datos estructurados JSON-LD
+├── header.tsx / footer.tsx     # Navegación y pie de página
+└── brand-logo.tsx / container.tsx / animated-section.tsx
+lib/utils.ts                    # Utilidades (cn, Tailwind Merge)
+public/                         # Imágenes, logos y fuentes (Satoshi)
+```
+
+## Configuración de entorno
+
+Copia `.env.local` (ver `.env.example` o crea uno) y define el webhook de n8n:
 
 ```bash
 N8N_LEAD_WEBHOOK_URL=http://localhost:5678/webhook/ventas
 ```
 
-## Getting Started
+Si la variable no está definida, la API `/api/leads` responde `500` con un mensaje claro. El payload que recibe el webhook tiene la siguiente forma:
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```json
+{
+  "source": "nexobite_chatbot_widget",
+  "createdAt": "2026-08-16T12:00:00.000Z",
+  "lead": { "name": "...", "phone": "...", "email": "...", "message": "..." },
+  "metadata": { "pageUrl": "...", "userAgent": "...", "ip": "..." }
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Cómo empezar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Requisitos: Node.js 20+, pnpm.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Instalar dependencias
+pnpm install
 
-## Learn More
+# Levantar el servidor de desarrollo
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Abre [http://localhost:3000](http://localhost:3000) para ver el resultado.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Scripts disponibles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Script | Descripción |
+| --- | --- |
+| `pnpm dev` | Servidor de desarrollo |
+| `pnpm build` | Build de producción |
+| `pnpm start` | Servidor de producción |
+| `pnpm lint` | ESLint |
 
-## Deploy on Vercel
+## Plantilla de propuesta comercial
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`/propuesta-template` es una plantilla para generar propuestas de venta por cliente. Para usarla, edita los objetos `CLIENT_CONFIG`, `proposals` y `paymentOptions` al inicio de `app/propuesta-template/page.tsx` (los datos del cliente, planes, precios y opciones de pago). El resto del componente no requiere modificaciones. La página no está indexada (`robots.ts` la excluye del sitemap).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notas
+
+- El widget de chatbot (`components/chatbot-widget.tsx`) integra el widget **OmniChat** de `nex.nexobite.com`. Actualmente está disponible para montar pero no se importa en el layout.
+- La marca usa **naranja** (`#FF7400`) como color primario y texto near-black (`#171717`) sobre los CTAs naranjas. La guía completa está en `IDENTIDAD-VISUAL.md` y `DESIGN.MD`.
+
+## Portfolio
+
+> **NexoBite** — Sitio web comercial para una agencia de automatización de ventas para PYMEs colombianas. Landing page one-page en Next.js 16 y Tailwind CSS 4 con planes de precios en COP, paquetes integrales y carruseles responsive. Integra captura de leads hacia n8n vía API Route, CTAs directos a WhatsApp, widget de chatbot OmniChat y SEO completo (sitemap, robots, schema JSON-LD y Open Graph). Diseño oscuro inspirado en Supabase con acento naranja, tipografías Satoshi/JetBrains Mono y animaciones de entrada por scroll.
