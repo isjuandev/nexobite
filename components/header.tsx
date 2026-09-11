@@ -1,11 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/brand-logo";
+
+const HOME_NAV_ITEMS = [
+  { id: "services", label: "Servicios" },
+  { id: "how-it-works", label: "Cómo Funciona" },
+  { id: "mini-plans", label: "Planes" },
+  { id: "packages", label: "Paquetes" },
+] as const;
+
+const PROPOSAL_NAV_ITEMS = [
+  { id: "proposals", label: "Propuestas" },
+  { id: "payment", label: "Opciones de Pago" },
+  { id: "contact", label: "Contacto" },
+] as const;
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,80 +28,113 @@ export function Header() {
   const router = useRouter();
 
   // Detectar si estamos en una página de propuesta
-  const isProposalPage = pathname?.startsWith("/propuesta-");
+  const isProposalPage = Boolean(pathname?.startsWith("/propuesta"));
   // Detectar si NO estamos en la página principal
   const isNotHomePage = pathname !== "/";
 
+  // Determinar los ítems de navegación según el tipo de página
+  const navItems = isProposalPage ? PROPOSAL_NAV_ITEMS : HOME_NAV_ITEMS;
+
   // Función reutilizable para smooth scroll o redirección
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault();
-    setIsMenuOpen(false);
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+      e.preventDefault();
+      setIsMenuOpen(false);
 
-    if (isNotHomePage && !isProposalPage) {
-      // Si no estamos en el home ni en propuestas, redirigir al home con un hash
-      router.push(`/#${sectionId}`);
-      return;
-    }
-
-    const el = document.getElementById(sectionId);
-    const header = document.querySelector("header");
-    if (el) {
-      const headerHeight = header ? header.getBoundingClientRect().height : 80;
-      const y =
-        el.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-
-      // Si no estamos en la página principal ni en propuestas, no calcular scroll spy
       if (isNotHomePage && !isProposalPage) {
-        setActiveSection("");
+        router.push(`/#${sectionId}`);
         return;
       }
 
-      // Obtener la altura del header para ajustar el offset
-      const header = document.querySelector("header");
-      const headerHeight = header ? header.getBoundingClientRect().height : 80;
-      const offset = headerHeight + 100; // Agregar margen adicional
+      const el = document.getElementById(sectionId);
+      if (el) {
+        const headerEl = document.getElementById("main-header");
+        const headerHeight = headerEl ? headerEl.offsetHeight : 72;
+        const targetY =
+          el.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+        window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
+      }
+    },
+    [isNotHomePage, isProposalPage, router]
+  );
 
-      // Determinar las secciones según el tipo de página
-      const sections = isProposalPage
-        ? ["proposals", "payment", "contact"]
-        : ["services", "how-it-works", "mini-plans", "packages"];
+  // Cerrar menú con tecla Escape o clic fuera
+  useEffect(() => {
+    if (!isMenuOpen) return;
 
-      const scrollPosition = window.scrollY + offset;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
 
-      // Encontrar la sección actual basándose en la posición de scroll
+    const handleClickOutside = (e: MouseEvent) => {
+      const headerEl = document.getElementById("main-header");
+      if (headerEl && !headerEl.contains(e.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  // Scroll listener optimizado con requestAnimationFrame
+  useEffect(() => {
+    let ticking = false;
+
+    const updateScrollState = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 20);
+
+      // Si estamos en una página sin secciones hash, resetear sección activa
+      if (isNotHomePage && !isProposalPage) {
+        setActiveSection("");
+        ticking = false;
+        return;
+      }
+
+      const headerEl = document.getElementById("main-header");
+      const headerHeight = headerEl ? headerEl.offsetHeight : 72;
+      const offsetThreshold = headerHeight + 64;
+      const scrollPosition = currentScrollY + offsetThreshold;
+
       let currentSection = "";
-
-      for (const id of sections) {
-        const el = document.getElementById(id);
+      for (const item of navItems) {
+        const el = document.getElementById(item.id);
         if (!el) continue;
 
-        const { top } = el.getBoundingClientRect();
-        const absoluteTop = top + window.scrollY;
-
+        const absoluteTop = el.getBoundingClientRect().top + currentScrollY;
         if (scrollPosition >= absoluteTop) {
-          currentSection = id;
+          currentSection = item.id;
         }
       }
 
       setActiveSection(currentSection);
+      ticking = false;
     };
 
-    handleScroll(); // Ejecutar al montar
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isProposalPage, isNotHomePage]);
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollState);
+        ticking = true;
+      }
+    };
+
+    updateScrollState(); // Ejecutar al montar
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isProposalPage, isNotHomePage, navItems]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
-      {/* Backdrop adicional para asegurar que nada se vea por encima */}
-      <div className="absolute inset-0 -z-10 backdrop-blur-sm" />
+    <header id="main-header" className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+      {/* Backdrop decorativo sin interceptar clicks */}
+      <div className="absolute inset-0 -z-10 backdrop-blur-sm pointer-events-none" />
 
       <div
         className={`mx-auto max-w-7xl transition-all duration-300 ${
@@ -101,144 +147,50 @@ export function Header() {
           <Link
             href="/"
             className="group flex items-center gap-2 transition-opacity hover:opacity-90"
+            aria-label="NexoBite - Inicio"
           >
             <BrandLogo markClassName="h-8 w-8" />
           </Link>
 
-          <nav className="hidden items-center gap-6 md:flex">
-            {isProposalPage ? (
-              // Navegación para páginas de propuestas
-              <>
+          {/* Navegación Desktop */}
+          <nav
+            className="hidden items-center gap-6 md:flex"
+            aria-label="Navegación principal"
+          >
+            {navItems.map((item) => {
+              const isActive = activeSection === item.id;
+              const linkHref = isNotHomePage && !isProposalPage ? `/#${item.id}` : `#${item.id}`;
+
+              return (
                 <Link
-                  href="#proposals"
-                  onClick={(e) => handleNavClick(e, "proposals")}
-                  className={`group relative text-sm font-medium transition-colors ${activeSection === "proposals"
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                    }`}
+                  key={item.id}
+                  href={linkHref}
+                  onClick={(e) => handleNavClick(e, item.id)}
+                  aria-current={isActive ? "location" : undefined}
+                  className={`group relative text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-ink"
+                      : "text-ink-soft hover:text-ink"
+                  }`}
                 >
-                  <span>Propuestas</span>
+                  <span>{item.label}</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "proposals"
-                      ? "w-full scale-x-100"
-                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                      }`}
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${
+                      isActive
+                        ? "w-full scale-x-100"
+                        : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
+                    }`}
                     style={{ transformOrigin: "center" }}
                   />
                 </Link>
-                <Link
-                  href="#payment"
-                  onClick={(e) => handleNavClick(e, "payment")}
-                  className={`group relative text-sm font-medium transition-colors ${activeSection === "payment"
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                    }`}
-                >
-                  <span>Opciones de Pago</span>
-                  <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "payment"
-                      ? "w-full scale-x-100"
-                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                      }`}
-                    style={{ transformOrigin: "center" }}
-                  />
-                </Link>
-                <Link
-                  href="#contact"
-                  onClick={(e) => handleNavClick(e, "contact")}
-                  className={`group relative text-sm font-medium transition-colors ${activeSection === "contact"
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                    }`}
-                >
-                  <span>Contacto</span>
-                  <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "contact"
-                      ? "w-full scale-x-100"
-                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                      }`}
-                    style={{ transformOrigin: "center" }}
-                  />
-                </Link>
-              </>
-            ) : (
-              // Navegación normal para la página principal
-              <>
-                <Link
-                  href="#services"
-                  onClick={(e) => handleNavClick(e, "services")}
-                  className={`group relative text-sm font-medium transition-colors ${activeSection === "services"
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                    }`}
-                >
-                  <span>Servicios</span>
-                  <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "services"
-                      ? "w-full scale-x-100"
-                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                      }`}
-                    style={{ transformOrigin: "center" }}
-                  />
-                </Link>
-                <Link
-                  href="#how-it-works"
-                  onClick={(e) => handleNavClick(e, "how-it-works")}
-                  className={`group relative text-sm font-medium transition-colors ${activeSection === "how-it-works"
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                    }`}
-                >
-                  <span>Cómo Funciona</span>
-                  <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "how-it-works"
-                      ? "w-full scale-x-100"
-                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                      }`}
-                    style={{ transformOrigin: "center" }}
-                  />
-                </Link>
-                <Link
-                  href="#mini-plans"
-                  onClick={(e) => handleNavClick(e, "mini-plans")}
-                  className={`group relative text-sm font-medium transition-colors ${activeSection === "mini-plans"
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                    }`}
-                >
-                  <span>Planes</span>
-                  <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "mini-plans"
-                      ? "w-full scale-x-100"
-                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                      }`}
-                    style={{ transformOrigin: "center" }}
-                  />
-                </Link>
-                <Link
-                  href="#packages"
-                  onClick={(e) => handleNavClick(e, "packages")}
-                  className={`group relative text-sm font-medium transition-colors ${activeSection === "packages"
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                    }`}
-                >
-                  <span>Paquetes</span>
-                  <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "packages"
-                      ? "w-full scale-x-100"
-                      : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
-                      }`}
-                    style={{ transformOrigin: "center" }}
-                  />
-                </Link>
-              </>
-            )}
+              );
+            })}
           </nav>
 
+          {/* Acciones del Header */}
           <div className="hidden items-center gap-3 md:flex">
             <div className="flex items-center gap-2 px-2.5 py-1 rounded-sm border border-line bg-paper/50 text-[11px] font-mono text-ink-mute">
-              <span className="w-1.5 h-1.5 rounded-full bg-signal inline-block animate-pulse"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-signal inline-block animate-pulse" />
               <span>SYS.OPERATIONAL</span>
             </div>
             <Button
@@ -257,11 +209,15 @@ export function Header() {
             </Button>
           </div>
 
+          {/* Botón Menú Móvil */}
           <div className="md:hidden">
             <button
-              className="relative rounded-sm p-2 text-foreground transition-colors hover:bg-card border border-line"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
+              type="button"
+              className="relative rounded-sm p-2 text-ink transition-colors hover:bg-card border border-line"
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-nav-menu"
+              aria-label={isMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
             >
               {isMenuOpen ? (
                 <FaTimes className="h-5 w-5" />
@@ -272,89 +228,38 @@ export function Header() {
           </div>
         </div>
 
+        {/* Menú Desplegable Móvil */}
         {isMenuOpen && (
-          <div className="border-t border-line bg-card/98 backdrop-blur-md md:hidden rounded-b-md">
-            <nav className="flex flex-col gap-4 p-4">
-              {isProposalPage ? (
-                // Navegación móvil para páginas de propuestas
-                <>
+          <div
+            id="mobile-nav-menu"
+            className="border-t border-line bg-card/98 backdrop-blur-md md:hidden rounded-b-md"
+          >
+            <nav
+              className="flex flex-col gap-3 p-4"
+              aria-label="Navegación móvil"
+            >
+              {navItems.map((item) => {
+                const isActive = activeSection === item.id;
+                const linkHref = isNotHomePage && !isProposalPage ? `/#${item.id}` : `#${item.id}`;
+
+                return (
                   <Link
-                    href="#proposals"
-                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "proposals"
-                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
-                      : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    onClick={(e) => handleNavClick(e, "proposals")}
+                    key={item.id}
+                    href={linkHref}
+                    onClick={(e) => handleNavClick(e, item.id)}
+                    aria-current={isActive ? "location" : undefined}
+                    className={`text-sm py-2 transition-colors ${
+                      isActive
+                        ? "text-ink font-semibold underline decoration-signal decoration-2 underline-offset-4"
+                        : "text-ink-soft font-medium hover:text-ink"
+                    }`}
                   >
-                    Propuestas
+                    {item.label}
                   </Link>
-                  <Link
-                    href="#payment"
-                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "payment"
-                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
-                      : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    onClick={(e) => handleNavClick(e, "payment")}
-                  >
-                    Opciones de Pago
-                  </Link>
-                  <Link
-                    href="#contact"
-                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "contact"
-                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
-                      : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    onClick={(e) => handleNavClick(e, "contact")}
-                  >
-                    Contacto
-                  </Link>
-                </>
-              ) : (
-                // Navegación móvil normal
-                <>
-                  <Link
-                    href={isNotHomePage ? "/#services" : "#services"}
-                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "services"
-                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
-                      : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    onClick={(e) => handleNavClick(e, "services")}
-                  >
-                    Servicios
-                  </Link>
-                  <Link
-                    href={isNotHomePage ? "/#how-it-works" : "#how-it-works"}
-                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "how-it-works"
-                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
-                      : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    onClick={(e) => handleNavClick(e, "how-it-works")}
-                  >
-                    Cómo Funciona
-                  </Link>
-                  <Link
-                    href={isNotHomePage ? "/#mini-plans" : "#mini-plans"}
-                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "mini-plans"
-                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
-                      : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    onClick={(e) => handleNavClick(e, "mini-plans")}
-                  >
-                    Planes
-                  </Link>
-                  <Link
-                    href={isNotHomePage ? "/#packages" : "#packages"}
-                    className={`text-sm font-medium transition-colors py-2 ${activeSection === "packages"
-                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
-                      : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    onClick={(e) => handleNavClick(e, "packages")}
-                  >
-                    Paquetes
-                  </Link>
-                </>
-              )}
-              <Button variant="signal" asChild className="w-full rounded-sm">
+                );
+              })}
+
+              <Button variant="signal" asChild className="w-full rounded-sm mt-2">
                 <a
                   href="https://wa.me/+573009459026?text=Hola,%20quiero%20entender%20c%C3%B3mo%20puedo%20mejorar%20la%20atenci%C3%B3n%20de%20mi%20negocio."
                   target="_blank"
