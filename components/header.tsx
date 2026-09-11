@@ -189,10 +189,6 @@ export function Header() {
 
           {/* Acciones del Header */}
           <div className="hidden items-center gap-3 md:flex">
-            <div className="flex items-center gap-2 px-2.5 py-1 rounded-sm border border-line bg-paper/50 text-[11px] font-mono text-ink-mute">
-              <span className="w-1.5 h-1.5 rounded-full bg-signal inline-block animate-pulse" />
-              <span>SYS.OPERATIONAL</span>
-            </div>
             <Button
               variant="signal"
               size="sm"
