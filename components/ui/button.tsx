@@ -10,18 +10,22 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-secondary-foreground hover:bg-primary/90",
+          "bg-ink text-paper font-semibold hover:bg-signal-deep hover:text-ink transition-colors",
+        primary:
+          "bg-ink text-paper font-semibold hover:bg-signal-deep hover:text-ink transition-colors",
+        signal:
+          "bg-signal text-paper font-semibold hover:bg-signal-deep transition-colors",
         destructive:
-          "bg-destructive/60 text-white hover:bg-destructive/90 focus-visible:ring-destructive/40",
+          "bg-alert/80 text-ink hover:bg-alert focus-visible:ring-alert/40",
         outline:
-          "border border-border bg-transparent shadow-xs hover:bg-secondary hover:text-secondary-foreground",
+          "border border-line-strong bg-card text-ink hover:border-ink hover:text-ink transition-colors shadow-xs",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "bg-secondary text-ink hover:bg-secondary/80 border border-line",
         ghost:
-          "hover:bg-accent/50 hover:text-accent-foreground",
-        link: "text-foreground underline decoration-primary decoration-2 underline-offset-4",
+          "bg-transparent text-ink-soft hover:bg-card hover:text-ink",
+        link: "text-ink underline decoration-signal decoration-1 underline-offset-4 hover:text-signal transition-colors",
         gradient:
-          "bg-primary text-secondary-foreground hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 border-0 hover-glow",
+          "bg-ink text-paper font-semibold hover:bg-signal-deep border border-line-strong/40 transition-all",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

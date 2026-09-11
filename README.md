@@ -17,8 +17,7 @@ El sitio incluye una plantilla de **propuestas comerciales** reutilizable, pági
 - **Integración con WhatsApp** en todos los puntos de contacto (`wa.me`) y widget de chatbot (OmniChat) listo para montar.
 - **SEO completo**: `sitemap.xml`, `robots.txt`, schema markup (JSON-LD), metadata Open Graph y Twitter, título/descripción por página.
 - **Analítica** de Vercel (`@vercel/analytics`).
-- **Encabezados de seguridad** vía `next.config.ts` (nosniff, X-Frame-Options, Referrer-Policy).
-- **Tema oscuro** inspirado en Supabase, con color primario naranja `#FF7400` y tipografías Satoshi (display/cuerpo) y JetBrains Mono (técnica).
+- **Identidad "Instrumento" (Dark Mode exclusivo)** con verde señal `#1C8A76`, acentos de cobre `#D6924E`, fondo de papel carbón `#0E1013` y tipografías Plus Jakarta Sans y JetBrains Mono (con tabular nums).
 
 ## Stack tecnológico
 
@@ -59,7 +58,7 @@ components/
 ├── header.tsx / footer.tsx     # Navegación y pie de página
 └── brand-logo.tsx / container.tsx / animated-section.tsx
 lib/utils.ts                    # Utilidades (cn, Tailwind Merge)
-public/                         # Imágenes, logos y fuentes (Satoshi)
+public/                         # Imágenes y logomarcas oficiales
 ```
 
 ## Configuración de entorno
@@ -111,8 +110,8 @@ Abre [http://localhost:3000](http://localhost:3000) para ver el resultado.
 ## Notas
 
 - El widget de chatbot (`components/chatbot-widget.tsx`) integra el widget **OmniChat** de `nex.nexobite.com`. Actualmente está disponible para montar pero no se importa en el layout.
-- La marca usa **naranja** (`#FF7400`) como color primario y texto near-black (`#171717`) sobre los CTAs naranjas. La guía completa está en `IDENTIDAD-VISUAL.md` y `DESIGN.MD`.
+- La identidad visual **"Instrumento"** opera exclusivamente en Dark Mode con Verde Señal (`#1C8A76`), Cobre (`#D6924E`), Papel Carbón (`#0E1013`) y líneas finas (`#262B31`). La guía completa está en `IDENTIDAD-VISUAL.md` y `DESIGN.MD`.
 
 ## Portfolio
 
-> **NexoBite** — Sitio web comercial para una agencia de automatización de ventas para PYMEs colombianas. Landing page one-page en Next.js 16 y Tailwind CSS 4 con planes de precios en COP, paquetes integrales y carruseles responsive. Integra captura de leads hacia n8n vía API Route, CTAs directos a WhatsApp, widget de chatbot OmniChat y SEO completo (sitemap, robots, schema JSON-LD y Open Graph). Diseño oscuro inspirado en Supabase con acento naranja, tipografías Satoshi/JetBrains Mono y animaciones de entrada por scroll.
+> **NexoBite** — Sitio web comercial para una agencia de automatización de ventas para PYMEs colombianas. Landing page one-page en Next.js 16 y Tailwind CSS 4 con planes de precios en COP, paquetes integrales y carruseles responsive. Integra captura de leads hacia n8n vía API Route, CTAs directos a WhatsApp, widget de chatbot OmniChat y SEO completo (sitemap, robots, schema JSON-LD y Open Graph). Diseño de precisión técnica "Instrumento" en Dark Mode exclusivo con verde señal, acentos de cobre, tipografías Plus Jakarta Sans / JetBrains Mono y corchetes de hardware.

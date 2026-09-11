@@ -198,62 +198,64 @@ function MobilePlansCarousel({ category }: { category: Category }) {
               className="min-w-0 shrink-0 basis-[85vw] max-w-sm"
             >
               <Card
-                className={`group relative mt-4 flex h-full flex-col transition-all duration-300 ${plan.highlighted
-                  ? "border-primary bg-card shadow-lg shadow-primary/20"
-                  : "border-border bg-card/50"
-                  }`}
+                instrument={plan.highlighted}
+                className={`group relative mt-4 flex h-full flex-col transition-all rounded-md p-5 ${
+                  plan.highlighted
+                    ? "border-signal/50 bg-card shadow-sm"
+                    : "border-line bg-card"
+                }`}
               >
                 {plan.highlighted && (
-                  <div className="absolute -top-4 left-1/2 z-10 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 shadow-lg backdrop-blur-sm">
-                    <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
-                    <span className="text-xs font-semibold text-foreground">
-                      Más Popular
-                    </span>
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-1.5 whitespace-nowrap rounded-sm border border-signal/40 bg-card px-2.5 py-0.5 shadow-xs font-mono text-[10px] font-semibold text-signal">
+                    <span className="h-1.5 w-1.5 rounded-full bg-signal inline-block" />
+                    RECOMENDADO
                   </div>
                 )}
-                <CardHeader>
-                  <CardTitle className="text-foreground">
+                <CardHeader className="p-0 pb-4">
+                  <CardTitle className="text-ink text-base font-semibold">
                     {plan.name}
                   </CardTitle>
-                  <CardDescription className="text-muted-foreground">
+                  <CardDescription className="text-ink-mute font-mono text-xs">
                     {plan.priceNote}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="flex-1">
-                  <div className="mb-6 flex flex-col items-start gap-2">
+                <CardContent className="flex-1 p-0 pb-5">
+                  <div className="mb-5 flex flex-col items-start gap-1">
                     {plan.originalPrice && (
-                      <div className="text-sm text-muted-foreground line-through">
+                      <div className="font-mono text-xs text-ink-mute line-through">
                         {plan.originalPrice}
                       </div>
                     )}
-                    <span className="text-3xl font-medium text-foreground">
+                    <span className="text-3xl font-extrabold text-ink font-display tnum">
                       {plan.price}
                     </span>
                     {plan.savings && (
-                      <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+                      <div className="inline-flex items-center gap-1 rounded-sm border border-copper/30 bg-copper-soft px-2 py-0.5 font-mono text-[11px] font-medium text-copper mt-1">
                         ✓ {plan.savings}
                       </div>
                     )}
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2.5">
                     {plan.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <FaCheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                        <span className="text-sm text-muted-foreground">
+                      <li key={item} className="flex items-start gap-2.5">
+                        <FaCheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-signal" />
+                        <span className="text-xs text-ink-soft leading-relaxed">
                           {item}
                         </span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="p-0">
                   <Button
-                    className="w-full"
-                    variant={plan.highlighted ? "gradient" : "default"}
+                    className="w-full rounded-sm font-medium"
+                    variant={plan.highlighted ? "signal" : "outline"}
                     asChild
                   >
                     <a
-                      href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, me interesa el plan ${plan.name} de ${category.title}. Quiero confirmar si es adecuado para mi negocio.`)}`}
+                      href={`https://wa.me/+573009459026?text=${encodeURIComponent(
+                        `Hola, me interesa el plan ${plan.name} de ${category.title}. Quiero confirmar si es adecuado para mi negocio.`
+                      )}`}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -273,9 +275,9 @@ function MobilePlansCarousel({ category }: { category: Category }) {
             type="button"
             key={plan.name}
             onClick={() => carouselApi?.scrollTo(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${activeIndex === index
-              ? "w-8 bg-primary"
-              : "w-2 bg-muted hover:bg-muted-foreground"
+            className={`h-1.5 rounded-full transition-all duration-300 ${activeIndex === index
+              ? "w-6 bg-signal"
+              : "w-1.5 bg-line-strong hover:bg-ink-mute"
               }`}
             aria-label={`Ir a ${plan.name}`}
           />
@@ -291,59 +293,40 @@ export function MiniPlansSection() {
   return (
     <section
       id="mini-plans"
-      className="relative py-24 border-b border-border/50"
+      className="relative py-24 border-b border-line bg-paper"
     >
-      <ParticleField variant="mixed" density="medium" speed="medium" />
+      <ParticleField variant="subtle" density="low" speed="slow" />
       <Container className="relative z-10">
         {/* Section Header */}
         <AnimatedSection>
-          <div className="brand-kicker mx-auto mb-4 w-fit text-center text-sm font-medium uppercase tracking-wider">
-            Planes por Servicio
+          <div className="flex justify-center mb-3">
+            <span className="eyebrow">03 · PLANES POR SERVICIO</span>
           </div>
-          <h2 className="mb-4 text-center text-3xl font-medium text-foreground sm:text-4xl">
-            <span className="brand-highlight">
-              Elige
-            </span>{" "}
-            cómo quieres empezar
+          <h2 className="mb-4 text-center text-3xl font-semibold text-ink sm:text-4xl">
+            Arquitectura y planes según tu{" "}
+            <span className="text-signal">etapa operativa</span>
           </h2>
-          <p className="mx-auto mb-12 max-w-2xl text-center text-pretty text-lg text-muted-foreground">
-            Puedes comenzar con un servicio puntual o construir un sistema más
-            completo según tu etapa.
+          <p className="mx-auto mb-12 max-w-2xl text-center text-pretty text-base text-ink-soft">
+            Comienza con un flujo puntual o despliega el stack completo de atención y captación.
           </p>
         </AnimatedSection>
 
         {/* Category buttons */}
-        <div className="mb-8 relative">
-          {/* Gradientes indicadores en móvil */}
-          <div className="md:hidden absolute left-0 top-0 bottom-0 w-8 bg-linear-to-r from-background to-transparent pointer-events-none z-10" />
-          <div className="md:hidden absolute right-0 top-0 bottom-0 w-8 bg-linear-to-l from-background to-transparent pointer-events-none z-10" />
-
-          <div className="mx-auto flex w-max gap-3 overflow-x-auto scrollbar-hide py-2 snap-x snap-proximity md:justify-center">
+        <div className="mb-10 relative">
+          <div className="mx-auto flex w-max gap-2 p-1 rounded-sm border border-line bg-card/60">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setSelected(cat.id)}
-                className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 snap-center ${selected === cat.id
-                  ? "bg-primary text-secondary-foreground shadow-md shadow-primary/20"
-                  : "bg-card/40 text-muted-foreground hover:bg-card/60"
-                  }`}
+                className={`rounded-sm px-4 py-1.5 text-xs font-mono transition-all duration-200 ${
+                  selected === cat.id
+                    ? "bg-ink text-paper font-semibold shadow-xs"
+                    : "text-ink-mute hover:text-ink hover:bg-card"
+                }`}
                 aria-pressed={selected === cat.id}
               >
                 {cat.title}
               </button>
-            ))}
-          </div>
-
-          {/* Indicador de scroll en móvil */}
-          <div className="md:hidden flex justify-center gap-1.5 mt-3">
-            {categories.map((cat) => (
-              <div
-                key={cat.id}
-                className={`h-1 rounded-full transition-all duration-300 ${selected === cat.id
-                  ? "w-6 bg-primary"
-                  : "w-1 bg-muted"
-                  }`}
-              />
             ))}
           </div>
         </div>
@@ -355,10 +338,10 @@ export function MiniPlansSection() {
             <AnimatedSection key={cat.id} delay={cIndex * 40}>
               <div>
                 <div className="mb-8">
-                  <h3 className="text-lg font-medium text-foreground">
+                  <h3 className="text-lg font-semibold text-ink">
                     {cat.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-ink-soft">
                     {cat.description}
                   </p>
                 </div>
@@ -370,66 +353,68 @@ export function MiniPlansSection() {
                   {cat.plans.map((p) => (
                     <Card
                       key={p.name}
-                      className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${p.highlighted
-                        ? "border-primary bg-card shadow-lg shadow-primary/20 hover:shadow-primary/30"
-                        : "border-border bg-card/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
-                        }`}
+                      instrument={p.highlighted}
+                      className={`group relative flex h-full flex-col rounded-md p-6 transition-all ${
+                        p.highlighted
+                          ? "border-signal/50 bg-card shadow-sm"
+                          : "border-line bg-card hover:border-line-strong"
+                      }`}
                     >
                       {p.highlighted && (
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
-                          <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
-                          <span className="text-xs font-semibold text-foreground">
-                            Más Popular
-                          </span>
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-1.5 whitespace-nowrap rounded-sm border border-signal/40 bg-card px-2.5 py-0.5 shadow-xs font-mono text-[10px] font-semibold text-signal">
+                          <span className="h-1.5 w-1.5 rounded-full bg-signal inline-block" />
+                          RECOMENDADO
                         </div>
                       )}
-                      <CardHeader>
-                        <CardTitle className="text-foreground">
+                      <CardHeader className="p-0 pb-4">
+                        <CardTitle className="text-ink text-base font-semibold">
                           {p.name}
                         </CardTitle>
-                        <CardDescription className="text-muted-foreground">
+                        <CardDescription className="text-ink-mute font-mono text-xs">
                           {p.priceNote}
                         </CardDescription>
                       </CardHeader>
-                      <CardContent className="flex-1">
-                        <div className="mb-4 flex flex-col items-start gap-2">
+                      <CardContent className="flex-1 p-0 pb-6">
+                        <div className="mb-5 flex flex-col items-start gap-1">
                           {p.originalPrice && (
-                            <div className="text-sm text-muted-foreground line-through">
+                            <div className="font-mono text-xs text-ink-mute line-through">
                               {p.originalPrice}
                             </div>
                           )}
-                          <span className="text-2xl font-medium text-foreground">
+                          <span className="text-3xl font-extrabold text-ink font-display tnum">
                             {p.price}
                           </span>
                           {p.savings && (
-                            <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+                            <div className="inline-flex items-center gap-1 rounded-sm border border-copper/30 bg-copper-soft px-2 py-0.5 font-mono text-[11px] font-medium text-copper mt-1">
                               ✓ {p.savings}
                             </div>
                           )}
                         </div>
                         <ul className="space-y-3">
                           {p.includes.map((inc) => (
-                            <li key={inc} className="flex items-start gap-3">
-                              <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                              <span className="text-sm text-muted-foreground">
+                            <li key={inc} className="flex items-start gap-2.5">
+                              <FaCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-signal" />
+                              <span className="text-xs text-ink-soft leading-relaxed">
                                 {inc}
                               </span>
                             </li>
                           ))}
                         </ul>
                       </CardContent>
-                      <CardFooter>
+                      <CardFooter className="p-0">
                         <Button
-                          className="w-full"
-                          variant={p.highlighted ? "gradient" : "default"}
+                          className="w-full rounded-sm font-medium"
+                          variant={p.highlighted ? "signal" : "outline"}
                           asChild
                         >
                           <a
-                            href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, me interesa el plan ${p.name} de ${cat.title}. Quiero confirmar si es adecuado para mi negocio.`)}`}
+                            href={`https://wa.me/+573009459026?text=${encodeURIComponent(
+                              `Hola, me interesa el plan ${p.name} de ${cat.title}. Quiero confirmar si es adecuado para mi negocio.`
+                            )}`}
                             target="_blank"
                             rel="noreferrer"
                           >
-                            {p.highlighted ? "Quiero este plan" : "Quiero este plan"}
+                            Quiero este plan
                           </a>
                         </Button>
                       </CardFooter>

@@ -116,23 +116,20 @@ export function PackagesSection() {
   return (
     <section
       id="packages"
-      className="relative py-24 sm:py-32 overflow-hidden border-b border-border/50"
+      className="relative py-24 sm:py-32 overflow-hidden border-b border-line bg-paper"
     >
-      <ParticleField variant="mixed" density="high" speed="medium" />
+      <ParticleField variant="subtle" density="low" speed="slow" />
       <Container className="relative z-10">
         <AnimatedSection>
-          <div className="brand-kicker mx-auto mb-4 w-fit text-center text-sm font-medium uppercase tracking-wider">
-            Paquetes Integrales
+          <div className="flex justify-center mb-3">
+            <span className="eyebrow">04 · PAQUETES INTEGRALES</span>
           </div>
-          <h2 className="mb-4 text-center text-3xl font-medium text-foreground sm:text-4xl">
-            <span className="brand-highlight">
-              Combina servicios
-            </span>{" "}
-            y simplifica tu crecimiento
+          <h2 className="mb-4 text-center text-3xl font-semibold text-ink sm:text-4xl">
+            Arquitectura unificada para{" "}
+            <span className="text-signal">simplificar tu operación</span>
           </h2>
-          <p className="mx-auto mb-16 max-w-2xl text-center text-pretty text-lg text-muted-foreground">
-            Integra desarrollo, automatización y contenido en un solo flujo de
-            trabajo. Menos coordinación, más avance.
+          <p className="mx-auto mb-16 max-w-2xl text-center text-pretty text-base text-ink-soft">
+            Integra WhatsApp, captación web y seguimiento automatizado en un solo flujo técnico coordinado.
           </p>
         </AnimatedSection>
 
@@ -141,18 +138,18 @@ export function PackagesSection() {
           <button
             type="button"
             onClick={() => carouselApi?.scrollPrev()}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-lg hover:bg-card transition-all"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-card border border-line-strong rounded-sm p-2 shadow-xs hover:border-ink transition-all"
             aria-label="Anterior"
           >
-            <FaChevronLeft className="h-6 w-6 text-foreground" />
+            <FaChevronLeft className="h-5 w-5 text-ink" />
           </button>
           <button
             type="button"
             onClick={() => carouselApi?.scrollNext()}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-lg hover:bg-card transition-all"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-card border border-line-strong rounded-sm p-2 shadow-xs hover:border-ink transition-all"
             aria-label="Siguiente"
           >
-            <FaChevronRight className="h-6 w-6 text-foreground" />
+            <FaChevronRight className="h-5 w-5 text-ink" />
           </button>
 
           <div
@@ -166,65 +163,67 @@ export function PackagesSection() {
                   className="min-w-0 shrink-0 basis-[85vw] max-w-sm"
                 >
                   <Card
-                    className={`group relative flex h-full flex-col transition-all duration-300 mt-4 ${pkg.highlighted
-                      ? "border-primary bg-card shadow-lg shadow-primary/20"
-                      : "border-border bg-card/50"
-                      }`}
+                    instrument={pkg.highlighted}
+                    className={`group relative flex h-full flex-col rounded-md p-6 mt-4 transition-all ${
+                      pkg.highlighted
+                        ? "border-signal/50 bg-card shadow-sm"
+                        : "border-line bg-card"
+                    }`}
                   >
                     {pkg.highlighted && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
-                        <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
-                        <span className="text-xs font-semibold text-foreground">
-                          Más Popular
-                        </span>
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-1.5 whitespace-nowrap rounded-sm border border-signal/40 bg-card px-2.5 py-0.5 shadow-xs font-mono text-[10px] font-semibold text-signal">
+                        <span className="h-1.5 w-1.5 rounded-full bg-signal inline-block" />
+                        RECOMENDADO
                       </div>
                     )}
-                    <CardHeader>
-                      <CardTitle className="text-foreground">
+                    <CardHeader className="p-0 pb-4">
+                      <CardTitle className="text-ink text-base font-semibold">
                         {pkg.name}
                       </CardTitle>
-                      <CardDescription className="text-muted-foreground">
+                      <CardDescription className="text-ink-soft text-xs leading-relaxed">
                         {pkg.description}
                       </CardDescription>
                     </CardHeader>
-                    <CardContent className="flex-1">
-                      <div className="mb-6 flex flex-col items-start gap-2">
-                        <span className="text-sm text-muted-foreground line-through">
+                    <CardContent className="flex-1 p-0 pb-6">
+                      <div className="mb-5 flex flex-col items-start gap-1">
+                        <span className="font-mono text-xs text-ink-mute line-through">
                           {pkg.originalPrice}
                         </span>
-                        <span className="text-3xl font-medium text-foreground">
+                        <span className="text-3xl font-extrabold text-ink font-display tnum">
                           {pkg.price}
                         </span>
-                        <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+                        <div className="inline-flex items-center gap-1 rounded-sm border border-copper/30 bg-copper-soft px-2 py-0.5 font-mono text-[11px] font-medium text-copper mt-1">
                           ✓ {pkg.savings}
                         </div>
                       </div>
-                      <ul className="space-y-3">
+                      <ul className="space-y-2.5">
                         {pkg.features.map((feature, featureIndex) => (
                           <li
                             key={`${feature}-${featureIndex}`}
-                            className="flex items-start gap-3"
+                            className="flex items-start gap-2.5"
                           >
-                            <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                            <span className="text-sm text-muted-foreground">
+                            <FaCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-signal" />
+                            <span className="text-xs text-ink-soft leading-relaxed">
                               {feature}
                             </span>
                           </li>
                         ))}
                       </ul>
                     </CardContent>
-                    <CardFooter>
+                    <CardFooter className="p-0">
                       <Button
-                        className="w-full"
-                        variant={pkg.highlighted ? "gradient" : "outline"}
+                        className="w-full rounded-sm font-medium"
+                        variant={pkg.highlighted ? "signal" : "outline"}
                         asChild
                       >
                         <a
-                          href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, quiero empezar con el paquete ${pkg.name}. ¿Cómo seguimos?`)}`}
+                          href={`https://wa.me/+573009459026?text=${encodeURIComponent(
+                            `Hola, quiero empezar con el paquete ${pkg.name}. ¿Cómo seguimos?`
+                          )}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          {pkg.highlighted ? "Empezar con este paquete" : "Empezar con este paquete"}
+                          Empezar con este paquete
                         </a>
                       </Button>
                     </CardFooter>
@@ -239,10 +238,11 @@ export function PackagesSection() {
                 type="button"
                 key={index}
                 onClick={() => carouselApi?.scrollTo(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${activeIndex === index
-                  ? "w-8 bg-primary"
-                  : "w-2 bg-muted hover:bg-muted-foreground"
-                  }`}
+                className={`h-1.5 rounded-full transition-all duration-200 ${
+                  activeIndex === index
+                    ? "w-6 bg-signal"
+                    : "w-1.5 bg-line-strong"
+                }`}
                 aria-label={`Ir a ${packages[index].name}`}
               />
             ))}
@@ -250,64 +250,66 @@ export function PackagesSection() {
         </div>
 
         {/* Desktop Grid */}
-        <div className="hidden lg:grid gap-8 lg:grid-cols-3">
+        <div className="hidden lg:grid gap-6 lg:grid-cols-3">
           {packages.map((pkg, index) => (
             <AnimatedSection key={pkg.name} delay={index * 100}>
               <Card
-                className={`group relative flex h-full flex-col hover-lift transition-all duration-300 ${pkg.highlighted
-                  ? "border-primary bg-card shadow-lg shadow-primary/20 hover:shadow-primary/30"
-                  : "border-border bg-card/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
-                  }`}
+                instrument={pkg.highlighted}
+                className={`group relative flex h-full flex-col rounded-md p-6 transition-all ${
+                  pkg.highlighted
+                    ? "border-signal/50 bg-card shadow-sm"
+                    : "border-line bg-card hover:border-line-strong"
+                }`}
               >
                 {pkg.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full border border-border/30 bg-secondary/80 px-4 py-1.5 backdrop-blur-sm shadow-lg whitespace-nowrap">
-                    <span className="h-2 w-2 animate-pulse-glow rounded-full bg-primary" />
-                    <span className="text-xs font-semibold text-foreground">
-                      Más Popular
-                    </span>
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-1.5 whitespace-nowrap rounded-sm border border-signal/40 bg-card px-2.5 py-0.5 shadow-xs font-mono text-[10px] font-semibold text-signal">
+                    <span className="h-1.5 w-1.5 rounded-full bg-signal inline-block" />
+                    RECOMENDADO
                   </div>
                 )}
-                <CardHeader>
-                  <CardTitle className="text-foreground">{pkg.name}</CardTitle>
-                  <CardDescription className="text-muted-foreground">
+                <CardHeader className="p-0 pb-4">
+                  <CardTitle className="text-ink text-base font-semibold">{pkg.name}</CardTitle>
+                  <CardDescription className="text-ink-soft text-xs leading-relaxed">
                     {pkg.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="flex-1">
-                  <div className="mb-6 flex flex-col items-start gap-2">
-                    <span className="text-sm text-muted-foreground line-through">
+                <CardContent className="flex-1 p-0 pb-6">
+                  <div className="mb-5 flex flex-col items-start gap-1">
+                    <span className="font-mono text-xs text-ink-mute line-through">
                       {pkg.originalPrice}
                     </span>
-                    <span className="text-3xl font-medium text-foreground">
+                    <span className="text-3xl font-extrabold text-ink font-display tnum">
                       {pkg.price}
                     </span>
-                    <div className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+                    <div className="inline-flex items-center gap-1 rounded-sm border border-copper/30 bg-copper-soft px-2 py-0.5 font-mono text-[11px] font-medium text-copper mt-1">
                       ✓ {pkg.savings}
                     </div>
                   </div>
                   <ul className="space-y-3">
                     {pkg.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
-                        <FaCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                        <span className="text-sm text-muted-foreground">
+                      <li key={feature} className="flex items-start gap-2.5">
+                        <FaCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-signal" />
+                        <span className="text-xs text-ink-soft leading-relaxed">
                           {feature}
                         </span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="p-0">
                   <Button
-                    className="w-full"
-                    variant={pkg.highlighted ? "gradient" : "default"}
+                    className="w-full rounded-sm font-medium"
+                    variant={pkg.highlighted ? "signal" : "outline"}
                     asChild
                   >
                     <a
-                      href={`https://wa.me/+573009459026?text=${encodeURIComponent(`Hola, quiero empezar con el paquete ${pkg.name}. ¿Cómo seguimos?`)}`}
+                      href={`https://wa.me/+573009459026?text=${encodeURIComponent(
+                        `Hola, quiero empezar con el paquete ${pkg.name}. ¿Cómo seguimos?`
+                      )}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {pkg.highlighted ? "Empezar con este paquete" : "Empezar con este paquete"}
+                      Empezar con este paquete
                     </a>
                   </Button>
                 </CardFooter>

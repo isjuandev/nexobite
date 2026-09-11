@@ -91,17 +91,18 @@ export function Header() {
       <div className="absolute inset-0 -z-10 backdrop-blur-sm" />
 
       <div
-        className={`mx-auto max-w-7xl transition-all duration-300 ${isScrolled
-          ? "bg-card backdrop-blur-xl shadow-lg shadow-black/20 border border-border/60"
-          : "bg-card/95 backdrop-blur-lg border border-border/45"
-          } rounded-lg`}
+        className={`mx-auto max-w-7xl transition-all duration-300 ${
+          isScrolled
+            ? "bg-card/95 backdrop-blur-xl border border-line-strong shadow-xs"
+            : "bg-card/85 backdrop-blur-md border border-line"
+        } rounded-md`}
       >
-        <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex h-14 items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
-            className="group flex items-center gap-2 transition-transform duration-300 hover:scale-105"
+            className="group flex items-center gap-2 transition-opacity hover:opacity-90"
           >
-            <BrandLogo markClassName="h-9 w-9" />
+            <BrandLogo markClassName="h-8 w-8" />
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex">
@@ -118,7 +119,7 @@ export function Header() {
                 >
                   <span>Propuestas</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "proposals"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "proposals"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -135,7 +136,7 @@ export function Header() {
                 >
                   <span>Opciones de Pago</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "payment"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "payment"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -152,7 +153,7 @@ export function Header() {
                 >
                   <span>Contacto</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "contact"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "contact"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -173,7 +174,7 @@ export function Header() {
                 >
                   <span>Servicios</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "services"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "services"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -190,7 +191,7 @@ export function Header() {
                 >
                   <span>Cómo Funciona</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "how-it-works"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "how-it-works"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -207,7 +208,7 @@ export function Header() {
                 >
                   <span>Planes</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "mini-plans"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "mini-plans"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -224,7 +225,7 @@ export function Header() {
                 >
                   <span>Paquetes</span>
                   <span
-                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-primary transition-all duration-300 transform -translate-x-1/2 ${activeSection === "packages"
+                    className={`absolute -bottom-1 left-1/2 h-0.5 bg-signal transition-all duration-300 transform -translate-x-1/2 ${activeSection === "packages"
                       ? "w-full scale-x-100"
                       : "w-0 scale-x-0 group-hover:w-full group-hover:scale-x-100"
                       }`}
@@ -236,39 +237,43 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
+            <div className="flex items-center gap-2 px-2.5 py-1 rounded-sm border border-line bg-paper/50 text-[11px] font-mono text-ink-mute">
+              <span className="w-1.5 h-1.5 rounded-full bg-signal inline-block animate-pulse"></span>
+              <span>SYS.OPERATIONAL</span>
+            </div>
             <Button
-              variant="gradient"
+              variant="signal"
+              size="sm"
               asChild
-              className="relative overflow-hidden"
+              className="rounded-sm font-medium text-xs px-3.5"
             >
               <a
                 href="https://wa.me/+573009459026?text=Hola,%20quiero%20entender%20c%C3%B3mo%20puedo%20mejorar%20la%20atenci%C3%B3n%20de%20mi%20negocio."
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="relative z-10">Hablar por WhatsApp</span>
-                <div className="absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 hover:opacity-100" />
+                <span>WhatsApp</span>
               </a>
             </Button>
           </div>
 
           <div className="md:hidden">
             <button
-              className="relative rounded-sm p-2 text-foreground transition-colors hover:bg-primary/10"
+              className="relative rounded-sm p-2 text-foreground transition-colors hover:bg-card border border-line"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <FaTimes className="h-6 w-6" />
+                <FaTimes className="h-5 w-5" />
               ) : (
-                <FaBars className="h-6 w-6" />
+                <FaBars className="h-5 w-5" />
               )}
             </button>
           </div>
         </div>
 
         {isMenuOpen && (
-          <div className="border-t border-border/50 bg-card backdrop-blur-sm md:hidden rounded-b-lg">
+          <div className="border-t border-line bg-card/98 backdrop-blur-md md:hidden rounded-b-md">
             <nav className="flex flex-col gap-4 p-4">
               {isProposalPage ? (
                 // Navegación móvil para páginas de propuestas
@@ -276,7 +281,7 @@ export function Header() {
                   <Link
                     href="#proposals"
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "proposals"
-                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "proposals")}
@@ -286,7 +291,7 @@ export function Header() {
                   <Link
                     href="#payment"
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "payment"
-                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "payment")}
@@ -296,7 +301,7 @@ export function Header() {
                   <Link
                     href="#contact"
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "contact"
-                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "contact")}
@@ -310,7 +315,7 @@ export function Header() {
                   <Link
                     href={isNotHomePage ? "/#services" : "#services"}
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "services"
-                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "services")}
@@ -320,7 +325,7 @@ export function Header() {
                   <Link
                     href={isNotHomePage ? "/#how-it-works" : "#how-it-works"}
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "how-it-works"
-                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "how-it-works")}
@@ -330,7 +335,7 @@ export function Header() {
                   <Link
                     href={isNotHomePage ? "/#mini-plans" : "#mini-plans"}
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "mini-plans"
-                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "mini-plans")}
@@ -340,7 +345,7 @@ export function Header() {
                   <Link
                     href={isNotHomePage ? "/#packages" : "#packages"}
                     className={`text-sm font-medium transition-colors py-2 ${activeSection === "packages"
-                      ? "text-foreground font-medium underline decoration-primary decoration-2 underline-offset-4"
+                      ? "text-foreground font-medium underline decoration-signal decoration-2 underline-offset-4"
                       : "text-muted-foreground hover:text-foreground"
                       }`}
                     onClick={(e) => handleNavClick(e, "packages")}
@@ -349,7 +354,7 @@ export function Header() {
                   </Link>
                 </>
               )}
-              <Button variant="gradient" asChild className="w-full">
+              <Button variant="signal" asChild className="w-full rounded-sm">
                 <a
                   href="https://wa.me/+573009459026?text=Hola,%20quiero%20entender%20c%C3%B3mo%20puedo%20mejorar%20la%20atenci%C3%B3n%20de%20mi%20negocio."
                   target="_blank"

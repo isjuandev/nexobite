@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NexoBite — Identidad Visual · Instrumento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   NEXOBITE — VARIANTE "INSTRUMENTO"
+   Concepto: NexoBite enruta mensajes con la misma precisión con
+   la que un instrumento de medición lee una señal. Nada de calidez
+   decorativa acá — la marca proyecta confianza técnica: bordes
+   finos, tipografía exacta, números tabulares, cero adornos.
+   ============================================================ */
+:root{
+  --ink:20 23 28;             /* #14171C Grafito */
+  --ink-soft:75 83 97;        /* #4B5361 */
+  --ink-mute:139 146 158;     /* #8B929E */
+  --paper:247 248 250;        /* #F7F8FA fondo frío */
+  --card:255 255 255;         /* #FFFFFF */
+  --line:226 228 233;         /* #E2E4E9 */
+  --line-strong:201 205 214;  /* #C9CDD6 */
+
+  --signal:20 99 86;          /* #146356 verde señal — estado saludable, no neón */
+  --signal-deep:15 79 69;     /* #0F4F45 */
+  --signal-soft:228 240 236;  /* #E4F0EC */
+  --copper:184 118 58;        /* #B8763A dato / énfasis numérico */
+  --copper-soft:245 233 218;  /* #F5E9DA */
+  --alert:178 58 52;          /* #B23A34 */
+  --alert-soft:247 228 226;
+  --amber:199 154 46;         /* #C79A2E advertencia */
+  --amber-soft:250 240 218;
+
+  --radius-sm:4px;--radius-md:8px;--radius-lg:12px;
+  --space-xs:4px;--space-sm:8px;--space-md:12px;--space-lg:16px;--space-xl:24px;--space-xxl:32px;--space-huge:64px;
+  --shadow-card:0 1px 2px rgb(20 23 28 / .04);
+  --shadow-focus:0 0 0 3px rgb(20 99 86 / .25);
+
+  --font-display:'Plus Jakarta Sans', Helvetica, Arial, sans-serif;
+  --font-serif:'Plus Jakarta Sans', Helvetica, Arial, sans-serif;
+  --font-mono:'JetBrains Mono', ui-monospace, monospace;
+}
+.dark{
+  --ink:237 239 242;--ink-soft:180 186 195;--ink-mute:120 128 140;
+  --paper:14 16 19;--card:22 25 29;--line:38 43 49;--line-strong:56 62 70;
+  --signal:28 138 118;--signal-deep:20 110 94;--signal-soft:20 40 36;
+  --copper:214 146 78;--copper-soft:46 34 22;
+  --shadow-card:0 1px 2px rgb(0 0 0 / .4);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-display);background:rgb(var(--paper));color:rgb(var(--ink));line-height:1.55;-webkit-font-smoothing:antialiased;font-size:14px}
+a{color:inherit}
+code,.mono{font-family:var(--font-mono)}
+.tnum{font-variant-numeric:tabular-nums}
+
+.shell{display:flex;min-height:100vh}
+.nav{position:fixed;top:0;left:0;bottom:0;width:240px;background:rgb(var(--card));border-right:1px solid rgb(var(--line));overflow:auto;padding:20px 16px}
+.nav h6{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--ink-mute));margin:22px 6px 8px}
+.nav a{display:flex;align-items:center;gap:9px;padding:7px 8px;border-radius:var(--radius-sm);font-size:13px;color:rgb(var(--ink-soft));text-decoration:none;font-weight:500}
+.nav a .n{font-family:var(--font-mono);font-size:10px;color:rgb(var(--ink-mute));width:20px}
+.nav a:hover{background:rgb(var(--paper))}
+.nav a.active{background:rgb(var(--ink));color:rgb(var(--paper))}
+.nav a.active .n{color:rgb(var(--copper))}
+.brand{display:flex;align-items:center;gap:10px;padding:4px 4px 16px;border-bottom:1px solid rgb(var(--line));margin-bottom:6px}
+.brand b{font-size:15px;font-weight:700;letter-spacing:-.01em}
+.brand span{display:block;font-family:var(--font-mono);font-size:9.5px;color:rgb(var(--ink-mute));letter-spacing:.04em}
+.main{margin-left:240px;flex:1;max-width:1160px}
+.topbar{position:sticky;top:0;z-index:5;background:rgb(var(--paper) / .9);backdrop-filter:blur(6px);border-bottom:1px solid rgb(var(--line));display:flex;align-items:center;justify-content:space-between;padding:13px 44px}
+.topbar-title{font-family:var(--font-mono);font-size:11.5px;color:rgb(var(--ink-mute))}
+.content{padding:0 44px 100px}
+section{padding-top:60px;scroll-margin-top:66px}
+.eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:rgb(var(--signal));font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.eyebrow::before{content:'';width:14px;height:1px;background:rgb(var(--signal))}
+.section-head h2{font-size:26px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+.section-head p{color:rgb(var(--ink-soft));font-size:13.5px;max-width:600px;line-height:1.6}
+@media(max-width:900px){.nav{display:none}.main{margin-left:0}.topbar,.content{padding-left:18px;padding-right:18px}}
+
+.mode-toggle{display:flex;border:1px solid rgb(var(--line-strong));border-radius:var(--radius-sm);overflow:hidden}
+.mode-toggle button{border:none;background:rgb(var(--card));padding:6px 13px;font-size:11.5px;font-weight:600;color:rgb(var(--ink-mute));cursor:pointer;font-family:var(--font-mono)}
+.mode-toggle button.active{background:rgb(var(--ink));color:rgb(var(--paper))}
+
+/* ---- tick ruler: firma visual (calibración) ---- */
+.ruler{height:16px;display:flex;align-items:flex-end;gap:0;margin:26px 0;overflow:hidden}
+.ruler i{flex:1;height:5px;border-left:1px solid rgb(var(--line-strong))}
+.ruler i:nth-child(5n+1){height:10px;border-color:rgb(var(--ink-mute))}
+.ruler i:nth-child(10n+1){height:16px;border-color:rgb(var(--signal))}
+
+/* ---- instrument card: corner brackets, la otra firma visual ---- */
+.instrument{position:relative;background:rgb(var(--card));border:1px solid rgb(var(--line));border-radius:var(--radius-md);padding:22px}
+.instrument::before,.instrument::after{content:'';position:absolute;width:12px;height:12px;pointer-events:none}
+.instrument::before{top:-1px;left:-1px;border-top:2px solid rgb(var(--copper));border-left:2px solid rgb(var(--copper))}
+.instrument::after{bottom:-1px;right:-1px;border-bottom:2px solid rgb(var(--copper));border-right:2px solid rgb(var(--copper))}
+
+/* ---- hero: readout ---- */
+.hero{padding:60px 0 30px;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.hero h1{font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-.015em;margin-bottom:16px}
+.hero h1 i{font-family:var(--font-serif);font-style:normal;font-weight:800;color:rgb(var(--signal))}
+.hero p.lede{font-size:14.5px;color:rgb(var(--ink-soft));max-width:460px;margin-bottom:22px;line-height:1.65}
+.readout{background:rgb(var(--card));border:1px solid rgb(var(--line));border-radius:var(--radius-lg);padding:6px}
+.readout-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid rgb(var(--line))}
+.readout-head span{font-family:var(--font-mono);font-size:10.5px;color:rgb(var(--ink-mute))}
+.readout-dot{width:6px;height:6px;border-radius:50%;background:rgb(var(--signal));display:inline-block;margin-right:6px;box-shadow:0 0 0 3px rgb(var(--signal-soft))}
+.readout-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgb(var(--line))}
+.readout-cell{background:rgb(var(--card));padding:16px}
+.readout-cell label{font-family:var(--font-mono);font-size:10px;color:rgb(var(--ink-mute));text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:6px}
+.readout-cell .val{font-family:var(--font-serif);font-style:normal;font-weight:800;font-size:28px;color:rgb(var(--ink))}
+.readout-cell .val small{font-family:var(--font-mono);font-style:normal;font-size:12px;color:rgb(var(--ink-mute));margin-left:2px}
+
+/* ---- swatches ---- */
+.grid{display:grid;gap:1px;background:rgb(var(--line));border:1px solid rgb(var(--line));border-radius:var(--radius-md);overflow:hidden}
+.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+.swatch{background:rgb(var(--card));cursor:pointer}
+.swatch-top{height:64px;display:flex;align-items:flex-end;padding:9px;font-family:var(--font-mono);font-size:10.5px;font-weight:600}
+.swatch-meta{padding:9px 11px}
+.swatch-meta b{font-size:12px;display:block;font-weight:600}
+.swatch-meta code{color:rgb(var(--ink-mute));font-size:10px}
+.plain-grid{display:grid;gap:14px}
+
+/* ---- type ---- */
+.type-row{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid rgb(var(--line));padding:15px 0;gap:16px}
+.type-row small{color:rgb(var(--ink-mute));font-family:var(--font-mono);font-size:10.5px;white-space:nowrap}
+.font-card{background:rgb(var(--card));border:1px solid rgb(var(--line));border-radius:var(--radius-md);padding:20px}
+.font-card .sample{font-size:30px;margin:8px 0}
+.font-card .meta{font-size:11px;color:rgb(var(--ink-mute));font-family:var(--font-mono)}
+
+/* ---- buttons ---- */
+.btn{display:inline-flex;align-items:center;gap:7px;border:1px solid transparent;border-radius:var(--radius-sm);padding:8px 15px;font-size:13px;font-weight:600;font-family:var(--font-display);cursor:pointer}
+.btn:focus-visible{outline:none;box-shadow:var(--shadow-focus)}
+.btn-primary{background:rgb(var(--ink));color:rgb(var(--paper))}.btn-primary:hover{background:rgb(var(--signal-deep))}
+.btn-outline{background:rgb(var(--card));border-color:rgb(var(--line-strong));color:rgb(var(--ink))}.btn-outline:hover{border-color:rgb(var(--ink))}
+.btn-ghost{background:transparent;color:rgb(var(--ink-soft))}.btn-ghost:hover{background:rgb(var(--card))}
+.btn-sm{padding:6px 11px;font-size:12px}
+
+/* ---- badges (estados de cola BullMQ) ---- */
+.badge{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:11px;font-weight:500;border:1px solid transparent}
+.badge i{width:6px;height:6px;border-radius:50%}
+.b-waiting{background:rgb(var(--paper));border-color:rgb(var(--line-strong));color:rgb(var(--ink-soft))}.b-waiting i{background:rgb(var(--ink-mute))}
+.b-active{background:rgb(var(--signal-soft));color:rgb(var(--signal-deep))}.b-active i{background:rgb(var(--signal))}
+.b-completed{background:rgb(var(--signal-soft));color:rgb(var(--signal-deep))}.b-completed i{background:rgb(var(--signal))}
+.b-failed{background:rgb(var(--alert-soft));color:rgb(var(--alert))}.b-failed i{background:rgb(var(--alert))}
+.b-delayed{background:rgb(var(--amber-soft));color:#8a6c1e}.b-delayed i{background:rgb(var(--amber))}
+
+/* ---- inputs ---- */
+.field{display:flex;flex-direction:column;gap:6px;max-width:340px}
+.field label{font-family:var(--font-mono);font-size:11px;color:rgb(var(--ink-soft));font-weight:500}
+.input{height:36px;border:1px solid rgb(var(--line-strong));border-radius:var(--radius-sm);background:rgb(var(--card));padding:0 12px;font-size:13px;color:rgb(var(--ink));font-family:var(--font-mono)}
+.input:focus{outline:none;border-color:rgb(var(--signal));box-shadow:var(--shadow-focus)}
+
+.card{background:rgb(var(--card));border:1px solid rgb(var(--line));border-radius:var(--radius-md);padding:20px;box-shadow:var(--shadow-card)}
+
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid rgb(var(--line))}
+th{color:rgb(var(--ink-mute));font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+td.tnum{font-family:var(--font-mono)}
+
+pre{font-family:var(--font-mono);font-size:12px;line-height:1.9;white-space:pre-wrap}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:rgb(var(--ink));color:rgb(var(--paper));padding:9px 16px;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:12px;opacity:0;transition:.2s;z-index:50;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<nav class="nav">
+  <div class="brand">
+    <svg width="30" height="30" viewBox="0 0 30 30"><rect x="0.5" y="0.5" width="29" height="29" rx="7" fill="none" stroke="#14171C" stroke-width="1"/><path d="M8 20 L14 10 L16 16 L22 8" stroke="#146356" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="8" r="1.6" fill="#B8763A"/></svg>
+    <div><b>NexoBite</b><span>IDENTIDAD · V2 INSTRUMENTO</span></div>
+  </div>
+  <h6>00 — Empezar</h6>
+  <a href="#inicio" class="active"><span class="n">00</span>Lectura inicial</a>
+  <a href="#voz"><span class="n">01</span>Voz y tono</a>
+  <h6>Fundamentos</h6>
+  <a href="#color"><span class="n">02</span>Color</a>
+  <a href="#tipografia"><span class="n">03</span>Tipografía</a>
+  <a href="#espaciado"><span class="n">04</span>Grid y forma</a>
+  <h6>Componentes</h6>
+  <a href="#botones"><span class="n">05</span>Botones</a>
+  <a href="#colas"><span class="n">06</span>Estados de cola</a>
+  <a href="#datos"><span class="n">07</span>Tarjetas de dato</a>
+  <h6>Sistema</h6>
+  <a href="#seguridad"><span class="n">08</span>Webhooks y firma</a>
+  <a href="#oscuro"><span class="n">09</span>Modo oscuro</a>
+  <a href="#codigo"><span class="n">10</span>Tokens</a>
+</nav>
+
+<main class="main">
+  <div class="topbar">
+    <span class="topbar-title mono">nexobite.dev/brand · rev.02</span>
+    <div class="mode-toggle">
+      <button class="active" onclick="setMode('light',this)">LIGHT</button>
+      <button onclick="setMode('dark',this)">DARK</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+  <section id="inicio">
+    <div class="hero">
+      <div>
+        <span class="eyebrow">SYS.STATUS · OPERATIONAL</span>
+        <h1>Cada mensaje se enruta con la <i>misma precisión</i>, sin importar el canal.</h1>
+        <p class="lede">NexoBite no es un chat bonito: es la capa de enrutamiento entre canales, colas y agentes. La marca proyecta eso — control, exactitud, cero ambigüedad — para un comprador técnico que evalúa infraestructura, no un widget.</p>
+        <div style="display:flex;gap:8px">
+          <span class="badge b-active"><i></i>tenant_id aislado</span>
+          <span class="badge b-completed"><i></i>p95 118ms</span>
+        </div>
+      </div>
+      <div class="readout">
+        <div class="readout-head"><span><span class="readout-dot"></span>QUEUE MONITOR</span><span class="mono">nx_8f21a</span></div>
+        <div class="readout-grid">
+          <div class="readout-cell"><label>Mensajes/seg</label><div class="val tnum">42<small>/s</small></div></div>
+          <div class="readout-cell"><label>Latencia p95</label><div class="val tnum">118<small>ms</small></div></div>
+          <div class="readout-cell"><label>Canales activos</label><div class="val tnum">04</div></div>
+          <div class="readout-cell"><label>Jobs en cola</label><div class="val tnum">07</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="ruler">${Array(60).fill('<i></i>').join('')}</div>
+  </section>
+
+  <section id="voz">
+    <div class="section-head"><span class="eyebrow">01 · FUNDAMENTO</span><h2>Voz y tono</h2>
+    <p>Frases cortas, verbos exactos. No vendemos "sinergia omnicanal": decimos qué hace el sistema y qué gana quien lo usa. Cero signos de exclamación, cero "¡genial!".</p></div>
+    <div class="plain-grid grid-2" style="margin-top:20px;background:none;border:none">
+      <div class="card"><span class="eyebrow" style="color:rgb(var(--alert))">✕ Genérico</span><p style="font-size:13.5px">"¡Conectá todos tus canales y sorprendé a tus clientes con una experiencia omnicanal increíble!"</p></div>
+      <div class="card"><span class="eyebrow">✓ NexoBite</span><p style="font-size:13.5px">"Cuatro canales, un solo inbox. Cada mensaje llega con su tenant_id resuelto y su SLA corriendo."</p></div>
+    </div>
+  </section>
+
+  <section id="color">
+    <div class="section-head"><span class="eyebrow">02 · FUNDAMENTO</span><h2>Color</h2>
+    <p>Verde Señal indica "el sistema funciona" — el mismo lenguaje que un LED de estado. Cobre marca los números que importan. El resto es grafito y líneas finas: la interfaz no compite con el dato.</p></div>
+    <div class="grid grid-4" id="palette-brand" style="margin-top:20px"></div>
+    <h4 style="margin:30px 0 4px;font-size:12px;font-family:var(--font-mono);color:rgb(var(--ink-mute))">NEUTROS</h4>
+    <div class="grid grid-4" id="palette-neutral"></div>
+  </section>
+
+  <section id="tipografia">
+    <div class="section-head"><span class="eyebrow">03 · FUNDAMENTO</span><h2>Tipografía</h2>
+    <p>Plus Jakarta Sans hace toda la interfaz — moderna, geométrica, sin personalidad de sobra. Los pesos 700–800 marcan los números que hay que mirar dos veces: métricas, precios, resultados. JetBrains Mono queda reservado a IDs, headers y payloads.</p></div>
+    <div class="grid grid-3" style="margin-top:20px">
+      <div class="font-card"><div class="sample" style="font-weight:600">Route()</div><b>Plus Jakarta Sans 400–600</b><div class="meta">UI completa</div></div>
+      <div class="font-card"><div class="sample" style="font-weight:800">118ms</div><b>Plus Jakarta Sans 800</b><div class="meta">solo métricas y cifras clave</div></div>
+      <div class="font-card"><div class="sample mono">nx_8f21a</div><b>JetBrains Mono</b><div class="meta">IDs, headers, payloads</div></div>
+    </div>
+    <div class="card" style="margin-top:20px">
+      <div class="type-row"><span style="font-size:30px;font-weight:600;letter-spacing:-.015em">Enrutamiento entre canales</span><small>h1 / 30 / 600</small></div>
+      <div class="type-row"><span style="font-size:20px;font-weight:600">Webhook confirmado</span><small>h2 / 20 / 600</small></div>
+      <div class="type-row"><span style="font-family:var(--font-serif);font-weight:800;font-size:26px">99.98<span class="mono" style="font-size:13px"> % uptime</span></span><small>stat / 800</small></div>
+      <div class="type-row"><span class="mono" style="font-size:12.5px">x-signature: sha256=4a1f...</span><small>code / mono 12.5</small></div>
+    </div>
+  </section>
+
+  <section id="espaciado">
+    <div class="section-head"><span class="eyebrow">04 · FUNDAMENTO</span><h2>Grid y forma</h2>
+    <p>Radios chicos (4–8px), bordes de 1px, sombras casi inexistentes. La firma visual son las marcas de esquina tipo visor de instrumento — aparecen únicamente en tarjetas que muestran un dato en vivo.</p></div>
+    <div class="grid-2" style="display:grid;gap:14px;margin-top:20px">
+      <div class="instrument"><label class="mono" style="font-size:10px;color:rgb(var(--ink-mute))">LIVE · CONVERSATIONS_GATEWAY</label>
+        <div style="font-family:var(--font-serif);font-weight:800;font-size:26px;margin-top:6px" class="tnum">312 <span class="mono" style="font-size:12px;color:rgb(var(--ink-mute))">activas</span></div>
+      </div>
+      <div class="card"><b style="font-size:12.5px">Tarjeta estándar</b><p style="font-size:12.5px;color:rgb(var(--ink-soft));margin-top:6px">Sin marcas de esquina — se reservan solo para lecturas en vivo, no para decorar todo.</p></div>
+    </div>
+  </section>
+
+  <section id="botones">
+    <div class="section-head"><span class="eyebrow">05 · COMPONENTE</span><h2>Botones</h2></div>
+    <div class="card" style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <button class="btn btn-primary">Desplegar workflow</button>
+      <button class="btn btn-outline">Ver logs</button>
+      <button class="btn btn-ghost">Cancelar</button>
+      <button class="btn btn-primary btn-sm">Reintentar job</button>
+    </div>
+  </section>
+
+  <section id="colas">
+    <div class="section-head"><span class="eyebrow">06 · COMPONENTE</span><h2>Estados de cola (BullMQ)</h2>
+    <p>Los mismos cinco estados que ves en Redis, sin traducir de más — el equipo técnico reconoce el vocabulario real.</p></div>
+    <div class="card" style="margin-top:20px;display:flex;gap:8px;flex-wrap:wrap">
+      <span class="badge b-waiting"><i></i>waiting</span>
+      <span class="badge b-active"><i></i>active</span>
+      <span class="badge b-delayed"><i></i>delayed</span>
+      <span class="badge b-completed"><i></i>completed</span>
+      <span class="badge b-failed"><i></i>failed</span>
+    </div>
+  </section>
+
+  <section id="datos">
+    <div class="section-head"><span class="eyebrow">07 · COMPONENTE</span><h2>Tarjetas de dato e inputs</h2></div>
+    <div class="grid-2" style="display:grid;gap:14px;margin-top:20px">
+      <div class="card">
+        <div class="field"><label>TENANT_SLUG</label><input class="input" value="nexo-corp"></div>
+        <div class="field" style="margin-top:12px"><label>WEBHOOK_URL</label><input class="input" value="https://n8n.tenant.io/webhook/order-status"></div>
+      </div>
+      <div class="instrument">
+        <label class="mono" style="font-size:10px;color:rgb(var(--ink-mute))">RETRY POLICY</label>
+        <table style="margin-top:8px">
+          <tr><th>Intento</th><th>Backoff</th></tr>
+          <tr><td class="tnum mono">1</td><td class="tnum mono">1s</td></tr>
+          <tr><td class="tnum mono">2</td><td class="tnum mono">4s</td></tr>
+          <tr><td class="tnum mono">3</td><td class="tnum mono">16s</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="seguridad">
+    <div class="section-head"><span class="eyebrow">08 · SISTEMA</span><h2>Webhooks y firma</h2>
+    <p>Todo webhook saliente hacia n8n lleva estas tres cabeceras. Mostrarlas tal cual en la documentación es parte de la marca: nada se oculta detrás de una capa de marketing.</p></div>
+    <div class="card" style="margin-top:20px">
+      <pre class="mono">POST /webhook/order-status-notification
+x-api-key: ****************
+x-signature: sha256=&lt;hmac&gt;
+x-timestamp: 1735500000
+Content-Type: application/json</pre>
+    </div>
+  </section>
+
+  <section id="oscuro">
+    <div class="section-head"><span class="eyebrow">09 · SISTEMA</span><h2>Modo oscuro</h2>
+    <p>Grafito casi negro, no navy — la señal verde y el cobre mantienen exactamente el mismo valor perceptual en ambos modos.</p></div>
+    <div class="grid grid-4" style="margin-top:20px">
+      <div class="swatch"><div class="swatch-top" style="background:#0E1013;color:#EDEFF2">bg</div><div class="swatch-meta"><b>#0E1013</b><code>--paper (dark)</code></div></div>
+      <div class="swatch"><div class="swatch-top" style="background:#16191D;color:#EDEFF2">surface</div><div class="swatch-meta"><b>#16191D</b><code>--card (dark)</code></div></div>
+      <div class="swatch"><div class="swatch-top" style="background:#1C8A76;color:#fff">señal</div><div class="swatch-meta"><b>#1C8A76</b><code>--signal (dark)</code></div></div>
+      <div class="swatch"><div class="swatch-top" style="background:#D6924E;color:#14171C">cobre</div><div class="swatch-meta"><b>#D6924E</b><code>--copper (dark)</code></div></div>
+    </div>
+  </section>
+
+  <section id="codigo">
+    <div class="section-head"><span class="eyebrow">10 · SISTEMA</span><h2>Tokens</h2><p>Click para copiar.</p></div>
+    <div class="card" style="margin-top:20px"><pre id="token-block" style="cursor:pointer"></pre></div>
+  </section>
+
+  </div>
+</main>
+</div>
+<div class="toast" id="toast">Copiado ✓</div>
+
+<script>
+document.querySelector('.ruler').innerHTML = Array(80).fill('<i></i>').join('');
+function setMode(m,btn){document.documentElement.classList.toggle('dark',m==='dark');document.querySelectorAll('.mode-toggle button').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
+function showToast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(window._t);window._t=setTimeout(()=>el.classList.remove('show'),1500)}
+function copyTxt(t){navigator.clipboard.writeText(t).then(()=>showToast('Copiado: '+t))}
+
+const brand=[['Señal','#146356','--signal','#fff'],['Señal Deep','#0F4F45','--signal-deep','#fff'],['Cobre','#B8763A','--copper','#fff'],['Alerta','#B23A34','--alert','#fff']];
+const neutral=[['Grafito','#14171C','--ink','#F7F8FA'],['Grafito Soft','#4B5361','--ink-soft','#fff'],['Papel','#F7F8FA','--paper','#14171C'],['Línea','#E2E4E9','--line','#14171C']];
+function paint(id,items){document.getElementById(id).innerHTML=items.map(([n,h,t,fg])=>`<div class="swatch" onclick="copyTxt('${h}')"><div class="swatch-top" style="background:${h};color:${fg}">${n}</div><div class="swatch-meta"><b>${h}</b><code>${t}</code></div></div>`).join('')}
+paint('palette-brand',brand);paint('palette-neutral',neutral);
+
+const tokenCss=`:root{
+  --ink: 20 23 28;
+  --ink-soft: 75 83 97;
+  --paper: 247 248 250;
+  --card: 255 255 255;
+  --line: 226 228 233;
+  --signal: 20 99 86;
+  --signal-deep: 15 79 69;
+  --copper: 184 118 58;
+  --alert: 178 58 52;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-serif: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius-md: 8px;
+}`;
+document.getElementById('token-block').textContent=tokenCss;
+document.getElementById('token-block').onclick=()=>copyTxt(tokenCss);
+
+const links=[...document.querySelectorAll('.nav a')];
+const secs=[...document.querySelectorAll('section')];
+window.addEventListener('scroll',()=>{let cur=secs[0].id;for(const s of secs){if(window.scrollY+80>=s.offsetTop)cur=s.id}links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+cur))});
+</script>
+</body>
+</html>

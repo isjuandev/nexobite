@@ -2,162 +2,136 @@
 @import "tw-animate-css";
 
 /* ============================================================
-   NEXOBITE — Supabase-inspired dark mode: orange + canvas-night
+   NEXOBITE — VARIANTE "INSTRUMENTO" (MODO OSCURO)
+   Concepto: Enrutamiento técnico con la precisión de un
+   instrumento de medición. Bordes finos (1px), números tabulares,
+   cero adornos.
    ============================================================ */
 
-/* ── Tokens de marca y modo oscuro único ── */
 :root {
-  /* Brand colors */
-  --brand-orange: #FF7400;
-  --brand-orange-deep: #CC5D00;
-  --brand-orange-soft: #FF9A4D;
-  --brand-dark: #1c1c1c;
-  --brand-dark-soft: #202020;
-  --brand-white: #ffffff;
-  --brand-slate: #9a9a9a;
+  /* Tokens oficiales - Modo Oscuro */
+  --ink: #EDEFF2;            /* Texto principal grafito claro */
+  --ink-soft: #B4BAC3;       /* Texto secundario */
+  --ink-mute: #78808C;       /* Texto helper / terciario */
+  --paper: #0E1013;          /* Canvas de fondo (grafito casi negro) */
+  --card: #16191D;           /* Superficies elevadas */
+  --line: #262B31;           /* Bordes normales (1px) */
+  --line-strong: #383E46;    /* Bordes acentuados / separadores */
 
-  /* Ink (text) scale */
-  --ink: #171717;
-  --ink-secondary: #212121;
-  --ink-mute: #707070;
-  --ink-mute-2: #9a9a9a;
-  --ink-faint: #b2b2b2;
+  --signal: #1C8A76;         /* Verde señal — estado saludable */
+  --signal-deep: #146E5E;    /* Verde señal presionado / hover */
+  --signal-soft: #142824;    /* Fondo tenue verde señal */
+  --copper: #D6924E;         /* Cobre — dato / énfasis numérico */
+  --copper-soft: #2E2216;    /* Fondo tenue cobre */
+  --alert: #B23A34;          /* Rojo alerta de error */
+  --alert-soft: #381A18;     /* Fondo tenue alerta */
+  --amber: #C79A2E;          /* Ámbar advertencia */
+  --amber-soft: #382C14;     /* Fondo tenue ámbar */
 
-  /* Surface scale */
-  --canvas-night: #1c1c1c;
-  --canvas-night-soft: #202020;
-  --hairline: #2a2a2a;
-  --hairline-strong: #3a3a3a;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
 
-  --radius: 6px;
+  /* Semantic tokens compatibles con shadcn/ui y componentes */
+  --background: #0E1013;
+  --foreground: #EDEFF2;
 
-  /* Semantic tokens — dark mode */
-  --background: #1c1c1c;
-  --foreground: #ffffff;
+  --card-bg: #16191D;
+  --card-foreground: #EDEFF2;
 
-  --card: #202020;
-  --card-foreground: #ffffff;
+  --popover: #16191D;
+  --popover-foreground: #EDEFF2;
 
-  --popover: #202020;
-  --popover-foreground: #ffffff;
+  --primary: #1C8A76;
+  --primary-foreground: #EDEFF2;
 
-  --primary: #FF7400;
-  --primary-foreground: #171717;
+  --secondary: #1E2227;
+  --secondary-foreground: #EDEFF2;
 
-  --secondary: #252525;
-  --secondary-foreground: #ffffff;
+  --muted: #1E2227;
+  --muted-foreground: #78808C;
 
-  --muted: #252525;
-  --muted-foreground: #9a9a9a;
+  --accent: #D6924E;
+  --accent-foreground: #0E1013;
 
-  --accent: #FF7400;
-  --accent-foreground: #171717;
+  --destructive: #B23A34;
+  --destructive-foreground: #EDEFF2;
 
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
+  --border: #262B31;
+  --input: #262B31;
+  --ring: #1C8A76;
 
-  --border: #2a2a2a;
-  --input: #2a2a2a;
-  --ring: #FF7400;
+  --radius: 4px;
 
-  --chart-1: #FF7400;
-  --chart-2: #ffffff;
-  --chart-3: #9a9a9a;
-  --chart-4: #FF9A4D;
-  --chart-5: #2a2a2a;
-
-  --sidebar: #181818;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #FF7400;
-  --sidebar-primary-foreground: #171717;
-  --sidebar-accent: #252525;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #2a2a2a;
-  --sidebar-ring: #FF7400;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-focus: 0 0 0 3px rgba(28, 138, 118, 0.25);
 }
 
 /* ============================================================
-   @theme inline — expone tokens de marca y semánticos a Tailwind.
+   @theme inline — Tokens expuestos para Tailwind CSS v4
    ============================================================ */
 @theme inline {
   /* Tipografías */
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-mono), ui-monospace, monospace;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
 
-  /* Colores de marca */
-  --color-brand-orange: #FF7400;
-  --color-brand-orange-deep: #CC5D00;
-  --color-brand-orange-soft: #FF9A4D;
-  --color-brand-dark: #1c1c1c;
-  --color-brand-dark-soft: #202020;
-  --color-brand-white: #ffffff;
-  --color-brand-slate: #9a9a9a;
+  /* Paleta "Instrumento" */
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-mute: var(--ink-mute);
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
 
-  /* Colores semánticos del modo oscuro */
+  --color-signal: var(--signal);
+  --color-signal-deep: var(--signal-deep);
+  --color-signal-soft: var(--signal-soft);
+  --color-copper: var(--copper);
+  --color-copper-soft: var(--copper-soft);
+  --color-alert: var(--alert);
+  --color-amber: var(--amber);
+
+  /* Colores semánticos */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-
-  /* Radio */
-  --radius-sm: 6px;
+  /* Radios técnicos reducidos */
+  --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
-  --radius-xl: 16px;
 
   /* Animaciones */
   --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
   --animate-float: float 6s ease-in-out infinite;
 }
 
-/* Keyframes fuera de @theme (scope global correcto) */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 116, 0, 0.4); }
-  50%       { box-shadow: 0 0 15px 8px rgba(255, 116, 0, 0.2); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(28, 138, 118, 0.4); }
+  50%       { box-shadow: 0 0 12px 6px rgba(28, 138, 118, 0.2); }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
+  50%       { transform: translateY(-6px); }
 }
 
 /* ── Base ── */
@@ -169,16 +143,21 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
+    background-color: var(--paper);
+    color: var(--ink);
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    letter-spacing: -0.015em;
   }
 
   section {
@@ -191,65 +170,191 @@
   }
 }
 
-/* ── Utilidades ── */
+/* ── Utilidades e Identidad "Instrumento" ── */
 @layer utilities {
-  /* Micro-interacciones */
+  /* Números tabulares exactos */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Eyebrow de sección técnica */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--signal);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 14px;
+    height: 1px;
+    background: var(--signal);
+  }
+
+  /* Tick ruler: firma visual de calibración */
+  .ruler {
+    height: 16px;
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
+    margin: 24px 0;
+    overflow: hidden;
+    width: 100%;
+  }
+  .ruler i {
+    flex: 1;
+    height: 5px;
+    border-left: 1px solid var(--line-strong);
+  }
+  .ruler i:nth-child(5n+1) {
+    height: 10px;
+    border-color: var(--ink-mute);
+  }
+  .ruler i:nth-child(10n+1) {
+    height: 16px;
+    border-color: var(--signal);
+  }
+
+  /* Instrument card: corner brackets en cobre (para datos en vivo) */
+  .instrument {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+  }
+  .instrument::before,
+  .instrument::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .instrument::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid var(--copper);
+    border-left: 2px solid var(--copper);
+  }
+  .instrument::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid var(--copper);
+    border-right: 2px solid var(--copper);
+  }
+
+  /* Badges de estados de cola (BullMQ) */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 9px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .badge i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .b-waiting {
+    background: var(--card);
+    border-color: var(--line-strong);
+    color: var(--ink-soft);
+  }
+  .b-waiting i {
+    background: var(--ink-mute);
+  }
+  .b-active {
+    background: var(--signal-soft);
+    border-color: rgba(28, 138, 118, 0.4);
+    color: var(--signal);
+  }
+  .b-active i {
+    background: var(--signal);
+  }
+  .b-completed {
+    background: var(--signal-soft);
+    border-color: rgba(28, 138, 118, 0.4);
+    color: var(--signal);
+  }
+  .b-completed i {
+    background: var(--signal);
+  }
+  .b-failed {
+    background: var(--alert-soft);
+    border-color: rgba(178, 58, 52, 0.4);
+    color: var(--alert);
+  }
+  .b-failed i {
+    background: var(--alert);
+  }
+  .b-delayed {
+    background: var(--copper-soft);
+    border-color: rgba(214, 146, 78, 0.4);
+    color: var(--copper);
+  }
+  .b-delayed i {
+    background: var(--amber);
+  }
+
+  /* Micro-interacciones técnicas */
   .hover-lift {
-    @apply transition-all duration-300;
+    @apply transition-all duration-200;
   }
   .hover-lift:hover {
-    @apply -translate-y-1 shadow-lg;
+    @apply -translate-y-0.5;
+    border-color: var(--line-strong);
   }
 
   .hover-glow {
-    @apply transition-all duration-300;
+    @apply transition-all duration-200;
   }
   .hover-glow:hover {
-    box-shadow: 0 0 20px rgba(255, 116, 0, 0.4);
-    border-color: rgba(255, 116, 0, 0.5);
+    border-color: var(--signal);
+    box-shadow: 0 0 16px rgba(28, 138, 118, 0.2);
   }
 
-  /* Tipografía de marca */
+  /* Resaltados de marca */
   .brand-highlight {
-    color: var(--brand-orange);
+    color: var(--signal);
     text-decoration: none;
   }
 
   .brand-kicker {
-    color: var(--foreground);
-    border-left: 0.2rem solid var(--primary);
-    padding-left: 0.625rem;
+    color: var(--signal);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    border-left: 2px solid var(--signal);
+    padding-left: 0.5rem;
   }
 
-  /* Link con subrayado animado */
+  /* Enlaces con subrayado técnico */
   .link-underline {
     @apply relative;
   }
   .link-underline::after {
     content: "";
-    @apply absolute bottom-0 left-0 h-px w-0 bg-primary transition-all duration-300;
+    @apply absolute bottom-0 left-0 h-px w-0 bg-signal transition-all duration-200;
   }
   .link-underline:hover::after {
     @apply w-full;
   }
 
-  /* Navbar sobre todo */
-  header {
-    isolation: isolate;
-  }
-
-  /* Ocultar scrollbar en carruseles */
+  /* Ocultar scrollbar */
   .scrollbar-hide::-webkit-scrollbar { display: none; }
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
-
-  /* Clases de animación */
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
-  }
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
   }
 }

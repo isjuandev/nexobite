@@ -32,23 +32,20 @@ export function HowItWorksSection() {
   return (
     <section
       id="how-it-works"
-      className="relative border-b border-border/50 bg-secondary/30 py-24 sm:py-32 overflow-hidden"
+      className="relative border-b border-line bg-paper py-24 sm:py-32 overflow-hidden"
     >
       <ParticleField variant="subtle" density="low" speed="slow" />
       <Container className="relative z-10">
         <AnimatedSection>
-          <div className="brand-kicker mx-auto mb-4 w-fit text-center text-sm font-medium uppercase tracking-wider">
-            Cómo funciona
+          <div className="flex justify-center mb-3">
+            <span className="eyebrow">02 · DESPLIEGUE Y OPERACIÓN</span>
           </div>
-          <h2 className="mb-4 text-center text-3xl font-medium text-foreground sm:text-4xl">
-            <span className="brand-highlight">
-              Así implementamos
-            </span>{" "}
-            la automatización en tu negocio
+          <h2 className="mb-4 text-center text-3xl font-semibold text-ink sm:text-4xl">
+            Implementación calibrada en{" "}
+            <span className="text-signal">tres fases exactas</span>
           </h2>
-          <p className="mx-auto mb-16 max-w-2xl text-center text-pretty text-lg text-muted-foreground">
-            Proceso claro, sin complicaciones y enfocado en resultados desde el
-            inicio.
+          <p className="mx-auto mb-16 max-w-2xl text-center text-pretty text-base text-ink-soft">
+            Flujo estructurado, sin ambigüedad técnica y con foco en resultados desde el primer día.
           </p>
         </AnimatedSection>
 
@@ -58,22 +55,21 @@ export function HowItWorksSection() {
               <div className="relative">
                 {index < steps.length - 1 && (
                   <div
-                    className="absolute right-0 top-12 hidden h-px w-full bg-border md:block"
+                    className="absolute right-0 top-6 hidden h-px w-full bg-line-strong md:block"
                     style={{ width: "calc(100% - 48px)", left: "48px" }}
                   />
                 )}
                 <div className="group relative flex flex-col items-center text-center md:items-start md:text-left px-4">
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-card/30">
-                    <div className="absolute inset-0 rounded-full bg-primary opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-40" />
-                    <step.icon className="relative z-10 h-6 w-6 text-secondary-foreground" />
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-sm bg-signal-soft border border-signal/30">
+                    <step.icon className="h-5 w-5 text-signal" />
                   </div>
-                  <div className="mb-2 inline-flex rounded-full bg-card px-2 py-0.5 text-sm font-medium text-foreground">
-                    {step.step}
+                  <div className="mb-2 inline-flex items-center gap-1 font-mono text-[11px] text-copper px-2 py-0.5 rounded-sm bg-card border border-line">
+                    STAGE {step.step}
                   </div>
-                  <h3 className="mb-4 text-xl font-medium text-foreground">
+                  <h3 className="mb-2 text-lg font-semibold text-ink">
                     {step.title}
                   </h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-ink-soft leading-relaxed">
                     {step.description}
                   </p>
                 </div>

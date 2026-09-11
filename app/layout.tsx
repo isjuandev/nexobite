@@ -1,59 +1,22 @@
 import type React from "react";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SchemaMarkup } from "../components/schema-markup";
 import "./globals.css";
 
-// Tipografías oficiales NexoBite — Satoshi (weight 500 para display)
-const satoshiSans = localFont({
-  src: [
-    {
-      path: "../public/fonts/satoshi/fonts/Satoshi-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/satoshi/fonts/Satoshi-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/satoshi/fonts/Satoshi-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+// Tipografía oficial NexoBite — Variante "Instrumento"
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
   variable: "--font-sans",
-  display: "swap",
-});
-
-const satoshiDisplay = localFont({
-  src: [
-    {
-      path: "../public/fonts/satoshi/fonts/Satoshi-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/satoshi/fonts/Satoshi-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/satoshi/fonts/Satoshi-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-display",
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -129,9 +92,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className="dark">
       <body
-        className={`${satoshiSans.variable} ${satoshiDisplay.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        style={{ ["--font-display" as string]: "var(--font-sans)" }}
       >
         <SchemaMarkup />
         {children}

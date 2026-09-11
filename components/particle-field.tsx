@@ -39,17 +39,17 @@ export function ParticleField({
     let particles: Particle[] = [];
     let time = 0;
 
-    // La animacion usa la paleta oficial sobre el fondo oscuro.
+    // La animación usa la paleta técnica Instrumento (Señal + Cobre)
     const getColors = () => {
       switch (variant) {
         case "primary":
-          return ["255, 116, 0", "255, 255, 255"];
+          return ["28, 138, 118", "214, 146, 78"];
         case "accent":
-          return ["255, 116, 0"];
+          return ["28, 138, 118"];
         case "subtle":
-          return ["154, 154, 154", "255, 255, 255"];
+          return ["120, 128, 140", "28, 138, 118"];
         case "mixed":
-          return ["255, 116, 0", "154, 154, 154", "255, 255, 255"];
+          return ["28, 138, 118", "214, 146, 78", "120, 128, 140"];
       }
     };
 

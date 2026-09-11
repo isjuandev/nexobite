@@ -40,56 +40,52 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-24 sm:py-32 overflow-hidden border-b border-border/50"
+      className="relative py-24 sm:py-32 overflow-hidden border-b border-line"
     >
-      <ParticleField variant="accent" density="medium" speed="slow" />
+      <ParticleField variant="subtle" density="low" speed="slow" />
       <Container className="relative z-10">
         <AnimatedSection>
-          <div className="brand-kicker mb-4 text-sm font-medium uppercase tracking-wider">
-            Qué hacemos
+          <div className="mb-3">
+            <span className="eyebrow">01 · ARQUITECTURA DE SERVICIOS</span>
           </div>
-          <h2 className="mb-4 max-w-2xl text-balance text-3xl font-medium text-foreground sm:text-4xl">
-            <span className="brand-highlight">
-              Soluciones diseñadas para convertir más,
-            </span>{" "}
-            no solo para “estar online”
+          <h2 className="mb-4 max-w-2xl text-balance text-3xl font-semibold text-ink sm:text-4xl">
+            Soluciones diseñadas para{" "}
+            <span className="text-signal">enrutar y convertir</span>,
+            no solo para "estar online"
           </h2>
-          <p className="mb-16 max-w-2xl text-pretty text-lg text-muted-foreground">
-            Trabajamos contigo para mejorar cómo llegan, se gestionan y se
-            convierten tus clientes. Sin intermediarios y con foco en
-            resultados reales.
+          <p className="mb-14 max-w-2xl text-pretty text-base text-ink-soft">
+            Infraestructura técnica para capturar, organizar y atender clientes
+            sin fricción. Sin intermediarios, con SLA claro y foco en precisión operativa.
           </p>
         </AnimatedSection>
 
         <AnimatedSection delay={100}>
-          <div className="mb-8">
-            <h3 className="brand-highlight mb-6 text-xl font-medium">
-              Desarrollo y Automatización
-            </h3>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {services
-                .filter((s) => s.category === "Software")
-                .map((service) => (
-                  <Card
-                    key={service.title}
-                    className="group hover-lift border-border bg-card/50 transition-all hover:border-primary hover:shadow-lg hover:shadow-primary/20 hover:bg-card"
-                  >
-                    <CardHeader>
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary transition-all duration-300 group-hover:scale-110">
-                        <service.icon className="h-6 w-6 text-secondary-foreground transition-colors duration-300" />
-                      </div>
-                      <CardTitle className="text-foreground">
-                        {service.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-muted-foreground">
-                        {service.description}
-                      </CardDescription>
-                    </CardContent>
-                  </Card>
-                ))}
-            </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, index) => (
+              <Card
+                key={service.title}
+                className="group border-line bg-card hover:border-signal/50 transition-all rounded-md p-5"
+              >
+                <CardHeader className="p-0 pb-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-signal-soft border border-signal/25">
+                      <service.icon className="h-5 w-5 text-signal" />
+                    </div>
+                    <span className="font-mono text-[11px] text-ink-mute">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <CardTitle className="text-ink text-lg font-semibold">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <CardDescription className="text-ink-soft text-sm leading-relaxed">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </AnimatedSection>
       </Container>
