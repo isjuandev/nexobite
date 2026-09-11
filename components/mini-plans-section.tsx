@@ -238,7 +238,7 @@ function MobilePlansCarousel({ category }: { category: Category }) {
                   <ul className="space-y-2.5">
                     {plan.includes.map((item) => (
                       <li key={item} className="flex items-start gap-2.5">
-                        <FaCheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-signal" />
+                        <FaCheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-secondary-foreground" />
                         <span className="text-xs text-ink-soft leading-relaxed">
                           {item}
                         </span>
@@ -393,7 +393,7 @@ export function MiniPlansSection() {
                         <ul className="space-y-3">
                           {p.includes.map((inc) => (
                             <li key={inc} className="flex items-start gap-2.5">
-                              <FaCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-signal" />
+                              <FaCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-secondary-foreground" />
                               <span className="text-xs text-ink-soft leading-relaxed">
                                 {inc}
                               </span>

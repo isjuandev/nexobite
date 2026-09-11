@@ -11,7 +11,7 @@ export default function CondicionesDelServicio() {
         {
             id: "aceptacion",
             title: "1. Aceptación de los Términos",
-            icon: <FaFileAlt className="h-5 w-5 text-signal" />,
+            icon: <FaFileAlt className="w-6 h-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-ink-soft leading-relaxed text-sm">
                     <p>
@@ -26,7 +26,7 @@ export default function CondicionesDelServicio() {
         {
             id: "descripcion",
             title: "2. Descripción de los Servicios",
-            icon: <FaBriefcase className="h-5 w-5 text-signal" />,
+            icon: <FaBriefcase className="w-6 h-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-ink-soft leading-relaxed text-sm">
                     <p>
@@ -41,7 +41,7 @@ export default function CondicionesDelServicio() {
         {
             id: "obligaciones",
             title: "3. Obligaciones del Cliente",
-            icon: <FaShieldAlt className="h-5 w-5 text-signal" />,
+            icon: <FaShieldAlt className="w-6 h-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-ink-soft leading-relaxed text-sm">
                     <p>
@@ -58,7 +58,7 @@ export default function CondicionesDelServicio() {
         {
             id: "pagos",
             title: "4. Pagos y Facturación",
-            icon: <FaCreditCard className="h-5 w-5 text-signal" />,
+            icon: <FaCreditCard className="w-6 h-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-ink-soft leading-relaxed text-sm">
                     <p>
@@ -75,7 +75,7 @@ export default function CondicionesDelServicio() {
         {
             id: "propiedad-intelectual",
             title: "5. Propiedad Intelectual",
-            icon: <FaCopyright className="h-5 w-5 text-signal" />,
+            icon: <FaCopyright className="w-6 h-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-ink-soft leading-relaxed text-sm">
                     <p>
@@ -90,7 +90,7 @@ export default function CondicionesDelServicio() {
         {
             id: "limitacion",
             title: "6. Limitación de Responsabilidad",
-            icon: <FaExclamationTriangle className="h-5 w-5 text-signal" />,
+            icon: <FaExclamationTriangle className="w-6 h-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-ink-soft leading-relaxed text-sm">
                     <p>
@@ -105,7 +105,7 @@ export default function CondicionesDelServicio() {
         {
             id: "modificaciones",
             title: "7. Modificaciones a los Términos",
-            icon: <FaBalanceScale className="h-5 w-5 text-signal" />,
+            icon: <FaBalanceScale className="w-6 h-6 text-secondary-foreground" />,
             content: (
                 <div className="space-y-4 text-ink-soft leading-relaxed text-sm">
                     <p>

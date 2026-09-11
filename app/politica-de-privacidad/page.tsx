@@ -41,7 +41,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "3. Uso de la Información",
-      icon: <FaSync className="w-5 h-5 text-signal" />,
+      icon: <FaSync className="w-6 h-6 text-secondary-foreground" />,
       content: (
         <>
           <p className="mb-4">La información recopilada es utilizada para:</p>
@@ -64,7 +64,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "4. Protección y Seguridad de los Datos",
-      icon: <FaLock className="w-5 h-5 text-signal" />,
+      icon: <FaLock className="w-6 h-6 text-secondary-foreground" />,
       content: (
         <div className="space-y-4">
           <p>
@@ -78,7 +78,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "5. Compartición de Información",
-      icon: <FaShareAlt className="w-5 h-5 text-signal" />,
+      icon: <FaShareAlt className="w-6 h-6 text-secondary-foreground" />,
       content: (
         <>
           <p className="mb-4">
@@ -99,7 +99,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "6. Derechos del Usuario",
-      icon: <FaUserCheck className="w-5 h-5 text-signal" />,
+      icon: <FaUserCheck className="w-6 h-6 text-secondary-foreground" />,
       content: (
         <>
           <p className="mb-4">Tienes el derecho a:</p>
@@ -123,7 +123,7 @@ export default function PoliticaDePrivacidad() {
     },
     {
       title: "7. Contacto y Cambios",
-      icon: <FaWhatsapp className="w-5 h-5 text-signal" />,
+      icon: <FaWhatsapp className="w-6 h-6 text-secondary-foreground" />,
       content: (
         <div className="space-y-4">
           <p className="text-sm text-ink-soft">
