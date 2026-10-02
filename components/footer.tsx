@@ -11,8 +11,8 @@ export function Footer() {
           <div className="flex flex-col items-center gap-3 md:items-start">
             <BrandLogo markClassName="h-8 w-8" />
             <p className="max-w-md text-center text-xs text-ink-mute md:text-left leading-relaxed">
-              Infraestructura técnica de enrutamiento, chatbots y sistemas
-              digitales para operaciones que exigen precisión.
+              Sistemas comerciales para WhatsApp y web: respuestas inmediatas,
+              calificación automática y procesos de venta ordenados.
             </p>
           </div>
 
@@ -50,21 +50,28 @@ export function Footer() {
 
         <div className="mt-8 border-t border-line pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs font-mono text-ink-mute text-center md:text-left">
-            © {new Date().getFullYear()} NexoBite · Infraestructura y Automatización
+            © {new Date().getFullYear()} NexoBite · Automatización Comercial y Sistemas Web
           </p>
           <div className="flex flex-wrap gap-4 justify-center md:justify-end text-xs font-mono">
             <Link
-              href="/#services"
+              href="/#servicios"
               className="text-ink-mute hover:text-ink transition-colors"
             >
               Servicios
             </Link>
             <span className="text-line-strong hidden md:inline">/</span>
             <Link
-              href="/#mini-plans"
+              href="/#precios"
               className="text-ink-mute hover:text-ink transition-colors"
             >
               Planes
+            </Link>
+            <span className="text-line-strong hidden md:inline">/</span>
+            <Link
+              href="/#faq"
+              className="text-ink-mute hover:text-ink transition-colors"
+            >
+              FAQ
             </Link>
             <span className="text-line-strong hidden md:inline">/</span>
             <Link

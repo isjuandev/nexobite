@@ -23,23 +23,22 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: {
     default:
-      "Chatbots para WhatsApp y Automatización de Ventas | Nexobite",
+      "Automatización de WhatsApp y Páginas Web para Empresas | NexoBite",
     template: "%s | NexoBite",
   },
   description:
-    "Automatiza tu WhatsApp y convierte más conversaciones en ventas. Chatbots para negocios, automatización y desarrollo web enfocado en resultados.",
+    "Automatiza tu WhatsApp y tus canales de captación para responder al instante, calificar prospectos y cerrar más ventas sin depender de tareas manuales.",
   metadataBase: new URL("https://www.nexobite.com"),
   alternates: {
     canonical: "/",
   },
   keywords: [
-    "agencia marketing digital Colombia",
-    "chatbot WhatsApp IA",
-    "desarrollo web pymes",
-    "automatización inteligente",
+    "automatizacion whatsapp colombia",
+    "chatbot whatsapp empresas medellin bogota",
+    "desarrollo web conversion pymes",
+    "crm whatsapp colombia",
+    "atencion al cliente automatizada",
     "NexoBite",
-    "marketing digital pymes Colombia",
-    "chatbot inteligente para empresas",
   ],
   authors: [{ name: "NexoBite", url: "https://www.nexobite.com" }],
   creator: "NexoBite",
@@ -50,9 +49,9 @@ export const metadata: Metadata = {
     url: "https://www.nexobite.com",
     siteName: "NexoBite",
     title:
-      "NexoBite — Agencia de Marketing Digital, Chatbots IA y Desarrollo Web",
+      "NexoBite — Sistemas Comerciales para WhatsApp y Desarrollo Web",
     description:
-      "Transformamos la presencia digital de PYMEs colombianas. Chatbots con IA, desarrollo web, redes sociales y automatización. Todo en un solo equipo.",
+      "Tu negocio debería vender, no pasar el día respondiendo mensajes. Automatización de WhatsApp, páginas web y CRM para empresas.",
     images: [
       {
         url: "/og-image.png",

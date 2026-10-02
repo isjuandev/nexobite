@@ -8,10 +8,13 @@ import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/brand-logo";
 
 const HOME_NAV_ITEMS = [
-  { id: "services", label: "Servicios" },
-  { id: "how-it-works", label: "Cómo Funciona" },
-  { id: "mini-plans", label: "Planes" },
-  { id: "packages", label: "Paquetes" },
+  { id: "problemas", label: "Problemas" },
+  { id: "solucion", label: "Solución" },
+  { id: "demo", label: "Demostración" },
+  { id: "proceso", label: "Cómo Funciona" },
+  { id: "servicios", label: "Servicios" },
+  { id: "precios", label: "Planes" },
+  { id: "faq", label: "FAQ" },
 ] as const;
 
 const PROPOSAL_NAV_ITEMS = [
@@ -196,11 +199,11 @@ export function Header() {
               className="rounded-sm font-medium text-xs px-3.5"
             >
               <a
-                href="https://wa.me/+573009459026?text=Hola,%20quiero%20entender%20c%C3%B3mo%20puedo%20mejorar%20la%20atenci%C3%B3n%20de%20mi%20negocio."
+                href="https://wa.me/+573009459026?text=Hola,%20quiero%20revisar%20c%C3%B3mo%20gestiono%20mis%20mensajes%20y%20agendar%20un%20diagn%C3%B3stico."
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>WhatsApp</span>
+                <span>Diagnóstico Gratis</span>
               </a>
             </Button>
           </div>

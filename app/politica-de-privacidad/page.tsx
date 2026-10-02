@@ -71,7 +71,7 @@ export default function PoliticaDePrivacidad() {
             En NexoBite implementamos medidas técnicas y organizativas de seguridad para proteger tu información personal contra el acceso no autorizado, alteración, divulgación o destrucción. Empleamos protocolos de cifrado estándar de la industria y garantizamos que la información almacenada en nuestras bases de datos está asegurada mediante tecnologías confiables.
           </p>
           <p className="p-4 rounded-sm bg-card border border-line-strong text-xs text-ink-soft font-mono">
-            // Nota de seguridad: ninguna transmisión en red es 100% invulnerable; sin embargo, implementamos estándares estrictos de cifrado y aislamiento por tenant_id.
+            {"// Nota de seguridad: ninguna transmisión en red es 100% invulnerable; sin embargo, implementamos estándares estrictos de cifrado y aislamiento por tenant_id."}
           </p>
         </div>
       )

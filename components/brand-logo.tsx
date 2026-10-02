@@ -19,9 +19,9 @@ export function BrandLogo({
           src="/logo-mark-dark.svg"
           width={34}
           height={30}
-          alt=""
+          alt="NexoBite Logo"
+          priority
           className="object-contain"
-          aria-hidden="true"
         />
       </span>
       {showWordmark && (

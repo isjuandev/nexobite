@@ -13,14 +13,21 @@ export function AnimatedSection({ children, className = "", delay = 0 }: Animate
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    // Si delay es 0 o está en viewport inicial, activar de inmediato para no demorar LCP
+    if (delay === 0) {
+      setIsVisible(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay)
+          const timer = setTimeout(() => setIsVisible(true), delay)
           observer.unobserve(entry.target)
+          return () => clearTimeout(timer)
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+      { threshold: 0.05, rootMargin: "0px 0px -20px 0px" },
     )
 
     if (ref.current) {

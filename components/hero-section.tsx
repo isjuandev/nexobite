@@ -1,53 +1,49 @@
 "use client";
 
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaWhatsapp, FaCheck } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import { ParticleField } from "@/components/particle-field";
 import { AnimatedSection } from "@/components/animated-section";
 import { Container } from "@/components/container";
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-28 pb-16">
-      <ParticleField variant="primary" density="medium" speed="slow" />
-
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-signal/5 via-card/10 to-paper pointer-events-none" />
-
+    <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden pt-28 pb-16 border-b border-line">
       <Container className="relative z-10" size="lg">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Columna Izquierda: Copy y CTAs */}
           <div className="lg:col-span-7 text-left">
             <AnimatedSection>
-              <div className="mb-4 flex items-center gap-3">
-                <span className="eyebrow">SYS.STATUS · OPERATIONAL</span>
+              <div className="mb-4 flex items-center gap-2">
+                <span className="eyebrow flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-signal inline-block" />
+                  SISTEMA COMERCIAL PARA WHATSAPP Y WEB
+                </span>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={100}>
-              <h1 className="mb-6 text-balance text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl lg:text-6xl">
-                Cada mensaje se enruta con la{" "}
-                <span className="text-signal font-bold">misma precisión</span>,
-                sin importar el canal.
+              <h1 className="mb-6 text-balance text-3xl font-bold leading-[1.1] tracking-tight text-ink sm:text-5xl lg:text-[54px]">
+                Tu negocio debería vender, no pasar el día{" "}
+                <span className="text-signal">respondiendo mensajes</span>.
               </h1>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
-              <p className="mb-8 max-w-xl text-pretty text-base text-ink-soft sm:text-lg leading-relaxed">
-                NexoBite automatiza tu WhatsApp y canales de venta como una capa de
-                infraestructura técnica: respuestas en segundos, cualificación
-                exacta y seguimiento continuo sin fricción.
+              <p className="mb-7 max-w-xl text-pretty text-base text-ink-soft sm:text-lg leading-relaxed">
+                Automatizamos tus conversaciones en WhatsApp y tus canales de captación para responder al instante, calificar prospectos y organizar tu proceso comercial sin depender de tareas manuales.
               </p>
               <div className="mb-8 flex flex-wrap gap-2.5">
                 <span className="badge b-active">
                   <i />
-                  tenant_id aislado
+                  Respuesta inmediata 24/7
                 </span>
                 <span className="badge b-completed">
                   <i />
-                  p95 118ms
+                  Calificación automática de prospectos
                 </span>
                 <span className="badge b-waiting">
                   <i />
-                  24/7 SLA garantizado
+                  Integrado a tu número actual
                 </span>
               </div>
             </AnimatedSection>
@@ -56,10 +52,11 @@ export function HeroSection() {
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <Button size="lg" variant="signal" asChild className="group rounded-sm font-medium">
                   <a
-                    href="https://wa.me/+573009459026?text=Hola,%20quiero%20revisar%20c%C3%B3mo%20estoy%20gestionando%20mis%20mensajes%20y%20si%20puedo%20mejorarlo."
+                    href="https://wa.me/+573009459026?text=Hola.%20Quiero%20revisar%20c%C3%B3mo%20gestionamos%20hoy%20nuestros%20mensajes%20en%20WhatsApp%20y%20ver%20c%C3%B3mo%20podemos%20automatizar%20la%20atenci%C3%B3n%20y%20el%20seguimiento."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
+                    <FaWhatsapp className="mr-2 h-4 w-4" />
                     Revisar mi caso por WhatsApp
                     <FaArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                   </a>
@@ -70,66 +67,106 @@ export function HeroSection() {
                   asChild
                   className="rounded-sm font-medium bg-card hover:border-ink hover:text-ink"
                 >
-                  <a href="#services">Ver arquitectura de servicios</a>
+                  <a href="#proceso">Ver cómo funciona el sistema</a>
                 </Button>
               </div>
+              <p className="mt-3 text-xs font-mono text-ink-mute">
+                Sin costo · Diagnóstico directo de tu flujo actual en 15 minutos.
+              </p>
             </AnimatedSection>
           </div>
 
+          {/* Columna Derecha: Mockup Interactivo de Producto (WhatsApp + Calificación) */}
           <div className="lg:col-span-5">
             <AnimatedSection delay={250}>
-              <div className="instrument rounded-md border border-line bg-card p-1.5 shadow-sm">
-                <div className="flex justify-between items-center px-4 py-3 border-b border-line bg-card/60">
-                  <span className="flex items-center text-xs font-mono text-ink-mute">
-                    <span className="w-2 h-2 rounded-full bg-signal inline-block mr-2 shadow-[0_0_0_3px_var(--signal-soft)] animate-pulse" />
-                    QUEUE MONITOR
+              <div className="instrument rounded-md border border-line bg-card shadow-lg overflow-hidden">
+                {/* Header del Mockup */}
+                <div className="flex items-center justify-between px-4 py-3 border-b border-line bg-card-hover">
+                  <div className="flex items-center gap-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-signal opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-signal" />
+                    </span>
+                    <span className="font-mono text-xs font-medium text-ink">
+                      WhatsApp Cloud API
+                    </span>
+                  </div>
+                  <span className="font-mono text-[11px] text-ink-mute px-2 py-0.5 rounded-sm bg-paper border border-line">
+                    24/7 ONLINE
                   </span>
-                  <span className="font-mono text-xs text-ink-mute">nx_8f21a</span>
                 </div>
-                <div className="grid grid-cols-2 gap-px bg-line">
-                  <div className="bg-card p-4">
-                    <label className="font-mono text-[10px] text-ink-mute uppercase tracking-wider block mb-1.5">
-                      Mensajes/seg
-                    </label>
-                    <div className="font-display font-extrabold text-3xl text-ink tnum">
-                      42<small className="font-mono font-normal text-xs text-ink-mute ml-1">/s</small>
+
+                {/* Conversación Real Simulada */}
+                <div className="p-4 space-y-3.5 text-xs bg-paper-deep/60 min-h-[300px] flex flex-col justify-center">
+                  {/* Mensaje entrante de cliente */}
+                  <div className="flex flex-col items-start gap-1">
+                    <span className="font-mono text-[10px] text-ink-mute pl-1">
+                      10:42 PM · Prospecto entrante
+                    </span>
+                    <div className="bg-card border border-line rounded-md rounded-tl-none p-3 max-w-[85%] text-ink leading-relaxed">
+                      Hola, quiero cotizar la automatización de atención para mi empresa.
                     </div>
                   </div>
-                  <div className="bg-card p-4">
-                    <label className="font-mono text-[10px] text-ink-mute uppercase tracking-wider block mb-1.5">
-                      Latencia p95
-                    </label>
-                    <div className="font-display font-extrabold text-3xl text-copper tnum">
-                      118<small className="font-mono font-normal text-xs text-ink-mute ml-1">ms</small>
+
+                  {/* Respuesta del asistente con filtro */}
+                  <div className="flex flex-col items-end gap-1">
+                    <span className="font-mono text-[10px] text-signal pr-1">
+                      10:42 PM · Asistente NexoBite (&lt; 2s)
+                    </span>
+                    <div className="bg-signal-soft border border-signal/30 rounded-md rounded-tr-none p-3 max-w-[90%] text-ink leading-relaxed">
+                      <p className="mb-2">
+                        ¡Hola! Con gusto te oriento. Para calcular el flujo adecuado: ¿cuántas consultas reciben al día?
+                      </p>
+                      <div className="flex flex-wrap gap-1.5 mt-2">
+                        <span className="px-2 py-1 rounded-sm bg-card border border-line text-[11px] text-ink-soft">
+                          1. Menos de 30 msgs
+                        </span>
+                        <span className="px-2 py-1 rounded-sm bg-signal/20 border border-signal text-[11px] text-ink font-medium">
+                          2. 30 a 100 msgs ✓
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  <div className="bg-card p-4">
-                    <label className="font-mono text-[10px] text-ink-mute uppercase tracking-wider block mb-1.5">
-                      Canales activos
-                    </label>
-                    <div className="font-display font-extrabold text-3xl text-ink tnum">
-                      04
+
+                  {/* Agendamiento automático */}
+                  <div className="flex flex-col items-end gap-1">
+                    <span className="font-mono text-[10px] text-signal pr-1">
+                      10:43 PM · Asistente NexoBite
+                    </span>
+                    <div className="bg-signal-soft border border-signal/30 rounded-md rounded-tr-none p-3 max-w-[90%] text-ink leading-relaxed">
+                      <p className="mb-1.5 font-medium text-ink">
+                        Excelente. Calificas para atención prioritaria.
+                      </p>
+                      <p className="text-ink-soft text-[11px]">
+                        ¿Te reservo espacio para una demo personalizada mañana?
+                      </p>
+                      <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-card border border-copper/50 text-copper font-mono text-[11px]">
+                        📅 Horario elegido: Mañana 3:30 PM
+                      </div>
                     </div>
                   </div>
-                  <div className="bg-card p-4">
-                    <label className="font-mono text-[10px] text-ink-mute uppercase tracking-wider block mb-1.5">
-                      Uptime SLA
-                    </label>
-                    <div className="font-display font-extrabold text-3xl text-signal tnum">
-                      99.98<small className="font-mono font-normal text-xs text-ink-mute ml-1">%</small>
+                </div>
+
+                {/* Footer de Integración CRM */}
+                <div className="p-3 border-t border-line bg-card/90 space-y-1.5">
+                  <div className="flex items-center justify-between text-[11px] font-mono text-ink-mute">
+                    <span className="text-copper">SISTEMA INTEGRADO</span>
+                    <span className="text-signal">EVENTOS CONFIRMADOS</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2 pt-1">
+                    <div className="flex items-center gap-1.5 text-[11px] text-ink-soft bg-paper px-2 py-1 rounded-sm border border-line">
+                      <FaCheck className="h-3 w-3 text-signal shrink-0" />
+                      <span className="truncate">Lead creado en CRM</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[11px] text-ink-soft bg-paper px-2 py-1 rounded-sm border border-line">
+                      <FaCheck className="h-3 w-3 text-signal shrink-0" />
+                      <span className="truncate">Cita en Google Calendar</span>
                     </div>
                   </div>
                 </div>
               </div>
             </AnimatedSection>
           </div>
-        </div>
-
-        {/* Ruler de calibración técnica */}
-        <div className="ruler mt-14" aria-hidden="true">
-          {Array.from({ length: 70 }).map((_, i) => (
-            <i key={i} />
-          ))}
         </div>
       </Container>
     </section>

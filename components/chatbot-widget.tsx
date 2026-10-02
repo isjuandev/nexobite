@@ -50,15 +50,25 @@ export function ChatbotWidget() {
       },
     };
 
-    const existingScript = document.querySelector<HTMLScriptElement>(
-      `script[src=\"${WIDGET_SRC}\"]`
-    );
+    const loadScript = () => {
+      const existingScript = document.querySelector<HTMLScriptElement>(
+        `script[src="${WIDGET_SRC}"]`
+      );
 
-    if (!existingScript) {
-      const script = document.createElement("script");
-      script.src = WIDGET_SRC;
-      script.defer = true;
-      document.body.appendChild(script);
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.src = WIDGET_SRC;
+        script.async = true;
+        document.body.appendChild(script);
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      if ("requestIdleCallback" in window) {
+        (window as unknown as { requestIdleCallback: (cb: () => void) => void }).requestIdleCallback(loadScript);
+      } else {
+        setTimeout(loadScript, 2500);
+      }
     }
   }, []);
 
