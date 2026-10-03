@@ -1,7 +1,7 @@
 ---
-version: 5.0
+version: 6.0
 name: NexoBite-Instrumento-design-system
-description: NexoBite's design system "Instrumento" — a precision-engineered operational telemetry aesthetic built on a dark carbon paper canvas (#0E1013), modular card surfaces (#16191D), hairline structural borders (#262B31), Signal Green operational action (#1C8A76), and secondary copper calibration accents (#D6924E). The brand communicates mission-critical reliability, queue-level throughput, and software infrastructure precision.
+description: NexoBite's design system "Instrumento" — a precision-engineered commercial and product UI aesthetic built on a dark carbon paper canvas (#0E1013), structured modular card surfaces (#16191D), hairline structural borders (#262B31), Signal Green operational action (#1C8A76), and secondary copper focus accents (#D6924E). The system focuses on software product UI, live conversation sandboxes, lead qualification workflows, and commercial conversion, eliminating generic AI clichés and pseudo-hardware telemetry.
 
 colors:
   paper: "#0E1013"
@@ -19,25 +19,27 @@ colors:
   copper: "#D6924E"
   copper-deep: "#B8763A"
   copper-soft: "rgba(214, 146, 78, 0.12)"
+  alert: "#B23A34"
+  alert-soft: "#381A18"
 
 typography:
   display-xxl:
     fontFamily: "Plus Jakarta Sans, sans-serif"
-    fontSize: 56px
+    fontSize: 54px
     fontWeight: 700
-    lineHeight: 1.05
+    lineHeight: 1.1
     letterSpacing: -0.03em
   display-xl:
     fontFamily: "Plus Jakarta Sans, sans-serif"
     fontSize: 40px
     fontWeight: 600
-    lineHeight: 1.1
+    lineHeight: 1.15
     letterSpacing: -0.02em
   display-lg:
     fontFamily: "Plus Jakarta Sans, sans-serif"
     fontSize: 32px
     fontWeight: 600
-    lineHeight: 1.15
+    lineHeight: 1.2
     letterSpacing: -0.02em
   heading-md:
     fontFamily: "Plus Jakarta Sans, sans-serif"
@@ -49,7 +51,7 @@ typography:
     fontFamily: "Plus Jakarta Sans, sans-serif"
     fontSize: 15px
     fontWeight: 400
-    lineHeight: 1.55
+    lineHeight: 1.6
     letterSpacing: 0
   body-sm:
     fontFamily: "Plus Jakarta Sans, sans-serif"
@@ -85,76 +87,102 @@ rounded:
   lg: 8px
 ---
 
-# NexoBite Design System: "Instrumento"
+# NexoBite Design System: "Instrumento" (v6.0)
 
-## Executive Summary
-NexoBite is an operational automation and intelligent software agency. The visual identity, codenamed **"Instrumento"**, rejects generic SaaS aesthetics (soft pill buttons, saturated gradients, consumer emojis) in favor of **hardware-grade precision, operational telemetry, and infrastructure observability**.
+## 1. Executive Summary & Philosophy
 
-The system is built on:
-- **Exclusive Dark Mode**: Deep carbon paper background (`#0E1013`) with structured card modules (`#16191D`).
-- **Signal Green (`#1C8A76`)**: Action color representing `SYS.OPERATIONAL`, active job execution, and verified deliveries.
-- **Copper (`#D6924E`)**: Secondary accent for calibration brackets (`.instrument`), savings indicators, and queue alerts.
-- **Hairline Geometry (`#262B31`)**: 1px crisp borders, ticks, and calibration rulers.
-- **Dual Typography**: Plus Jakarta Sans for structural headings and body text + JetBrains Mono with tabular numbers (`tnum`) for data, rates, prices, and metrics.
+NexoBite designs and deploys commercial automation systems, intelligent WhatsApp infrastructure, and conversion-focused websites for companies and SMEs. 
+
+The visual identity, codenamed **"Instrumento"**, rejects both generic SaaS fluff (saturated purple gradients, soft pill buttons, consumer emojis) and **generic "AI Hype" aesthetics** (floating particle fields, glowing neon halos, vintage robot heads, server queue telemetry).
+
+Instead, "Instrumento" grounds itself in **real product interfaces, commercial workflows, and business outcomes**:
+- **Narrativa central de producto:** `Web que capta → Chatbot en WhatsApp que califica → CRM que organiza → Cierre de ventas`.
+- **Exclusive Dark Mode:** Lienzo de grafito profundo sin tintes azules (`#0E1013`) con superficies modulares (`#16191D`).
+- **Signal Green (`#1C8A76`):** Color semántico de acción, estado operativo activo, mensajes verificados y conversión comercial.
+- **Copper (`#D6924E`):** Acento secundario para focos de atención, plazos de entrega, cuellos de botella y marcos calibrados (`.instrument`).
+- **Hairline Geometry (`#262B31`):** Bordes nítidos de 1px que estructuran tablas, interfaces y simuladores de software.
+- **Tipografía Dual Estratégica:** `Plus Jakarta Sans` para lectura editorial de negocio + `JetBrains Mono` con números tabulares (`tnum`) para precios en COP, tasas de conversión y métricas.
 
 ---
 
-## Color System
+## 2. Color System
 
 ### Base Palette (Dark Mode Only)
-- **`colors.paper` (`#0E1013`)**: The primary canvas background. Pure dark carbon with zero blue tint.
-- **`colors.card` (`#16191D`)**: Slightly elevated modular panels and service cards.
-- **`colors.card-hover` (`#1C2025`)**: Hover state for interactive modules.
-- **`colors.line` (`#262B31`)**: 1px structural hairpins and connectors.
-- **`colors.line-strong` (`#373E47`)**: Focus state and interactive container borders.
-- **`colors.ink` (`#EDEFF2`)**: Primary text and high-contrast numerical readouts.
-- **`colors.ink-soft` (`#9AA2AD`)**: Secondary description text.
-- **`colors.ink-mute` (`#5D6571`)**: Metadata, labels, and timestamps.
+- **`colors.paper` (`#0E1013`)**: Canvas de fondo principal. Carbón oscuro puro.
+- **`colors.paper-deep` (`#08090B`)**: Fondo de pantallas y ventanas simuladas de software.
+- **`colors.card` (`#16191D`)**: Superficies elevadas, paneles interactivos y módulos de servicio.
+- **`colors.card-hover` (`#1C2025`)**: Estado hover de módulos interactivos.
+- **`colors.line` (`#262B31` / `border-line`)**: Delimitador estructural de 1px.
+- **`colors.line-strong` (`#373E47`)**: Estados de foco, encabezados de tabla y bordes activos.
+- **`colors.ink` (`#EDEFF2`)**: Texto principal de alto contraste y valores numéricos de precio.
+- **`colors.ink-soft` (`#9AA2AD`)**: Texto descriptivo y explicaciones secundarias.
+- **`colors.ink-mute` (`#5D6571`)**: Metadatos, etiquetas de estado, timestamps de chat y microcopy.
 
 ### Functional Accents
-- **`colors.signal` (`#1C8A76`)**: The primary chromatic anchor for CTA buttons and operational dots.
-- **`colors.signal-hover` (`#146356`)**: Active/hover state for Signal buttons.
-- **`colors.signal-soft` (`rgba(28, 138, 118, 0.12)`)**: Low-opacity fill for technical icons and status badges.
-- **`colors.copper` (`#D6924E`)**: Corner calibration brackets and promotional/savings indicators.
-- **`colors.copper-soft` (`rgba(214, 146, 78, 0.12)`)**: Highlight card backgrounds and telemetry alerts.
+- **`colors.signal` (`#1C8A76`)**: Botones principales CTA, checks de entregables, estado 24/7 y confirmación de eventos.
+- **`colors.signal-hover` (`#146356`)**: Estado hover de botones Signal.
+- **`colors.signal-soft` (`rgba(28, 138, 118, 0.12)`)**: Relleno suave para burbujas de respuesta del asistente y badges operativos.
+- **`colors.copper` (`#D6924E`)**: Badges de fases de proceso, agendamiento de citas, y brackets en el plan comercial recomendado.
+- **`colors.copper-soft` (`rgba(214, 146, 78, 0.12)`)**: Relleno de fondo para indicadores de cuellos de botella y notas de advertencia.
+- **`colors.alert` (`#B23A34`)**: Indicadores de operación manual deficiente y cruces de comparación (`FaTimes`).
 
 ---
 
-## Typography
+## 3. Typography & Numerical Data
 
-- **Display & Headings**: Plus Jakarta Sans (`600`, `700`, `800`) with `-0.02em` tracking.
-- **Body & Captions**: Plus Jakarta Sans (`400`, `500`) with comfortable reading line-height.
-- **Telemetry & Numbers**: JetBrains Mono (`400`, `500`, `600`) with mandatory `.tnum` (`font-variant-numeric: tabular-nums`) on all monetary values, percentages, queue counters, and timestamps.
+- **Headlines & Display:** Plus Jakarta Sans (`600`, `700`, `800`) con tracking `-0.02em` a `-0.03em`. Enfoque en claridad y tono conversacional directo sin hipérboles de marketing.
+- **Body & Paréntesis explicativos:** Plus Jakarta Sans (`400`, `500`) con interlineado generoso (`line-height: 1.6`) para máxima legibilidad ejecutiva.
+- **Datos Comerciales & Telemetría:** JetBrains Mono (`400`, `500`, `600`) obligatorio con `tabular-nums` (`.tnum`) en todos los precios en COP (`$1.190.000`, `$1.890.000`, `$3.490.000`), tiempos de entrega y porcentajes.
 
 ---
 
-## Core Components
+## 4. UI Patterns & Component Guidelines
 
 ### 1. The Instrument Frame (`.instrument`)
-Featured cards mount technical copper brackets (`#D6924E`) in the 4 corners:
-- 10px outer bracket arms with 1.5px stroke width.
-- Reserved for primary plans, system readouts, and high-impact CTA containers.
+Brackets esquineros en color cobre (`#D6924E`) de 8px de brazo y 1.5px de grosor.  
+**Regla de uso estricta:** Reservado **únicamente** para:
+- El simulador de chat en vivo del Hero.
+- La tarjeta de precio del plan recomendado (`Plan Sales`).
+- El contenedor de diagnóstico del CTA final.
+*Prohibido aplicarlo en tarjetas genéricas para evitar ruido visual militar/sci-fi.*
 
-### 2. Calibration Ruler (`.ruler`)
-- Repetitive 1px tick marks (alternating 4px, 6px, 10px height) providing hardware alignment visual cues.
+### 2. Live Product Mockups (Simuladores de Interfaz)
+Sustituyen a cualquier ilustración abstracta o imagen decorativa:
+- **WhatsApp Cloud API Sandbox:** Ventana de chat real con cabecera de estado, timestamps (`10:42 PM`), burbujas de mensaje del cliente (`#20252B`) y respuestas del bot (`rgba(28, 138, 118, 0.15)`), chips de opción rápida y pie de integración CRM confirmada.
+- **Tablero CRM & Lead Pipeline:** Fichas de prospectos con estado, valor estimado y canal de origen.
 
-### 3. BullMQ Status Badges (`.badge`)
-- `.badge.b-active`: Pulsing green telemetry indicator.
-- `.badge.b-completed`: Solid signal green badge for validated capabilities.
-- `.badge.b-copper`: Copper badge for discount percentages and priority tiers.
+### 3. Métricas de Impacto de Negocio (`MetricsBar`)
+Franja horizontal con divisores de 1px en `#262B31`. Muestra cifras reales de valor de negocio (`< 3 seg`, `24/7`, `100% oficial`, `0 hrs`), reemplazando la regla de 70 divisiones obsoleta (`.ruler`).
 
-### 4. Technical Eyebrows (`.eyebrow`)
-- Pattern: `01 · ARQUITECTURA DE SERVICIOS` in JetBrains Mono uppercase, letter-spacing `0.08em`, accompanied by an operational dot.
+### 4. Tablas de Comparación Bipolar (`BeforeAfterSection`)
+Tabla de 2 columnas de alto contraste:
+- Columna izquierda: *Operación Manual Habitual* con iconos rojos `FaTimes` y fondo tenue.
+- Columna derecha: *Operación con NexoBite* con iconos verdes `FaCheck`, tipografía bold y fondo `rgba(28, 138, 118, 0.08)`.
 
-### 5. Buttons
-- **`Button variant="signal"`**: Compact, 4px border radius (`rounded-sm`), `#1C8A76` background, `#0E1013` or `#EDEFF2` text.
-- **`Button variant="outline"`**: 1px `#262B31` line, transparent background, `#EDEFF2` text.
+### 5. Arquitectura de Pricing Asimétrico (`PricingSection`)
+- **3 Planes Nucleares:** `01 · START` (Atención básica), `02 · SALES` (Calificación con IA y agenda - Destacado), y `03 · SCALE` (Web + WhatsApp + CRM).
+- **Desglose transparente:** Separación visible entre pago único de implementación y mensualidad de servidor/soporte en COP.
+- **Cero promociones artificiales:** Prohibidos precios tachados del tipo *"Antes $X / Ahora $Y"*.
+- **Matriz técnica colapsable:** Tabla interactiva desplegable para comparar capacidades fila por fila sin saturar el primer vistazo.
+
+### 6. Badges y Eyebrows
+- **Eyebrow:** `01 · EL COSTO DE LA ATENCIÓN MANUAL` en JetBrains Mono uppercase, letter-spacing `0.08em`.
+- **Status Badges (`.badge`):**
+  - `.badge.b-active`: Micro-punto verde con pulso sutil (ej: `Respuesta inmediata 24/7`).
+  - `.badge.b-completed`: Punto verde sólido (ej: `Calificación automática de prospectos`).
+  - `.badge.b-waiting`: Punto cobre tenue (ej: `Integrado a tu número actual`).
+
+### 7. Botones Comerciales
+- **`Button variant="signal"`**: 4px radius (`rounded-sm`), fondo `#1C8A76`, texto `#0E1013` en negrita, icono `FaWhatsapp` o `FaArrowRight`.
+- **`Button variant="outline"`**: 1px `#373E47`, fondo `#16191D`, texto `#EDEFF2`, hover a border `#EDEFF2`.
 
 ---
 
-## Rules and Constraints
+## 5. Prohibited Elements (Anti-Patterns)
 
-1. **Dark Mode Only**: No light theme, no theme toggle.
-2. **Logos Intact**: Pre-existing SVG logo marks (`logo-mark-dark.svg`, `logo-mark-light.svg`, `BrandLogo`) must remain unmodified.
-3. **No Orange Accents in UI**: Orange has been completely eliminated from UI elements, replaced by Signal Green and Copper.
-4. **Squared Radii**: Border radius is strictly `rounded-sm` (4px) or `rounded-md` (6px). Never pill-shaped buttons.
+1. **NO "AI Hype" Visuals:** Quedan prohibidos robots, cerebros digitales, redes neuronales vectoriales, circuitos, planetas o ilustraciones de ciencia ficción.
+2. **NO Particle Canvas:** Prohibido el uso de `ParticleField` o bucles `requestAnimationFrame` que consuman CPU/GPU en decoraciones no funcionales.
+3. **NO Fake Server Telemetry:** Prohibido mostrar monitores de colas con latencia de red (`p95 118ms`, `tenant_id`, `QUEUE MONITOR`) como gancho comercial; la telemetría debe ser de métricas comerciales.
+4. **NO Artificial Discounts:** Prohibidas tachaduras promocionales o mensajes de escasez ficticia.
+5. **NO Pill Buttons:** Todos los botones interactivos mantienen radio cuadrado moderno de 4px (`rounded-sm`).
+6. **Dark Mode Exclusivo:** La identidad no implementa temas claros.
