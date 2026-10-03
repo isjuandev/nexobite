@@ -202,6 +202,7 @@ export function Header() {
                 href="https://wa.me/+573009459026?text=Hola,%20quiero%20revisar%20c%C3%B3mo%20gestiono%20mis%20mensajes%20y%20agendar%20un%20diagn%C3%B3stico."
                 target="_blank"
                 rel="noopener noreferrer"
+                data-analytics-event="whatsapp_click"
               >
                 <span>Diagnóstico Gratis</span>
               </a>
@@ -263,6 +264,7 @@ export function Header() {
                   href="https://wa.me/+573009459026?text=Hola,%20quiero%20entender%20c%C3%B3mo%20puedo%20mejorar%20la%20atenci%C3%B3n%20de%20mi%20negocio."
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-analytics-event="whatsapp_click"
                 >
                   Hablar por WhatsApp
                 </a>

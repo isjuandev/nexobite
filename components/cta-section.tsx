@@ -43,6 +43,7 @@ export function CtaSection() {
               href="https://wa.me/+573009459026?text=Hola,%20estuve%20revisando%20los%20planes%20de%20NexoBite%20y%20quiero%20coordinar%20un%20diagn%C3%B3stico%20de%2015%20minutos%20para%20la%20atenci%C3%B3n%20de%20mi%20negocio."
               target="_blank"
               rel="noopener noreferrer"
+              data-analytics-event="whatsapp_click"
             >
               <FaWhatsapp className="mr-2 h-4 w-4" />
               Iniciar diagnóstico por WhatsApp

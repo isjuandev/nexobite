@@ -1,9 +1,25 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Container } from "@/components/container";
 import { AnimatedSection } from "@/components/animated-section";
 import { ParticleField } from "@/components/particle-field";
 import { FaFileAlt, FaBriefcase, FaCreditCard, FaExclamationTriangle, FaCopyright, FaShieldAlt, FaBalanceScale, FaWhatsapp } from "react-icons/fa";
+
+export const metadata: Metadata = {
+  title: "Condiciones del Servicio",
+  description:
+    "Términos y condiciones legales aplicables a los servicios de desarrollo web, automatización comercial y consultoría de NexoBite.",
+  alternates: {
+    canonical: "https://www.nexobite.com/condiciones-del-servicio",
+  },
+  openGraph: {
+    title: "Condiciones del Servicio | NexoBite",
+    description:
+      "Términos y condiciones legales aplicables a los servicios de desarrollo web, automatización comercial y consultoría de NexoBite.",
+    url: "https://www.nexobite.com/condiciones-del-servicio",
+  },
+};
 
 export default function CondicionesDelServicio() {
 
@@ -139,7 +155,7 @@ export default function CondicionesDelServicio() {
                                 Condiciones del <span className="text-signal">Servicio</span>
                             </h1>
                             <p className="text-sm text-ink-soft font-mono">
-                                nexobite.dev/terms · rev.02
+                                nexobite.com/condiciones-del-servicio · rev.02
                             </p>
                         </AnimatedSection>
                     </div>

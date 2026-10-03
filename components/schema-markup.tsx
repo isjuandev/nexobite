@@ -1,88 +1,135 @@
 import React from "react";
+import { siteConfig } from "@/lib/site-config";
+import { faqs } from "@/lib/faqs";
 
 export function SchemaMarkup() {
-    const organizationSchema = {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        name: "NexoBite",
-        url: "https://www.nexobite.com",
-        logo: "https://www.nexobite.com/nexobite-logo.png",
-        description:
-            "Agencia boutique de soluciones digitales para PYMEs en Colombia. Marketing digital, chatbots con IA, desarrollo web y automatización.",
-        contactPoint: {
-            "@type": "ContactPoint",
-            telephone: "+57-300-945-9026",
-            contactType: "sales",
-            availableLanguage: "Spanish",
-        },
-        sameAs: ["https://instagram.com/nexobite"],
-        areaServed: {
-            "@type": "Country",
-            name: "Colombia",
-        },
-        knowsAbout: [
-            "Marketing Digital",
-            "Chatbots con Inteligencia Artificial",
-            "Desarrollo Web",
-            "Automatización de Procesos",
-            "Community Management",
-        ],
-    };
+  const sameAsProfiles = [
+    siteConfig.social.instagram,
+    siteConfig.social.linkedin,
+  ].filter(Boolean);
 
-    const websiteSchema = {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: "NexoBite",
-        url: "https://www.nexobite.com",
-        description:
-            "Agencia de marketing digital, chatbots IA y desarrollo web para PYMEs en Colombia.",
-        inLanguage: "es",
-    };
+  const postalAddress = siteConfig.contact.address.streetAddress || siteConfig.contact.address.addressLocality
+    ? {
+        "@type": "PostalAddress",
+        ...(siteConfig.contact.address.streetAddress
+          ? { streetAddress: siteConfig.contact.address.streetAddress }
+          : {}),
+        addressLocality: siteConfig.contact.address.addressLocality,
+        addressRegion: siteConfig.contact.address.addressRegion,
+        ...(siteConfig.contact.address.postalCode
+          ? { postalCode: siteConfig.contact.address.postalCode }
+          : {}),
+        addressCountry: siteConfig.contact.address.addressCountry,
+      }
+    : undefined;
 
-    const localBusinessSchema = {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        name: "NexoBite",
-        url: "https://www.nexobite.com",
-        telephone: "+573009459026",
-        description:
-            "Agencia boutique de soluciones digitales: chatbots con IA, desarrollo web, marketing digital y automatización para PYMEs colombianas.",
-        areaServed: "Colombia",
-        priceRange: "$$",
-        openingHoursSpecification: {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    legalName: siteConfig.legalName,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/nexobite-logo.png`,
+    description: siteConfig.description,
+    email: siteConfig.contact.email,
+    telephone: siteConfig.contact.phone,
+    ...(postalAddress ? { address: postalAddress } : {}),
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: siteConfig.contact.phone,
+      email: siteConfig.contact.email,
+      contactType: "customer service",
+      availableLanguage: ["Spanish"],
+    },
+    sameAs: sameAsProfiles,
+    areaServed: siteConfig.contact.areaServed.map((area) => ({
+      "@type": "AdministrativeArea",
+      name: area,
+    })),
+    knowsAbout: [
+      "Automatización de WhatsApp",
+      "Chatbots con Inteligencia Artificial",
+      "Desarrollo Web para Empresas",
+      "Sistemas CRM y Pipelines de Ventas",
+      "Integración de APIs Comerciales",
+    ],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    inLanguage: "es-CO",
+  };
+
+  const professionalServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    telephone: siteConfig.contact.phone,
+    email: siteConfig.contact.email,
+    description: siteConfig.description,
+    sameAs: sameAsProfiles,
+    ...(postalAddress ? { address: postalAddress } : {}),
+    areaServed: siteConfig.contact.areaServed.map((area) => ({
+      "@type": "AdministrativeArea",
+      name: area,
+    })),
+    priceRange: "$$",
+    ...(siteConfig.contact.openingHours
+      ? {
+          openingHoursSpecification: {
             "@type": "OpeningHoursSpecification",
-            dayOfWeek: [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-            ],
-            opens: "08:00",
-            closes: "18:00",
-        },
-    };
+            dayOfWeek: siteConfig.contact.openingHours.days,
+            opens: siteConfig.contact.openingHours.opens,
+            closes: siteConfig.contact.openingHours.closes,
+          },
+        }
+      : {}),
+  };
 
-    return (
-        <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(organizationSchema),
-                }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(websiteSchema),
-                }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(localBusinessSchema),
-                }}
-            />
-        </>
-    );
+  const faqPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(professionalServiceSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqPageSchema),
+        }}
+      />
+    </>
+  );
 }

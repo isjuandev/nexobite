@@ -185,6 +185,7 @@ export function PricingSection() {
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-analytics-event="whatsapp_click"
                     >
                       {p.ctaText}
                       <FaArrowRight className="ml-2 h-3 w-3" />

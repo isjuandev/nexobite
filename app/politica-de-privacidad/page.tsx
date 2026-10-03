@@ -1,9 +1,25 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Container } from "@/components/container";
 import { ParticleField } from "@/components/particle-field";
 import { AnimatedSection } from "@/components/animated-section";
 import { FaShieldAlt, FaLock, FaEye, FaCheckCircle, FaShareAlt, FaUserCheck, FaSync, FaWhatsapp } from "react-icons/fa";
+
+export const metadata: Metadata = {
+  title: "Política de Privacidad y Seguridad",
+  description:
+    "Conoce cómo NexoBite recopila, utiliza y protege los datos personales y comerciales de sus clientes y usuarios.",
+  alternates: {
+    canonical: "https://www.nexobite.com/politica-de-privacidad",
+  },
+  openGraph: {
+    title: "Política de Privacidad | NexoBite",
+    description:
+      "Conoce cómo NexoBite recopila, utiliza y protege los datos personales y comerciales de sus clientes y usuarios.",
+    url: "https://www.nexobite.com/politica-de-privacidad",
+  },
+};
 
 export default function PoliticaDePrivacidad() {
 
@@ -169,7 +185,7 @@ export default function PoliticaDePrivacidad() {
                 Política de Privacidad y <span className="text-signal">Seguridad</span>
               </h1>
               <p className="text-sm text-ink-soft font-mono">
-                nexobite.dev/legal · rev.02
+                nexobite.com/politica-de-privacidad · rev.02
               </p>
             </AnimatedSection>
           </div>

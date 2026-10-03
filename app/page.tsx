@@ -1,16 +1,25 @@
+import dynamic from "next/dynamic";
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
 import { MetricsBar } from "@/components/metrics-bar";
 import { ProblemSection } from "@/components/problem-section";
 import { SolutionsSection } from "@/components/solutions-section";
-import { ProductDemo } from "@/components/product-demo";
 import { BeforeAfterSection } from "@/components/before-after-section";
 import { ProcessSection } from "@/components/process-section";
 import { ServicesSection } from "@/components/services-section";
-import { PricingSection } from "@/components/pricing-section";
 import { FaqSection } from "@/components/faq-section";
 import { CtaSection } from "@/components/cta-section";
 import { Footer } from "@/components/footer";
+import { TestimonialsSection } from "@/components/testimonials-section";
+
+// Carga diferida de componentes interactivos bajo el pliegue (reduce el bundle JS inicial)
+const ProductDemo = dynamic(
+  () => import("@/components/product-demo").then((mod) => mod.ProductDemo)
+);
+
+const PricingSection = dynamic(
+  () => import("@/components/pricing-section").then((mod) => mod.PricingSection)
+);
 
 export default function Home() {
   return (
@@ -25,6 +34,7 @@ export default function Home() {
       <ProcessSection />
       <ServicesSection />
       <PricingSection />
+      <TestimonialsSection />
       <FaqSection />
       <CtaSection />
       <Footer />
