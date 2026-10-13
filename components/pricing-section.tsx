@@ -120,7 +120,7 @@ const connections: {
       { ok: false, text: "Sin botones ni plantillas oficiales de Meta" },
     ],
     priceNote: null,
-    whatsappText: "con conexión económica",
+    whatsappText: "Prefiero la conexión económica.",
   },
   {
     id: "oficial",
@@ -135,7 +135,7 @@ const connections: {
       { ok: false, text: "Requiere verificación del negocio con Meta" },
     ],
     priceNote: null,
-    whatsappText: "con la API oficial de Meta",
+    whatsappText: "Prefiero la API oficial de Meta.",
   },
 ];
 
@@ -282,7 +282,7 @@ export function PricingSection() {
                   >
                     <a
                       href={`https://wa.me/+573009459026?text=${encodeURIComponent(
-                        `${p.whatsappMessage} Me interesa ${connection.whatsappText}.`
+                        `${p.whatsappMessage} ${connection.whatsappText}`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
