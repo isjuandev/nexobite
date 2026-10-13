@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SchemaMarkup } from "../components/schema-markup";
 import { ConversionTracker } from "../components/conversion-tracker";
+import { ChatbotWidget } from "../components/chatbot-widget";
 import "./globals.css";
 
 // Tipografía oficial NexoBite optimizada con variable fonts y display swap
@@ -100,6 +101,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <ConversionTracker />
+        <ChatbotWidget />
         <SpeedInsights />
       </body>
     </html>

@@ -26,18 +26,19 @@ declare global {
   }
 }
 
-const WIDGET_SRC = "https://nex.nexobite.com/widget.js";
+const WIDGET_BASE_URL = "https://app.nexobite.com";
+const WIDGET_SRC = `${WIDGET_BASE_URL}/widget.js`;
 
 export function ChatbotWidget() {
   useEffect(() => {
     window.OmniChat = {
-      tenantSlug: "nexobite-platform",
-      widgetBaseUrl: "https://nex.nexobite.com",
+      tenantSlug: "nexobite",
+      widgetBaseUrl: WIDGET_BASE_URL,
       widgetPath: "/chat",
       launcher: {
         position: "right",
         primaryColor: "#1C8A76",
-        secondaryColor: "#146E5E",
+        secondaryColor: "#146356",
         iconColor: "#FFFFFF",
         glowColor: "#1C8A76",
         pulseColor: "#1C8A76",
