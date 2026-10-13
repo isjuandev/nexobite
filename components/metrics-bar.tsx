@@ -12,17 +12,17 @@ const metrics = [
   {
     value: "Fuera de horario",
     label: "Cobertura de noches y fines de semana",
-    note: "Captura datos del prospecto aunque tu equipo no esté",
+    note: "Guarda los datos del cliente aunque tu equipo no esté",
   },
   {
     value: "2 opciones",
-    label: "Conexión oficial de Meta o económica",
-    note: "Eliges según presupuesto y nivel de riesgo que aceptas",
+    label: "Conexión oficial de WhatsApp o económica",
+    note: "Eliges según tu presupuesto y el riesgo que quieras asumir",
   },
   {
     value: "0 hrs",
     label: "Tiempo perdido copiando respuestas",
-    note: "Menús claros, catálogos y filtro automático",
+    note: "Menús claros, catálogos y respuestas listas",
   },
 ];
 

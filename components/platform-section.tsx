@@ -17,14 +17,14 @@ import { siteConfig } from "@/lib/site-config";
 const views = [
   {
     id: "inbox",
-    tab: "Bandeja",
+    tab: "Chats",
     icon: FaInbox,
-    title: "Todas las conversaciones en un solo lugar",
+    title: "Todos tus chats en un solo lugar",
     description:
-      "WhatsApp, Instagram y el chat de tu web llegan a la misma bandeja. El asistente responde y, cuando el cliente pide una persona o la consulta lo requiere, el chat pasa a tu asesor con todo el historial.",
+      "WhatsApp, Instagram y el chat de tu web llegan al mismo lugar. El asistente responde y, cuando el cliente pide una persona o la consulta lo requiere, el chat pasa a tu asesor con todo el historial.",
     points: [
       "Conversaciones asignadas a cada asesor",
-      "Traspaso del asistente a una persona sin perder contexto",
+      "Pasa del asistente a una persona sin perder la conversación",
       "Notas internas y estado de cada chat",
     ],
   },
@@ -34,9 +34,9 @@ const views = [
     icon: FaCalendarCheck,
     title: "Citas que se agendan y se recuerdan solas",
     description:
-      "El asistente propone horarios según tu disponibilidad real, agenda, reagenda o cancela y envía recordatorios al cliente. Tú ves la agenda del equipo en el panel.",
+      "El asistente propone horarios según tu disponibilidad real, agenda, reagenda o cancela y envía recordatorios al cliente. Tú ves la agenda de tu equipo en la pantalla.",
     points: [
-      "Horarios y disponibilidad por asesor o servicio",
+      "Horarios disponibles por asesor o servicio",
       "Reagendar y cancelar desde la conversación",
       "Recordatorios automáticos al cliente",
     ],
@@ -45,26 +45,26 @@ const views = [
     id: "clientes",
     tab: "Clientes",
     icon: FaUserFriends,
-    title: "Cada prospecto, con su historial",
+    title: "Cada cliente, con su historial",
     description:
       "Cada contacto queda registrado con sus conversaciones, citas y pedidos. Sabes quién preguntó qué y en qué punto del proceso está.",
     points: [
-      "Ficha de cliente con historial completo",
+      "Ficha de cada cliente con todo su historial",
       "Etiquetas para organizar y dar seguimiento",
       "Catálogo y pedidos si vendes productos",
     ],
   },
   {
     id: "reportes",
-    tab: "Reportes",
+    tab: "Resultados",
     icon: FaChartLine,
-    title: "Mide lo que pasa en tu atención",
+    title: "Mira cómo va tu atención",
     description:
-      "Un tablero con conversaciones, citas e ingresos del periodo, y el rendimiento del asistente, para decidir con datos y no por intuición.",
+      "Un resumen con chats, citas e ingresos del periodo, y cómo trabaja el asistente, para decidir con números y no a ojo.",
     points: [
-      "Conversaciones y citas por periodo",
-      "Rendimiento del asistente y de tu equipo",
-      "Encuestas de satisfacción (CSAT)",
+      "Chats y citas por semana o mes",
+      "Cómo trabajan el asistente y tu equipo",
+      "Encuestas para saber si tus clientes quedaron contentos",
     ],
   },
 ] as const;
@@ -78,14 +78,14 @@ export function PlatformSection() {
       <Container size="lg">
         <AnimatedSection>
           <div className="mb-3">
-            <span className="eyebrow">PLATAFORMA NEXOBITE</span>
+            <span className="eyebrow">TU PANTALLA DE CONTROL</span>
           </div>
           <h2 className="mb-4 max-w-3xl text-balance text-3xl font-semibold text-ink sm:text-4xl">
-            No solo un chatbot: un panel donde{" "}
+            No solo un asistente: una pantalla donde{" "}
             <span className="text-signal">tu equipo opera todo</span>
           </h2>
           <p className="mb-10 max-w-2xl text-pretty text-base text-ink-soft">
-            Implementamos el sistema sobre nuestra propia plataforma. Recibes acceso al panel para atender, agendar y medir sin depender de herramientas sueltas.
+            Todo funciona en nuestra plataforma. Recibes acceso a una pantalla para atender, agendar y ver resultados, sin andar entre herramientas sueltas.
           </p>
         </AnimatedSection>
 
@@ -128,13 +128,13 @@ export function PlatformSection() {
                 <Button size="sm" variant="signal" asChild className="rounded-sm">
                   <a
                     href={`${siteConfig.contact.whatsappUrl}?text=${encodeURIComponent(
-                      "Hola NexoBite. Quiero ver el panel de la plataforma en una demostración."
+                      "Hola NexoBite. Quiero ver la pantalla de control en una demostración."
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     data-analytics-event="whatsapp_click"
                   >
-                    Ver el panel en una demo
+                    Ver la pantalla en una demo
                     <FaArrowRight className="ml-1.5 h-3 w-3" />
                   </a>
                 </Button>
@@ -152,7 +152,7 @@ export function PlatformSection() {
                 <div className="flex items-center justify-between border-b border-line bg-card px-4 py-2.5 font-mono text-xs text-ink-mute">
                   <span className="flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-signal" />
-                    Panel NexoBite · {view.tab}
+                    NexoBite · {view.tab}
                   </span>
                   <span>Vista ilustrativa</span>
                 </div>
@@ -175,7 +175,7 @@ export function PlatformSection() {
                       [
                         ["Cliente nuevo", "Hola, ¿tienen disponibilidad esta semana?", "Asistente"],
                         ["Consulta de precio", "¿Cuánto cuesta el servicio completo?", "Asistente"],
-                        ["Pide asesor", "Prefiero hablar con una persona", "Asesor"],
+                        ["Pide hablar con alguien", "Prefiero hablar con una persona", "Asesor"],
                       ].map(([name, msg, who]) => (
                         <div key={name} className="rounded-sm border border-line bg-card p-3">
                           <div className="flex items-center justify-between text-[11px]">
@@ -187,7 +187,7 @@ export function PlatformSection() {
                       ))}
                     {activeId === "agenda" &&
                       [
-                        ["Lun", "09:00", "Cita de diagnóstico"],
+                        ["Lun", "09:00", "Cita de revisión"],
                         ["Mar", "11:30", "Consulta inicial"],
                         ["Jue", "15:00", "Seguimiento"],
                       ].map(([day, hour, label]) => (
@@ -200,7 +200,7 @@ export function PlatformSection() {
                     {activeId === "clientes" &&
                       [
                         ["Cliente A", "3 conversaciones · 1 cita"],
-                        ["Cliente B", "1 conversación · prospecto"],
+                        ["Cliente B", "1 conversación · interesado"],
                         ["Cliente C", "2 conversaciones · 1 pedido"],
                       ].map(([name, info]) => (
                         <div key={name} className="rounded-sm border border-line bg-card p-3">
@@ -210,7 +210,7 @@ export function PlatformSection() {
                       ))}
                     {activeId === "reportes" && (
                       <div className="grid grid-cols-2 gap-2.5">
-                        {["Conversaciones", "Citas", "Satisfacción", "Traspasos a asesor"].map((label) => (
+                        {["Conversaciones", "Citas", "Clientes contentos", "Chats pasados a un asesor"].map((label) => (
                           <div key={label} className="rounded-sm border border-line bg-card p-3">
                             <p className="font-mono text-[10px] uppercase text-ink-mute">{label}</p>
                             <div className="mt-2 h-1.5 w-full rounded-sm bg-line">
@@ -224,7 +224,7 @@ export function PlatformSection() {
                 </div>
               </div>
               <p className="mt-2 text-center font-mono text-[11px] text-ink-mute">
-                Maqueta ilustrativa. Los datos reales aparecen en tu panel.
+                Maqueta ilustrativa. Los datos reales aparecen en tu pantalla.
               </p>
             </div>
           </div>

@@ -7,28 +7,28 @@ const steps = [
     step: "01",
     timeframe: "Día 1 a 3",
     icon: FaClipboardList,
-    title: "Diagnóstico y diseño del flujo comercial",
+    title: "Entendemos tu negocio y planeamos las conversaciones",
     description:
-      "Analizamos cómo llegan tus clientes, cuáles son las preguntas más comunes y qué información es indispensable para calificar una venta. Definimos los guiones, la lógica del asistente y los puntos de contacto.",
-    deliverable: "Mapa de conversación y catálogo de respuestas",
+      "Vemos cómo te escriben tus clientes, cuáles son las preguntas de siempre y qué necesitas saber para confirmar una venta. Escribimos juntos lo que dirá el asistente.",
+    deliverable: "Guion de conversaciones y lista de respuestas",
   },
   {
     step: "02",
     timeframe: "Día 4 a 10",
     icon: FaCogs,
-    title: "Configuración técnica e integración",
+    title: "Lo armamos y lo probamos",
     description:
-      "Construimos los flujos de respuesta, conectamos el sistema a tu línea de WhatsApp Cloud API, enlazamos tu web y configuramos el almacenamiento automático de prospectos en tu CRM o base de datos.",
-    deliverable: "Entorno integrado y pruebas de validación",
+      "Preparamos las respuestas, conectamos el asistente a tu WhatsApp y a tu web, y dejamos que cada cliente interesado se guarde solo en tu sistema.",
+    deliverable: "Todo conectado y probado contigo",
   },
   {
     step: "03",
     timeframe: "Día 11+",
     icon: FaCheckDouble,
-    title: "Puesta en marcha y capacitación operativa",
+    title: "Lo activamos y capacitamos a tu equipo",
     description:
-      "Activamos el sistema en tu operación diaria, capacitamos a tu equipo en el uso del panel y monitoreamos el rendimiento inicial para afinar respuestas y asegurar estabilidad continua.",
-    deliverable: "Capacitación práctica + monitoreo 24/7",
+      "Empezamos a usarlo en tu día a día, enseñamos a tu equipo a manejar la pantalla de control y vigilamos que funcione bien para mejorar las respuestas.",
+    deliverable: "Capacitación práctica + vigilancia continua",
   },
 ];
 
@@ -38,14 +38,14 @@ export function ProcessSection() {
       <Container size="lg">
         <AnimatedSection>
           <div className="mb-3">
-            <span className="eyebrow">05 · MÉTODO DE IMPLEMENTACIÓN</span>
+            <span className="eyebrow">05 · CÓMO TRABAJAMOS</span>
           </div>
           <h2 className="mb-4 max-w-3xl text-balance text-3xl font-semibold text-ink sm:text-4xl">
-            Cómo integramos este sistema{" "}
+            Cómo lo dejamos funcionando{" "}
             <span className="text-signal">en tu negocio</span>
           </h2>
           <p className="mb-14 max-w-2xl text-pretty text-base text-ink-soft">
-            Nosotros nos encargamos de todo el desarrollo, configuración e integración técnica. Tu equipo solo recibe los prospectos calificados.
+            Nosotros nos encargamos de todo. Tu equipo solo recibe a los clientes que están listos para comprar.
           </p>
         </AnimatedSection>
 

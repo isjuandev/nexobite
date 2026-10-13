@@ -9,11 +9,11 @@ import { FaWhatsapp, FaArrowRight, FaCalendarCheck, FaFilter, FaListAlt } from "
 const useCases = [
   {
     id: "cotizacion",
-    tab: "1. Venta y Cotización",
+    tab: "1. Pedir un precio",
     icon: FaFilter,
-    title: "Calificación y Rango de Precios",
+    title: "Precios claros y clientes interesados",
     description:
-      "El asistente consulta los requerimientos, informa los rangos base y solicita los datos de contacto solo si el cliente tiene interés real.",
+      "El asistente pregunta qué necesita el cliente, le da un rango de precios y pide sus datos solo si de verdad está interesado.",
     chat: [
       {
         sender: "user",
@@ -24,28 +24,28 @@ const useCases = [
         sender: "bot",
         time: "11:15 AM",
         text: "¡Hola! Con gusto te paso la información. Para indicarte el plan exacto: ¿qué tipo de proyecto necesitas hoy?",
-        chips: ["1. Chatbot WhatsApp", "2. Página Web", "3. Solución Integral"],
+        chips: ["1. Asistente de WhatsApp", "2. Página Web", "3. Solución Completa"],
       },
       {
         sender: "user",
         time: "11:16 AM",
-        text: "3. Solución Integral",
+        text: "3. Solución Completa",
       },
       {
         sender: "bot",
         time: "11:16 AM",
-        text: "Excelente. La Solución Integral combina Web + WhatsApp + CRM desde $3.490.000 COP. ¿Para qué empresa o sector sería?",
+        text: "Excelente. La Solución Completa junta Página web + WhatsApp + registro de clientes desde $3.490.000 COP. ¿Para qué empresa o sector sería?",
       },
     ],
-    crmNote: "Lead registrado en CRM: Calificado · Interés: Integral · Origen: WhatsApp",
+    crmNote: "Cliente guardado: interesado en la solución completa · llegó por WhatsApp",
   },
   {
     id: "citas",
-    tab: "2. Agendamiento de Citas",
+    tab: "2. Reservar una cita",
     icon: FaCalendarCheck,
-    title: "Reserva y Confirmación Automática",
+    title: "Citas reservadas y confirmadas solas",
     description:
-      "Permite a tus prospectos elegir fecha y hora disponible sin llamadas ni mensajes de ida y vuelta.",
+      "Tus clientes eligen fecha y hora disponibles sin llamadas ni mensajes de ida y vuelta.",
     chat: [
       {
         sender: "user",
@@ -55,7 +55,7 @@ const useCases = [
       {
         sender: "bot",
         time: "03:20 PM",
-        text: "¡Perfecto! Tenemos estos horarios disponibles para mañana vía Google Meet:",
+        text: "¡Perfecto! Tenemos estos horarios disponibles para mañana por videollamada:",
         chips: ["Mañana 10:00 AM", "Mañana 02:30 PM", "Mañana 04:00 PM"],
       },
       {
@@ -69,15 +69,15 @@ const useCases = [
         text: "¡Listo! Tu llamada quedó agendada para mañana a las 2:30 PM. Te enviamos la invitación al calendario y un recordatorio 2 horas antes.",
       },
     ],
-    crmNote: "Evento sincronizado en Google Calendar + Recordatorio programado",
+    crmNote: "Cita guardada en tu agenda + recordatorio programado",
   },
   {
     id: "catalogo",
-    tab: "3. Catálogo y FAQs",
+    tab: "3. Resolver dudas",
     icon: FaListAlt,
-    title: "Respuestas Inmediatas a Dudas Frecuentes",
+    title: "Respuestas al instante a las dudas de siempre",
     description:
-      "Envío instantáneo de menús, condiciones de entrega, horarios de atención y fichas en PDF.",
+      "Envía al instante menús, condiciones de entrega, horarios y documentos en PDF.",
     chat: [
       {
         sender: "user",
@@ -101,7 +101,7 @@ const useCases = [
         text: "📄 Aquí tienes el documento: [Catalogo_NexoBite_2026.pdf]. Si deseas cotizar una opción en particular, dime y te transfiero con un especialista.",
       },
     ],
-    crmNote: "Contacto registrado: Prospecto consultó catálogo en horario nocturno (8:46 PM)",
+    crmNote: "Contacto guardado: un cliente pidió el catálogo de noche (8:46 PM)",
   },
 ];
 
@@ -114,14 +114,14 @@ export function ProductDemo() {
       <Container size="lg">
         <AnimatedSection>
           <div className="mb-3">
-            <span className="eyebrow">03 · DEMOSTRACIÓN DE PRODUCTO</span>
+            <span className="eyebrow">03 · MÍRALO EN ACCIÓN</span>
           </div>
           <h2 className="mb-4 max-w-3xl text-balance text-3xl font-semibold text-ink sm:text-4xl">
-            Así interactúan tus clientes reales{" "}
-            <span className="text-signal">con el sistema</span>
+            Así te escriben tus clientes y así{" "}
+            <span className="text-signal">responde el asistente</span>
           </h2>
           <p className="mb-10 max-w-2xl text-pretty text-base text-ink-soft">
-            Explora tres de los flujos más frecuentes implementados para empresas: cotización con filtro, reserva de citas y atención de dudas frecuentes.
+            Mira tres situaciones comunes: pedir un precio, reservar una cita y resolver dudas.
           </p>
         </AnimatedSection>
 
@@ -151,7 +151,7 @@ export function ProductDemo() {
             {/* Descripción del flujo */}
             <div className="lg:col-span-5 space-y-4">
               <span className="font-mono text-xs text-copper px-2 py-0.5 rounded-sm bg-copper-soft border border-copper/30">
-                FLUJO EN VIVO
+                EJEMPLO EN VIVO
               </span>
               <h3 className="text-2xl font-semibold text-ink">
                 {currentCase.title}
@@ -161,7 +161,7 @@ export function ProductDemo() {
               </p>
               <div className="pt-4 border-t border-line space-y-2">
                 <p className="text-xs font-mono text-ink-mute">
-                  INTEGRACIÓN DE SALIDA:
+                  LO QUE QUEDA HECHO:
                 </p>
                 <p className="text-xs font-mono text-signal">
                   ✓ {currentCase.crmNote}
@@ -175,7 +175,7 @@ export function ProductDemo() {
                     rel="noopener noreferrer"
                   >
                     <FaWhatsapp className="mr-1.5 h-3.5 w-3.5" />
-                    Probar flujo similar en mi WhatsApp
+                    Probar algo similar en mi WhatsApp
                     <FaArrowRight className="ml-1.5 h-3 w-3" />
                   </a>
                 </Button>

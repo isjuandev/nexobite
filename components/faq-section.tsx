@@ -9,14 +9,14 @@ export function FaqSection() {
       <Container size="md">
         <AnimatedSection>
           <div className="mb-3 text-center">
-            <span className="eyebrow">08 · RESOLUCIÓN DE DUDAS COMERCIALES</span>
+            <span className="eyebrow">08 · TUS DUDAS</span>
           </div>
           <h2 className="mb-4 text-center text-balance text-3xl font-semibold text-ink sm:text-4xl">
             Preguntas frecuentes sobre la{" "}
-            <span className="text-signal">implementación y el servicio</span>
+            <span className="text-signal">forma de trabajar y el servicio</span>
           </h2>
           <p className="mx-auto mb-14 max-w-xl text-center text-pretty text-base text-ink-soft">
-            Todo lo que necesitas tener claro sobre integración, números, garantías y soporte.
+            Todo lo que necesitas saber sobre tu número, los tiempos, los pagos y el soporte.
           </p>
         </AnimatedSection>
 
