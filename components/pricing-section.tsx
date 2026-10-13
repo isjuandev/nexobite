@@ -10,7 +10,7 @@ const plans = [
   {
     id: "start",
     name: "01 · START",
-    subtitle: "Atención Inmediata Automática",
+    subtitle: "Respuesta Inmediata a tus Clientes",
     target: "Para negocios locales y profesionales que pierden clientes por responder tarde o fuera de horario.",
     setupPrice: "$1.190.000",
     monthlyPrice: "$140.000",
@@ -18,13 +18,13 @@ const plans = [
     highlighted: false,
     badge: null,
     features: [
-      "Conexión a 1 línea de WhatsApp (oficial o económica)",
-      "Bienvenida inteligente + menú estructurado",
-      "Hasta 15 respuestas a consultas frecuentes",
-      "Calificación básica (nombre, necesidad, ciudad)",
-      "Enrutamiento directo a asesor comercial",
+      "Funciona con 1 número de WhatsApp (oficial o económico)",
+      "Saludo automático y menú de opciones claro",
+      "Hasta 15 respuestas a las preguntas más comunes",
+      "Pide los datos básicos (nombre, qué necesita, ciudad)",
+      "Pasa el chat directo a tu asesor",
       "1 hora de capacitación para tu equipo",
-      "Monitoreo continuo y 2 ajustes mensuales de texto",
+      "Vigilamos que todo funcione y cambiamos textos 2 veces al mes",
     ],
     ctaText: "Elegir Plan Start",
     whatsappMessage:
@@ -33,62 +33,62 @@ const plans = [
   {
     id: "sales",
     name: "02 · SALES",
-    subtitle: "Sistema Comercial de Calificación",
-    target: "Para empresas de servicios y B2B con flujo de consultas que necesitan filtrar prospectos y agendar citas solas.",
+    subtitle: "Ventas y Citas Automáticas",
+    target: "Para empresas de servicios que reciben muchas consultas y quieren saber quién sí va a comprar y agendar citas sin esfuerzo.",
     setupPrice: "$1.890.000",
     monthlyPrice: "$220.000",
     timeframe: "10 a 14 días hábiles",
     highlighted: true,
-    badge: "MÁS ELEGIDO · RECOMENDADO PARA B2B",
+    badge: "MÁS ELEGIDO · IDEAL PARA EMPRESAS DE SERVICIOS",
     features: [
       "Todo lo incluido en el Plan Start",
-      "Asistente conversacional con base de conocimiento",
-      "Filtro avanzado de presupuesto y urgencia",
-      "Agendamiento automático en Google Calendar/Calendly",
-      "Registro automático de prospectos en base de datos",
-      "Secuencia de seguimiento automático a las 24 horas",
-      "Optimización mensual de respuestas y soporte < 4h",
+      "Asistente que conoce tu negocio y responde como tú",
+      "Identifica quién tiene presupuesto y prisa por comprar",
+      "Agenda las citas solo, directo en tu calendario",
+      "Guarda cada cliente interesado automáticamente",
+      "Vuelve a escribirle al cliente a las 24 horas",
+      "Mejoramos las respuestas cada mes y te atendemos en menos de 4 horas",
     ],
     ctaText: "Elegir Plan Sales",
     whatsappMessage:
-      "Hola NexoBite. Me interesa el Plan Sales (Calificación y Agendamiento). Quiero revisar si se adapta a mi flujo comercial.",
+      "Hola NexoBite. Me interesa el Plan Sales (ventas y citas automáticas). Quiero revisar si se adapta a mi negocio.",
   },
   {
     id: "scale",
     name: "03 · SCALE",
-    subtitle: "Ecosistema Integral (Web + Chatbot + CRM)",
-    target: "Para empresas que buscan una máquina comercial completa: captar en la web, atender en WhatsApp y centralizar en CRM.",
+    subtitle: "Todo en Uno (Página Web + WhatsApp + Registro de Clientes)",
+    target: "Para empresas que quieren todo resuelto: conseguir clientes en la web, atenderlos en WhatsApp y tenerlos ordenados en un solo lugar.",
     setupPrice: "$3.490.000",
     monthlyPrice: "$290.000",
     timeframe: "20 a 25 días hábiles",
     highlighted: false,
     badge: "SOLUCIÓN TODO EN UNO",
     features: [
-      "Sitio Web o Landing Page a medida en Next.js",
-      "Sistema de WhatsApp Nivel SALES conectado a la web",
-      "Integración con CRM Comercial (Kommo / HubSpot)",
-      "Alertas automáticas de ventas a tu equipo",
-      "Diseño responsive, SEO técnico y hosting primer año",
-      "2 horas de capacitación comercial al equipo de ventas",
-      "Mantenimiento integral de web, servidor y soporte < 2h",
+      "Página web hecha a tu medida, rápida y moderna",
+      "Todo lo del Plan Sales, conectado a tu página web",
+      "Tus clientes organizados en un sistema de ventas profesional",
+      "Aviso inmediato a tu equipo cuando llega un cliente",
+      "Se ve bien en celular, te encuentran en Google y el primer año de alojamiento va incluido",
+      "2 horas de capacitación para tu equipo de ventas",
+      "Mantenimiento de tu web y tu sistema, con atención en menos de 2 horas",
     ],
     ctaText: "Elegir Plan Scale",
     whatsappMessage:
-      "Hola NexoBite. Me interesa el Plan Scale integral (Web + WhatsApp + CRM). Quiero agendar un diagnóstico de mi proyecto.",
+      "Hola NexoBite. Me interesa el Plan Scale (Página web + WhatsApp + registro de clientes). Quiero agendar una revisión de mi caso.",
   },
 ];
 
 const featureComparison = [
-  { name: "Conexión WhatsApp (oficial o económica)", start: "✓ (1 línea)", sales: "✓ (1 línea)", scale: "✓ (1 línea)" },
+  { name: "Conexión de WhatsApp (oficial o económica)", start: "✓ (1 línea)", sales: "✓ (1 línea)", scale: "✓ (1 línea)" },
   { name: "Respuestas automáticas fuera de horario", start: "✓", sales: "✓", scale: "✓" },
   { name: "Respuestas a dudas y catálogos", start: "Hasta 15", sales: "Ilimitadas", scale: "Ilimitadas" },
-  { name: "Calificación avanzada con IA", start: "—", sales: "✓", scale: "✓" },
-  { name: "Agendamiento en Calendario", start: "—", sales: "✓", scale: "✓" },
-  { name: "Seguimiento automático a prospectos", start: "—", sales: "✓", scale: "✓" },
-  { name: "Desarrollo Web / Landing Page", start: "—", sales: "—", scale: "✓ (Hasta 6 secciones)" },
-  { name: "Integración con CRM Comercial", start: "—", sales: "Google Sheets", scale: "CRM Dedicado" },
-  { name: "Tiempo de Implementación", start: "5–7 días", sales: "10–14 días", scale: "20–25 días" },
-  { name: "Mantenimiento e infraestructura", start: "$140.000/mes", sales: "$220.000/mes", scale: "$290.000/mes" },
+  { name: "Detecta quién sí quiere comprar", start: "—", sales: "✓", scale: "✓" },
+  { name: "Citas automáticas en tu calendario", start: "—", sales: "✓", scale: "✓" },
+  { name: "Seguimiento automático a interesados", start: "—", sales: "✓", scale: "✓" },
+  { name: "Página web hecha a tu medida", start: "—", sales: "—", scale: "✓ (Hasta 6 secciones)" },
+  { name: "Registro y orden de tus clientes", start: "—", sales: "Hoja simple", scale: "Sistema de ventas completo" },
+  { name: "Tiempo para dejarlo listo", start: "5–7 días", sales: "10–14 días", scale: "20–25 días" },
+  { name: "Mantenimiento mensual", start: "$140.000/mes", sales: "$220.000/mes", scale: "$290.000/mes" },
 ];
 
 type ConnectionId = "economica" | "oficial";
@@ -112,30 +112,30 @@ const connections: {
     id: "economica",
     label: "Conexión económica",
     tag: "BAJO COSTO",
-    summary: "Vinculas tu número escaneando un código, sin trámites con Meta.",
+    summary: "Conectas tu número escaneando un código, sin trámites con WhatsApp.",
     points: [
-      { ok: true, text: "Sin costos de mensajería de Meta" },
-      { ok: true, text: "Puesta en marcha rápida, sin verificación de empresa" },
-      { ok: false, text: "No es la API oficial: WhatsApp puede restringir o bloquear el número" },
-      { ok: false, text: "Sin botones ni plantillas oficiales de Meta" },
+      { ok: true, text: "Sin cobros extra de WhatsApp por mensajes" },
+      { ok: true, text: "Listo rápido, sin verificar tu empresa" },
+      { ok: false, text: "No es la vía oficial: WhatsApp podría limitar o bloquear tu número" },
+      { ok: false, text: "Sin botones ni mensajes preaprobados de WhatsApp" },
     ],
     priceNote: null,
     whatsappText: "Prefiero la conexión económica.",
   },
   {
     id: "oficial",
-    label: "API oficial de Meta",
-    tag: "RECOMENDADA PARA OPERACIÓN CRÍTICA",
-    summary: "WhatsApp Business Platform: la vía autorizada por Meta.",
+    label: "Conexión oficial de WhatsApp",
+    tag: "RECOMENDADA SI WHATSAPP ES CLAVE PARA TUS VENTAS",
+    summary: "La vía autorizada por WhatsApp (Meta), la más segura.",
     points: [
-      { ok: true, text: "Número protegido contra bloqueos por uso automatizado" },
-      { ok: true, text: "Plantillas, botones y listas oficiales" },
-      { ok: true, text: "Estabilidad y soporte directo de Meta" },
-      { ok: false, text: "Meta cobra por conversación (se paga aparte, en tu cuenta)" },
-      { ok: false, text: "Requiere verificación del negocio con Meta" },
+      { ok: true, text: "Tu número protegido contra bloqueos" },
+      { ok: true, text: "Botones, listas y mensajes oficiales de WhatsApp" },
+      { ok: true, text: "Más estable y con soporte de WhatsApp" },
+      { ok: false, text: "WhatsApp cobra por conversación (se paga aparte, en tu cuenta)" },
+      { ok: false, text: "Hay que verificar tu negocio ante WhatsApp" },
     ],
     priceNote: null,
-    whatsappText: "Prefiero la API oficial de Meta.",
+    whatsappText: "Prefiero la conexión oficial de WhatsApp.",
   },
 ];
 
@@ -152,11 +152,11 @@ export function PricingSection() {
             <span className="eyebrow">07 · INVERSIÓN TRANSPARENTE Y PLANES</span>
           </div>
           <h2 className="mb-4 text-center text-balance text-3xl font-semibold text-ink sm:text-4xl">
-            Planes profesionales con{" "}
-            <span className="text-signal">alcance e inversión definidos</span>
+            Planes claros con{" "}
+            <span className="text-signal">lo que incluyen y lo que cuestan</span>
           </h2>
           <p className="mx-auto mb-14 max-w-2xl text-center text-pretty text-base text-ink-soft">
-            Precios netos en pesos colombianos (COP). Sin costes ocultos ni promociones artificiales. Desglosamos claramente la implementación inicial del soporte mensual.
+            Precios netos en pesos colombianos (COP). Sin costos ocultos. Te separamos claramente lo que pagas una sola vez para dejarlo listo y lo que pagas cada mes para mantenerlo funcionando.
           </p>
         </AnimatedSection>
 
@@ -243,7 +243,7 @@ export function PricingSection() {
                   {/* Precios desglosados */}
                   <div className="my-6 py-5 border-y border-line space-y-1">
                     <span className="font-mono text-xs text-ink-mute block">
-                      Implementación (Pago único):
+                      Dejarlo listo (pago único):
                     </span>
                     <div className="font-display font-extrabold text-3xl sm:text-4xl text-ink tnum tracking-tight">
                       {p.setupPrice}
@@ -306,7 +306,7 @@ export function PricingSection() {
           >
             {showMatrix
               ? "▲ Ocultar tabla comparativa detallada"
-              : "▼ Ver matriz comparativa técnica entre planes"}
+              : "▼ Comparar los planes en detalle"}
           </button>
         </div>
 

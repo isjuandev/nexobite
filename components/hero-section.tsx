@@ -17,7 +17,7 @@ export function HeroSection() {
             <div className="mb-4 flex items-center gap-2">
               <span className="eyebrow flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-signal inline-block" />
-                SISTEMA COMERCIAL PARA WHATSAPP Y WEB
+                MÁS VENTAS POR WHATSAPP Y TU PÁGINA WEB
               </span>
             </div>
 
@@ -28,21 +28,21 @@ export function HeroSection() {
             </h1>
 
             <p className="mb-7 max-w-xl text-pretty text-base text-ink-soft sm:text-lg leading-relaxed">
-              Automatizamos tus conversaciones en WhatsApp y tus canales de captación para responder al instante, calificar prospectos y organizar tu proceso comercial sin depender de tareas manuales.
+              Un asistente automático contesta a tus clientes en WhatsApp al instante, descubre quiénes sí quieren comprar y deja todo ordenado para que tu equipo solo se dedique a vender.
             </p>
 
             <div className="mb-8 flex flex-wrap gap-2.5">
               <span className="badge b-active">
                 <i />
-                Respuesta automática fuera de horario
+                Contesta de noche y fines de semana
               </span>
               <span className="badge b-completed">
                 <i />
-                Calificación automática de prospectos
+                Detecta quién sí quiere comprar
               </span>
               <span className="badge b-waiting">
                 <i />
-                Integrado a tu número actual
+                Funciona con tu número actual
               </span>
             </div>
 
@@ -66,11 +66,11 @@ export function HeroSection() {
                   asChild
                   className="rounded-sm font-medium bg-card hover:border-ink hover:text-ink"
                 >
-                  <a href="#proceso">Ver cómo funciona el sistema</a>
+                  <a href="#proceso">Ver cómo funciona</a>
                 </Button>
               </div>
               <p className="mt-3 text-xs font-mono text-ink-mute">
-                Sin costo · Diagnóstico directo de tu flujo actual en 15 minutos.
+                Sin costo · En 15 minutos revisamos cómo atiendes hoy a tus clientes.
               </p>
             </div>
           </div>
@@ -86,7 +86,7 @@ export function HeroSection() {
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-signal" />
                   </span>
                   <span className="font-mono text-xs font-medium text-ink">
-                    WhatsApp Cloud API
+                    WhatsApp de tu negocio
                   </span>
                 </div>
                 <span className="font-mono text-[11px] text-ink-mute px-2 py-0.5 rounded-sm bg-paper border border-line">
@@ -99,10 +99,10 @@ export function HeroSection() {
                 {/* Mensaje entrante de cliente */}
                 <div className="flex flex-col items-start gap-1">
                   <span className="font-mono text-[10px] text-ink-mute pl-1">
-                    10:42 PM · Prospecto entrante
+                    10:42 PM · Cliente nuevo
                   </span>
                   <div className="bg-card border border-line rounded-md rounded-tl-none p-3 max-w-[85%] text-ink leading-relaxed">
-                    Hola, quiero cotizar la automatización de atención para mi empresa.
+                    Hola, quiero cotizar la atención automática para mi empresa.
                   </div>
                 </div>
 
@@ -113,14 +113,14 @@ export function HeroSection() {
                   </span>
                   <div className="bg-signal-soft border border-signal/30 rounded-md rounded-tr-none p-3 max-w-[90%] text-ink leading-relaxed">
                     <p className="mb-2">
-                      ¡Hola! Con gusto te oriento. Para calcular el flujo adecuado: ¿cuántas consultas reciben al día?
+                      ¡Hola! Con gusto te oriento. Para recomendarte lo mejor: ¿cuántos mensajes reciben al día?
                     </p>
                     <div className="flex flex-wrap gap-1.5 mt-2">
                       <span className="px-2 py-1 rounded-sm bg-card border border-line text-[11px] text-ink-soft">
-                        1. Menos de 30 msgs
+                        1. Menos de 30
                       </span>
                       <span className="px-2 py-1 rounded-sm bg-signal/20 border border-signal text-[11px] text-ink font-medium">
-                        2. 30 a 100 msgs ✓
+                        2. De 30 a 100 ✓
                       </span>
                     </div>
                   </div>
@@ -133,10 +133,10 @@ export function HeroSection() {
                   </span>
                   <div className="bg-signal-soft border border-signal/30 rounded-md rounded-tr-none p-3 max-w-[90%] text-ink leading-relaxed">
                     <p className="mb-1.5 font-medium text-ink">
-                      Excelente. Calificas para atención prioritaria.
+                      Excelente. Tendrás atención prioritaria.
                     </p>
                     <p className="text-ink-soft text-[11px]">
-                      ¿Te reservo espacio para una demo personalizada mañana?
+                      ¿Te reservo una demostración personalizada para mañana?
                     </p>
                     <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-card border border-copper/50 text-copper font-mono text-[11px]">
                       📅 Horario elegido: Mañana 3:30 PM
@@ -145,20 +145,20 @@ export function HeroSection() {
                 </div>
               </div>
 
-              {/* Footer de Integración CRM */}
+              {/* Footer de resultados automáticos */}
               <div className="p-3 border-t border-line bg-card/90 space-y-1.5">
                 <div className="flex items-center justify-between text-[11px] font-mono text-ink-mute">
-                  <span className="text-copper">SISTEMA INTEGRADO</span>
-                  <span className="text-signal">EVENTOS CONFIRMADOS</span>
+                  <span className="text-copper">TODO CONECTADO</span>
+                  <span className="text-signal">HECHO AUTOMÁTICAMENTE</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2 pt-1">
                   <div className="flex items-center gap-1.5 text-[11px] text-ink-soft bg-paper px-2 py-1 rounded-sm border border-line">
                     <FaCheck className="h-3 w-3 text-signal shrink-0" />
-                    <span className="truncate">Lead creado en CRM</span>
+                    <span className="truncate">Cliente guardado</span>
                   </div>
                   <div className="flex items-center gap-1.5 text-[11px] text-ink-soft bg-paper px-2 py-1 rounded-sm border border-line">
                     <FaCheck className="h-3 w-3 text-signal shrink-0" />
-                    <span className="truncate">Cita en Google Calendar</span>
+                    <span className="truncate">Cita en tu agenda</span>
                   </div>
                 </div>
               </div>

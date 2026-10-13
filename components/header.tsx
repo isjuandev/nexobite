@@ -9,13 +9,13 @@ import { BrandLogo } from "@/components/brand-logo";
 import { siteConfig } from "@/lib/site-config";
 
 const HOME_NAV_ITEMS = [
-  { id: "solucion", label: "Solución" },
-  { id: "demo", label: "Demostración" },
-  { id: "plataforma", label: "Plataforma" },
+  { id: "solucion", label: "Qué hacemos" },
+  { id: "demo", label: "Míralo" },
+  { id: "plataforma", label: "Tu pantalla" },
   { id: "proceso", label: "Cómo Funciona" },
   { id: "servicios", label: "Servicios" },
   { id: "precios", label: "Planes" },
-  { id: "faq", label: "FAQ" },
+  { id: "faq", label: "Preguntas" },
 ] as const;
 
 const PROPOSAL_NAV_ITEMS = [
@@ -212,7 +212,7 @@ export function Header() {
                 rel="noopener noreferrer"
                 data-analytics-event="whatsapp_click"
               >
-                <span>Diagnóstico Gratis</span>
+                <span>Revisión Gratis</span>
               </a>
             </Button>
           </div>

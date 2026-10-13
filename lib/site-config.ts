@@ -47,7 +47,7 @@ export const siteConfig: SiteConfig = {
   legalName: "NexoBite",
   url: "https://www.nexobite.com",
   description:
-    "Automatiza tu WhatsApp y página web para responder al instante, calificar prospectos y cerrar más ventas sin depender de tareas comerciales manuales.",
+    "Automatiza tu WhatsApp y página web para responder al instante, saber quién quiere comprar y cerrar más ventas sin pasar el día contestando mensajes.",
   contact: {
     // Correo oficial de contacto
     email: "contacto@nexobite.com",

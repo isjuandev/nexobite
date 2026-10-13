@@ -5,54 +5,54 @@ import { FaGlobe, FaWhatsapp, FaCogs, FaCode, FaCheck } from "react-icons/fa";
 const serviceModules = [
   {
     icon: FaGlobe,
-    category: "CAPTACIÓN DIGITAL",
-    title: "Desarrollo Web & Landing Pages",
+    category: "CONSEGUIR CLIENTES",
+    title: "Páginas Web",
     description:
-      "Sitios web y páginas de aterrizaje ligeras en Next.js, con copywriting comercial persuasivo y botones que envían prospectos calificados directamente a WhatsApp.",
+      "Páginas web rápidas, con textos que convencen y botones que llevan al cliente directo a tu WhatsApp.",
     features: [
-      "Diseño a medida sin plantillas lentas",
-      "Optimización Core Web Vitals y velocidad móvil",
-      "Formularios inteligentes conectados a chat",
-      "Configuración de Meta Pixel y analítica",
+      "Diseño a tu medida, sin moldes genéricos",
+      "Carga rápido en el celular",
+      "Formularios simples que abren el chat",
+      "Medimos cuánta gente te escribe desde tu web",
     ],
   },
   {
     icon: FaWhatsapp,
-    category: "ATENCIÓN CONVERSACIONAL",
-    title: "Chatbots para WhatsApp e Instagram",
+    category: "ATENDER CLIENTES",
+    title: "Asistente para WhatsApp e Instagram",
     description:
-      "Asistentes inteligentes conectados a tu WhatsApp, con API oficial de Meta o con una conexión económica. Responden preguntas frecuentes, atienden fuera de horario y filtran prospectos antes de pasarlos a tus asesores.",
+      "Un asistente en tu WhatsApp, con conexión oficial o económica. Responde preguntas comunes, atiende de noche y averigua quién quiere comprar antes de pasárselo a tus asesores.",
     features: [
-      "Conexión sobre tu número actual (oficial o económica)",
-      "Manejo de catálogos, horarios y precios base",
-      "Calificación de presupuesto y necesidad",
-      "Traspaso inmediato a asesor humano",
+      "Usa tu número actual (oficial o económica)",
+      "Catálogos, horarios y precios",
+      "Averigua presupuesto y necesidad",
+      "Pasa el chat a una persona al instante",
     ],
   },
   {
     icon: FaCogs,
-    category: "INTEGRACIÓN OPERATIVA",
-    title: "Automatización de Procesos (CRM & APIs)",
+    category: "ORDEN Y AUTOMATIZACIÓN",
+    title: "Conectamos tus herramientas",
     description:
-      "Conectamos tus canales de venta con herramientas de gestión (Google Sheets, Kommo, HubSpot, Siigo o Alegra) para eliminar el traspaso manual de datos.",
+      "Unimos tus chats y tus ventas con las herramientas que ya usas, para que no tengas que pasar datos a mano.",
     features: [
-      "Sincronización instantánea de prospectos",
-      "Alertas internas de ventas por chat o correo",
-      "Disparo automático de confirmaciones",
-      "Webhooks personalizados entre plataformas",
+      "Cada cliente interesado se guarda al instante",
+      "Avisos a tu equipo por chat o correo",
+      "Confirmaciones enviadas automáticamente",
+      "Conexión entre las herramientas que uses",
     ],
   },
   {
     icon: FaCode,
-    category: "DESARROLLO AVANZADO",
-    title: "Sistemas Web & Software a Medida",
+    category: "A TU MEDIDA",
+    title: "Programas hechos para tu negocio",
     description:
-      "Desarrollo de aplicaciones web para operaciones que exceden las herramientas comerciales estándar: cotizadores dinámicos, paneles de clientes o sistemas de reservas.",
+      "Aplicaciones web para cuando las herramientas comunes no alcanzan: cotizadores, pantallas para tus clientes o sistemas de reservas.",
     features: [
-      "Desarrollo sobre stack Next.js + PostgreSQL",
-      "Adaptado a las reglas específicas de tu negocio",
-      "Arquitectura escalable y código propietario",
-      "Seguridad, backups y soporte técnico dedicado",
+      "Construido con tecnología moderna y confiable",
+      "Adaptado a la forma de trabajar de tu negocio",
+      "Crece contigo y es tuyo",
+      "Seguridad, copias de respaldo y soporte dedicado",
     ],
   },
 ];
@@ -63,14 +63,14 @@ export function ServicesSection() {
       <Container size="lg">
         <AnimatedSection>
           <div className="mb-3">
-            <span className="eyebrow">06 · SERVICIOS Y MODALIDADES</span>
+            <span className="eyebrow">06 · LO QUE HACEMOS</span>
           </div>
           <h2 className="mb-4 max-w-3xl text-balance text-3xl font-semibold text-ink sm:text-4xl">
-            Soluciones modulares adaptadas a lo que{" "}
+            Soluciones a la medida de lo que{" "}
             <span className="text-signal">tu negocio necesita hoy</span>
           </h2>
           <p className="mb-14 max-w-2xl text-pretty text-base text-ink-soft">
-            Puedes implementar la solución comercial completa o contratar los módulos de forma individual según la madurez de tu operación.
+            Puedes contratar todo junto o solo lo que necesites hoy, y sumar más cuando tu negocio crezca.
           </p>
         </AnimatedSection>
 

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | NexoBite",
   },
   description:
-    "Automatiza tu WhatsApp y página web para responder al instante, calificar prospectos y cerrar más ventas sin depender de tareas comerciales manuales.",
+    "Automatiza tu WhatsApp y página web para responder al instante, saber quién quiere comprar y cerrar más ventas sin pasar el día contestando mensajes.",
   metadataBase: new URL("https://www.nexobite.com"),
   alternates: {
     canonical: "https://www.nexobite.com",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: "NexoBite",
     title: "Automatización de WhatsApp y Páginas Web | NexoBite",
     description:
-      "Automatiza tu WhatsApp y página web para responder al instante, calificar prospectos y cerrar más ventas sin depender de tareas comerciales manuales.",
+      "Automatiza tu WhatsApp y página web para responder al instante, saber quién quiere comprar y cerrar más ventas sin pasar el día contestando mensajes.",
     images: [
       {
         url: "/og-image.png",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Automatización de WhatsApp y Páginas Web | NexoBite",
     description:
-      "Automatiza tu WhatsApp y página web para responder al instante, calificar prospectos y cerrar más ventas sin depender de tareas comerciales manuales.",
+      "Automatiza tu WhatsApp y página web para responder al instante, saber quién quiere comprar y cerrar más ventas sin pasar el día contestando mensajes.",
     images: ["/og-image.png"],
   },
   robots: {

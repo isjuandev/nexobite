@@ -10,28 +10,28 @@ const comparisons = [
   },
   {
     criterion: "Atención nocturna y festivos",
-    before: "Bandeja pausada hasta la siguiente jornada laboral; leads fríos.",
-    after: "El sistema atiende, informa, califica y toma los datos del prospecto.",
+    before: "Los chats esperan hasta el día siguiente y el cliente se enfría.",
+    after: "El asistente atiende, informa y guarda los datos del cliente.",
   },
   {
-    criterion: "Filtro de prospectos",
-    before: "El asesor invierte tiempo valioso con curiosos sin presupuesto.",
-    after: "El sistema califica requerimientos y entrega los prospectos listos para cierre.",
+    criterion: "Saber quién sí va a comprar",
+    before: "El asesor pierde tiempo con curiosos que no van a comprar.",
+    after: "El asistente averigua qué necesitan y te pasa solo a los que están listos para comprar.",
   },
   {
     criterion: "Tareas repetitivas",
-    before: "Copiar y pegar listas de precios, catálogos y políticas manualmente.",
-    after: "Automatizadas con menús claros, PDFs y respuestas estructuradas.",
+    before: "Copiar y pegar a mano listas de precios, catálogos y condiciones.",
+    after: "Se resuelven solas con menús claros, PDFs y respuestas listas.",
   },
   {
     criterion: "Seguimiento comercial",
     before: "Inconsistente; depende de la memoria de cada vendedor.",
-    after: "Recordatorios programados para reactivar conversaciones pendientes.",
+    after: "Mensajes programados que retoman las conversaciones pendientes.",
   },
   {
-    criterion: "Organización de datos",
-    before: "Dispersa en los chats individuales de cada teléfono personal.",
-    after: "Centralizada en un panel comercial o CRM con etapas claras de venta.",
+    criterion: "Orden de tus clientes",
+    before: "Regados en los chats del celular de cada persona.",
+    after: "Todos en un solo lugar, con claridad de en qué punto va cada venta.",
   },
 ];
 
@@ -41,14 +41,14 @@ export function BeforeAfterSection() {
       <Container size="lg">
         <AnimatedSection>
           <div className="mb-3">
-            <span className="eyebrow">04 · COMPARATIVA DE GESTIÓN</span>
+            <span className="eyebrow">04 · ANTES Y DESPUÉS</span>
           </div>
           <h2 className="mb-4 max-w-3xl text-balance text-3xl font-semibold text-ink sm:text-4xl">
             La diferencia entre operar a mano y contar con{" "}
-            <span className="text-signal">un sistema estructurado</span>
+            <span className="text-signal">un asistente que trabaja por ti</span>
           </h2>
           <p className="mb-14 max-w-2xl text-pretty text-base text-ink-soft">
-            Compara el impacto directo de automatizar tu flujo de atención frente a continuar dependiendo de respuestas manuales.
+            Mira qué cambia en tu día a día cuando la atención deja de ser manual.
           </p>
         </AnimatedSection>
 
@@ -59,10 +59,10 @@ export function BeforeAfterSection() {
                 <tr>
                   <th className="py-4 px-6 font-medium">Aspecto Operativo</th>
                   <th className="py-4 px-6 font-medium text-alert">
-                    Operación Manual Habitual
+                    Atendiendo a mano
                   </th>
                   <th className="py-4 px-6 font-medium text-signal">
-                    Operación con NexoBite
+                    Con NexoBite
                   </th>
                 </tr>
               </thead>

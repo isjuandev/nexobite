@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Automatización de WhatsApp para Empresas",
   description:
-    "Asistentes inteligentes conectados a tu WhatsApp con API oficial de Meta o conexión económica. Atención fuera de horario, calificación de prospectos y traspaso a asesores.",
+    "Un asistente en tu WhatsApp, con conexión oficial o económica. Atiende de noche, averigua quién quiere comprar y pasa el chat a tu asesor.",
   alternates: {
     canonical: "https://www.nexobite.com/servicios/automatizacion-whatsapp",
   },
@@ -41,13 +41,13 @@ export default function AutomatizacionWhatsAppPage() {
       <section className="py-16 sm:py-24 border-b border-line">
         <Container size="md">
           <div className="text-center">
-            <span className="eyebrow mb-3 inline-block">ATENCIÓN CONVERSACIONAL</span>
+            <span className="eyebrow mb-3 inline-block">ATENDER CLIENTES</span>
             <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-ink mb-6 text-balance">
-              Automatización de WhatsApp y{" "}
-              <span className="text-signal">Chatbots con IA</span>
+              Atención automática en WhatsApp con{" "}
+              <span className="text-signal">un asistente que trabaja por ti</span>
             </h1>
             <p className="text-base sm:text-lg text-ink-soft max-w-2xl mx-auto mb-8 leading-relaxed text-pretty">
-              Asistentes inteligentes conectados a tu WhatsApp, con API oficial de Meta o con una conexión económica. Responden preguntas frecuentes, atienden fuera de horario y filtran prospectos antes de pasarlos a tus asesores comerciales.
+              Un asistente en tu WhatsApp, con conexión oficial o económica. Responde las preguntas de siempre, atiende de noche y averigua quién quiere comprar antes de pasarle el chat a tus asesores.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -59,7 +59,7 @@ export default function AutomatizacionWhatsAppPage() {
                   data-analytics-event="whatsapp_click"
                 >
                   <FaWhatsapp className="mr-2 h-4 w-4" />
-                  Solicitar diagnóstico por WhatsApp
+                  Hablar por WhatsApp
                   <FaArrowRight className="ml-2 h-3.5 w-3.5" />
                 </a>
               </Button>
@@ -75,16 +75,16 @@ export default function AutomatizacionWhatsAppPage() {
       <section className="py-16 border-b border-line bg-card/50">
         <Container size="md">
           <h2 className="text-2xl font-semibold text-ink mb-8 text-center">
-            Capacidades incluidas en la solución
+            Lo que incluye
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              "Conexión sobre tu número actual de WhatsApp Business",
-              "Manejo de catálogos, horarios y preguntas frecuentes",
-              "Calificación automática de presupuesto y necesidad",
-              "Traspaso inmediato a asesor humano cuando el prospecto califica",
-              "Historial y trazabilidad en la cuenta corporativa",
-              "Capacitación de uso para tu equipo de ventas",
+              "Funciona con tu número actual de WhatsApp Business",
+              "Catálogos, horarios y preguntas frecuentes",
+              "Averigua solo el presupuesto y lo que necesita el cliente",
+              "Pasa el chat a una persona cuando el cliente está listo para comprar",
+              "Historial de cada conversación guardado en la cuenta de tu empresa",
+              "Capacitación para tu equipo de ventas",
             ].map((feature, idx) => (
               <div
                 key={idx}

@@ -16,8 +16,8 @@ export function Footer() {
           <div className="flex flex-col items-center gap-3 md:items-start">
             <BrandLogo markClassName="h-8 w-8" />
             <p className="max-w-md text-center text-xs text-ink-mute md:text-left leading-relaxed">
-              Sistemas comerciales para WhatsApp y web: respuestas inmediatas,
-              calificación automática y procesos de venta ordenados.
+              Más ventas por WhatsApp y web: respuestas inmediatas,
+              clientes interesados detectados y ventas ordenadas.
             </p>
 
             {/* Datos de contacto y ubicación visibles solo si están definidos en siteConfig */}
