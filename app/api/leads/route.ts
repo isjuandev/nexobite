@@ -6,9 +6,32 @@ interface LeadRequestBody {
   email?: unknown;
   message?: unknown;
   pageUrl?: unknown;
+  source?: unknown;
+  business?: unknown;
+  /** Honeypot: los usuarios reales lo dejan vacío. */
+  website?: unknown;
 }
 
 const WEBHOOK_TIMEOUT_MS = 10_000;
+const ALLOWED_SOURCES = new Set(["nexobite_chatbot_widget", "nexobite_landing_form"]);
+
+// Límite por IP en memoria (por instancia): suficiente para frenar spam básico.
+const RATE_LIMIT_WINDOW_MS = 10 * 60_000;
+const RATE_LIMIT_MAX = 5;
+const hits = new Map<string, number[]>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 5_000) {
+    for (const [key, times] of hits) {
+      if (times.every((t) => now - t >= RATE_LIMIT_WINDOW_MS)) hits.delete(key);
+    }
+  }
+  return recent.length > RATE_LIMIT_MAX;
+}
 
 function asTrimmedString(value: unknown, maxLength: number): string {
   if (typeof value !== "string") return "";
@@ -39,6 +62,24 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { error: "Body inválido. Debe ser JSON." },
       { status: 400 }
+    );
+  }
+
+  // Honeypot: responde ok sin reenviar para no revelar el filtro a los bots.
+  if (asTrimmedString(body.website, 200)) {
+    return NextResponse.json({ ok: true });
+  }
+
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  const ip =
+    forwardedFor?.split(",")[0]?.trim() ??
+    request.headers.get("x-real-ip") ??
+    "unknown";
+
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: "Demasiados intentos. Intenta de nuevo en unos minutos." },
+      { status: 429 }
     );
   }
 
@@ -76,20 +117,21 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const forwardedFor = request.headers.get("x-forwarded-for");
-  const ip =
-    forwardedFor?.split(",")[0]?.trim() ??
-    request.headers.get("x-real-ip") ??
-    "unknown";
+  const requestedSource = asTrimmedString(body.source, 60);
+  const source = ALLOWED_SOURCES.has(requestedSource)
+    ? requestedSource
+    : "nexobite_chatbot_widget";
+  const business = asTrimmedString(body.business, 120);
 
   const payload = {
-    source: "nexobite_chatbot_widget",
+    source,
     createdAt: new Date().toISOString(),
     lead: {
       name,
       phone,
       email,
       message,
+      business: business || null,
     },
     metadata: {
       pageUrl: pageUrl || null,
