@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { FaArrowRight, FaCheck } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import { getAttribution, trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -33,6 +34,7 @@ export function LeadForm() {
           website: data.get("website"),
           source: "nexobite_landing_form",
           pageUrl: window.location.href,
+          attribution: getAttribution(),
         }),
       });
 
@@ -41,6 +43,7 @@ export function LeadForm() {
         throw new Error(body?.error ?? "No pudimos enviar tus datos. Escríbenos por WhatsApp.");
       }
 
+      trackEvent("lead_submitted", { section: "cta", page: window.location.pathname });
       setStatus("sent");
       form.reset();
     } catch (err) {

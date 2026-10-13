@@ -10,6 +10,7 @@ interface LeadRequestBody {
   business?: unknown;
   /** Honeypot: los usuarios reales lo dejan vacío. */
   website?: unknown;
+  attribution?: unknown;
 }
 
 const WEBHOOK_TIMEOUT_MS = 10_000;
@@ -123,6 +124,14 @@ export async function POST(request: NextRequest) {
     : "nexobite_chatbot_widget";
   const business = asTrimmedString(body.business, 120);
 
+  const attribution: Record<string, string> = {};
+  if (body.attribution && typeof body.attribution === "object") {
+    for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"]) {
+      const value = asTrimmedString((body.attribution as Record<string, unknown>)[key], 80);
+      if (value) attribution[key] = value;
+    }
+  }
+
   const payload = {
     source,
     createdAt: new Date().toISOString(),
@@ -135,6 +144,7 @@ export async function POST(request: NextRequest) {
     },
     metadata: {
       pageUrl: pageUrl || null,
+      attribution: Object.keys(attribution).length > 0 ? attribution : null,
       userAgent: request.headers.get("user-agent") ?? null,
       ip,
     },
