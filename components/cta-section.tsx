@@ -2,6 +2,7 @@ import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/animated-section";
 import { Container } from "@/components/container";
+import { LeadForm } from "@/components/lead-form";
 
 export function CtaSection() {
   return (
@@ -50,6 +51,18 @@ export function CtaSection() {
               <FaArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
+        </AnimatedSection>
+
+        <AnimatedSection delay={400}>
+          <div className="mx-auto mt-12 max-w-xl border-t border-line pt-10 text-left">
+            <h3 className="mb-1 text-center text-lg font-semibold text-ink">
+              ¿Prefieres que te escribamos nosotros?
+            </h3>
+            <p className="mb-6 text-center text-sm text-ink-soft">
+              Déjanos tus datos y te contactamos el siguiente día hábil.
+            </p>
+            <LeadForm />
+          </div>
         </AnimatedSection>
       </Container>
     </section>
