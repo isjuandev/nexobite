@@ -109,7 +109,7 @@ export function HeroSection() {
                 {/* Respuesta del asistente con filtro */}
                 <div className="flex flex-col items-end gap-1">
                   <span className="font-mono text-[10px] text-signal pr-1">
-                    10:42 PM · Asistente NexoBite (&lt; 2s)
+                    10:42 PM · Asistente NexoBite
                   </span>
                   <div className="bg-signal-soft border border-signal/30 rounded-md rounded-tr-none p-3 max-w-[90%] text-ink leading-relaxed">
                     <p className="mb-2">
