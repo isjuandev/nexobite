@@ -21,9 +21,9 @@ const serviceModules = [
     category: "ATENCIÓN CONVERSACIONAL",
     title: "Chatbots para WhatsApp e Instagram",
     description:
-      "Asistentes inteligentes integrados a tu línea oficial de WhatsApp Business API. Atienden 24/7, responden preguntas frecuentes y filtran prospectos antes de pasarlos a tus asesores.",
+      "Asistentes inteligentes conectados a tu WhatsApp, con API oficial de Meta o con una conexión económica. Responden preguntas frecuentes, atienden fuera de horario y filtran prospectos antes de pasarlos a tus asesores.",
     features: [
-      "Conexión sobre tu número actual oficial",
+      "Conexión sobre tu número actual (oficial o económica)",
       "Manejo de catálogos, horarios y precios base",
       "Calificación de presupuesto y necesidad",
       "Traspaso inmediato a asesor humano",

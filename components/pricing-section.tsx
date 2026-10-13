@@ -4,13 +4,13 @@ import { useState } from "react";
 import { Container } from "@/components/container";
 import { AnimatedSection } from "@/components/animated-section";
 import { Button } from "@/components/ui/button";
-import { FaCheck, FaArrowRight } from "react-icons/fa";
+import { FaCheck, FaArrowRight, FaTimes } from "react-icons/fa";
 
 const plans = [
   {
     id: "start",
     name: "01 · START",
-    subtitle: "Atención Inmediata 24/7",
+    subtitle: "Atención Inmediata Automática",
     target: "Para negocios locales y profesionales que pierden clientes por responder tarde o fuera de horario.",
     setupPrice: "$1.190.000",
     monthlyPrice: "$140.000",
@@ -18,13 +18,13 @@ const plans = [
     highlighted: false,
     badge: null,
     features: [
-      "Conexión a 1 línea oficial de WhatsApp",
+      "Conexión a 1 línea de WhatsApp (oficial o económica)",
       "Bienvenida inteligente + menú estructurado",
       "Hasta 15 respuestas a consultas frecuentes",
       "Calificación básica (nombre, necesidad, ciudad)",
       "Enrutamiento directo a asesor comercial",
       "1 hora de capacitación para tu equipo",
-      "Monitoreo 24/7 y 2 ajustes mensuales de texto",
+      "Monitoreo continuo y 2 ajustes mensuales de texto",
     ],
     ctaText: "Elegir Plan Start",
     whatsappMessage:
@@ -79,8 +79,8 @@ const plans = [
 ];
 
 const featureComparison = [
-  { name: "Canal oficial WhatsApp API", start: "✓ (1 línea)", sales: "✓ (1 línea)", scale: "✓ (1 línea)" },
-  { name: "Disponibilidad y respuestas 24/7", start: "✓", sales: "✓", scale: "✓" },
+  { name: "Conexión WhatsApp (oficial o económica)", start: "✓ (1 línea)", sales: "✓ (1 línea)", scale: "✓ (1 línea)" },
+  { name: "Respuestas automáticas fuera de horario", start: "✓", sales: "✓", scale: "✓" },
   { name: "Respuestas a dudas y catálogos", start: "Hasta 15", sales: "Ilimitadas", scale: "Ilimitadas" },
   { name: "Calificación avanzada con IA", start: "—", sales: "✓", scale: "✓" },
   { name: "Agendamiento en Calendario", start: "—", sales: "✓", scale: "✓" },
@@ -91,8 +91,58 @@ const featureComparison = [
   { name: "Mantenimiento e infraestructura", start: "$140.000/mes", sales: "$220.000/mes", scale: "$290.000/mes" },
 ];
 
+type ConnectionId = "economica" | "oficial";
+
+/**
+ * Las dos formas de conectar WhatsApp. Los precios de los planes son los mismos;
+ * lo que cambia es el riesgo, los costos de Meta y la verificación requerida.
+ * TODO (Usuario): si la conexión oficial tiene un recargo de implementación o mensual,
+ * defínelo en `priceNote` y se mostrará bajo el selector.
+ */
+const connections: {
+  id: ConnectionId;
+  label: string;
+  tag: string;
+  summary: string;
+  points: { ok: boolean; text: string }[];
+  priceNote: string | null;
+  whatsappText: string;
+}[] = [
+  {
+    id: "economica",
+    label: "Conexión económica",
+    tag: "BAJO COSTO",
+    summary: "Vinculas tu número escaneando un código, sin trámites con Meta.",
+    points: [
+      { ok: true, text: "Sin costos de mensajería de Meta" },
+      { ok: true, text: "Puesta en marcha rápida, sin verificación de empresa" },
+      { ok: false, text: "No es la API oficial: WhatsApp puede restringir o bloquear el número" },
+      { ok: false, text: "Sin botones ni plantillas oficiales de Meta" },
+    ],
+    priceNote: null,
+    whatsappText: "con conexión económica",
+  },
+  {
+    id: "oficial",
+    label: "API oficial de Meta",
+    tag: "RECOMENDADA PARA OPERACIÓN CRÍTICA",
+    summary: "WhatsApp Business Platform: la vía autorizada por Meta.",
+    points: [
+      { ok: true, text: "Número protegido contra bloqueos por uso automatizado" },
+      { ok: true, text: "Plantillas, botones y listas oficiales" },
+      { ok: true, text: "Estabilidad y soporte directo de Meta" },
+      { ok: false, text: "Meta cobra por conversación (se paga aparte, en tu cuenta)" },
+      { ok: false, text: "Requiere verificación del negocio con Meta" },
+    ],
+    priceNote: null,
+    whatsappText: "con la API oficial de Meta",
+  },
+];
+
 export function PricingSection() {
   const [showMatrix, setShowMatrix] = useState(false);
+  const [connectionId, setConnectionId] = useState<ConnectionId>("economica");
+  const connection = connections.find((c) => c.id === connectionId) ?? connections[0];
 
   return (
     <section id="precios" className="border-b border-line bg-card/30 py-20 sm:py-28">
@@ -108,6 +158,57 @@ export function PricingSection() {
           <p className="mx-auto mb-14 max-w-2xl text-center text-pretty text-base text-ink-soft">
             Precios netos en pesos colombianos (COP). Sin costes ocultos ni promociones artificiales. Desglosamos claramente la implementación inicial del soporte mensual.
           </p>
+        </AnimatedSection>
+
+        {/* Selector de conexión de WhatsApp */}
+        <AnimatedSection delay={100}>
+          <div className="mx-auto mb-10 max-w-3xl">
+            <div
+              role="radiogroup"
+              aria-label="Tipo de conexión de WhatsApp"
+              className="grid grid-cols-2 gap-2 rounded-md border border-line bg-paper-deep/70 p-1"
+            >
+              {connections.map((c) => (
+                <button
+                  key={c.id}
+                  type="button"
+                  role="radio"
+                  aria-checked={c.id === connectionId}
+                  onClick={() => setConnectionId(c.id)}
+                  className={`rounded-sm px-3 py-2.5 text-sm font-medium transition-colors ${
+                    c.id === connectionId
+                      ? "bg-card text-ink border border-signal/50"
+                      : "text-ink-soft hover:text-ink border border-transparent"
+                  }`}
+                >
+                  {c.label}
+                </button>
+              ))}
+            </div>
+            <div className="mt-4 rounded-md border border-line bg-card p-5" aria-live="polite">
+              <div className="mb-1 inline-flex items-center gap-1.5 rounded-sm border border-copper/40 bg-copper-soft px-2 py-0.5 font-mono text-[10px] font-semibold text-copper">
+                {connection.tag}
+              </div>
+              <p className="mb-3 text-sm text-ink-soft">{connection.summary}</p>
+              <ul className="grid gap-2 sm:grid-cols-2">
+                {connection.points.map((p) => (
+                  <li key={p.text} className="flex items-start gap-2 text-xs text-ink-soft">
+                    {p.ok ? (
+                      <FaCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-signal" />
+                    ) : (
+                      <FaTimes className="mt-0.5 h-3.5 w-3.5 shrink-0 text-copper" />
+                    )}
+                    <span>{p.text}</span>
+                  </li>
+                ))}
+              </ul>
+              {connection.priceNote && (
+                <p className="mt-3 border-t border-line pt-3 font-mono text-xs text-signal">
+                  {connection.priceNote}
+                </p>
+              )}
+            </div>
+          </div>
         </AnimatedSection>
 
         {/* 3 Planes con Jerarquía Asimétrica */}
@@ -181,7 +282,7 @@ export function PricingSection() {
                   >
                     <a
                       href={`https://wa.me/+573009459026?text=${encodeURIComponent(
-                        p.whatsappMessage
+                        `${p.whatsappMessage} Me interesa ${connection.whatsappText}.`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
