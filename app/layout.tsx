@@ -4,6 +4,7 @@ import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SchemaMarkup } from "../components/schema-markup";
+import { ConversionTracker } from "../components/conversion-tracker";
 import "./globals.css";
 
 // Tipografía oficial NexoBite optimizada con variable fonts y display swap
@@ -98,6 +99,7 @@ export default function RootLayout({
         <SchemaMarkup />
         {children}
         <Analytics />
+        <ConversionTracker />
         <SpeedInsights />
       </body>
     </html>
