@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { signedHeaders } from "@/lib/hmac";
 
 interface LeadRequestBody {
   name?: unknown;
@@ -52,6 +53,14 @@ export async function POST(request: NextRequest) {
   if (!webhookUrl) {
     return NextResponse.json(
       { error: "Webhook no configurado. Define N8N_LEAD_WEBHOOK_URL." },
+      { status: 500 }
+    );
+  }
+
+  const webhookSecret = process.env.N8N_LEAD_WEBHOOK_SECRET?.trim();
+  if (!webhookSecret) {
+    return NextResponse.json(
+      { error: "Secreto del webhook no configurado. Define N8N_LEAD_WEBHOOK_SECRET." },
       { status: 500 }
     );
   }
@@ -158,6 +167,7 @@ export async function POST(request: NextRequest) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        ...signedHeaders(payload, webhookSecret),
       },
       body: JSON.stringify(payload),
       signal: controller.signal,
