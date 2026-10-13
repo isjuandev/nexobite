@@ -34,6 +34,8 @@ export interface SiteConfig {
       closes: string;
     };
   };
+  /** Panel de la plataforma (inicio de sesión de clientes). */
+  appLoginUrl: string;
   social: {
     instagram: string;
     linkedin: string; // TODO (Usuario): Enlace oficial a la página de LinkedIn de la empresa
@@ -69,6 +71,7 @@ export const siteConfig: SiteConfig = {
       closes: "18:00",
     },
   },
+  appLoginUrl: "https://app.nexobite.com/login",
   social: {
     instagram: "https://instagram.com/nexobite",
     // TODO: Completar con el enlace oficial de LinkedIn de NexoBite cuando esté disponible
