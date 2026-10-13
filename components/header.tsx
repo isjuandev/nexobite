@@ -158,7 +158,7 @@ export function Header() {
 
           {/* Navegación Desktop */}
           <nav
-            className="hidden items-center gap-6 md:flex"
+            className="hidden items-center gap-4 lg:gap-6 md:flex"
             aria-label="Navegación principal"
           >
             {navItems.map((item) => {
@@ -171,7 +171,7 @@ export function Header() {
                   href={linkHref}
                   onClick={(e) => handleNavClick(e, item.id)}
                   aria-current={isActive ? "location" : undefined}
-                  className={`group relative text-sm font-medium transition-colors ${
+                  className={`group relative whitespace-nowrap text-xs lg:text-sm font-medium transition-colors ${
                     isActive
                       ? "text-ink"
                       : "text-ink-soft hover:text-ink"
@@ -195,7 +195,7 @@ export function Header() {
           <div className="hidden items-center gap-3 md:flex">
             <a
               href={siteConfig.appLoginUrl}
-              className="text-sm font-medium text-ink-soft transition-colors hover:text-ink"
+              className="whitespace-nowrap text-xs lg:text-sm font-medium text-ink-soft transition-colors hover:text-ink"
               data-analytics-event="login_click"
             >
               Iniciar sesión
