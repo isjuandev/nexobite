@@ -115,7 +115,7 @@ Abre [http://localhost:3000](http://localhost:3000) para ver el resultado.
 
 ## Notas
 
-- El widget de chatbot (`components/chatbot-widget.tsx`) integra el widget **OmniChat** de `nex.nexobite.com`. Actualmente está disponible para montar pero no se importa en el layout.
+- El widget de chat (`components/chatbot-widget.tsx`) carga `https://app.nexobite.com/widget.js` con el tenant `nexobite` y está montado en el layout. Los colores del panel del chat se configuran en el canal webchat del SaaS; los del botón flotante, en este componente.
 - La identidad visual **"Instrumento"** opera exclusivamente en Dark Mode con Verde Señal (`#1C8A76`), Cobre (`#D6924E`), Papel Carbón (`#0E1013`) y líneas finas (`#262B31`). La guía completa está en `IDENTIDAD-VISUAL.md` y `DESIGN.MD`.
 
 ## Portfolio
