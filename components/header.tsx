@@ -195,7 +195,7 @@ export function Header() {
           <div className="hidden items-center gap-3 md:flex">
             <a
               href={siteConfig.appLoginUrl}
-              className="whitespace-nowrap text-xs lg:text-sm font-medium text-ink-soft transition-colors hover:text-ink"
+              className="hidden whitespace-nowrap text-sm font-medium text-ink-soft transition-colors hover:text-ink lg:inline"
               data-analytics-event="login_click"
             >
               Iniciar sesión
