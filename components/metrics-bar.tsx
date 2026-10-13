@@ -2,20 +2,22 @@ import { Container } from "@/components/container";
 import { AnimatedSection } from "@/components/animated-section";
 
 const metrics = [
+  // Solo cifras que podemos respaldar. Cuando haya medición real de latencia y
+  // disponibilidad (tarjeta de rendimiento del asistente en el panel), publicarla aquí.
   {
-    value: "< 3 seg",
-    label: "Tiempo de primera respuesta",
-    note: "Vs. 2 horas promedio en atención manual",
+    value: "Automática",
+    label: "Primera respuesta sin esperar a un asesor",
+    note: "El asistente contesta cada chat al llegar, sin turnos ni colas",
   },
   {
-    value: "24/7",
-    label: "Disponibilidad operativa continua",
-    note: "Captura clientes de noche y fines de semana",
+    value: "Fuera de horario",
+    label: "Cobertura de noches y fines de semana",
+    note: "Captura datos del prospecto aunque tu equipo no esté",
   },
   {
-    value: "100%",
-    label: "Línea oficial sin riesgo de bloqueo",
-    note: "Conectado directamente a WhatsApp Cloud API",
+    value: "2 opciones",
+    label: "Conexión oficial de Meta o económica",
+    note: "Eliges según presupuesto y nivel de riesgo que aceptas",
   },
   {
     value: "0 hrs",
@@ -41,7 +43,7 @@ export function MetricsBar() {
                     : "md:px-6"
                 }`}
               >
-                <span className="font-display font-bold text-3xl sm:text-4xl text-ink tnum tracking-tight">
+                <span className="font-display font-bold text-2xl sm:text-3xl text-ink tnum tracking-tight">
                   {m.value}
                 </span>
                 <span className="mt-1 text-sm font-medium text-ink-soft">

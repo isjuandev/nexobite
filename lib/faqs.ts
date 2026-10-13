@@ -6,7 +6,7 @@ export interface FaqItem {
 export const faqs: FaqItem[] = [
   {
     q: "¿Puedo utilizar mi número actual de WhatsApp?",
-    a: "Sí. El sistema se vincula a tu línea actual de WhatsApp Business o corporativa mediante la API oficial. No tienes que cambiar de número ni pierdes tu historial de chats o tu base de contactos habituales.",
+    a: "Sí. El sistema se vincula a tu línea actual de WhatsApp Business o corporativa de dos formas: con la API oficial de Meta (recomendada para operaciones críticas; requiere verificar tu negocio y Meta cobra por conversación aparte) o con una conexión económica por código QR, sin costos de Meta pero sin ser la vía oficial, por lo que WhatsApp puede restringir el número. No tienes que cambiar de número y te explicamos los riesgos de cada una antes de elegir.",
   },
   {
     q: "¿El asistente reemplaza a mi equipo comercial?",
@@ -18,7 +18,7 @@ export const faqs: FaqItem[] = [
   },
   {
     q: "¿Qué incluye exactamente el costo mensual de mantenimiento?",
-    a: "Cubre los recursos de infraestructura en la nube para mantener tu asistente y tu web activos 24/7, el monitoreo operativo, copias de seguridad de datos, ajustes menores a textos o precios y soporte técnico ante cualquier eventualidad. Los consumos directos de la API de Meta por volumen de mensajes se gestionan directamente en la cuenta de cada cliente.",
+    a: "Cubre los recursos de infraestructura en la nube para mantener tu asistente y tu web activos, el monitoreo operativo, copias de seguridad de datos, ajustes menores a textos o precios y soporte técnico ante cualquier eventualidad. Los consumos directos de la API de Meta por volumen de mensajes se gestionan directamente en la cuenta de cada cliente.",
   },
   {
     q: "¿Necesito conocimientos técnicos para operar el sistema?",

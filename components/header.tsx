@@ -6,11 +6,12 @@ import { usePathname, useRouter } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/brand-logo";
+import { siteConfig } from "@/lib/site-config";
 
 const HOME_NAV_ITEMS = [
-  { id: "problemas", label: "Problemas" },
   { id: "solucion", label: "Solución" },
   { id: "demo", label: "Demostración" },
+  { id: "plataforma", label: "Plataforma" },
   { id: "proceso", label: "Cómo Funciona" },
   { id: "servicios", label: "Servicios" },
   { id: "precios", label: "Planes" },
@@ -157,7 +158,7 @@ export function Header() {
 
           {/* Navegación Desktop */}
           <nav
-            className="hidden items-center gap-6 md:flex"
+            className="hidden items-center gap-4 lg:gap-6 md:flex"
             aria-label="Navegación principal"
           >
             {navItems.map((item) => {
@@ -170,7 +171,7 @@ export function Header() {
                   href={linkHref}
                   onClick={(e) => handleNavClick(e, item.id)}
                   aria-current={isActive ? "location" : undefined}
-                  className={`group relative text-sm font-medium transition-colors ${
+                  className={`group relative whitespace-nowrap text-xs lg:text-sm font-medium transition-colors ${
                     isActive
                       ? "text-ink"
                       : "text-ink-soft hover:text-ink"
@@ -192,6 +193,13 @@ export function Header() {
 
           {/* Acciones del Header */}
           <div className="hidden items-center gap-3 md:flex">
+            <a
+              href={siteConfig.appLoginUrl}
+              className="hidden whitespace-nowrap text-sm font-medium text-ink-soft transition-colors hover:text-ink lg:inline"
+              data-analytics-event="login_click"
+            >
+              Iniciar sesión
+            </a>
             <Button
               variant="signal"
               size="sm"
@@ -258,6 +266,14 @@ export function Header() {
                   </Link>
                 );
               })}
+
+              <a
+                href={siteConfig.appLoginUrl}
+                className="block px-1 py-2 text-sm font-medium text-ink-soft hover:text-ink"
+                data-analytics-event="login_click"
+              >
+                Iniciar sesión
+              </a>
 
               <Button variant="signal" asChild className="w-full rounded-sm mt-2">
                 <a

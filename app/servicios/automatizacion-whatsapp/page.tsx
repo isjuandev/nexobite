@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Automatización de WhatsApp para Empresas",
   description:
-    "Asistentes inteligentes integrados a tu línea oficial de WhatsApp Business API. Atención 24/7, calificación de prospectos y traspaso a asesores.",
+    "Asistentes inteligentes conectados a tu WhatsApp con API oficial de Meta o conexión económica. Atención fuera de horario, calificación de prospectos y traspaso a asesores.",
   alternates: {
     canonical: "https://www.nexobite.com/servicios/automatizacion-whatsapp",
   },
@@ -47,7 +47,7 @@ export default function AutomatizacionWhatsAppPage() {
               <span className="text-signal">Chatbots con IA</span>
             </h1>
             <p className="text-base sm:text-lg text-ink-soft max-w-2xl mx-auto mb-8 leading-relaxed text-pretty">
-              Asistentes inteligentes integrados a tu línea oficial de WhatsApp Business API. Atienden 24/7, responden preguntas frecuentes y filtran prospectos antes de pasarlos a tus asesores comerciales.
+              Asistentes inteligentes conectados a tu WhatsApp, con API oficial de Meta o con una conexión económica. Responden preguntas frecuentes, atienden fuera de horario y filtran prospectos antes de pasarlos a tus asesores comerciales.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">

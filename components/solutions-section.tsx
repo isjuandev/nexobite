@@ -17,8 +17,8 @@ const solutionPillars = [
     icon: FaWhatsapp,
     title: "2. Atención y filtro automático en WhatsApp",
     description:
-      "Implementamos asistentes conversacionales que responden en segundos, entregan catálogos o precios y califican si el cliente tiene presupuesto real antes de pasar la conversación a tu equipo.",
-    highlight: "Respuestas 24/7 en < 3 seg",
+      "Implementamos asistentes conversacionales que responden de inmediato, entregan catálogos o precios y califican si el cliente tiene presupuesto real antes de pasar la conversación a tu equipo.",
+    highlight: "Respuesta automática sin esperar turno",
   },
   {
     step: "03",

@@ -10,14 +10,14 @@ El sitio incluye una plantilla de **propuestas comerciales** reutilizable, pági
 
 ## Características
 
-- **Landing page one-page** con secciones: Hero, Servicios, Cómo funciona, Planes por Servicio, Paquetes Integrales y CTA final.
-- **Planes por servicio** (Chatbots con IA y Desarrollo Web) en tres niveles (Esencial / Avanzado / Premium) con precios en COP.
-- **Paquetes integrales** con carrusel (Embla) en móvil y grilla en escritorio.
-- **Captura de leads hacia n8n** mediante la API interna `POST /api/leads`, que valida la información y la reenvía a un webhook.
-- **Integración con WhatsApp** en todos los puntos de contacto (`wa.me`) y widget de chatbot (OmniChat) listo para montar.
-- **SEO completo**: `sitemap.xml`, `robots.txt`, schema markup (JSON-LD), metadata Open Graph y Twitter, título/descripción por página.
-- **Analítica** de Vercel (`@vercel/analytics`).
-- **Identidad "Instrumento" (Dark Mode exclusivo)** con verde señal `#1C8A76`, acentos de cobre `#D6924E`, fondo de papel carbón `#0E1013` y tipografías Plus Jakarta Sans y JetBrains Mono (con tabular nums).
+- **Landing one-page** con secciones: Hero, Métricas, Problema, Solución, Demostración, Plataforma, Antes/Después, Proceso, Servicios, Planes, FAQ y CTA final (los testimonios se muestran solo cuando hay casos reales validados).
+- **Planes Start / Sales / Scale** con implementación y mensualidad en COP, y selector de **conexión de WhatsApp** (económica u oficial de Meta).
+- **Plataforma NexoBite**: sección que presenta el panel (bandeja, agenda, clientes, reportes) y enlace de inicio de sesión (`siteConfig.appLoginUrl`).
+- **Captura de leads**: CTAs a WhatsApp y formulario alterno que envía a `POST /api/leads` → webhook de n8n (con honeypot y límite por IP).
+- **Analítica de conversiones**: `ConversionTracker` registra los `data-analytics-event` en Vercel Analytics y propaga los UTM a los mensajes de WhatsApp.
+- **SEO completo**: `sitemap.xml`, `robots.txt`, schema markup (JSON-LD), Open Graph y Twitter, FAQ renderizado en servidor.
+- **Páginas de servicio, legales y plantilla de propuestas** (`/propuesta-template`).
+- **Identidad "Instrumento" (Dark Mode exclusivo)**: verde señal `#1C8A76`, cobre `#D6924E`, carbón `#0E1013`, Plus Jakarta Sans y JetBrains Mono.
 
 ## Stack tecnológico
 
@@ -46,7 +46,11 @@ app/
 └── sitemap.ts                  # sitemap.xml
 components/
 ├── ui/                         # Botones y cards (shadcn/ui)
-├── hero-section.tsx            # Hero con estadísticas
+├── hero-section.tsx            # Hero con simulador de WhatsApp
+├── platform-section.tsx        # Presentación del panel NexoBite
+├── pricing-section.tsx         # Planes Start/Sales/Scale y selector de conexión
+├── lead-form.tsx               # Formulario de contacto → /api/leads
+├── conversion-tracker.tsx      # Eventos de conversión y UTM
 ├── services-section.tsx        # Servicios (Chatbots, Web, Software)
 ├── how-it-works-section.tsx    # Proceso en 3 pasos
 ├── mini-plans-section.tsx      # Planes por servicio
@@ -69,13 +73,13 @@ Copia `.env.local` (ver `.env.example` o crea uno) y define el webhook de n8n:
 N8N_LEAD_WEBHOOK_URL=http://localhost:5678/webhook/ventas
 ```
 
-Si la variable no está definida, la API `/api/leads` responde `500` con un mensaje claro. El payload que recibe el webhook tiene la siguiente forma:
+Si la variable no está definida, la API `/api/leads` responde `500` con un mensaje claro. El payload que recibe el webhook tiene la siguiente forma (`source` es `nexobite_chatbot_widget` o `nexobite_landing_form`):
 
 ```json
 {
   "source": "nexobite_chatbot_widget",
   "createdAt": "2026-08-16T12:00:00.000Z",
-  "lead": { "name": "...", "phone": "...", "email": "...", "message": "..." },
+  "lead": { "name": "...", "phone": "...", "email": "...", "message": "...", "business": "..." },
   "metadata": { "pageUrl": "...", "userAgent": "...", "ip": "..." }
 }
 ```

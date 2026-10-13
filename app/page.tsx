@@ -6,6 +6,7 @@ import { ProblemSection } from "@/components/problem-section";
 import { SolutionsSection } from "@/components/solutions-section";
 import { BeforeAfterSection } from "@/components/before-after-section";
 import { ProcessSection } from "@/components/process-section";
+import { PlatformSection } from "@/components/platform-section";
 import { ServicesSection } from "@/components/services-section";
 import { FaqSection } from "@/components/faq-section";
 import { CtaSection } from "@/components/cta-section";
@@ -30,6 +31,7 @@ export default function Home() {
       <ProblemSection />
       <SolutionsSection />
       <ProductDemo />
+      <PlatformSection />
       <BeforeAfterSection />
       <ProcessSection />
       <ServicesSection />
