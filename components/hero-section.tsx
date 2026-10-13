@@ -34,7 +34,7 @@ export function HeroSection() {
             <div className="mb-8 flex flex-wrap gap-2.5">
               <span className="badge b-active">
                 <i />
-                Respuesta inmediata 24/7
+                Respuesta automática fuera de horario
               </span>
               <span className="badge b-completed">
                 <i />
@@ -90,7 +90,7 @@ export function HeroSection() {
                   </span>
                 </div>
                 <span className="font-mono text-[11px] text-ink-mute px-2 py-0.5 rounded-sm bg-paper border border-line">
-                  24/7 ONLINE
+                  ASISTENTE ACTIVO
                 </span>
               </div>
 

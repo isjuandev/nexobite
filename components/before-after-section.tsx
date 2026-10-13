@@ -6,7 +6,7 @@ const comparisons = [
   {
     criterion: "Primer tiempo de respuesta",
     before: "Minutos u horas, sujeto a disponibilidad del personal.",
-    after: "Inmediato (menos de 3 segundos), en cualquier momento del día.",
+    after: "Inmediato y automático, sin depender de que haya alguien disponible.",
   },
   {
     criterion: "Atención nocturna y festivos",
