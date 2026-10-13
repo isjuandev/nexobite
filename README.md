@@ -70,10 +70,12 @@ public/                         # Imágenes y logomarcas oficiales
 Copia `.env.local` (ver `.env.example` o crea uno) y define el webhook de n8n:
 
 ```bash
-N8N_LEAD_WEBHOOK_URL=http://localhost:5678/webhook/ventas
+N8N_LEAD_WEBHOOK_URL=https://n8n.nexobite.com/webhook/landing/leads
+# Mismo valor que N8N_INTERNAL_WEBHOOK_KEY del SaaS: firma cada lead (HMAC v2) para que n8n lo acepte
+N8N_LEAD_WEBHOOK_SECRET=
 ```
 
-Si la variable no está definida, la API `/api/leads` responde `500` con un mensaje claro. El payload que recibe el webhook tiene la siguiente forma (`source` es `nexobite_chatbot_widget` o `nexobite_landing_form`):
+Si falta alguna de las dos variables, la API `/api/leads` responde `500` con un mensaje claro. El workflow de n8n (`wf-v2-landing-leads`) verifica la firma y registra el lead en el SaaS (`POST /internal/leads`). El payload que recibe el webhook tiene la siguiente forma (`source` es `nexobite_chatbot_widget` o `nexobite_landing_form`):
 
 ```json
 {
