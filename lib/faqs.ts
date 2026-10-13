@@ -18,7 +18,7 @@ export const faqs: FaqItem[] = [
   },
   {
     q: "¿Qué incluye exactamente el costo mensual de mantenimiento?",
-    a: "Cubre los recursos de infraestructura en la nube para mantener tu asistente y tu web activos 24/7, el monitoreo operativo, copias de seguridad de datos, ajustes menores a textos o precios y soporte técnico ante cualquier eventualidad. Los consumos directos de la API de Meta por volumen de mensajes se gestionan directamente en la cuenta de cada cliente.",
+    a: "Cubre los recursos de infraestructura en la nube para mantener tu asistente y tu web activos, el monitoreo operativo, copias de seguridad de datos, ajustes menores a textos o precios y soporte técnico ante cualquier eventualidad. Los consumos directos de la API de Meta por volumen de mensajes se gestionan directamente en la cuenta de cada cliente.",
   },
   {
     q: "¿Necesito conocimientos técnicos para operar el sistema?",
