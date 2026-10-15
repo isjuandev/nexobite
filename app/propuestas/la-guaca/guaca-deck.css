@@ -271,6 +271,13 @@
       opacity: .25;
       cursor: default
     }
+.gdeck .arrow.next:disabled {
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid var(--card-b);
+  box-shadow: none;
+  color: var(--ink-3);
+  opacity: .4;
+}
 .gdeck .arrow.prev {
       padding: 0
     }
