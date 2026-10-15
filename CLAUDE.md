@@ -47,6 +47,7 @@ No hay pruebas automáticas: antes de dar un cambio por terminado, ejecuta `pnpm
 - `app/page.tsx`: orden de las secciones de la landing. `ProductDemo` y `PricingSection` se cargan con `dynamic`.
 - `app/servicios/[slug]`: las 4 páginas de servicio salen de `lib/services.ts` + `components/service-page.tsx`. Para añadir o editar un servicio, cambia solo `lib/services.ts` (y la maqueta en `service-mockups.tsx` si hace falta). Están indexadas y en el sitemap.
 - `app/propuesta-template`: plantilla de propuesta; no indexada.
+- `app/propuestas/[cliente]`: propuestas a medida por cliente (hoy `la-guaca`), una sola página con scroll, `noindex` y excluidas en `robots.ts`. Los activos del cliente van en `public/propuestas/`. La calculadora de retorno es `components/roi-calculator.tsx`.
 - `app/api/leads/route.ts`: recibe leads → webhook de n8n firmado con HMAC v2 (`lib/hmac.ts`). Requiere `N8N_LEAD_WEBHOOK_URL` y `N8N_LEAD_WEBHOOK_SECRET` en `.env.local` (nunca los subas al repo).
 - `components/chatbot-widget.tsx`: widget de chat del SaaS; inyecta estilos en su Shadow DOM.
 - `components/animated-section.tsx`: fade-in al hacer scroll (respeta `prefers-reduced-motion`).

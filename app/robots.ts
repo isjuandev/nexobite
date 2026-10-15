@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: "*",
                 allow: "/",
-                disallow: ["/api/", "/propuesta-template/"],
+                disallow: ["/api/", "/propuesta-template/", "/propuestas/"],
             },
         ],
         sitemap: "https://www.nexobite.com/sitemap.xml",

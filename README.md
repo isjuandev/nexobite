@@ -53,6 +53,7 @@ app/
 ├── condiciones-del-servicio/               # Página legal
 ├── politica-de-privacidad/                 # Página legal
 ├── propuesta-template/                     # Plantilla de propuesta comercial
+├── propuestas/la-guaca/                    # Propuesta a medida para un cliente (noindex)
 ├── layout.tsx                              # Layout raíz (SEO, fuentes, analytics, widget)
 ├── page.tsx                                # Landing principal
 ├── robots.ts / sitemap.ts                  # robots.txt y sitemap.xml
