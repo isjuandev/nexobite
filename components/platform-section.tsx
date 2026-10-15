@@ -170,7 +170,7 @@ export function PlatformSection() {
                       </div>
                     ))}
                   </div>
-                  <div className="flex-1 space-y-2.5 p-4">
+                  <div key={activeId} className="stagger-enter flex-1 space-y-2.5 p-4">
                     {activeId === "inbox" &&
                       [
                         ["Cliente nuevo", "Hola, ¿tienen disponibilidad esta semana?", "Asistente"],

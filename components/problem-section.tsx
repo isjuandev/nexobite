@@ -47,7 +47,7 @@ export function ProblemSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={150}>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {problems.map((p, index) => (
               <div
                 key={p.title}

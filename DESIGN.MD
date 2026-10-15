@@ -276,6 +276,10 @@ Presentación a pantalla completa, `noindex`, una diapositiva por pantalla (`com
 
 ### Movimiento
 - `AnimatedSection`: al entrar en viewport, fade-in con desplazamiento de 24px (`translate-y-6` → 0) en 500ms `ease-out`, con `delay` opcional; respeta `prefers-reduced-motion`.
+- **Cascada de grupos** (`.stagger`): las tarjetas de una cuadrícula dentro de `AnimatedSection` entran con `rise` (opacidad + 10px, 400ms, `--ease-out`, 60ms entre una y otra). **Cambio de pestaña** (`.stagger-enter`): el contenido nuevo entra en 220ms (demo de producto y panel).
+- **Feedback de pulsación**: los botones se hunden a `scale(0.97)` al presionar (150ms, `ease-out`).
+- **Menú móvil**: entra con fade + 8px desde arriba en 200ms. **FAQ**: el panel abre con altura + opacidad en 250ms (`details::details-content`; en navegadores sin soporte abre sin animar).
+- Con `prefers-reduced-motion` las cascadas pasan a solo opacidad. Rechazado a propósito: contadores animados en métricas, hover con elevación en tarjetas y movimiento en el header (datos que se leen o elementos de uso frecuente).
 - Transiciones de color y borde en botones y tarjetas (`transition-colors`). Fuera de las propuestas a medida (`deck-*`), no hay animaciones decorativas continuas ni keyframes propios.
 
 ---

@@ -5,25 +5,25 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-sm text-sm font-medium transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-out active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
         default:
-          "bg-ink text-paper font-semibold hover:bg-signal-deep hover:text-ink transition-colors",
+          "bg-ink text-paper font-semibold hover:bg-signal-deep hover:text-ink",
         primary:
-          "bg-ink text-paper font-semibold hover:bg-signal-deep hover:text-ink transition-colors",
+          "bg-ink text-paper font-semibold hover:bg-signal-deep hover:text-ink",
         signal:
-          "bg-signal text-paper font-semibold hover:bg-signal-deep transition-colors",
+          "bg-signal text-paper font-semibold hover:bg-signal-deep",
         destructive:
           "bg-alert/80 text-ink hover:bg-alert focus-visible:ring-alert/40",
         outline:
-          "border border-line-strong bg-card text-ink hover:border-ink hover:text-ink transition-colors shadow-xs",
+          "border border-line-strong bg-card text-ink hover:border-ink hover:text-ink shadow-xs",
         secondary:
           "bg-secondary text-ink hover:bg-secondary/80 border border-line",
         ghost:
           "bg-transparent text-ink-soft hover:bg-card hover:text-ink",
-        link: "text-ink underline decoration-signal decoration-1 underline-offset-4 hover:text-signal transition-colors",
+        link: "text-ink underline decoration-signal decoration-1 underline-offset-4 hover:text-signal",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

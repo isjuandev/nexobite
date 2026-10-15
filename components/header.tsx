@@ -240,7 +240,7 @@ export function Header() {
         {isMenuOpen && (
           <div
             id="mobile-nav-menu"
-            className="border-t border-line bg-card/98 backdrop-blur-md md:hidden rounded-b-md"
+            className="border-t border-line bg-card/98 backdrop-blur-md md:hidden rounded-b-md motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-top-2 motion-safe:duration-200"
           >
             <nav
               className="flex flex-col gap-3 p-4"

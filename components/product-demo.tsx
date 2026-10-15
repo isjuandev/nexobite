@@ -193,7 +193,7 @@ export function ProductDemo() {
                   <span>Simulación Interactiva</span>
                 </div>
 
-                <div className="p-4 sm:p-6 space-y-3.5 min-h-[320px] flex flex-col justify-center text-xs">
+                <div key={activeTab} className="stagger-enter p-4 sm:p-6 space-y-3.5 min-h-[320px] flex flex-col justify-center text-xs">
                   {currentCase.chat.map((msg, idx) => (
                     <div
                       key={idx}

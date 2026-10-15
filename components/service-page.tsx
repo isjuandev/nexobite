@@ -109,7 +109,7 @@ function Problem({ service }: { service: Service }) {
           intro={problem.intro}
         />
         <AnimatedSection delay={150}>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="stagger grid gap-6 md:grid-cols-3">
             {problem.items.map((item, index) => (
               <div
                 key={item.title}
@@ -144,7 +144,7 @@ function Includes({ service }: { service: Service }) {
           intro={includes.intro}
         />
         <AnimatedSection delay={150}>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="stagger grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {includes.items.map((item) => (
               <div
                 key={item.title}
@@ -176,7 +176,7 @@ function Process({ service }: { service: Service }) {
           intro={process.intro}
         />
         <AnimatedSection delay={150}>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="stagger grid gap-6 md:grid-cols-3">
             {process.steps.map((step, index) => (
               <div
                 key={step.title}
@@ -238,7 +238,7 @@ function Quote({ service }: { service: Service }) {
           intro="Cada negocio es distinto, por eso no publicamos un precio único. Antes de empezar sabes exactamente qué recibes y cuánto cuesta. Precios netos en pesos colombianos (COP)."
         />
         <AnimatedSection delay={150}>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="stagger grid gap-6 md:grid-cols-3">
             {steps.map((s, index) => (
               <div key={s.title} className="rounded-md border border-line bg-card p-6">
                 <span className="mb-2 block font-mono text-xs text-copper">
@@ -291,7 +291,7 @@ function RelatedServices({ current }: { current: Service }) {
           <h2 className="mb-10 max-w-3xl text-balance text-2xl font-semibold text-ink sm:text-3xl">
             Puedes sumar más <span className="text-signal">cuando tu negocio crezca</span>
           </h2>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="stagger grid gap-4 md:grid-cols-3">
             {others.map((s) => (
               <Link
                 key={s.slug}

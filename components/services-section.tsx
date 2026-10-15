@@ -80,7 +80,7 @@ export function ServicesSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={150}>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="stagger grid gap-6 md:grid-cols-2">
             {serviceModules.map((s) => (
               <div
                 key={s.title}

@@ -49,7 +49,7 @@ export function SolutionsSection() {
 
         {/* Pipeline visual conectado */}
         <AnimatedSection delay={150}>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="stagger grid gap-6 md:grid-cols-3">
             {solutionPillars.map((pillar) => (
               <div
                 key={pillar.step}

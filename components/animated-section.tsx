@@ -55,6 +55,7 @@ export function AnimatedSection({
   return (
     <div
       ref={ref}
+      data-visible={isVisible}
       className={`transition-all duration-500 ease-out motion-reduce:transition-none motion-reduce:transform-none motion-reduce:opacity-100 ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       } ${className}`}

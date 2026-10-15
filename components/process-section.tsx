@@ -50,7 +50,7 @@ export function ProcessSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={150}>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="stagger grid gap-6 md:grid-cols-3">
             {steps.map((s) => (
               <div
                 key={s.step}

@@ -135,7 +135,7 @@ export function PricingSection({
 
         {/* 3 Planes con Jerarquía Asimétrica */}
         <AnimatedSection delay={150}>
-          <div className="grid gap-6 lg:grid-cols-3 items-stretch">
+          <div className="stagger grid gap-6 lg:grid-cols-3 items-stretch">
             {plans.map((p) => (
               <div
                 key={p.id}
