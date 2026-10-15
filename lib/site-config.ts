@@ -61,7 +61,8 @@ export const siteConfig: SiteConfig = {
       postalCode: "63001",
       addressCountry: "CO",
     },
-    areaServed: ["Colombia", "Armenia", "Medellín", "Bogotá"],
+    // Presencial en el Eje Cafetero; el resto del país, de forma remota
+    areaServed: ["Colombia", "Eje Cafetero", "Armenia", "Pereira", "Manizales", "Quindío", "Risaralda", "Caldas"],
     openingHours: {
       days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "08:00",

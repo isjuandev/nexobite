@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   keywords: [
     "automatizacion whatsapp colombia",
-    "chatbot whatsapp empresas medellin bogota",
+    "chatbot whatsapp empresas eje cafetero armenia",
     "desarrollo web conversion pymes",
     "crm whatsapp colombia",
     "atencion al cliente automatizada",

@@ -87,7 +87,7 @@ const useCases = [
       {
         sender: "bot",
         time: "08:45 PM",
-        text: "¡Hola! Atendemos de forma remota en toda Colombia y presencial en Medellín. Aquí puedes ver nuestro catálogo completo y alcance:",
+        text: "¡Hola! Atendemos de forma remota en toda Colombia y presencial en todo el Eje Cafetero. Aquí puedes ver nuestro catálogo completo y alcance:",
         chips: ["Descargar Catálogo PDF", "Ver Condiciones y SLA", "Hablar con un asesor"],
       },
       {
