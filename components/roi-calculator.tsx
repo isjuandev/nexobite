@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const formatCop = (value: number) => `$${value.toLocaleString("es-CO")}`;
 
-const TOTAL_SLOTS = 20;
+const TOTAL_SLOTS = 24;
 
 interface RoiCalculatorProps {
   /** Inversión inicial en COP. */
@@ -73,7 +73,7 @@ export function RoiCalculator({ investment, min, max, step, initialRate }: RoiCa
       </div>
 
       <div
-        className="mt-6 grid grid-cols-10 gap-2"
+        className="mt-6 grid grid-cols-12 gap-2"
         role="img"
         aria-label={`${needed} parejas recuperan la inversión; el resto es ganancia neta`}
       >

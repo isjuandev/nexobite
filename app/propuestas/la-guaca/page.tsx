@@ -21,7 +21,7 @@ const whatsappLink = `${siteConfig.contact.whatsappUrl}?text=${encodeURIComponen
   "Hola NexoBite, queremos avanzar con la propuesta para La Guaca"
 )}`;
 
-const INVESTMENT = 700000;
+const INVESTMENT = 990000;
 
 const problems = [
   {
@@ -389,7 +389,7 @@ const slides: DeckSlide[] = [
           </Reveal>
           <Reveal i={4}>
             <p className={leadClass}>
-              Con una habitación promedio de <strong className="tnum text-ink">$60.000 a $90.000 COP</strong>, bastan <strong className="text-ink">10 a 12 parejas nuevas</strong> llegando desde Google para recuperar el 100% de la inversión. A partir de la pareja 13, todo es ganancia neta.
+              Con una habitación promedio de <strong className="tnum text-ink">$60.000 a $90.000 COP</strong>, bastan <strong className="text-ink">entre 11 y 17 parejas nuevas</strong> llegando desde Google para recuperar el 100% de la inversión. A partir de ahí, todo es ganancia neta.
             </p>
           </Reveal>
         </div>
@@ -413,7 +413,7 @@ const slides: DeckSlide[] = [
               <p className="mb-4 font-mono text-label text-ink-mute">FASE 1 · DESARROLLO E IMPLEMENTACIÓN</p>
               <p className="mb-6 flex flex-wrap items-baseline gap-2">
                 <span className="font-display text-5xl font-extrabold text-ink">
-                  <CountUp to={700000} />
+                  <CountUp to={INVESTMENT} />
                 </span>
                 <span className="font-mono text-label text-ink-mute">COP · pago único</span>
               </p>
