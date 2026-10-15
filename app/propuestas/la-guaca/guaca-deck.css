@@ -1292,7 +1292,18 @@
       border: 1px dashed rgba(214, 146, 78, .5)
     }
 .gdeck .bonus .gift {
-      font-size: 26px
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      border: 1px solid rgba(214, 146, 78, .35);
+      color: var(--copper)
+    }
+.gdeck .bonus .gift svg {
+      width: 22px;
+      height: 22px
     }
 .gdeck .bonus p {
       margin: 0;
@@ -1320,6 +1331,9 @@
       padding-top: 22px
     }
 .gdeck .seasons span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       font-size: 12px;
       padding: 7px 12px;
       border-radius: 6px;
@@ -1702,4 +1716,10 @@
   gap: 0;
   font-family: inherit;
   font-weight: inherit;
+}
+
+.gdeck .seasons span svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
