@@ -107,7 +107,7 @@ export function LeadForm() {
         {status === "sending" ? "Enviando..." : "Quiero que me contacten"}
         <FaArrowRight className="ml-2 h-3 w-3" />
       </Button>
-      <p className="text-center text-[11px] text-ink-mute">
+      <p className="text-center text-label text-ink-mute">
         Usamos tus datos solo para contactarte, según nuestra{" "}
         <a href="/politica-de-privacidad" className="underline underline-offset-2 hover:text-ink-soft">
           política de privacidad

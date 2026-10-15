@@ -161,7 +161,7 @@ export function PlatformSection() {
                     {views.map((v) => (
                       <div
                         key={v.id}
-                        className={`flex items-center gap-2 rounded-sm px-2 py-1.5 text-[11px] ${
+                        className={`flex items-center gap-2 rounded-sm px-2 py-1.5 text-label ${
                           v.id === activeId ? "bg-signal-soft text-signal" : "text-ink-mute"
                         }`}
                       >
@@ -178,11 +178,11 @@ export function PlatformSection() {
                         ["Pide hablar con alguien", "Prefiero hablar con una persona", "Asesor"],
                       ].map(([name, msg, who]) => (
                         <div key={name} className="rounded-sm border border-line bg-card p-3">
-                          <div className="flex items-center justify-between text-[11px]">
+                          <div className="flex items-center justify-between text-label">
                             <span className="font-medium text-ink">{name}</span>
                             <span className="rounded-sm bg-signal-soft px-1.5 py-0.5 font-mono text-signal">{who}</span>
                           </div>
-                          <p className="mt-1 text-[11px] text-ink-soft">{msg}</p>
+                          <p className="mt-1 text-label text-ink-soft">{msg}</p>
                         </div>
                       ))}
                     {activeId === "agenda" &&
@@ -192,9 +192,9 @@ export function PlatformSection() {
                         ["Jue", "15:00", "Seguimiento"],
                       ].map(([day, hour, label]) => (
                         <div key={day} className="flex items-center gap-3 rounded-sm border border-line bg-card p-3">
-                          <span className="font-mono text-[11px] text-copper tnum">{day} {hour}</span>
-                          <span className="text-[11px] text-ink-soft">{label}</span>
-                          <span className="ml-auto rounded-sm bg-signal-soft px-1.5 py-0.5 font-mono text-[10px] text-signal">Agendada</span>
+                          <span className="font-mono text-label text-copper tnum">{day} {hour}</span>
+                          <span className="text-label text-ink-soft">{label}</span>
+                          <span className="ml-auto rounded-sm bg-signal-soft px-1.5 py-0.5 font-mono text-micro text-signal">Agendada</span>
                         </div>
                       ))}
                     {activeId === "clientes" &&
@@ -204,15 +204,15 @@ export function PlatformSection() {
                         ["Cliente C", "2 conversaciones · 1 pedido"],
                       ].map(([name, info]) => (
                         <div key={name} className="rounded-sm border border-line bg-card p-3">
-                          <p className="text-[11px] font-medium text-ink">{name}</p>
-                          <p className="mt-0.5 font-mono text-[11px] text-ink-mute">{info}</p>
+                          <p className="text-label font-medium text-ink">{name}</p>
+                          <p className="mt-0.5 font-mono text-label text-ink-mute">{info}</p>
                         </div>
                       ))}
                     {activeId === "reportes" && (
                       <div className="grid grid-cols-2 gap-2.5">
                         {["Conversaciones", "Citas", "Clientes contentos", "Chats pasados a un asesor"].map((label) => (
                           <div key={label} className="rounded-sm border border-line bg-card p-3">
-                            <p className="font-mono text-[10px] uppercase text-ink-mute">{label}</p>
+                            <p className="font-mono text-micro uppercase text-ink-mute">{label}</p>
                             <div className="mt-2 h-1.5 w-full rounded-sm bg-line">
                               <div className="h-1.5 w-2/3 rounded-sm bg-signal" />
                             </div>
@@ -223,7 +223,7 @@ export function PlatformSection() {
                   </div>
                 </div>
               </div>
-              <p className="mt-2 text-center font-mono text-[11px] text-ink-mute">
+              <p className="mt-2 text-center font-mono text-label text-ink-mute">
                 Maqueta ilustrativa. Los datos reales aparecen en tu pantalla.
               </p>
             </div>

@@ -119,19 +119,9 @@
   --radius-md: 8px;
   --radius-lg: 12px;
 
-  /* Animaciones */
-  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
-  --animate-float: float 6s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(28, 138, 118, 0.4); }
-  50%       { box-shadow: 0 0 12px 6px rgba(28, 138, 118, 0.2); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-6px); }
+  /* Tamaños de texto técnicos (mono: eyebrows, badges, chips) */
+  --text-micro: 10px;
+  --text-label: 11px;
 }
 
 /* ── Base ── */
@@ -180,7 +170,7 @@
   /* Eyebrow de sección técnica */
   .eyebrow {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: var(--text-label);
     letter-spacing: 0.06em;
     color: var(--signal);
     font-weight: 600;
@@ -193,30 +183,6 @@
     width: 14px;
     height: 1px;
     background: var(--signal);
-  }
-
-  /* Tick ruler: firma visual de calibración */
-  .ruler {
-    height: 16px;
-    display: flex;
-    align-items: flex-end;
-    gap: 0;
-    margin: 24px 0;
-    overflow: hidden;
-    width: 100%;
-  }
-  .ruler i {
-    flex: 1;
-    height: 5px;
-    border-left: 1px solid var(--line-strong);
-  }
-  .ruler i:nth-child(5n+1) {
-    height: 10px;
-    border-color: var(--ink-mute);
-  }
-  .ruler i:nth-child(10n+1) {
-    height: 16px;
-    border-color: var(--signal);
   }
 
   /* Instrument card: corner brackets en cobre (para datos en vivo) */
@@ -248,7 +214,7 @@
     border-right: 2px solid var(--copper);
   }
 
-  /* Badges de estados de cola (BullMQ) */
+  /* Badges de estado */
   .badge {
     display: inline-flex;
     align-items: center;
@@ -256,7 +222,7 @@
     padding: 3px 9px;
     border-radius: var(--radius-sm);
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: var(--text-label);
     font-weight: 500;
     border: 1px solid transparent;
   }
@@ -289,66 +255,6 @@
   }
   .b-completed i {
     background: var(--signal);
-  }
-  .b-failed {
-    background: var(--alert-soft);
-    border-color: rgba(178, 58, 52, 0.4);
-    color: var(--alert);
-  }
-  .b-failed i {
-    background: var(--alert);
-  }
-  .b-delayed {
-    background: var(--copper-soft);
-    border-color: rgba(214, 146, 78, 0.4);
-    color: var(--copper);
-  }
-  .b-delayed i {
-    background: var(--amber);
-  }
-
-  /* Micro-interacciones técnicas */
-  .hover-lift {
-    @apply transition-all duration-200;
-  }
-  .hover-lift:hover {
-    @apply -translate-y-0.5;
-    border-color: var(--line-strong);
-  }
-
-  .hover-glow {
-    @apply transition-all duration-200;
-  }
-  .hover-glow:hover {
-    border-color: var(--signal);
-    box-shadow: 0 0 16px rgba(28, 138, 118, 0.2);
-  }
-
-  /* Resaltados de marca */
-  .brand-highlight {
-    color: var(--signal);
-    text-decoration: none;
-  }
-
-  .brand-kicker {
-    color: var(--signal);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    border-left: 2px solid var(--signal);
-    padding-left: 0.5rem;
-  }
-
-  /* Enlaces con subrayado técnico */
-  .link-underline {
-    @apply relative;
-  }
-  .link-underline::after {
-    content: "";
-    @apply absolute bottom-0 left-0 h-px w-0 bg-signal transition-all duration-200;
-  }
-  .link-underline:hover::after {
-    @apply w-full;
   }
 
   /* Ocultar scrollbar */

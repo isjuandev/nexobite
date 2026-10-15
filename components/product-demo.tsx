@@ -201,7 +201,7 @@ export function ProductDemo() {
                         msg.sender === "user" ? "items-start" : "items-end"
                       }`}
                     >
-                      <span className="font-mono text-[10px] text-ink-mute mb-1 px-1">
+                      <span className="font-mono text-micro text-ink-mute mb-1 px-1">
                         {msg.time}
                       </span>
                       <div
@@ -217,7 +217,7 @@ export function ProductDemo() {
                             {msg.chips.map((chip, cIdx) => (
                               <span
                                 key={cIdx}
-                                className="px-2 py-1 rounded-sm bg-card border border-line text-[11px] text-ink-soft font-mono"
+                                className="px-2 py-1 rounded-sm bg-card border border-line text-label text-ink-soft font-mono"
                               >
                                 {chip}
                               </span>

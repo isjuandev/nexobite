@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Container } from "@/components/container";
-import { ParticleField } from "@/components/particle-field";
 import { AnimatedSection } from "@/components/animated-section";
 import { FaShieldAlt, FaLock, FaEye, FaCheckCircle, FaShareAlt, FaUserCheck, FaSync, FaWhatsapp } from "react-icons/fa";
 
@@ -168,7 +167,6 @@ export default function PoliticaDePrivacidad() {
   return (
     <main className="min-h-screen bg-paper flex flex-col relative overflow-hidden">
       <Header />
-      <ParticleField variant="subtle" density="low" speed="slow" />
 
       {/* Header Section */}
       <section className="relative pt-32 pb-14 border-b border-line">

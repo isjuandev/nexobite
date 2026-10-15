@@ -186,7 +186,7 @@ export function PricingSection() {
               ))}
             </div>
             <div className="mt-4 rounded-md border border-line bg-card p-5" aria-live="polite">
-              <div className="mb-1 inline-flex items-center gap-1.5 rounded-sm border border-copper/40 bg-copper-soft px-2 py-0.5 font-mono text-[10px] font-semibold text-copper">
+              <div className="mb-1 inline-flex items-center gap-1.5 rounded-sm border border-copper/40 bg-copper-soft px-2 py-0.5 font-mono text-micro font-semibold text-copper">
                 {connection.tag}
               </div>
               <p className="mb-3 text-sm text-ink-soft">{connection.summary}</p>
@@ -225,7 +225,7 @@ export function PricingSection() {
               >
                 <div>
                   {p.badge && (
-                    <div className="mb-4 inline-flex items-center gap-1.5 rounded-sm border border-signal/40 bg-signal-soft px-2.5 py-0.5 font-mono text-[10px] font-semibold text-signal">
+                    <div className="mb-4 inline-flex items-center gap-1.5 rounded-sm border border-signal/40 bg-signal-soft px-2.5 py-0.5 font-mono text-micro font-semibold text-signal">
                       <span className="h-1.5 w-1.5 rounded-full bg-signal inline-block" />
                       {p.badge}
                     </div>
@@ -254,7 +254,7 @@ export function PricingSection() {
                     <span className="font-mono text-xs text-signal block pt-1.5">
                       + {p.monthlyPrice} COP / mes (Servidor y soporte)
                     </span>
-                    <span className="font-mono text-[11px] text-ink-mute block pt-1">
+                    <span className="font-mono text-label text-ink-mute block pt-1">
                       ⏱ Entrega: {p.timeframe}
                     </span>
                   </div>

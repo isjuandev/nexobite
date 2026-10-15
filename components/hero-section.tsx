@@ -89,7 +89,7 @@ export function HeroSection() {
                     WhatsApp de tu negocio
                   </span>
                 </div>
-                <span className="font-mono text-[11px] text-ink-mute px-2 py-0.5 rounded-sm bg-paper border border-line">
+                <span className="font-mono text-label text-ink-mute px-2 py-0.5 rounded-sm bg-paper border border-line">
                   ASISTENTE ACTIVO
                 </span>
               </div>
@@ -98,7 +98,7 @@ export function HeroSection() {
               <div className="p-4 space-y-3.5 text-xs bg-paper-deep/60 min-h-[300px] flex flex-col justify-center">
                 {/* Mensaje entrante de cliente */}
                 <div className="flex flex-col items-start gap-1">
-                  <span className="font-mono text-[10px] text-ink-mute pl-1">
+                  <span className="font-mono text-micro text-ink-mute pl-1">
                     10:42 PM · Cliente nuevo
                   </span>
                   <div className="bg-card border border-line rounded-md rounded-tl-none p-3 max-w-[85%] text-ink leading-relaxed">
@@ -108,7 +108,7 @@ export function HeroSection() {
 
                 {/* Respuesta del asistente con filtro */}
                 <div className="flex flex-col items-end gap-1">
-                  <span className="font-mono text-[10px] text-signal pr-1">
+                  <span className="font-mono text-micro text-signal pr-1">
                     10:42 PM · Asistente NexoBite
                   </span>
                   <div className="bg-signal-soft border border-signal/30 rounded-md rounded-tr-none p-3 max-w-[90%] text-ink leading-relaxed">
@@ -116,10 +116,10 @@ export function HeroSection() {
                       ¡Hola! Con gusto te oriento. Para recomendarte lo mejor: ¿cuántos mensajes reciben al día?
                     </p>
                     <div className="flex flex-wrap gap-1.5 mt-2">
-                      <span className="px-2 py-1 rounded-sm bg-card border border-line text-[11px] text-ink-soft">
+                      <span className="px-2 py-1 rounded-sm bg-card border border-line text-label text-ink-soft">
                         1. Menos de 30
                       </span>
-                      <span className="px-2 py-1 rounded-sm bg-signal/20 border border-signal text-[11px] text-ink font-medium">
+                      <span className="px-2 py-1 rounded-sm bg-signal/20 border border-signal text-label text-ink font-medium">
                         2. De 30 a 100 ✓
                       </span>
                     </div>
@@ -128,17 +128,17 @@ export function HeroSection() {
 
                 {/* Agendamiento automático */}
                 <div className="flex flex-col items-end gap-1">
-                  <span className="font-mono text-[10px] text-signal pr-1">
+                  <span className="font-mono text-micro text-signal pr-1">
                     10:43 PM · Asistente NexoBite
                   </span>
                   <div className="bg-signal-soft border border-signal/30 rounded-md rounded-tr-none p-3 max-w-[90%] text-ink leading-relaxed">
                     <p className="mb-1.5 font-medium text-ink">
                       Excelente. Tendrás atención prioritaria.
                     </p>
-                    <p className="text-ink-soft text-[11px]">
+                    <p className="text-ink-soft text-label">
                       ¿Te reservo una demostración personalizada para mañana?
                     </p>
-                    <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-card border border-copper/50 text-copper font-mono text-[11px]">
+                    <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-card border border-copper/50 text-copper font-mono text-label">
                       📅 Horario elegido: Mañana 3:30 PM
                     </div>
                   </div>
@@ -147,16 +147,16 @@ export function HeroSection() {
 
               {/* Footer de resultados automáticos */}
               <div className="p-3 border-t border-line bg-card/90 space-y-1.5">
-                <div className="flex items-center justify-between text-[11px] font-mono text-ink-mute">
+                <div className="flex items-center justify-between text-label font-mono text-ink-mute">
                   <span className="text-copper">TODO CONECTADO</span>
                   <span className="text-signal">HECHO AUTOMÁTICAMENTE</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2 pt-1">
-                  <div className="flex items-center gap-1.5 text-[11px] text-ink-soft bg-paper px-2 py-1 rounded-sm border border-line">
+                  <div className="flex items-center gap-1.5 text-label text-ink-soft bg-paper px-2 py-1 rounded-sm border border-line">
                     <FaCheck className="h-3 w-3 text-signal shrink-0" />
                     <span className="truncate">Cliente guardado</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-[11px] text-ink-soft bg-paper px-2 py-1 rounded-sm border border-line">
+                  <div className="flex items-center gap-1.5 text-label text-ink-soft bg-paper px-2 py-1 rounded-sm border border-line">
                     <FaCheck className="h-3 w-3 text-signal shrink-0" />
                     <span className="truncate">Cita en tu agenda</span>
                   </div>

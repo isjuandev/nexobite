@@ -15,7 +15,6 @@ import { AnimatedSection } from "@/components/animated-section";
 import { Container } from "@/components/container";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ParticleField } from "@/components/particle-field";
 import { FaCheck, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 // ============================================================
@@ -221,7 +220,6 @@ export default function PropuestaCliente() {
 
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-16 overflow-hidden border-b border-line">
-        <ParticleField variant="subtle" density="low" speed="slow" />
         <Container className="relative z-10">
           <AnimatedSection className="text-center max-w-4xl mx-auto space-y-6">
             <div className="flex justify-center">
@@ -256,7 +254,6 @@ export default function PropuestaCliente() {
 
       {/* ── Propuestas ────────────────────────────────────── */}
       <section id="proposals" className="relative py-20 overflow-hidden border-b border-line">
-        <ParticleField variant="subtle" density="low" speed="slow" />
         <Container className="relative z-10">
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <div className="flex justify-center">
@@ -287,7 +284,7 @@ export default function PropuestaCliente() {
                       {p.highlighted && (
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-1.5 rounded-sm border border-copper/40 bg-card px-2.5 py-0.5 shadow-xs whitespace-nowrap">
                           <span className="h-1.5 w-1.5 rounded-full bg-copper" />
-                          <span className="text-[10px] font-mono font-medium uppercase tracking-wider text-copper">
+                          <span className="text-micro font-mono font-medium uppercase tracking-wider text-copper">
                             Recomendado
                           </span>
                         </div>
@@ -300,7 +297,7 @@ export default function PropuestaCliente() {
                         <div className="mb-6 flex flex-col items-start gap-1">
                           <span className="text-xs font-mono text-ink-mute line-through">{p.originalPrice}</span>
                           <span className="text-3xl font-semibold font-mono tnum text-ink">{p.price}</span>
-                          <div className="badge b-copper font-mono text-[11px] mt-1">
+                          <div className="badge b-copper font-mono text-label mt-1">
                             {p.savings}
                           </div>
                         </div>
@@ -340,7 +337,7 @@ export default function PropuestaCliente() {
                   {p.highlighted && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-1.5 rounded-sm border border-copper/40 bg-card px-2.5 py-0.5 shadow-xs whitespace-nowrap">
                       <span className="h-1.5 w-1.5 rounded-full bg-copper" />
-                      <span className="text-[10px] font-mono font-medium uppercase tracking-wider text-copper">
+                      <span className="text-micro font-mono font-medium uppercase tracking-wider text-copper">
                         Recomendado
                       </span>
                     </div>
@@ -353,7 +350,7 @@ export default function PropuestaCliente() {
                     <div className="mb-6 flex flex-col items-start gap-1">
                       <span className="text-xs font-mono text-ink-mute line-through">{p.originalPrice}</span>
                       <span className="text-3xl font-semibold font-mono tnum text-ink">{p.price}</span>
-                      <div className="badge b-copper font-mono text-[11px] mt-1">
+                      <div className="badge b-copper font-mono text-label mt-1">
                         {p.savings}
                       </div>
                     </div>
@@ -382,7 +379,6 @@ export default function PropuestaCliente() {
 
       {/* ── Opciones de Pago ──────────────────────────────── */}
       <section id="payment" className="relative py-20 border-b border-line">
-        <ParticleField variant="subtle" density="low" speed="slow" />
         <Container className="relative z-10">
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <div className="flex justify-center">
@@ -412,7 +408,7 @@ export default function PropuestaCliente() {
                       {opt.highlight && (
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-1.5 rounded-sm border border-copper/40 bg-card px-2.5 py-0.5 shadow-xs whitespace-nowrap">
                           <span className="h-1.5 w-1.5 rounded-full bg-copper" />
-                          <span className="text-[10px] font-mono font-medium uppercase tracking-wider text-copper">
+                          <span className="text-micro font-mono font-medium uppercase tracking-wider text-copper">
                             Más Elegido
                           </span>
                         </div>
@@ -462,7 +458,7 @@ export default function PropuestaCliente() {
                   {opt.highlight && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-1.5 rounded-sm border border-copper/40 bg-card px-2.5 py-0.5 shadow-xs whitespace-nowrap">
                       <span className="h-1.5 w-1.5 rounded-full bg-copper" />
-                      <span className="text-[10px] font-mono font-medium uppercase tracking-wider text-copper">
+                      <span className="text-micro font-mono font-medium uppercase tracking-wider text-copper">
                         Más Elegido
                       </span>
                     </div>
@@ -501,7 +497,6 @@ export default function PropuestaCliente() {
 
       {/* ── CTA Final ─────────────────────────────────────── */}
       <section id="contact" className="relative py-20 overflow-hidden">
-        <ParticleField variant="subtle" density="low" speed="slow" />
         <Container className="relative z-10">
           <AnimatedSection>
             <div className="instrument relative rounded-md bg-card overflow-hidden border border-line p-8 md:p-14 shadow-xs">
@@ -533,18 +528,18 @@ export default function PropuestaCliente() {
 
               <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto mt-12 pt-8 border-t border-line">
                 <div className="bg-paper rounded-sm p-4 border border-line">
-                  <div className="text-[11px] text-ink-mute font-mono uppercase tracking-wider mb-1">Contacto</div>
+                  <div className="text-label text-ink-mute font-mono uppercase tracking-wider mb-1">Contacto</div>
                   <div className="text-ink font-mono text-sm">{CLIENT_CONFIG.executiveName}</div>
                 </div>
                 <div className="bg-paper rounded-sm p-4 border border-line">
-                  <div className="text-[11px] text-ink-mute font-mono uppercase tracking-wider mb-1">Teléfono</div>
+                  <div className="text-label text-ink-mute font-mono uppercase tracking-wider mb-1">Teléfono</div>
                   <a href={`tel:+${CLIENT_CONFIG.executivePhoneRaw}`} className="text-ink font-mono text-sm hover:text-signal transition-colors inline-flex items-center gap-1.5 group">
                     {CLIENT_CONFIG.executivePhone}
                     <FaChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-signal" />
                   </a>
                 </div>
                 <div className="bg-paper rounded-sm p-4 border border-line">
-                  <div className="text-[11px] text-ink-mute font-mono uppercase tracking-wider mb-1">Email</div>
+                  <div className="text-label text-ink-mute font-mono uppercase tracking-wider mb-1">Email</div>
                   <a href={`mailto:${CLIENT_CONFIG.executiveEmail}`} className="text-ink font-mono text-sm hover:text-signal transition-colors inline-flex items-center gap-1.5 group">
                     {CLIENT_CONFIG.executiveEmail}
                     <FaChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-signal" />

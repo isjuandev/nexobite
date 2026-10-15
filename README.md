@@ -70,7 +70,7 @@ components/
 ├── conversion-tracker.tsx                  # Eventos de conversión y UTM
 ├── schema-markup.tsx                       # Datos estructurados JSON-LD
 ├── lead-form.tsx                           # Formulario alterno → /api/leads
-├── particle-field / animated-section / container / brand-logo
+├── animated-section / container / brand-logo
 └── header.tsx / footer.tsx
 lib/
 ├── site-config.ts                          # Datos oficiales de contacto y URLs (NAP)

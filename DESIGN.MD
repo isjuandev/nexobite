@@ -97,7 +97,7 @@ shadows:
 
 # NexoBite Design System: "Instrumento" (v6.1)
 
-> **Fuente de verdad:** este documento describe lo que existe en el código. Los tokens viven en `app/globals.css` (`:root` y `@theme inline`), los botones en `components/ui/button.tsx` y las tarjetas en `components/ui/card.tsx`. Si cambias un valor en el código, actualiza este archivo. La sección 7 lista las diferencias conocidas entre la intención del sistema y el estado actual.
+> **Fuente de verdad:** este documento describe lo que existe en el código. Los tokens viven en `app/globals.css` (`:root` y `@theme inline`), los botones en `components/ui/button.tsx` y las tarjetas en `components/ui/card.tsx`. Si cambias un valor en el código, actualiza este archivo. La sección 7 registra las deudas resueltas y las pendientes.
 
 ## 1. Filosofía
 
@@ -143,7 +143,7 @@ Todos los tokens están definidos como variables CSS y expuestos a Tailwind v4 c
 | `copper` | `#D6924E` | Iconos de "cuello de botella", plazos, chips de plan, corchetes `.instrument`, palabra destacada del h2 de Problemas |
 | `copper-soft` | `#2E2216` | Fondo de chips y badges de cobre |
 | `alert` | `#B23A34` | Cruces de la columna "a mano", botón `destructive` |
-| `alert-soft` | `#381A18` | Fondo del badge `.b-failed` |
+| `alert-soft` | `#381A18` | Fondo de estados de error (token disponible) |
 | `amber` / `amber-soft` | `#C79A2E` / `#382C14` | Advertencias; punto del badge `.b-delayed` |
 
 Variables semánticas shadcn: `--primary = signal`, `--accent = copper`, `--destructive = alert`, `--ring = signal`, `--border = line`, `--muted-foreground = ink-mute`.
@@ -169,7 +169,7 @@ Escala observada:
 | Párrafo | 16px · 400 · lh 1.5 · `ink-soft` | |
 | Eyebrow | mono 11px · 600 · 0.06em · `signal` | Prefijo `—` de 14px×1px (`.eyebrow::before`) |
 | Badge | mono 11px · 500 | `.badge` |
-| Micro | mono 10–11px | Chips de plan, `CUELLO 01`, `FASE 01`, `PASO 01`, timestamps |
+| Micro / label | mono 10px (`text-micro`) y 11px (`text-label`) | Chips de plan, `CUELLO 01`, `FASE 01`, `PASO 01`, timestamps. Tokens `--text-micro` y `--text-label` en `@theme` |
 
 **Números:** usa `.tnum` (`tabular-nums`) en precios, plazos y porcentajes. Los precios de los planes se renderizan en **Plus Jakarta Sans extrabold** (`font-display font-extrabold tnum`); la mensualidad y los plazos que los acompañan van en `font-mono`. Las cifras de la `MetricsBar` usan `font-display font-bold`.
 
@@ -204,7 +204,6 @@ Base: `rounded-sm`, `text-sm font-medium`, anillo de foco `ring-ring/50` de 3px.
 | `ghost` | Transparente, texto `ink-soft`; hover fondo `card` |
 | `link` | Texto `ink`, subrayado `signal`; hover texto `signal` |
 | `destructive` | `alert/80`; hover `alert` |
-| `gradient` | Nombre heredado: es un botón `ink` con borde sutil, **no hay gradiente** |
 
 Prohibido el estilo píldora en botones. `rounded-full` solo se usa en puntos de estado, avatares e iconos circulares y en el botón flotante del chat.
 
@@ -224,15 +223,13 @@ También se aplica en `/propuesta-template` (`<Card instrument>` en los planes y
 Mono 11px, `signal`, con línea de 14px antes del texto. Numerado: `01 · LO QUE CUESTA ATENDER A MANO`, `04 · ANTES Y DESPUÉS`, `07 · INVERSIÓN TRANSPARENTE Y PLANES`, `09 · HABLEMOS`. En el Hero va precedido de un punto de estado.
 
 ### Badges (`.badge`)
-Mono 11px, `rounded-sm`, borde del color del estado, punto de 6px.
+Mono 11px (`--text-label`), `rounded-sm`, borde del color del estado, punto de 6px. Solo existen los estados usados: activo, completado y en espera.
 
 | Clase | Aspecto | Ejemplo en la landing |
 | --- | --- | --- |
 | `.b-active` | `signal-soft`, borde `signal/40` | `Contesta de noche y fines de semana` |
 | `.b-completed` | Igual que activo | `Detecta quién sí quiere comprar` |
 | `.b-waiting` | `card`, borde `line-strong`, punto `ink-mute` | `Funciona con tu número actual` |
-| `.b-failed` | `alert-soft`, borde `alert/40` | Sin uso actual |
-| `.b-delayed` | `copper-soft`, borde `copper/40`, punto `amber` | Sin uso actual |
 
 Los puntos no tienen animación de pulso.
 
@@ -264,15 +261,14 @@ Botón flotante circular de 56px en la esquina inferior derecha (`signal`, icono
 
 ### Movimiento
 - `AnimatedSection`: al entrar en viewport, fade-in con desplazamiento de 24px (`translate-y-6` → 0) en 500ms `ease-out`, con `delay` opcional; respeta `prefers-reduced-motion`.
-- `.hover-lift` (sube 2px y aclara el borde), `.hover-glow` y `.link-underline` (subrayado `signal` que crece en hover).
-- Keyframes disponibles: `pulse-glow` y `float` (definidos en `@theme`, sin uso en la landing).
+- Transiciones de color y borde en botones y tarjetas (`transition-colors`). No hay animaciones decorativas continuas ni keyframes propios.
 
 ---
 
 ## 6. Prohibiciones (anti-patrones)
 
 1. **Nada de estética "hype de IA":** robots, cerebros digitales, redes neuronales, circuitos, planetas o ciencia ficción.
-2. **Sin canvas animado decorativo** en la landing (hoy no hay ningún `<canvas>` en `/`). Ver deuda en la sección 7.
+2. **Sin canvas animado decorativo** en ninguna página (no hay `<canvas>` ni `ParticleField` en el proyecto).
 3. **Sin telemetría falsa de servidores** (`p95`, `tenant_id`, monitores de cola); las métricas son de negocio.
 4. **Sin descuentos artificiales** ni escasez ficticia.
 5. **Sin botones tipo píldora** en CTAs.
@@ -281,20 +277,22 @@ Botón flotante circular de 56px en la esquina inferior derecha (`signal`, icono
 
 ---
 
-## 7. Diferencias conocidas entre intención y código
+## 7. Registro de sincronización
 
-Estado verificado el 2026-10-15. Son deudas de implementación, no decisiones de diseño.
+Auditoría del 2026-10-15. Todas las diferencias entre la intención del sistema y el código se corrigieron en el mismo cambio:
 
-| # | Hallazgo | Dónde | Acción sugerida |
-| --- | --- | --- | --- |
-| 1 | `ParticleField` (canvas con `requestAnimationFrame`) sigue montado | `/politica-de-privacidad`, `/condiciones-del-servicio`, `/propuesta-template` | Retirarlo y borrar `components/particle-field.tsx` |
-| 2 | Componentes huérfanos (no se importan en ninguna página) que además usan `ParticleField` | `mini-plans-section.tsx`, `packages-section.tsx`, `how-it-works-section.tsx` | Eliminar o reintegrar |
-| 3 | Clase inexistente `hover:bg-signal-hover` | `app/condiciones-del-servicio/page.tsx:200` | Cambiar a `hover:bg-signal-deep` |
-| 4 | Utilidad `.ruler` y keyframes `pulse-glow`/`float` sin uso | `app/globals.css` | Eliminar |
-| 5 | Comentarios y nombres de badges heredados de BullMQ (`b-waiting`, `b-delayed`, `b-failed`) | `app/globals.css` | Renombrar a estados de negocio cuando se refactorice |
-| 6 | Variante de botón `gradient` no tiene gradiente | `components/ui/button.tsx` | Renombrar o eliminar |
-| 7 | Tamaños fijos `text-[10px]`/`text-[11px]` (45 usos) en lugar de una escala | Varios componentes | Consolidar en tokens de texto |
-| 8 | `--font-display` apunta a Plus Jakarta Sans (no hay fuente de display distinta) | `app/globals.css` | Mantener; es solo un alias |
+| Hallazgo | Resolución |
+| --- | --- |
+| `ParticleField` (canvas con `requestAnimationFrame`) en las páginas legales y en `/propuesta-template` | Eliminado el componente y todos sus usos |
+| Componentes huérfanos `mini-plans-section`, `packages-section`, `how-it-works-section` | Eliminados |
+| Clase inexistente `hover:bg-signal-hover` en `/condiciones-del-servicio` | Cambiada a `hover:bg-signal-deep` |
+| Utilidades sin uso (`.ruler`, `.hover-lift`, `.hover-glow`, `.link-underline`, `.brand-highlight`, `.brand-kicker`) y keyframes `pulse-glow`/`float` | Eliminados de `globals.css` |
+| Badges heredados de BullMQ (`.b-failed`, `.b-delayed`) y comentario de "estados de cola" | Eliminados; quedan `.b-active`, `.b-completed` y `.b-waiting` |
+| Variante de botón `gradient` sin gradiente | Eliminada |
+| Tamaños `text-[10px]`/`text-[11px]` repetidos 45 veces | Reemplazados por los tokens `text-micro` y `text-label` |
+| `--font-display` apunta a Plus Jakarta Sans | Se mantiene a propósito: es un alias semántico para titulares y precios |
+
+**Pendiente:** ninguno conocido.
 
 ---
 

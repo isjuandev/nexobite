@@ -108,7 +108,6 @@ Tres columnas: *Aspecto operativo*, *Atendiendo a mano* (cruces `×`) y *Con Nex
 Pequeñas etiquetas mono con punto de color:
 - `b-active` / `b-completed`: verde señal (`Contesta de noche y fines de semana`, `Detecta quién sí quiere comprar`).
 - `b-waiting`: neutro (`Funciona con tu número actual`).
-- `b-delayed`: cobre. `b-failed`: alerta.
 
 ### 6. Eyebrows (`.eyebrow`)
 Prefijo de sección en mono, verde señal, con una línea de 14px y numeración: `01 · LO QUE CUESTA ATENDER A MANO`, `04 · ANTES Y DESPUÉS`, `07 · INVERSIÓN TRANSPARENTE Y PLANES`, `09 · HABLEMOS`.
@@ -148,9 +147,6 @@ Tarjetas numeradas en mono: `CUELLO 01–04` (cobre), `FASE 01–03`, `PASO 01�
 - No usar botones tipo píldora.
 - No usar gradientes estridentes ni halos de neón.
 - No inventar testimonios ni descuentos: los testimonios se publican solo con casos reales validados.
-
-### Excepción vigente
-Las páginas `/politica-de-privacidad`, `/condiciones-del-servicio` y `/propuesta-template` todavía muestran un campo de partículas (`ParticleField`), contrario a estas reglas. Está registrado como deuda en la sección 7 de [`DESIGN.MD`](DESIGN.MD).
 
 ---
 

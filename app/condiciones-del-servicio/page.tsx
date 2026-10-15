@@ -3,7 +3,6 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Container } from "@/components/container";
 import { AnimatedSection } from "@/components/animated-section";
-import { ParticleField } from "@/components/particle-field";
 import { FaFileAlt, FaBriefcase, FaCreditCard, FaExclamationTriangle, FaCopyright, FaShieldAlt, FaBalanceScale, FaWhatsapp } from "react-icons/fa";
 
 export const metadata: Metadata = {
@@ -138,7 +137,6 @@ export default function CondicionesDelServicio() {
     return (
         <main className="min-h-screen bg-paper flex flex-col relative overflow-hidden">
             <Header />
-            <ParticleField variant="subtle" density="low" speed="slow" />
 
             {/* Header Section */}
             <section className="relative pt-32 pb-14 border-b border-line">
@@ -197,7 +195,7 @@ export default function CondicionesDelServicio() {
                                             href="https://wa.me/+573009459026?text=Hola!%20Tengo%20una%20duda%20sobre%20las%20condiciones%20del%20servicio%20de%20NexoBite."
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="px-5 py-2.5 rounded-sm bg-signal text-paper font-medium text-xs hover:bg-signal-hover transition-colors flex items-center gap-2"
+                                            className="px-5 py-2.5 rounded-sm bg-signal text-paper font-medium text-xs hover:bg-signal-deep transition-colors flex items-center gap-2"
                                         >
                                             <FaWhatsapp className="w-4 h-4" />
                                             Contactar Asesor

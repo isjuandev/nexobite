@@ -24,8 +24,6 @@ const buttonVariants = cva(
         ghost:
           "bg-transparent text-ink-soft hover:bg-card hover:text-ink",
         link: "text-ink underline decoration-signal decoration-1 underline-offset-4 hover:text-signal transition-colors",
-        gradient:
-          "bg-ink text-paper font-semibold hover:bg-signal-deep border border-line-strong/40 transition-all",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
