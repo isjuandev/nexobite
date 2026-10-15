@@ -612,10 +612,7 @@
       text-transform: uppercase
     }
 .gdeck .nexo {
-      display: inline-block;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, .08)
+      display: inline-block
     }
 .gdeck .nexo img {
       height: 32px;
