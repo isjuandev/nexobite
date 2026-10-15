@@ -25,7 +25,8 @@ La identidad descarta los clichés de "IA": robots, cerebros digitales, redes ne
 ## Logotipo
 
 - Marca **Nexobite**: monograma "N" con un punto de cobre y el nombre en Plus Jakarta Sans.
-- Archivos oficiales en `public/`: `logo-mark-dark.svg` (el que usa el sitio, componente `BrandLogo`), `logo-mark-light.svg`, `nexobite-logo.png` y `og-image.png`/`og-image.svg` para redes sociales.
+- Archivos oficiales en `public/`: `logo-mark-dark.svg` (el que usa el sitio, componente `BrandLogo`), `logo-mark-light.svg`, y `nexobite-logo.png`.
+- Imágenes para redes sociales (Open Graph y Twitter): se generan en código, no hay PNG estático. Plantilla en `app/_og/og-template.tsx` (fondo `paper`, logomarca, etiqueta mono en cobre, título con frase final en `signal`); `app/opengraph-image.tsx` (landing), `app/servicios/[slug]/opengraph-image.tsx` (una por servicio, desde `lib/services.ts`) y una por cada página legal. Las fuentes TTF que usa están en `app/_og/fonts/`.
 - No recolorear, deformar ni añadir efectos a los logotipos.
 
 ---

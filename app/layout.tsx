@@ -53,21 +53,12 @@ export const metadata: Metadata = {
     title: "Automatización de WhatsApp y Páginas Web | NexoBite",
     description:
       "Automatiza tu WhatsApp y página web para responder al instante, saber quién quiere comprar y cerrar más ventas sin pasar el día contestando mensajes.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "NexoBite - Soluciones Digitales para PYMEs",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Automatización de WhatsApp y Páginas Web | NexoBite",
     description:
       "Automatiza tu WhatsApp y página web para responder al instante, saber quién quiere comprar y cerrar más ventas sin pasar el día contestando mensajes.",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,

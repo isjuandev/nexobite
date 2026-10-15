@@ -31,7 +31,6 @@ export async function generateMetadata({
       siteName: siteConfig.name,
       title: `${service.metaTitle} | ${siteConfig.name}`,
       description: service.metaDescription,
-      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: `${siteConfig.name} · ${service.shortName}` }],
     },
   };
 }

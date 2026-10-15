@@ -81,7 +81,7 @@ lib/
 ├── hmac.ts                                 # Firma HMAC v2 de peticiones a n8n
 └── utils.ts                                # cn() y utilidades
 docs/REPORTE-VINCULACION-SAAS.md            # Análisis de vinculación landing ↔ SaaS
-public/                                     # Logomarcas, OG image y fuentes
+public/                                     # Logomarcas y fuentes (las imágenes OG se generan en app/_og)
 .agents/skills/ · .claude/skills/           # Skills de diseño y UI para agentes (ver abajo)
 ```
 
