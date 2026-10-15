@@ -6,7 +6,6 @@
  * los datos aquí configurados deben coincidir EXACTAMENTE con los registrados
  * en el Perfil de Google Business (Google Business Profile - GBP).
  * 
- * Deja en blanco o edita los campos marcados con TODO según los datos de tu empresa.
  */
 
 export interface SiteConfig {
@@ -19,12 +18,11 @@ export interface SiteConfig {
     phone: string; // Formato E.164 (+573009459026)
     phoneDisplay: string; // Formato visual legible (+57 300 945 9026)
     whatsappUrl: string;
-    // TODO (Usuario): Completa la dirección exactamente como figura en tu Perfil de Google Business
     address: {
-      streetAddress: string; // TODO: ej. "Cra. 43A # 1-50, El Poblado" (dejar vacío si es área de servicio sin oficina pública)
-      addressLocality: string; // TODO: ej. "Medellín"
-      addressRegion: string; // TODO: ej. "Antioquia"
-      postalCode: string; // TODO: ej. "050021"
+      streetAddress: string;
+      addressLocality: string;
+      addressRegion: string;
+      postalCode: string;
       addressCountry: string; // Código ISO de dos letras: "CO"
     };
     areaServed: string[];
@@ -38,7 +36,7 @@ export interface SiteConfig {
   appLoginUrl: string;
   social: {
     instagram: string;
-    linkedin: string; // TODO (Usuario): Enlace oficial a la página de LinkedIn de la empresa
+    linkedin: string; // Vacío: NexoBite no tiene página de LinkedIn
   };
 }
 
@@ -55,16 +53,15 @@ export const siteConfig: SiteConfig = {
     phone: "+573009459026",
     phoneDisplay: "+57 (300) 945-9026",
     whatsappUrl: "https://wa.me/+573009459026",
+    // Debe coincidir exactamente con el Perfil de Google Business (coherencia NAP)
     address: {
-      // TODO: Completar con la dirección física exacta de Google Business Profile si aplica
-      streetAddress: "",
-      // TODO: Confirmar si la sede principal es Medellín o Bogotá
-      addressLocality: "Medellín",
-      addressRegion: "Antioquia",
-      postalCode: "",
+      streetAddress: "Calle 32 #24-43, Piso 3",
+      addressLocality: "Armenia",
+      addressRegion: "Quindío",
+      postalCode: "63001",
       addressCountry: "CO",
     },
-    areaServed: ["Colombia", "Medellín", "Bogotá"],
+    areaServed: ["Colombia", "Armenia", "Medellín", "Bogotá"],
     openingHours: {
       days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "08:00",
@@ -74,7 +71,6 @@ export const siteConfig: SiteConfig = {
   appLoginUrl: "https://app.nexobite.com/login",
   social: {
     instagram: "https://instagram.com/nexobite",
-    // TODO: Completar con el enlace oficial de LinkedIn de NexoBite cuando esté disponible
     linkedin: "",
   },
 };
