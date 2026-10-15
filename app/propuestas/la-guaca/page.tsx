@@ -465,7 +465,7 @@ const slides: DeckSlide[] = [
                 <textPath href="#seal-circle">UN SOLO MOTEL EN LA ZONA · EXCLUSIVIDAD ARMENIA ·</textPath>
               </text>
             </svg>
-            <div className="instrument grid aspect-square w-2/3 place-items-center rounded-full border border-line bg-card text-center">
+            <div className="grid aspect-square w-[62%] place-items-center rounded-full border border-copper/40 bg-card text-center">
               <div>
                 <b className="block font-display text-8xl font-extrabold leading-[0.8] text-signal">1</b>
                 <small className="font-mono text-label uppercase text-ink-soft">aliado por zona</small>
