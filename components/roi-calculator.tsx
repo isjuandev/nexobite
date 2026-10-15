@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
+import { FaHeart } from "react-icons/fa";
+import { useSlideActive } from "@/components/proposal-deck";
 import { cn } from "@/lib/utils";
 
 const formatCop = (value: number) => `$${value.toLocaleString("es-CO")}`;
 
-const TOTAL_SLOTS = 24;
+const TOTAL_SLOTS = 20;
 
 interface RoiCalculatorProps {
   /** Inversión inicial en COP. */
@@ -16,11 +18,22 @@ interface RoiCalculatorProps {
   initialRate: number;
 }
 
-/** Cuántas ventas hacen falta para recuperar una inversión, según la tarifa promedio. */
+/** Cuántas parejas hacen falta para recuperar una inversión, según la tarifa promedio. */
 export function RoiCalculator({ investment, min, max, step, initialRate }: RoiCalculatorProps) {
+  const active = useSlideActive();
   const [rate, setRate] = useState(initialRate);
+  const [revealed, setRevealed] = useState(false);
   const needed = Math.ceil(investment / rate);
-  const recovered = Math.min(needed, TOTAL_SLOTS);
+
+  // Los corazones se colorean un momento después de entrar a la diapositiva
+  useEffect(() => {
+    if (!active) return;
+    const t = setTimeout(() => setRevealed(true), 900);
+    return () => {
+      clearTimeout(t);
+      setRevealed(false);
+    };
+  }, [active]);
 
   return (
     <div className="rounded-md border border-line bg-card p-6 sm:p-8">
@@ -40,6 +53,7 @@ export function RoiCalculator({ investment, min, max, step, initialRate }: RoiCa
         step={step}
         value={rate}
         onChange={(e) => setRate(Number(e.target.value))}
+        aria-label="Tarifa promedio"
         className="w-full accent-[#1C8A76]"
       />
       <div className="tnum mt-1 flex justify-between font-mono text-micro text-ink-mute">
@@ -59,14 +73,18 @@ export function RoiCalculator({ investment, min, max, step, initialRate }: RoiCa
       </div>
 
       <div
-        className="mt-6 grid grid-cols-12 gap-1.5"
+        className="mt-6 grid grid-cols-10 gap-2"
         role="img"
         aria-label={`${needed} parejas recuperan la inversión; el resto es ganancia neta`}
       >
         {Array.from({ length: TOTAL_SLOTS }, (_, i) => (
-          <span
+          <FaHeart
             key={i}
-            className={cn("h-3 rounded-sm", i < recovered ? "bg-copper" : "bg-signal")}
+            style={{ transitionDelay: `${i * 40}ms` } as CSSProperties}
+            className={cn(
+              "h-4 w-4 justify-self-center transition-colors duration-500",
+              !revealed ? "text-line-strong" : i < needed ? "text-copper" : "text-signal"
+            )}
           />
         ))}
       </div>

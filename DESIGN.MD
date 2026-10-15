@@ -271,9 +271,12 @@ Estructura fija (mismos patrones que la landing):
 
 Cada página emite `Service`, `BreadcrumbList` y `FAQPage` en JSON-LD (el `FAQPage` de la landing ya no se emite globalmente). Para añadir un servicio, agrega un objeto a `services` en `lib/services.ts`.
 
+### Propuestas a medida (`app/propuestas/[cliente]`)
+Presentación a pantalla completa, `noindex`, una diapositiva por pantalla (`components/proposal-deck.tsx`): flechas, puntos, contador, barra de progreso de 2px, teclado, rueda, deslizamiento táctil y enlace por `#n`. Cada diapositiva usa `Reveal` (aparición escalonada) y `Line` (titular que sube desde una máscara) de `components/deck-parts.tsx`; los efectos por diapositiva (`TypingText`, `CountUp`, `RoiCalculator`) se activan con `useSlideActive`. Estilos en `app/globals.css` (bloque "Deck de propuestas", prefijo `deck-`). Mantiene la paleta Instrumento: sin partículas, grano, resplandores ni degradados; la línea de barrido es de 1px en `signal`. Respeta `prefers-reduced-motion`.
+
 ### Movimiento
 - `AnimatedSection`: al entrar en viewport, fade-in con desplazamiento de 24px (`translate-y-6` → 0) en 500ms `ease-out`, con `delay` opcional; respeta `prefers-reduced-motion`.
-- Transiciones de color y borde en botones y tarjetas (`transition-colors`). No hay animaciones decorativas continuas ni keyframes propios.
+- Transiciones de color y borde en botones y tarjetas (`transition-colors`). Fuera de las propuestas a medida (`deck-*`), no hay animaciones decorativas continuas ni keyframes propios.
 
 ---
 
