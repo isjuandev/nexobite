@@ -55,7 +55,7 @@ export function BeforeAfterSection() {
         <AnimatedSection delay={150}>
           <div className="overflow-x-auto rounded-md border border-line bg-card">
             <table className="w-full text-left text-sm">
-              <thead className="border-b border-line bg-card-hover font-mono text-xs uppercase text-ink-mute">
+              <thead className="border-b border-line font-mono text-xs uppercase text-ink-mute">
                 <tr>
                   <th className="py-4 px-6 font-medium">Aspecto Operativo</th>
                   <th className="py-4 px-6 font-medium text-alert">

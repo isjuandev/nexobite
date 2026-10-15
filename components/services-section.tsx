@@ -1,12 +1,14 @@
 import { Container } from "@/components/container";
 import { AnimatedSection } from "@/components/animated-section";
-import { FaGlobe, FaWhatsapp, FaCogs, FaCode, FaCheck } from "react-icons/fa";
+import Link from "next/link";
+import { FaGlobe, FaWhatsapp, FaCogs, FaCode, FaCheck, FaArrowRight } from "react-icons/fa";
 
 const serviceModules = [
   {
     icon: FaGlobe,
     category: "CONSEGUIR CLIENTES",
     title: "Páginas Web",
+    href: "/servicios/paginas-web-para-empresas",
     description:
       "Páginas web rápidas, con textos que convencen y botones que llevan al cliente directo a tu WhatsApp.",
     features: [
@@ -20,6 +22,7 @@ const serviceModules = [
     icon: FaWhatsapp,
     category: "ATENDER CLIENTES",
     title: "Asistente para WhatsApp e Instagram",
+    href: "/servicios/automatizacion-whatsapp",
     description:
       "Un asistente en tu WhatsApp, con conexión oficial o económica. Responde preguntas comunes, atiende de noche y averigua quién quiere comprar antes de pasárselo a tus asesores.",
     features: [
@@ -33,6 +36,7 @@ const serviceModules = [
     icon: FaCogs,
     category: "ORDEN Y AUTOMATIZACIÓN",
     title: "Conectamos tus herramientas",
+    href: "/servicios/integracion-de-herramientas",
     description:
       "Unimos tus chats y tus ventas con las herramientas que ya usas, para que no tengas que pasar datos a mano.",
     features: [
@@ -46,6 +50,7 @@ const serviceModules = [
     icon: FaCode,
     category: "A TU MEDIDA",
     title: "Programas hechos para tu negocio",
+    href: "/servicios/software-a-medida",
     description:
       "Aplicaciones web para cuando las herramientas comunes no alcanzan: cotizadores, pantallas para tus clientes o sistemas de reservas.",
     features: [
@@ -104,6 +109,13 @@ export function ServicesSection() {
                       <span>{feat}</span>
                     </div>
                   ))}
+                  <Link
+                    href={s.href}
+                    className="group inline-flex items-center gap-1.5 pt-3 font-mono text-xs text-signal"
+                  >
+                    Ver el servicio
+                    <FaArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </div>
               </div>
             ))}

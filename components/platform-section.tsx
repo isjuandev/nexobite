@@ -148,7 +148,7 @@ export function PlatformSection() {
 
             {/* Vista ilustrativa del panel (maqueta, no datos reales) */}
             <div className="lg:col-span-7" aria-hidden="true">
-              <div className="overflow-hidden rounded-md border border-line bg-paper-deep/80 shadow-inner">
+              <div className="overflow-hidden rounded-md border border-line shadow-inner">
                 <div className="flex items-center justify-between border-b border-line bg-card px-4 py-2.5 font-mono text-xs text-ink-mute">
                   <span className="flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-signal" />

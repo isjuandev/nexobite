@@ -79,7 +79,7 @@ export function HeroSection() {
           <div className="lg:col-span-5">
             <div className="instrument rounded-md border border-line bg-card shadow-lg overflow-hidden">
               {/* Header del Mockup */}
-              <div className="flex items-center justify-between px-4 py-3 border-b border-line bg-card-hover">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-line">
                 <div className="flex items-center gap-2">
                   <span className="relative flex h-2 w-2">
                     <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-signal opacity-75" />
@@ -95,7 +95,7 @@ export function HeroSection() {
               </div>
 
               {/* Conversación Real Simulada */}
-              <div className="p-4 space-y-3.5 text-xs bg-paper-deep/60 min-h-[300px] flex flex-col justify-center">
+              <div className="p-4 space-y-3.5 text-xs min-h-[300px] flex flex-col justify-center">
                 {/* Mensaje entrante de cliente */}
                 <div className="flex flex-col items-start gap-1">
                   <span className="font-mono text-micro text-ink-mute pl-1">

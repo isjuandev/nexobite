@@ -242,12 +242,12 @@ Los puntos no tienen animación de pulso.
 6. **Plataforma** (`#plataforma`) — pestañas (`Chats`, `Agenda`, `Clientes`, `Resultados`) con maqueta del panel y la leyenda "Maqueta ilustrativa"; CTA `Ver la pantalla en una demo` y `Ya soy cliente: iniciar sesión`.
 7. **Antes/Después** — tabla de 3 columnas (`ASPECTO OPERATIVO · ATENDIENDO A MANO · CON NEXOBITE`) con `×` en `copper`/`alert` y `✓` en `signal`.
 8. **Proceso** (`#proceso`) — 3 pasos con chip de plazo (`Día 1 a 3`, `Día 4 a 10`, `Día 11+`) y bloque `ENTREGABLE`.
-9. **Servicios** (`#servicios`) — 4 tarjetas (`Páginas Web`, `Asistente para WhatsApp e Instagram`, orden y automatización, a la medida) con etiqueta mono en la esquina y lista con checks.
+9. **Servicios** (`#servicios`) — 4 tarjetas (`Páginas Web`, `Asistente para WhatsApp e Instagram`, orden y automatización, a la medida) con etiqueta mono en la esquina, lista con checks y enlace `Ver el servicio` a su página.
 10. **Precios** (`#precios`, carga diferida) — selector de conexión (económica u oficial) con su panel de pros y contras, y 3 planes: `01 · START`, `02 · SALES` (recomendado, `.instrument`, elevado en escritorio), `03 · SCALE`. Cada plan muestra implementación (precio `tnum`), mensualidad en mono, plazo, lista `QUÉ INCLUYE` y un CTA que abre WhatsApp con mensaje precargado. Matriz de comparación colapsable.
 11. **Testimonios** — oculta hasta tener casos reales validados.
 12. **FAQ** (`#faq`) — acordeón renderizado en servidor desde `lib/faqs.ts`.
 13. **CTA** — eyebrow `09 · HABLEMOS`, botón `Hablar por WhatsApp` y formulario alterno (`LeadForm` → `/api/leads`).
-14. **Footer** — logo, datos de contacto, redes y enlaces legales.
+14. **Footer** — logo, datos de contacto, redes, fila `SERVICIOS` con enlaces a las 4 páginas de servicio y enlaces legales.
 
 ### Pricing
 - Tres planes con implementación única y mensualidad separadas, siempre en COP: Start `$1.190.000` + `$140.000`/mes; Sales `$1.890.000` + `$220.000`/mes; Scale `$3.490.000` + `$290.000`/mes.
@@ -256,8 +256,20 @@ Los puntos no tienen animación de pulso.
 ### Widget de chat (`chatbot-widget.tsx`)
 Botón flotante circular de 56px en la esquina inferior derecha (`signal`, icono blanco, offset 24px, pulso activado). El panel se carga desde `app.nexobite.com` dentro de un Shadow DOM; la landing inyecta overrides (altura 640px, sin marco doble, escala 0.88/0.8 en pantallas bajas). Los colores del panel se configuran en el canal webchat del SaaS.
 
-### Páginas de servicio
-`/servicios/automatizacion-whatsapp` y `/servicios/paginas-web-para-empresas`: Hero centrado con eyebrow, h1 con acento `signal`, dos CTAs y rejilla "Lo que incluye" de tarjetas con check. Mientras estén en borrador muestran una franja superior `BORRADOR DE SERVICIO · ESTADO: NO INDEXADO` en `copper`.
+### Páginas de servicio (`app/servicios/[slug]`)
+Cuatro páginas generadas desde una sola plantilla (`components/service-page.tsx`) y un archivo de contenido (`lib/services.ts`): `automatizacion-whatsapp`, `paginas-web-para-empresas`, `integracion-de-herramientas` y `software-a-medida`. Están indexadas, en el sitemap y enlazadas desde el footer y las tarjetas de la sección Servicios.
+
+Estructura fija (mismos patrones que la landing):
+1. **Hero** en dos columnas: eyebrow con la categoría, h1 con frase en `signal`, párrafo, tres badges, CTA `signal` a WhatsApp + `outline` a `#proceso`, y una **maqueta de producto** con `.instrument` (`components/service-mockups.tsx`, siempre con la leyenda "Maqueta ilustrativa").
+2. **`01 · EL PROBLEMA`**: 3 tarjetas `CUELLO 0X` con icono en `copper-soft` y frase final del h2 en `copper`.
+3. **`02 · LO QUE INCLUYE`**: 6 tarjetas con check en `signal`.
+4. **`03 · CÓMO TRABAJAMOS`** (`#proceso`): 3 pasos con chip en `copper` y bloque `ENTREGABLE`.
+5. **`04`** Precios: `PricingSection` (planes de `lib/plans.ts`) en el asistente de WhatsApp; `Quote` ("Cómo cotizamos": revisión gratis, propuesta por escrito, pago en dos partes) en los demás. Nunca se inventan precios que no estén en `lib/plans.ts`.
+6. **`05 · TUS DUDAS`**: `FaqSection` con las preguntas del servicio.
+7. **`06 · HABLEMOS`**: `CtaSection` con mensaje de WhatsApp propio del servicio y formulario alterno.
+8. **`07 · OTROS SERVICIOS`**: tarjetas hacia los otros tres servicios.
+
+Cada página emite `Service`, `BreadcrumbList` y `FAQPage` en JSON-LD (el `FAQPage` de la landing ya no se emite globalmente). Para añadir un servicio, agrega un objeto a `services` en `lib/services.ts`.
 
 ### Movimiento
 - `AnimatedSection`: al entrar en viewport, fade-in con desplazamiento de 24px (`translate-y-6` → 0) en 500ms `ease-out`, con `delay` opcional; respeta `prefers-reduced-motion`.
@@ -290,6 +302,7 @@ Auditoría del 2026-10-15. Todas las diferencias entre la intención del sistema
 | Badges heredados de BullMQ (`.b-failed`, `.b-delayed`) y comentario de "estados de cola" | Eliminados; quedan `.b-active`, `.b-completed` y `.b-waiting` |
 | Variante de botón `gradient` sin gradiente | Eliminada |
 | Tamaños `text-[10px]`/`text-[11px]` repetidos 45 veces | Reemplazados por los tokens `text-micro` y `text-label` |
+| Clases `bg-paper-deep/*` y `bg-card-hover` en 7 componentes, sin token definido (no generaban estilos) | Eliminadas; el fondo efectivo no cambió |
 | `--font-display` apunta a Plus Jakarta Sans | Se mantiene a propósito: es un alias semántico para titulares y precios |
 
 **Pendiente:** ninguno conocido.

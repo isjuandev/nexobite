@@ -13,7 +13,7 @@ La copy está escrita en lenguaje sin tecnicismos, pensada para dueños de negoc
 ## Características
 
 - **Landing one-page** con las secciones: Hero (simulador de WhatsApp), Métricas, Problema, Soluciones, Demo de producto, Plataforma, Antes/Después, Proceso, Servicios, Planes, Testimonios (ocultos hasta tener casos reales validados), FAQ y CTA final.
-- **Páginas de servicio** optimizadas para SEO: `/servicios/automatizacion-whatsapp` y `/servicios/paginas-web-para-empresas`.
+- **4 páginas de servicio** optimizadas para SEO, generadas desde una plantilla (`/servicios/[slug]`): `automatizacion-whatsapp`, `paginas-web-para-empresas`, `integracion-de-herramientas` y `software-a-medida`. Cada una tiene Hero con maqueta, problema, qué incluye, proceso, precios o cotización, FAQ, CTA y JSON-LD.
 - **Planes Start / Sales / Scale**, con implementación y mensualidad en COP y selector de conexión de WhatsApp (económica u oficial de Meta):
 
   | Plan | Implementación | Mensualidad | Entrega |
@@ -49,9 +49,7 @@ La copy está escrita en lenguaje sin tecnicismos, pensada para dueños de negoc
 ```
 app/
 ├── api/leads/route.ts                      # Captura de leads → n8n (firmada con HMAC)
-├── servicios/
-│   ├── automatizacion-whatsapp/            # Página de servicio: chatbots WhatsApp
-│   └── paginas-web-para-empresas/          # Página de servicio: desarrollo web
+├── servicios/[slug]/page.tsx               # Plantilla de las 4 páginas de servicio
 ├── condiciones-del-servicio/               # Página legal
 ├── politica-de-privacidad/                 # Página legal
 ├── propuesta-template/                     # Plantilla de propuesta comercial
@@ -65,6 +63,7 @@ components/
 ├── product-demo.tsx                        # Demo interactiva (carga diferida)
 ├── platform-section.tsx                    # Presentación del panel NexoBite
 ├── pricing-section.tsx                     # Planes y selector de conexión (carga diferida)
+├── service-page.tsx / service-mockups.tsx  # Plantilla y maquetas de las páginas de servicio
 ├── faq-section.tsx / testimonials-section.tsx / cta-section.tsx
 ├── chatbot-widget.tsx                      # Widget OmniChat + overrides de Shadow DOM
 ├── conversion-tracker.tsx                  # Eventos de conversión y UTM
@@ -74,7 +73,9 @@ components/
 └── header.tsx / footer.tsx
 lib/
 ├── site-config.ts                          # Datos oficiales de contacto y URLs (NAP)
-├── faqs.ts                                 # Preguntas frecuentes (fuente única para UI y JSON-LD)
+├── faqs.ts                                 # Preguntas frecuentes de la landing (UI y JSON-LD)
+├── services.ts                             # Contenido de las 4 páginas de servicio
+├── plans.ts                                # Planes y precios en COP (fuente única)
 ├── analytics.ts                            # Eventos y atribución UTM
 ├── hmac.ts                                 # Firma HMAC v2 de peticiones a n8n
 └── utils.ts                                # cn() y utilidades

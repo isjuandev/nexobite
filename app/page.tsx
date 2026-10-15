@@ -12,6 +12,8 @@ import { FaqSection } from "@/components/faq-section";
 import { CtaSection } from "@/components/cta-section";
 import { Footer } from "@/components/footer";
 import { TestimonialsSection } from "@/components/testimonials-section";
+import { FaqSchema } from "@/components/schema-markup";
+import { faqs } from "@/lib/faqs";
 
 // Carga diferida de componentes interactivos bajo el pliegue (reduce el bundle JS inicial)
 const ProductDemo = dynamic(
@@ -40,6 +42,7 @@ export default function Home() {
       <FaqSection />
       <CtaSection />
       <Footer />
+      <FaqSchema items={faqs} />
     </main>
   );
 }

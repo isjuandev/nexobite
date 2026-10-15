@@ -6,90 +6,8 @@ import { AnimatedSection } from "@/components/animated-section";
 import { Button } from "@/components/ui/button";
 import { FaCheck, FaArrowRight, FaTimes } from "react-icons/fa";
 
-const plans = [
-  {
-    id: "start",
-    name: "01 · START",
-    subtitle: "Respuesta Inmediata a tus Clientes",
-    target: "Para negocios locales y profesionales que pierden clientes por responder tarde o fuera de horario.",
-    setupPrice: "$1.190.000",
-    monthlyPrice: "$140.000",
-    timeframe: "5 a 7 días hábiles",
-    highlighted: false,
-    badge: null,
-    features: [
-      "Funciona con 1 número de WhatsApp (oficial o económico)",
-      "Saludo automático y menú de opciones claro",
-      "Hasta 15 respuestas a las preguntas más comunes",
-      "Pide los datos básicos (nombre, qué necesita, ciudad)",
-      "Pasa el chat directo a tu asesor",
-      "1 hora de capacitación para tu equipo",
-      "Vigilamos que todo funcione y cambiamos textos 2 veces al mes",
-    ],
-    ctaText: "Elegir Plan Start",
-    whatsappMessage:
-      "Hola NexoBite. Me interesa el Plan Start de atención para mi negocio. Quiero coordinar la implementación.",
-  },
-  {
-    id: "sales",
-    name: "02 · SALES",
-    subtitle: "Ventas y Citas Automáticas",
-    target: "Para empresas de servicios que reciben muchas consultas y quieren saber quién sí va a comprar y agendar citas sin esfuerzo.",
-    setupPrice: "$1.890.000",
-    monthlyPrice: "$220.000",
-    timeframe: "10 a 14 días hábiles",
-    highlighted: true,
-    badge: "MÁS ELEGIDO · IDEAL PARA EMPRESAS DE SERVICIOS",
-    features: [
-      "Todo lo incluido en el Plan Start",
-      "Asistente que conoce tu negocio y responde como tú",
-      "Identifica quién tiene presupuesto y prisa por comprar",
-      "Agenda las citas solo, directo en tu calendario",
-      "Guarda cada cliente interesado automáticamente",
-      "Vuelve a escribirle al cliente a las 24 horas",
-      "Mejoramos las respuestas cada mes y te atendemos en menos de 4 horas",
-    ],
-    ctaText: "Elegir Plan Sales",
-    whatsappMessage:
-      "Hola NexoBite. Me interesa el Plan Sales (ventas y citas automáticas). Quiero revisar si se adapta a mi negocio.",
-  },
-  {
-    id: "scale",
-    name: "03 · SCALE",
-    subtitle: "Todo en Uno (Página Web + WhatsApp + Registro de Clientes)",
-    target: "Para empresas que quieren todo resuelto: conseguir clientes en la web, atenderlos en WhatsApp y tenerlos ordenados en un solo lugar.",
-    setupPrice: "$3.490.000",
-    monthlyPrice: "$290.000",
-    timeframe: "20 a 25 días hábiles",
-    highlighted: false,
-    badge: "SOLUCIÓN TODO EN UNO",
-    features: [
-      "Página web hecha a tu medida, rápida y moderna",
-      "Todo lo del Plan Sales, conectado a tu página web",
-      "Tus clientes organizados en un sistema de ventas profesional",
-      "Aviso inmediato a tu equipo cuando llega un cliente",
-      "Se ve bien en celular, te encuentran en Google y el primer año de alojamiento va incluido",
-      "2 horas de capacitación para tu equipo de ventas",
-      "Mantenimiento de tu web y tu sistema, con atención en menos de 2 horas",
-    ],
-    ctaText: "Elegir Plan Scale",
-    whatsappMessage:
-      "Hola NexoBite. Me interesa el Plan Scale (Página web + WhatsApp + registro de clientes). Quiero agendar una revisión de mi caso.",
-  },
-];
+import { plans, featureComparison } from "@/lib/plans";
 
-const featureComparison = [
-  { name: "Conexión de WhatsApp (oficial o económica)", start: "✓ (1 línea)", sales: "✓ (1 línea)", scale: "✓ (1 línea)" },
-  { name: "Respuestas automáticas fuera de horario", start: "✓", sales: "✓", scale: "✓" },
-  { name: "Respuestas a dudas y catálogos", start: "Hasta 15", sales: "Ilimitadas", scale: "Ilimitadas" },
-  { name: "Detecta quién sí quiere comprar", start: "—", sales: "✓", scale: "✓" },
-  { name: "Citas automáticas en tu calendario", start: "—", sales: "✓", scale: "✓" },
-  { name: "Seguimiento automático a interesados", start: "—", sales: "✓", scale: "✓" },
-  { name: "Página web hecha a tu medida", start: "—", sales: "—", scale: "✓ (Hasta 6 secciones)" },
-  { name: "Registro y orden de tus clientes", start: "—", sales: "Hoja simple", scale: "Sistema de ventas completo" },
-  { name: "Tiempo para dejarlo listo", start: "5–7 días", sales: "10–14 días", scale: "20–25 días" },
-  { name: "Mantenimiento mensual", start: "$140.000/mes", sales: "$220.000/mes", scale: "$290.000/mes" },
-];
 
 type ConnectionId = "economica" | "oficial";
 
@@ -139,7 +57,11 @@ const connections: {
   },
 ];
 
-export function PricingSection() {
+export function PricingSection({
+  eyebrow = "07 · INVERSIÓN TRANSPARENTE Y PLANES",
+}: {
+  eyebrow?: string;
+}) {
   const [showMatrix, setShowMatrix] = useState(false);
   const [connectionId, setConnectionId] = useState<ConnectionId>("economica");
   const connection = connections.find((c) => c.id === connectionId) ?? connections[0];
@@ -149,7 +71,7 @@ export function PricingSection() {
       <Container size="lg">
         <AnimatedSection>
           <div className="mb-3 text-center">
-            <span className="eyebrow">07 · INVERSIÓN TRANSPARENTE Y PLANES</span>
+            <span className="eyebrow">{eyebrow}</span>
           </div>
           <h2 className="mb-4 text-center text-balance text-3xl font-semibold text-ink sm:text-4xl">
             Planes claros con{" "}
@@ -166,7 +88,7 @@ export function PricingSection() {
             <div
               role="radiogroup"
               aria-label="Tipo de conexión de WhatsApp"
-              className="grid grid-cols-2 gap-2 rounded-md border border-line bg-paper-deep/70 p-1"
+              className="grid grid-cols-2 gap-2 rounded-md border border-line p-1"
             >
               {connections.map((c) => (
                 <button
@@ -220,7 +142,7 @@ export function PricingSection() {
                 className={`relative rounded-md flex flex-col justify-between p-6 sm:p-8 transition-all ${
                   p.highlighted
                     ? "instrument border border-signal bg-card shadow-xl lg:-translate-y-2"
-                    : "border border-line bg-paper-deep/70 hover:border-line-strong"
+                    : "border border-line hover:border-line-strong"
                 }`}
               >
                 <div>
@@ -315,7 +237,7 @@ export function PricingSection() {
           <AnimatedSection delay={100}>
             <div className="mt-8 overflow-x-auto rounded-md border border-line bg-card">
               <table className="w-full text-left text-xs">
-                <thead className="border-b border-line bg-card-hover font-mono uppercase text-ink-mute">
+                <thead className="border-b border-line font-mono uppercase text-ink-mute">
                   <tr>
                     <th className="py-3 px-4 font-medium">Capacidad / Entregable</th>
                     <th className="py-3 px-4 font-medium text-center">01 · START</th>

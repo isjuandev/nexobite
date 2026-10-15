@@ -1,6 +1,6 @@
 import React from "react";
 import { siteConfig } from "@/lib/site-config";
-import { faqs } from "@/lib/faqs";
+import type { FaqItem } from "@/lib/faqs";
 
 export function SchemaMarkup() {
   const sameAsProfiles = [
@@ -91,19 +91,6 @@ export function SchemaMarkup() {
       : {}),
   };
 
-  const faqPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.a,
-      },
-    })),
-  };
-
   return (
     <>
       <script
@@ -124,10 +111,73 @@ export function SchemaMarkup() {
           __html: JSON.stringify(professionalServiceSchema),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqPageSchema),
+    </>
+  );
+}
+
+function JsonLd({ data }: { data: object }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+/** FAQPage de la página donde se renderiza (cada página declara solo sus propias preguntas). */
+export function FaqSchema({ items }: { items: FaqItem[] }) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: items.map((faq) => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: { "@type": "Answer", text: faq.a },
+        })),
+      }}
+    />
+  );
+}
+
+/** Service + BreadcrumbList de una página de servicio. */
+export function ServiceSchema({
+  name,
+  description,
+  path,
+}: {
+  name: string;
+  description: string;
+  path: string;
+}) {
+  const url = `${siteConfig.url}${path}`;
+  return (
+    <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name,
+          description,
+          url,
+          inLanguage: "es-CO",
+          provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
+          areaServed: siteConfig.contact.areaServed.map((area) => ({
+            "@type": "AdministrativeArea",
+            name: area,
+          })),
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Inicio", item: siteConfig.url },
+            { "@type": "ListItem", position: 2, name: "Servicios", item: `${siteConfig.url}/#servicios` },
+            { "@type": "ListItem", position: 3, name, item: url },
+          ],
         }}
       />
     </>

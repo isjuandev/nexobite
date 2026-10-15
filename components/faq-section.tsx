@@ -1,28 +1,42 @@
 import { Container } from "@/components/container";
 import { AnimatedSection } from "@/components/animated-section";
 import { FaChevronDown } from "react-icons/fa";
-import { faqs } from "@/lib/faqs";
+import { faqs, type FaqItem } from "@/lib/faqs";
 
-export function FaqSection() {
+interface FaqSectionProps {
+  items?: FaqItem[];
+  eyebrow?: string;
+  titleLead?: string;
+  titleAccent?: string;
+  intro?: string;
+}
+
+export function FaqSection({
+  items = faqs,
+  eyebrow = "08 · TUS DUDAS",
+  titleLead = "Preguntas frecuentes sobre la",
+  titleAccent = "forma de trabajar y el servicio",
+  intro = "Todo lo que necesitas saber sobre tu número, los tiempos, los pagos y el soporte.",
+}: FaqSectionProps) {
   return (
     <section id="faq" className="border-b border-line bg-paper py-20 sm:py-28">
       <Container size="md">
         <AnimatedSection>
           <div className="mb-3 text-center">
-            <span className="eyebrow">08 · TUS DUDAS</span>
+            <span className="eyebrow">{eyebrow}</span>
           </div>
           <h2 className="mb-4 text-center text-balance text-3xl font-semibold text-ink sm:text-4xl">
-            Preguntas frecuentes sobre la{" "}
-            <span className="text-signal">forma de trabajar y el servicio</span>
+            {titleLead}{" "}
+            <span className="text-signal">{titleAccent}</span>
           </h2>
           <p className="mx-auto mb-14 max-w-xl text-center text-pretty text-base text-ink-soft">
-            Todo lo que necesitas saber sobre tu número, los tiempos, los pagos y el soporte.
+            {intro}
           </p>
         </AnimatedSection>
 
         <AnimatedSection delay={150}>
           <div className="space-y-3">
-            {faqs.map((faq, index) => (
+            {items.map((faq, index) => (
               <details
                 key={index}
                 className="group rounded-md border border-line bg-card overflow-hidden transition-colors"

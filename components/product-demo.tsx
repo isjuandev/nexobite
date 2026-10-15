@@ -184,7 +184,7 @@ export function ProductDemo() {
 
             {/* Simulación del Chat en Vivo */}
             <div className="lg:col-span-7">
-              <div className="rounded-md border border-line bg-paper-deep/80 overflow-hidden shadow-inner">
+              <div className="rounded-md border border-line overflow-hidden shadow-inner">
                 <div className="px-4 py-2.5 bg-card border-b border-line flex items-center justify-between text-xs font-mono text-ink-mute">
                   <span className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-signal" />

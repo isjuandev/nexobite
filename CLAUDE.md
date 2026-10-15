@@ -38,14 +38,14 @@ No hay pruebas automáticas: antes de dar un cambio por terminado, ejecuta `pnpm
 
 - Todo el texto del sitio va en **español de Colombia**, en lenguaje claro y sin tecnicismos (atender, ordenar, vender).
 - Los CTAs terminan en WhatsApp (`siteConfig.contact.whatsappUrl`) con mensaje precargado. Los datos de contacto y URLs viven en `lib/site-config.ts`; no los repitas en componentes.
-- Planes y precios (COP) están en `components/pricing-section.tsx`: Start $1.190.000 + $140.000/mes, Sales $1.890.000 + $220.000/mes, Scale $3.490.000 + $290.000/mes. Si cambian, actualiza también FAQ (`lib/faqs.ts`), README y `DESIGN.MD`.
+- Planes y precios (COP) están en `lib/plans.ts` (los muestra `components/pricing-section.tsx`): Start $1.190.000 + $140.000/mes, Sales $1.890.000 + $220.000/mes, Scale $3.490.000 + $290.000/mes. Si cambian, actualiza también FAQ (`lib/faqs.ts`), README y `DESIGN.MD`.
 - Las FAQ viven en `lib/faqs.ts` y alimentan tanto la UI como el JSON-LD.
 - No inventes testimonios, cifras ni descuentos. `TestimonialsSection` devuelve `null` mientras `testimonials` esté vacío.
 
 ## Estructura clave
 
 - `app/page.tsx`: orden de las secciones de la landing. `ProductDemo` y `PricingSection` se cargan con `dynamic`.
-- `app/servicios/*`: páginas de servicio en borrador (banner "NO INDEXADO"; no están en el sitemap).
+- `app/servicios/[slug]`: las 4 páginas de servicio salen de `lib/services.ts` + `components/service-page.tsx`. Para añadir o editar un servicio, cambia solo `lib/services.ts` (y la maqueta en `service-mockups.tsx` si hace falta). Están indexadas y en el sitemap.
 - `app/propuesta-template`: plantilla de propuesta; no indexada.
 - `app/api/leads/route.ts`: recibe leads → webhook de n8n firmado con HMAC v2 (`lib/hmac.ts`). Requiere `N8N_LEAD_WEBHOOK_URL` y `N8N_LEAD_WEBHOOK_SECRET` en `.env.local` (nunca los subas al repo).
 - `components/chatbot-widget.tsx`: widget de chat del SaaS; inyecta estilos en su Shadow DOM.

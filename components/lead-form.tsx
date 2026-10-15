@@ -8,7 +8,7 @@ import { getAttribution, trackEvent } from "@/lib/analytics";
 type Status = "idle" | "sending" | "sent" | "error";
 
 const inputClass =
-  "w-full rounded-sm border border-line bg-paper-deep/70 px-3 py-2 text-sm text-ink placeholder:text-ink-mute focus:border-signal focus:outline-none";
+  "w-full rounded-sm border border-line px-3 py-2 text-sm text-ink placeholder:text-ink-mute focus:border-signal focus:outline-none";
 
 export function LeadForm() {
   const [status, setStatus] = useState<Status>("idle");

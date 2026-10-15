@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { services } from "@/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://www.nexobite.com";
@@ -10,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: "weekly",
             priority: 1,
         },
+        ...services.map((service) => ({
+            url: `${baseUrl}/servicios/${service.slug}`,
+            lastModified: new Date(),
+            changeFrequency: "monthly" as const,
+            priority: 0.8,
+        })),
         {
             url: `${baseUrl}/politica-de-privacidad`,
             lastModified: new Date(),

@@ -1,3 +1,4 @@
+import { services } from "@/lib/services";
 import Link from "next/link";
 import { FaInstagram, FaWhatsapp, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { Container } from "@/components/container";
@@ -112,7 +113,23 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-line pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <nav
+          aria-label="Servicios"
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-line pt-6 md:justify-start"
+        >
+          <span className="font-mono text-label text-copper">SERVICIOS</span>
+          {services.map((service) => (
+            <Link
+              key={service.slug}
+              href={`/servicios/${service.slug}`}
+              className="text-xs text-ink-soft transition-colors hover:text-ink"
+            >
+              {service.shortName}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="mt-6 border-t border-line pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs font-mono text-ink-mute text-center md:text-left">
             © {new Date().getFullYear()} NexoBite · Automatización Comercial y Sistemas Web
           </p>
@@ -121,7 +138,7 @@ export function Footer() {
               href="/#servicios"
               className="text-ink-mute hover:text-ink transition-colors"
             >
-              Servicios de Automatización
+              Todos los servicios
             </Link>
             <span className="text-line-strong hidden md:inline">/</span>
             <Link
