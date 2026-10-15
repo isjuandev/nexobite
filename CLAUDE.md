@@ -49,7 +49,7 @@ No hay pruebas automáticas: antes de dar un cambio por terminado, ejecuta `pnpm
 - `app/propuesta-template`: plantilla de propuesta; no indexada.
 - `app/propuestas/[cliente]`: propuestas a medida por cliente (hoy `la-guaca`), una sola página con scroll, `noindex` y excluidas en `robots.ts`. Los activos del cliente van en `public/propuestas/`. La calculadora de retorno es `components/roi-calculator.tsx`.
 - `app/api/leads/route.ts`: recibe leads → webhook de n8n firmado con HMAC v2 (`lib/hmac.ts`). Requiere `N8N_LEAD_WEBHOOK_URL` y `N8N_LEAD_WEBHOOK_SECRET` en `.env.local` (nunca los subas al repo).
-- `components/chatbot-widget.tsx`: widget de chat del SaaS; inyecta estilos en su Shadow DOM.
+- `components/chatbot-widget.tsx`: widget de chat del SaaS; inyecta estilos en su Shadow DOM.  No se carga en rutas `/propuesta*`.
 - `components/animated-section.tsx`: fade-in al hacer scroll (respeta `prefers-reduced-motion`).
 - `components/ui/`: solo `button` y `card` (shadcn adaptados). Añade componentes nuevos con los tokens del sistema.
 

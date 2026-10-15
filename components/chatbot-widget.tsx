@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 declare global {
   interface Window {
@@ -29,7 +30,7 @@ declare global {
 const WIDGET_BASE_URL = "https://app.nexobite.com";
 const WIDGET_SRC = `${WIDGET_BASE_URL}/widget.js`;
 
-export function ChatbotWidget() {
+function ChatbotWidgetLoader() {
   useEffect(() => {
     window.OmniChat = {
       tenantSlug: "nexobite",
@@ -136,4 +137,20 @@ export function ChatbotWidget() {
   }, []);
 
   return null;
+}
+
+/** Rutas donde el widget no se carga ni se muestra (propuestas a medida para clientes). */
+const isWidgetHidden = (pathname: string | null) => Boolean(pathname?.startsWith("/propuesta"));
+
+export function ChatbotWidget() {
+  const pathname = usePathname();
+  const hidden = isWidgetHidden(pathname);
+
+  // Si el widget ya cargó en otra página, se oculta al navegar a una propuesta
+  useEffect(() => {
+    const root = document.getElementById("omnichat-widget-root");
+    if (root) root.style.display = hidden ? "none" : "";
+  }, [hidden]);
+
+  return hidden ? null : <ChatbotWidgetLoader />;
 }
