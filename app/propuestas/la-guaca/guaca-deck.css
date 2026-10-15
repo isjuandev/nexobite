@@ -1,0 +1,1705 @@
+.gdeck {
+      --bg: #0e1013;
+      --bg-2: #16191d;
+      --card: rgba(22, 25, 29, .72);
+      --card-b: #262b31;
+      --ink: #edeff2;
+      --ink-2: #b4bac3;
+      --ink-3: #78808c;
+      --gold: #22a58c;
+      --gold-2: #5cceb4;
+      --gold-3: #146e5e;
+      --copper: #d6924e;
+      --grad: linear-gradient(100deg, #146e5e 0%, #1c8a76 35%, #2fb89c 55%, #1c8a76 75%, #146e5e 100%);
+      --red: #b23a34;
+      --wa: #25d366;
+      --serif: "Plus Jakarta Sans", system-ui, sans-serif;
+      --sans: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --pad-x: clamp(16px, 5vw, 72px);
+    }
+:where(.gdeck) * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+.gdeck,
+.gdeck {
+      height: 100%;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden
+    }
+.gdeck {
+      background: radial-gradient(120% 90% at 50% 0%, #11211e 0%, var(--bg) 60%)
+    }
+.gdeck::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 20%, transparent 75%);
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 20%, transparent 75%)
+    }
+.gdeck a {
+      color: inherit
+    }
+.gdeck img {
+      display: block;
+      max-width: 100%
+    }
+.gdeck #fx {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none
+    }
+.gdeck .glow {
+      position: fixed;
+      z-index: 0;
+      width: 70vmax;
+      height: 70vmax;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(28, 138, 118, .20) 0%, rgba(28, 138, 118, .06) 35%, transparent 65%);
+      transform: translate(-50%, -50%);
+      left: var(--gx, 70%);
+      top: var(--gy, 30%);
+      transition: left 1.6s var(--ease), top 1.6s var(--ease);
+      filter: blur(10px)
+    }
+.gdeck .grain {
+      position: fixed;
+      inset: -50%;
+      z-index: 1;
+      pointer-events: none;
+      opacity: .07;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation: gd-grain 1.2s steps(6) infinite
+    }
+@keyframes gd-grain {
+      0% {
+        transform: translate(0, 0)
+      }
+
+      20% {
+        transform: translate(-3%, 2%)
+      }
+
+      40% {
+        transform: translate(2%, -3%)
+      }
+
+      60% {
+        transform: translate(-2%, -1%)
+      }
+
+      80% {
+        transform: translate(3%, 3%)
+      }
+
+      100% {
+        transform: translate(0, 0)
+      }
+    }
+.gdeck .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: calc(14px + env(safe-area-inset-top)) var(--pad-x) 14px;
+      background: linear-gradient(to bottom, rgba(14, 16, 19, .92), rgba(14, 16, 19, 0));
+    }
+.gdeck .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none
+    }
+.gdeck .brand img {
+      width: 34px;
+      height: 34px;
+      object-fit: cover;
+      object-position: 62% 12%;
+      border-radius: 50%;
+      border: 1px solid var(--card-b);
+      background: #000
+    }
+.gdeck .brand span {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -.01em
+    }
+.gdeck .brand em {
+      font-style: normal;
+      color: var(--gold)
+    }
+.gdeck .tools {
+      display: flex;
+      align-items: center;
+      gap: 14px
+    }
+.gdeck .counter {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .1em;
+      color: var(--ink-3);
+      font-variant-numeric: tabular-nums
+    }
+.gdeck .counter b {
+      color: var(--ink);
+      font-weight: 600
+    }
+.gdeck .icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: var(--ink-2);
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid var(--card-b);
+      transition: .3s var(--ease)
+    }
+.gdeck .icon-btn:hover {
+      color: var(--gold-2);
+      border-color: var(--gold);
+      transform: translateY(-1px)
+    }
+.gdeck .icon-btn svg {
+      width: 16px;
+      height: 16px
+    }
+.gdeck .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      z-index: 30;
+      background: var(--grad);
+      width: 0;
+      transition: width .9s var(--ease);
+      box-shadow: 0 0 12px rgba(28, 138, 118, .7)
+    }
+.gdeck .nav {
+      position: fixed;
+      z-index: 20;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px var(--pad-x) calc(18px + env(safe-area-inset-bottom));
+      background: linear-gradient(to top, rgba(14, 16, 19, .95) 30%, rgba(14, 16, 19, 0));
+    }
+.gdeck .dots {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+.gdeck .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 99px;
+      border: 0;
+      background: rgba(246, 239, 227, .18);
+      cursor: pointer;
+      transition: all .5s var(--ease);
+      padding: 0
+    }
+.gdeck .dot.on {
+      width: 30px;
+      background: var(--grad)
+    }
+.gdeck .dot:hover {
+      background: rgba(246, 239, 227, .45)
+    }
+.gdeck .arrows {
+      display: flex;
+      gap: 10px
+    }
+.gdeck .arrow {
+      height: 44px;
+      min-width: 44px;
+      padding: 0 18px;
+      border-radius: 8px;
+      border: 1px solid var(--card-b);
+      background: rgba(255, 255, 255, .03);
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font: 600 13px var(--sans);
+      letter-spacing: .06em;
+      transition: .35s var(--ease)
+    }
+.gdeck .arrow svg {
+      width: 18px;
+      height: 18px
+    }
+.gdeck .arrow:hover:not(:disabled) {
+      border-color: var(--gold);
+      color: var(--gold-2)
+    }
+.gdeck .arrow.next {
+      background: #1c8a76;
+      color: var(--ink);
+      border: 0;
+      box-shadow: 0 8px 30px -10px rgba(28, 138, 118, .6)
+    }
+.gdeck .arrow.next:hover:not(:disabled) {
+      color: var(--ink);
+      background: #22a08a;
+      transform: translateX(2px)
+    }
+.gdeck .arrow:disabled {
+      opacity: .25;
+      cursor: default
+    }
+.gdeck .arrow.prev {
+      padding: 0
+    }
+.gdeck .arrow.prev span {
+      display: none
+    }
+.gdeck .hint {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-3)
+    }
+.gdeck .deck {
+      position: fixed;
+      inset: 0;
+      z-index: 5
+    }
+.gdeck .slide {
+      position: absolute;
+      inset: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: calc(84px + env(safe-area-inset-top)) var(--pad-x) calc(110px + env(safe-area-inset-bottom));
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .8s var(--ease), transform 1s var(--ease), filter .8s var(--ease), visibility 0s 1s
+    }
+.gdeck .slide::-webkit-scrollbar {
+      display: none
+    }
+.gdeck .slide.on {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
+      filter: none;
+      transition: opacity .9s var(--ease) .25s, transform 1.1s var(--ease) .2s, filter .9s var(--ease) .25s, visibility 0s
+    }
+.gdeck .slide.out-up {
+      transform: translateY(-6vh) scale(.96);
+      filter: blur(8px)
+    }
+.gdeck .slide.out-down {
+      transform: translateY(6vh) scale(.96);
+      filter: blur(8px)
+    }
+.gdeck .slide.in-from-down {
+      transform: translateY(8vh)
+    }
+.gdeck .slide.in-from-up {
+      transform: translateY(-8vh)
+    }
+.gdeck .inner {
+      min-height: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center
+    }
+.gdeck [data-a] {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .9s var(--ease), transform 1.1s var(--ease);
+      transition-delay: 0s
+    }
+.gdeck .slide.on [data-a] {
+      opacity: 1;
+      transform: none;
+      transition-delay: calc(.35s + var(--i, 0) * .09s)
+    }
+.gdeck [data-a="scale"] {
+      transform: scale(.92)
+    }
+.gdeck [data-a="left"] {
+      transform: translateX(-40px)
+    }
+.gdeck [data-a="right"] {
+      transform: translateX(40px)
+    }
+.gdeck .line {
+      display: block;
+      overflow: hidden;
+      padding-bottom: .08em
+    }
+.gdeck .line>span {
+      display: block;
+      transform: translateY(105%);
+      transition: transform 1.2s var(--ease)
+    }
+.gdeck .slide.on .line>span {
+      transform: none;
+      transition-delay: calc(.3s + var(--i, 0) * .1s)
+    }
+.gdeck .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold)
+    }
+.gdeck .kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(28, 138, 118, .2);
+      animation: gd-ping 2s ease-in-out infinite
+    }
+@keyframes gd-ping {
+      50% {
+        box-shadow: 0 0 0 7px rgba(28, 138, 118, 0)
+      }
+    }
+.gdeck h1,
+.gdeck h2 {
+      font-family: var(--sans);
+      font-weight: 700;
+      line-height: 1.06;
+      letter-spacing: -.035em
+    }
+.gdeck h1 {
+      font-size: clamp(34px, 6vw, 80px)
+    }
+.gdeck h2 {
+      font-size: clamp(30px, 4.4vw, 60px)
+    }
+.gdeck h3 {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(18px, 1.6vw, 21px);
+      line-height: 1.25;
+      letter-spacing: -.015em
+    }
+.gdeck .gold {
+      background: linear-gradient(100deg, #1c8a76, #3fc7a8 50%, #1c8a76);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% 100%;
+      animation: gd-shine 6s linear infinite
+    }
+@keyframes gd-shine {
+      to {
+        background-position: -200% 0
+      }
+    }
+.gdeck .lead {
+      font-size: clamp(15px, 1.35vw, 18px);
+      line-height: 1.7;
+      color: var(--ink-2);
+      max-width: 62ch
+    }
+.gdeck .lead strong {
+      color: var(--ink);
+      font-weight: 600
+    }
+.gdeck .muted {
+      color: var(--ink-3);
+      font-size: 13px;
+      line-height: 1.6
+    }
+.gdeck .mt-s {
+      margin-top: 14px
+    }
+.gdeck .mt-m {
+      margin-top: 26px
+    }
+.gdeck .mt-l {
+      margin-top: 44px
+    }
+.gdeck .card {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--card-b);
+      border-radius: 12px;
+      padding: 26px;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: border-color .4s var(--ease), transform .5s var(--ease)
+    }
+.gdeck .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: radial-gradient(400px circle at var(--mx, 50%) var(--my, -20%), rgba(28, 138, 118, .12), transparent 45%);
+      opacity: 0;
+      transition: opacity .4s
+    }
+.gdeck .card:hover {
+      border-color: rgba(28, 138, 118, .4)
+    }
+.gdeck .card:hover::after {
+      opacity: 1
+    }
+.gdeck .ico {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      background: linear-gradient(145deg, rgba(28, 138, 118, .22), rgba(28, 138, 118, .04));
+      border: 1px solid rgba(28, 138, 118, .3);
+      color: var(--gold-2)
+    }
+.gdeck .ico svg {
+      width: 22px;
+      height: 22px
+    }
+.gdeck .card p {
+      color: var(--ink-2);
+      font-size: 14.5px;
+      line-height: 1.65;
+      margin-top: 10px
+    }
+.gdeck .grid {
+      display: grid;
+      gap: 16px
+    }
+.gdeck .g3 {
+      grid-template-columns: repeat(3, 1fr)
+    }
+.gdeck .g2 {
+      grid-template-columns: 1fr 1fr
+    }
+.gdeck .cover {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px
+    }
+.gdeck .cover>div:first-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center
+    }
+.gdeck .cover .tagline {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 40ch;
+      margin-top: 18px
+    }
+.gdeck .cover h1 {
+      font-size: clamp(36px, min(6.4vw, 8.4vh), 88px);
+      margin-top: 18px
+    }
+.gdeck .cover .for {
+      margin-top: 20px
+    }
+.gdeck .cover .by {
+      margin-top: 24px
+    }
+.gdeck .cover .by {
+      justify-content: center
+    }
+.gdeck .cover-logo {
+      position: relative;
+      order: -1;
+      width: min(240px, 26vh)
+    }
+.gdeck .cover-logo img {
+      width: 100%;
+      filter: drop-shadow(0 30px 60px rgba(28, 138, 118, .25));
+      animation: gd-float 7s ease-in-out infinite
+    }
+.gdeck .cover-logo::before {
+      content: "";
+      position: absolute;
+      inset: 8%;
+      border-radius: 50%;
+      border: 1px solid rgba(28, 138, 118, .18);
+      animation: gd-spin 40s linear infinite
+    }
+.gdeck .cover-logo::after {
+      content: "";
+      position: absolute;
+      inset: -2%;
+      border-radius: 50%;
+      border: 1px dashed rgba(28, 138, 118, .12);
+      animation: gd-spin 70s linear infinite reverse
+    }
+@keyframes gd-float {
+      50% {
+        transform: translateY(-12px)
+      }
+    }
+@keyframes gd-spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+.gdeck .for {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--card-b);
+      background: rgba(255, 255, 255, .03);
+      font-size: 13px;
+      color: var(--ink-2)
+    }
+.gdeck .for b {
+      color: var(--gold-2);
+      font-weight: 600
+    }
+.gdeck .tagline {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(17px, 1.8vw, 22px);
+      color: var(--ink);
+      margin-top: 24px;
+      max-width: 26ch;
+      line-height: 1.3
+    }
+.gdeck .by {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 40px;
+      color: var(--ink-3);
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase
+    }
+.gdeck .nexo {
+      display: inline-block;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .08)
+    }
+.gdeck .nexo img {
+      height: 32px;
+      width: auto
+    }
+.gdeck .problem-head {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 40px
+    }
+.gdeck .stat {
+      font-family: var(--serif);
+      font-size: clamp(56px, 7vw, 96px);
+      line-height: .9
+    }
+.gdeck .card .tag {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: var(--ink-3)
+    }
+.gdeck .search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, .35);
+      border: 1px solid rgba(255, 255, 255, .07);
+      font-size: 13px;
+      color: var(--ink)
+    }
+.gdeck .search svg {
+      width: 15px;
+      height: 15px;
+      color: var(--ink-3);
+      flex: none
+    }
+.gdeck .search .caret {
+      width: 1px;
+      height: 15px;
+      background: var(--gold);
+      animation: gd-blink 1s steps(1) infinite
+    }
+@keyframes gd-blink {
+      50% {
+        opacity: 0
+      }
+    }
+.gdeck .typing {
+      white-space: nowrap;
+      overflow: hidden
+    }
+.gdeck .nores {
+      margin-top: 10px;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--ink-3);
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+.gdeck .nores::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      flex: none
+    }
+.gdeck .save {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, .35);
+      border: 1px solid rgba(255, 255, 255, .07);
+      font-size: 12.5px;
+      color: var(--ink)
+    }
+.gdeck .save .row {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px
+    }
+.gdeck .save .row span {
+      flex: 1;
+      text-align: center;
+      padding: 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 12px
+    }
+.gdeck .save .no {
+      background: #1c8a76;
+      color: var(--ink)
+    }
+.gdeck .save .yes {
+      border: 1px solid var(--card-b);
+      color: var(--ink-3)
+    }
+.gdeck .funnel {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-2);
+      flex-wrap: wrap
+    }
+.gdeck .funnel span {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--card-b);
+      background: rgba(0, 0, 0, .25)
+    }
+.gdeck .funnel span.end {
+      border-color: rgba(37, 211, 102, .5);
+      color: #7fe6a8
+    }
+.gdeck .funnel i {
+      font-style: normal;
+      color: var(--gold)
+    }
+.gdeck .timer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px
+    }
+.gdeck .timer .bar {
+      flex: 1;
+      height: 6px;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, .07);
+      overflow: hidden
+    }
+.gdeck .timer .bar i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #e3b25c, #b3121f);
+      border-radius: inherit
+    }
+@keyframes gd-fill {
+      to {
+        width: 100%
+      }
+    }
+.gdeck .timer span {
+      font-size: 12px;
+      color: var(--ink-3);
+      font-variant-numeric: tabular-nums;
+      min-width: 56px;
+      text-align: right
+    }
+.gdeck .solution {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 60px;
+      align-items: center
+    }
+.gdeck .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 24px;
+      border-radius: 8px;
+      background: #1c8a76;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .04em;
+      box-shadow: 0 14px 40px -12px rgba(28, 138, 118, .65);
+      transition: transform .4s var(--ease), box-shadow .4s
+    }
+.gdeck .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 50px -10px rgba(28, 138, 118, .8)
+    }
+.gdeck .cta svg {
+      width: 18px;
+      height: 18px
+    }
+.gdeck .cta.ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--card-b);
+      box-shadow: none
+    }
+.gdeck .cta.ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold-2)
+    }
+.gdeck .cta.wa {
+      background: var(--wa);
+      color: #04210f;
+      box-shadow: 0 14px 40px -12px rgba(37, 211, 102, .55)
+    }
+.gdeck .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+.gdeck .pill {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--card-b);
+      color: var(--ink-2);
+      background: rgba(255, 255, 255, .02)
+    }
+.gdeck .pill b {
+      color: var(--gold-2);
+      font-weight: 600
+    }
+.gdeck .phone {
+      position: relative;
+      height: min(610px, max(480px, calc(100vh - 210px)));
+      aspect-ratio: 300/610;
+      border-radius: 46px;
+      padding: 11px;
+      background: linear-gradient(145deg, #383e46, #0e1013 40%, #262b31);
+      box-shadow: 0 50px 100px -30px rgba(0, 0, 0, .9), 0 0 0 1px rgba(28, 138, 118, .25), inset 0 0 0 1px rgba(255, 255, 255, .06)
+    }
+.gdeck .phone::before {
+      content: "";
+      position: absolute;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 92px;
+      height: 26px;
+      border-radius: 20px;
+      background: #000;
+      z-index: 3
+    }
+.gdeck .screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 36px;
+      overflow: hidden;
+      background: #0d0a07
+    }
+.gdeck .scroller {
+      animation: gd-scrollsite 16s var(--ease) infinite alternate
+    }
+@keyframes gd-scrollsite {
+
+      0%,
+      12% {
+        transform: translateY(0)
+      }
+
+      88%,
+      100% {
+        transform: translateY(-560px)
+      }
+    }
+.gdeck .m-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 16px 12px;
+      font-size: 9px;
+      color: #d9cdb8;
+      letter-spacing: .1em
+    }
+.gdeck .m-head b {
+      font-family: Georgia, serif;
+      font-size: 15px;
+      letter-spacing: .12em;
+      color: #f3e6cc;
+      font-weight: 600
+    }
+.gdeck .m-hero {
+      position: relative;
+      height: 300px;
+      margin: 0 0 14px;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: linear-gradient(to top, #0d0a07 5%, rgba(13, 10, 7, .2) 60%), radial-gradient(80% 60% at 70% 30%, #7a1b22 0%, #2a0b0d 50%, #0d0a07 100%)
+    }
+.gdeck .m-hero::before {
+      content: "";
+      position: absolute;
+      inset: 40px 30px auto auto;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(246, 217, 149, .5), transparent 70%);
+      filter: blur(10px)
+    }
+.gdeck .m-hero small {
+      font-size: 7.5px;
+      letter-spacing: .2em;
+      color: #e3b25c;
+      position: relative
+    }
+.gdeck .m-hero h4 {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1;
+      margin-top: 6px;
+      color: #fff;
+      position: relative;
+      text-transform: uppercase
+    }
+.gdeck .m-hero p {
+      font-size: 9px;
+      color: #cfc3ad;
+      margin-top: 8px;
+      line-height: 1.5;
+      position: relative
+    }
+.gdeck .m-btn {
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 6px;
+      background: var(--red);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: .06em;
+      position: relative
+    }
+.gdeck .m-sec {
+      padding: 6px 16px 10px;
+      font-family: Georgia, serif;
+      font-size: 17px;
+      color: #f3e6cc
+    }
+.gdeck .m-room {
+      margin: 0 16px 10px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(227, 178, 92, .22);
+      background: #15100b
+    }
+.gdeck .m-room .ph {
+      height: 84px;
+      position: relative
+    }
+.gdeck .m-room .ph::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, #15100b, transparent 60%)
+    }
+.gdeck .m-room .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 8px 10px 10px;
+      gap: 6px
+    }
+.gdeck .m-room b {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .14em;
+      color: #f3e6cc
+    }
+.gdeck .m-room span {
+      font-size: 8px;
+      color: #a99c86
+    }
+.gdeck .m-room i {
+      font-style: normal;
+      font-size: 10px;
+      font-weight: 700;
+      color: #f6d995;
+      white-space: nowrap
+    }
+.gdeck .m-wa {
+      position: absolute;
+      right: 12px;
+      bottom: 14px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 11px;
+      border-radius: 99px;
+      background: var(--wa);
+      color: #04210f;
+      font-size: 8.5px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .5);
+      animation: gd-pulse 2.4s ease-in-out infinite
+    }
+.gdeck .m-wa svg {
+      width: 11px;
+      height: 11px
+    }
+@keyframes gd-pulse {
+      50% {
+        transform: scale(1.06)
+      }
+    }
+.gdeck .phone-wrap {
+      position: relative
+    }
+.gdeck .phone-wrap .badge {
+      position: absolute;
+      z-index: 4;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(22, 25, 29, .85);
+      border: 1px solid var(--card-b);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      color: var(--ink-2);
+      white-space: nowrap;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, .8)
+    }
+.gdeck .phone-wrap .badge b {
+      display: block;
+      color: var(--gold-2);
+      font-size: 14px;
+      font-family: var(--mono)
+    }
+.gdeck .b1 {
+      left: -90px;
+      top: 120px;
+      animation: gd-float 6s ease-in-out infinite
+    }
+.gdeck .b2 {
+      right: -80px;
+      bottom: 150px;
+      animation: gd-float 7s ease-in-out infinite .8s
+    }
+.gdeck .benefits {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      margin-top: 36px
+    }
+.gdeck .benefits .card {
+      grid-column: span 2
+    }
+.gdeck .benefits .card:nth-child(4),
+.gdeck .benefits .card:nth-child(5) {
+      grid-column: span 3
+    }
+.gdeck .num {
+      font-family: var(--mono);
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      opacity: .9
+    }
+.gdeck .benefits h3 {
+      margin-top: 12px
+    }
+.gdeck .roi {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center
+    }
+.gdeck .calc {
+      padding: 30px
+    }
+.gdeck .calc label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--ink-3)
+    }
+.gdeck .calc label output {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--ink)
+    }
+.gdeck input[type=range] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 9px;
+      margin: 18px 0 6px;
+      cursor: pointer;
+      background: linear-gradient(90deg, var(--gold) 0 var(--p, 30%), rgba(255, 255, 255, .1) var(--p, 30%) 100%)
+    }
+.gdeck input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--ink);
+      border: 4px solid #1c8a76;
+      box-shadow: 0 0 0 1px var(--gold), 0 6px 18px rgba(28, 138, 118, .5)
+    }
+.gdeck input[type=range]::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--gold-2);
+      border: 4px solid #2a1d0e;
+      box-shadow: 0 0 0 1px var(--gold)
+    }
+.gdeck .range-legend {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-3)
+    }
+.gdeck .result {
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--card-b)
+    }
+.gdeck .result .big {
+      font-family: var(--sans);
+      font-weight: 800;
+      letter-spacing: -.05em;
+      font-size: clamp(70px, 8vw, 110px);
+      line-height: .8;
+      font-variant-numeric: tabular-nums
+    }
+.gdeck .result p {
+      font-size: 14px;
+      color: var(--ink-2);
+      line-height: 1.5;
+      padding-bottom: 6px
+    }
+.gdeck .couples {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 8px;
+      margin-top: 26px
+    }
+.gdeck .couple {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .08);
+      color: rgba(255, 255, 255, .18);
+      transition: all .45s var(--ease);
+      transition-delay: calc(var(--k) * 25ms)
+    }
+.gdeck .couple svg {
+      width: 55%;
+      height: 55%
+    }
+.gdeck .couple.pay {
+      background: rgba(214, 146, 78, .16);
+      border-color: rgba(214, 146, 78, .5);
+      color: #e9b07a
+    }
+.gdeck .couple.profit {
+      background: rgba(28, 138, 118, .2);
+      border-color: rgba(28, 138, 118, .6);
+      color: #5cceb4
+    }
+.gdeck .legend {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--ink-3)
+    }
+.gdeck .legend i {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 7px;
+      vertical-align: -1px
+    }
+.gdeck .pricing {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      margin-top: 36px;
+      align-items: stretch
+    }
+.gdeck .plan {
+      padding: 32px;
+      display: flex;
+      flex-direction: column
+    }
+.gdeck .plan.feat {
+      border-color: rgba(28, 138, 118, .6);
+      background: linear-gradient(160deg, #142824, rgba(22, 25, 29, .7) 55%)
+    }
+.gdeck .phase {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold)
+    }
+.gdeck .price {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 14px 0 4px;
+      flex-wrap: wrap
+    }
+.gdeck .price b {
+      font-family: var(--sans);
+      font-size: clamp(40px, 4.4vw, 58px);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums
+    }
+.gdeck .price span {
+      color: var(--ink-3);
+      font-size: 13px
+    }
+.gdeck ul.checks {
+      list-style: none;
+      margin-top: 20px;
+      display: grid;
+      gap: 12px
+    }
+.gdeck ul.checks li {
+      display: flex;
+      gap: 12px;
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: var(--ink-2)
+    }
+.gdeck ul.checks li strong {
+      color: var(--ink);
+      font-weight: 600
+    }
+.gdeck ul.checks svg {
+      flex: none;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      color: var(--gold)
+    }
+.gdeck .bonus {
+      margin-top: auto;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 16px 18px;
+      border-radius: 10px;
+      background: rgba(214, 146, 78, .08);
+      border: 1px dashed rgba(214, 146, 78, .5)
+    }
+.gdeck .bonus .gift {
+      font-size: 26px
+    }
+.gdeck .bonus p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--ink)
+    }
+.gdeck .bonus small {
+      display: block;
+      color: var(--copper);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 2px
+    }
+.gdeck .bonus-wrap {
+      padding-top: 24px;
+      margin-top: auto
+    }
+.gdeck .seasons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 22px
+    }
+.gdeck .seasons span {
+      font-size: 12px;
+      padding: 7px 12px;
+      border-radius: 6px;
+      background: #2e2216;
+      border: 1px solid rgba(214, 146, 78, .35);
+      color: #e9b07a
+    }
+.gdeck .equiv {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--ink-3);
+      font-style: italic
+    }
+.gdeck .excl {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 70px;
+      align-items: center
+    }
+.gdeck .seal {
+      position: relative;
+      width: min(360px, 70vw);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center
+    }
+.gdeck .seal svg.ring {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      animation: gd-spin 30s linear infinite
+    }
+.gdeck .seal .core {
+      width: 66%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: radial-gradient(circle at 30% 25%, #173a33, #0e1013 70%);
+      border: 1px solid rgba(28, 138, 118, .45);
+      box-shadow: 0 0 80px -10px rgba(28, 138, 118, .35), inset 0 0 40px rgba(0, 0, 0, .6)
+    }
+.gdeck .seal .core b {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 800;
+      font-size: clamp(90px, 11vw, 140px);
+      line-height: .8;
+      letter-spacing: -.05em
+    }
+.gdeck .seal .core small {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-2)
+    }
+.gdeck .deadline {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+      flex-wrap: wrap
+    }
+.gdeck .day {
+      width: 58px;
+      height: 70px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 2px;
+      border: 1px solid var(--card-b);
+      background: var(--card)
+    }
+.gdeck .day b {
+      font-family: var(--mono);
+      font-size: 28px;
+      line-height: 1
+    }
+.gdeck .day small {
+      font-size: 9px;
+      letter-spacing: .16em;
+      color: var(--ink-3)
+    }
+.gdeck .slide.on .day {
+      animation: gd-tick .8s var(--ease) both;
+      animation-delay: calc(1s + var(--k) * .15s)
+    }
+@keyframes gd-tick {
+      from {
+        transform: rotateX(90deg);
+        opacity: 0
+      }
+
+      to {
+        transform: none;
+        opacity: 1
+      }
+    }
+.gdeck .day.last {
+      border-color: rgba(214, 146, 78, .6);
+      background: #2e2216
+    }
+.gdeck .close {
+      text-align: center;
+      align-items: center
+    }
+.gdeck .close h2 {
+      max-width: 16ch;
+      margin: 22px auto 0
+    }
+.gdeck .close .lead {
+      margin: 20px auto 0;
+      text-align: center
+    }
+.gdeck .actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 36px
+    }
+.gdeck .contact {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 44px;
+      padding-top: 30px;
+      border-top: 1px solid var(--card-b);
+      color: var(--ink-2);
+      font-size: 14px
+    }
+.gdeck .contact a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: color .3s
+    }
+.gdeck .contact a:hover {
+      color: var(--gold-2)
+    }
+.gdeck .contact svg {
+      width: 18px;
+      height: 18px;
+      color: var(--gold)
+    }
+.gdeck .duo {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      justify-content: center
+    }
+.gdeck .duo img.g {
+      width: 120px
+    }
+.gdeck .duo .x {
+      font-family: var(--mono);
+      font-size: 26px;
+      color: var(--ink-3)
+    }
+.gdeck .sweep {
+      position: fixed;
+      inset: 0;
+      z-index: 15;
+      pointer-events: none;
+      overflow: hidden
+    }
+.gdeck .sweep i {
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      height: 1px;
+      top: 50%;
+      background: var(--grad);
+      box-shadow: 0 0 30px 4px rgba(28, 138, 118, .45);
+      opacity: 0;
+      transform: scaleX(0)
+    }
+.gdeck .sweep.go i {
+      animation: gd-sweep 1s var(--ease)
+    }
+@keyframes gd-sweep {
+      0% {
+        opacity: 0;
+        transform: scaleX(0)
+      }
+
+      35% {
+        opacity: 1;
+        transform: scaleX(1)
+      }
+
+      100% {
+        opacity: 0;
+        transform: scaleX(1) translateY(var(--sy, -40vh))
+      }
+    }
+@media (max-width:1100px) {
+.gdeck .b1 {
+        left: -40px
+      }
+.gdeck .b2 {
+        right: -30px
+      }
+}
+@media (max-width:960px) {
+.gdeck .cover,
+.gdeck .solution,
+.gdeck .roi,
+.gdeck .excl,
+.gdeck .problem-head {
+        grid-template-columns: 1fr
+      }
+.gdeck .cover-logo {
+        width: min(220px, 58vw)
+      }
+.gdeck .cover .kicker {
+        letter-spacing: .2em;
+        gap: 8px
+      }
+.gdeck .g3 {
+        grid-template-columns: 1fr
+      }
+.gdeck .benefits {
+        grid-template-columns: 1fr
+      }
+.gdeck .benefits .card,
+.gdeck .benefits .card:nth-child(4),
+.gdeck .benefits .card:nth-child(5) {
+        grid-column: auto
+      }
+.gdeck .pricing {
+        grid-template-columns: 1fr
+      }
+.gdeck .solution {
+        gap: 40px
+      }
+.gdeck .phone-wrap {
+        justify-self: center
+      }
+.gdeck .excl {
+        gap: 30px
+      }
+.gdeck .seal {
+        justify-self: center
+      }
+.gdeck .problem-head {
+        gap: 20px;
+        margin-bottom: 26px
+      }
+.gdeck .inner {
+        justify-content: flex-start
+      }
+.gdeck .hint {
+        display: none
+      }
+}
+@media (max-width:600px) {
+.gdeck .topbar .counter {
+        display: none
+      }
+.gdeck .brand span {
+        font-size: 17px
+      }
+.gdeck .card {
+        padding: 22px;
+        border-radius: 18px
+      }
+.gdeck .plan {
+        padding: 24px
+      }
+.gdeck .phone {
+        height: 520px;
+        border-radius: 40px
+      }
+.gdeck .screen {
+        border-radius: 31px
+      }
+.gdeck .b1 {
+        left: -14px;
+        top: 70px
+      }
+.gdeck .b2 {
+        right: -14px;
+        bottom: 110px
+      }
+.gdeck .phone-wrap .badge {
+        font-size: 11px;
+        padding: 8px 11px
+      }
+.gdeck .arrow.next span {
+        display: none
+      }
+.gdeck .arrow.next {
+        padding: 0;
+        width: 46px;
+        justify-content: center
+      }
+.gdeck .dots {
+        gap: 6px
+      }
+.gdeck .dot.on {
+        width: 22px
+      }
+.gdeck .couples {
+        gap: 6px
+      }
+.gdeck .cta {
+        width: 100%;
+        justify-content: center
+      }
+.gdeck .duo img.g {
+        width: 90px
+      }
+.gdeck .day {
+        width: 50px;
+        height: 62px
+      }
+}
+@media (prefers-reduced-motion:reduce) {
+.gdeck *,
+.gdeck *::before,
+.gdeck *::after {
+        animation: none !important;
+        transition-duration: .01ms !important;
+        transition-delay: 0s !important
+      }
+}
+@media print {
+.gdeck,
+.gdeck {
+        overflow: visible;
+        height: auto
+      }
+.gdeck .topbar,
+.gdeck .nav,
+.gdeck .progress,
+.gdeck .sweep,
+.gdeck #fx,
+.gdeck .grain,
+.gdeck .glow {
+        display: none !important
+      }
+.gdeck .deck {
+        position: static
+      }
+.gdeck .slide {
+        position: relative;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        filter: none;
+        page-break-after: always;
+        min-height: 100vh;
+        overflow: visible
+      }
+.gdeck [data-a],
+.gdeck .line>span {
+        opacity: 1 !important;
+        transform: none !important
+      }
+}
+.gdeck {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+}
+
+/* Evita choques con clases del sitio: `.ring` (Tailwind pinta un contorno de 1px) y `.badge` (globals.css) */
+.gdeck .seal svg.ring {
+  box-shadow: none;
+}
+.gdeck .phone-wrap .badge {
+  display: block;
+  align-items: normal;
+  gap: 0;
+  font-family: inherit;
+  font-weight: inherit;
+}

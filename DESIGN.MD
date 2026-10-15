@@ -271,8 +271,12 @@ Estructura fija (mismos patrones que la landing):
 
 Cada página emite `Service`, `BreadcrumbList` y `FAQPage` en JSON-LD (el `FAQPage` de la landing ya no se emite globalmente). Para añadir un servicio, agrega un objeto a `services` en `lib/services.ts`.
 
-### Propuestas a medida (`app/propuestas/[cliente]`)
-Presentación a pantalla completa, `noindex`, una diapositiva por pantalla (`components/proposal-deck.tsx`): flechas, puntos, contador, barra de progreso de 2px, teclado, rueda, deslizamiento táctil y enlace por `#n`. Cada diapositiva usa `Reveal` (aparición escalonada) y `Line` (titular que sube desde una máscara) de `components/deck-parts.tsx`; los efectos por diapositiva (`TypingText`, `CountUp`, `RoiCalculator`) se activan con `useSlideActive`. Estilos en `app/globals.css` (bloque "Deck de propuestas", prefijo `deck-`). Mantiene la paleta Instrumento: sin partículas, grano, resplandores ni degradados; la línea de barrido es de 1px en `signal`. Respeta `prefers-reduced-motion`.
+### Propuestas a medida (`app/propuestas/[cliente]`) — excepción al sistema
+Son presentaciones a pantalla completa, `noindex`, con **estilo propio** que no sigue "Instrumento": rejilla y brillo de fondo, partículas en canvas, grano, degradados verdes, tarjetas con foco que sigue al puntero, transiciones con desenfoque y línea de barrido. Esta excepción aplica solo a `/propuestas/*`; el resto del sitio mantiene las prohibiciones de la sección 6.
+
+- **Colores de marca obligatorios** (no se cambian): fondo `#0E1013`, tarjeta `#16191D`, tinta `#EDEFF2`, verde señal `#1C8A76` (con `#146E5E` y tintes `#22A58C`/`#5CCEB4` para acentos), cobre `#D6924E`, alerta `#B23A34`.
+- Estructura: `deck.html` (marcado; para actualizar el contenido se edita este archivo), `guaca-deck.css` (estilos del diseño original, aislados bajo `.gdeck` y con keyframes `gd-*`) y `guaca-deck.tsx` (navegación por teclado, rueda y táctil, enlace `#n`, escritura en la búsqueda, conteo de precios, calculadora de retorno y partículas).
+- El widget de chat no se carga en estas rutas. Los logos del cliente viven en `public/propuestas/`.
 
 ### Movimiento
 - `AnimatedSection`: al entrar en viewport, fade-in con desplazamiento de 24px (`translate-y-6` → 0) en 500ms `ease-out`, con `delay` opcional; respeta `prefers-reduced-motion`.
@@ -280,7 +284,7 @@ Presentación a pantalla completa, `noindex`, una diapositiva por pantalla (`com
 - **Feedback de pulsación**: los botones se hunden a `scale(0.97)` al presionar (150ms, `ease-out`).
 - **Menú móvil**: entra con fade + 8px desde arriba en 200ms. **FAQ**: el panel abre con altura + opacidad en 250ms (`details::details-content`; en navegadores sin soporte abre sin animar).
 - Con `prefers-reduced-motion` las cascadas pasan a solo opacidad. Rechazado a propósito: contadores animados en métricas, hover con elevación en tarjetas y movimiento en el header (datos que se leen o elementos de uso frecuente).
-- Transiciones de color y borde en botones y tarjetas (`transition-colors`). Fuera de las propuestas a medida (`deck-*`), no hay animaciones decorativas continuas ni keyframes propios.
+- Transiciones de color y borde en botones y tarjetas (`transition-colors`). Fuera de las propuestas a medida (`gd-*`), no hay animaciones decorativas continuas ni keyframes propios.
 
 ---
 
