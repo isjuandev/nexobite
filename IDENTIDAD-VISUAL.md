@@ -1,123 +1,159 @@
-# IDENTIDAD VISUAL — NexoBite (Sistema "Instrumento" v6.0)
+# IDENTIDAD VISUAL — NexoBite (Sistema "Instrumento" v6.1)
 
-## Concepto Visual y Filosofía
-**NexoBite** proyecta una estética de **"Instrumento"**: software de producto de alta precisión, claridad operativa y foco en resultados comerciales. Diseñado para transmitir solidez a tomadores de decisiones comerciales (gerentes, directores y dueños de negocio).
+> Documento de marca. Describe lo que hoy se ve en el sitio (`www.nexobite.com`), verificado contra el código (`app/globals.css`, `components/`) y la landing en ejecución. El detalle técnico de implementación está en [`DESIGN.MD`](DESIGN.MD).
 
-Nuestra identidad opera bajo una regla fundamental: **Dark Mode Exclusivo**, con una paleta calibrada de alto contraste funcional, bordes estructurales ultrafinos de 1px, corchetes de hardware en cobre y verde señal como indicador de conversión y operatividad.
+## Concepto visual
 
-### Evolución v6.0: De "Hype de IA / Telemetría de Servidores" a "Producto y Negocio"
-La identidad descarta los clichés superficiales de la industria (robots genéricos, canvas de partículas interactivas, fondos de neón difusos y telemetría ficticia de colas de jobs `p95`). 
-La narrativa visual dominante se centra en **interfaces vivas de producto**:  
-`Landing Page → Chatbot en WhatsApp Cloud API → Calificación automática de lead → CRM comercial → Cierre de venta`.
+**NexoBite** proyecta la estética de un **instrumento**: software de producto sobrio, preciso y claro, pensado para dueños y gerentes de negocio que quieren vender más sin complicarse. La marca se parece al producto que vende, un asistente de WhatsApp y un panel donde el equipo opera.
 
----
+Reglas fundamentales:
 
-## Paleta de Colores Oficial (Modo Oscuro Exclusivo)
+- **Modo oscuro exclusivo**, con una paleta calibrada de alto contraste.
+- **Bordes ultrafinos de 1px** para estructurar tarjetas, tablas y divisores.
+- **Verde señal** como color de acción y estado operativo.
+- **Cobre** como acento de atención y dato, y como firma de marca en los corchetes `.instrument`.
+- **Producto a la vista:** simuladores y maquetas reales en lugar de ilustraciones abstractas.
+- **Lenguaje sin tecnicismos:** se habla de atender, ordenar y vender.
 
-El sistema de colores no utiliza tonalidades genéricas de marketing; cada token tiene un propósito operacional:
+### Qué dejamos atrás
+La identidad descarta los clichés de "IA": robots, cerebros digitales, redes neuronales, neón difuso, campos de partículas y telemetría ficticia de servidores. La historia visual es el flujo comercial:
 
-### Tokens Base de Superficie y Tinta
-
-| Token / Rol               | Variable CSS        | Código HEX / Valor | Uso Principal                                            |
-| ------------------------- | ------------------- | ------------------ | -------------------------------------------------------- |
-| **Papel / Canvas**        | `--paper`           | `#0E1013`          | Fondo estructural general — negro carbón profundo        |
-| **Papel Profundo**        | `--paper-deep`      | `#08090B`          | Fondo de pantallas de software y consolas de chat        |
-| **Card / Superficie**     | `--card`            | `#16191D`          | Contenedores modulares, tarjetas y paneles interactivos  |
-| **Card Hover**            | `--card-hover`      | `#1C2025`          | Estado activo / hover de tarjetas y módulos              |
-| **Línea Fina**            | `--line`            | `#262B31`          | Bordes estructurales de 1px, tablas y divisores          |
-| **Línea Fuerte**          | `--line-strong`     | `#373E47`          | Bordes interactivos en foco, hover o cabeceras de tabla  |
-| **Tinta Principal**       | `--ink`             | `#EDEFF2`          | Texto titular y cifras destacadas — máxima legibilidad    |
-| **Tinta Secundaria**      | `--ink-soft`        | `#9AA2AD`          | Descripciones de servicios, párrafos y especificaciones  |
-| **Tinta Atenuada**        | `--ink-mute`        | `#5D6571`          | Metadatos comerciales, etiquetas de paso y microcopy     |
-
-### Colores Cromáticos y Acentos
-
-| Color / Rol               | Variable CSS        | Código HEX / Valor | Uso Principal                                            |
-| ------------------------- | ------------------- | ------------------ | -------------------------------------------------------- |
-| **Verde Señal (Primario)**| `--signal`          | `#1C8A76`          | Color de acción primaria (CTA), estado 24/7 y confirmación de eventos |
-| **Verde Señal Hover**     | `--signal-hover`    | `#146356`          | Estado hover/active de botones Signal                    |
-| **Verde Señal Suave**     | `--signal-soft`     | `rgba(28,138,118,0.12)` | Burbujas de respuesta del bot, badges de estado activo y celdas ganadas |
-| **Cobre (Secundario)**    | `--copper`          | `#D6924E`          | Corchetes `.instrument`, cuellos de botella y plazos de entrega |
-| **Cobre Profundo**        | `--copper-deep`     | `#B8763A`          | Bordes de acento de cobre, sombras ténues de calibración |
-| **Cobre Suave**           | `--copper-soft`     | `rgba(214,146,78,0.12)` | Fondos de alerta comercial y badges de plan destacado    |
-| **Alerta / Pérdida**      | `--alert`           | `#B23A34`          | Iconos de dolor comercial y comparativas manuales (`FaTimes`) |
+`Web que capta → Asistente de WhatsApp que atiende y califica → Pantalla donde el equipo opera → Cierre de venta`
 
 ---
 
-## Tipografía Oficial
+## Logotipo
 
-El emparejamiento tipográfico combina claridad editorial contemporánea con rigor numérico y técnico:
-
-| Uso                    | Fuente                 | Fuente CSS / Clase   | Pesos                | Detalle                                           |
-| ---------------------- | ---------------------- | -------------------- | -------------------- | ------------------------------------------------- |
-| **Display y Titulares**| **Plus Jakarta Sans**  | `font-sans`          | 600, 700, 800        | Títulos directos de negocio, letter-spacing: -0.02em |
-| **Cuerpo de Texto**    | **Plus Jakarta Sans**  | `font-sans`          | 400, 500             | Textos informativos, line-height 1.6 cómodo       |
-| **Precios y Métricas** | **JetBrains Mono**     | `font-mono`          | 400, 500, 600        | Precios en COP, tiempos de respuesta y entregables |
-
-### Modificadores Numéricos
-- **`.tnum` / Tabular Nums**: Obligatorio en precios (`$1.190.000`, `$1.890.000`, `$3.490.000`), mensualidades, tiempos de entrega y porcentajes (`font-variant-numeric: tabular-nums`). Evita desalineación de cifras numéricas.
+- Marca **Nexobite**: monograma "N" con un punto de cobre y el nombre en Plus Jakarta Sans.
+- Archivos oficiales en `public/`: `logo-mark-dark.svg` (el que usa el sitio, componente `BrandLogo`), `logo-mark-light.svg`, `nexobite-logo.png` y `og-image.png`/`og-image.svg` para redes sociales.
+- No recolorear, deformar ni añadir efectos a los logotipos.
 
 ---
 
-## Componentes y Signos de Identidad "Instrumento"
+## Paleta de colores oficial (modo oscuro)
 
-### 1. Corchetes de Calibración (`.instrument`)
-Brackets angulares en cobre (`#D6924E`) de 8px de brazo y 1.5px de grosor.  
-**Regla de uso quirúrgico:** Reservados **exclusivamente** para:
-1. El marco del simulador de chat interactivo del Hero.
-2. La tarjeta de precio del plan comercial recomendado (`Plan Sales`).
-3. El contenedor central del CTA de diagnóstico final.
+Cada token tiene un propósito operativo. Los valores son los definidos en `app/globals.css`.
 
-### 2. Live Product Mockups (Interfaces de Producto)
-Reemplazan cualquier arte abstracto o decorativo:
-- **WhatsApp Cloud API Sandbox:** Ventana de chat con foto oficial, burbujas de prospecto entrante y respuestas estructuradas del asistente con opciones en botones y pie de integración CRM.
-- **Tablero CRM & Lead Pipeline:** Fichas de prospectos con estado, canal de origen y valor estimado.
+### Superficie y tinta
 
-### 3. Barra de Telemetría Comercial (`MetricsBar`)
-Franja horizontal de alto impacto con 4 métricas tangibles de negocio (`< 3 seg`, `24/7`, `100% oficial`, `0 hrs perdidas`), reemplazando la regla ornamental milimétrica obsoleta (`.ruler`).
+| Rol | Variable CSS | Valor | Uso principal |
+| --- | --- | --- | --- |
+| **Papel / Canvas** | `--paper` | `#0E1013` | Fondo general del sitio — grafito casi negro |
+| **Card / Superficie** | `--card` | `#16191D` | Tarjetas, paneles, simuladores y botón secundario |
+| **Neutro** | `--secondary` / `--muted` | `#1E2227` | Fondos neutros de componentes |
+| **Línea fina** | `--line` | `#262B31` | Borde estructural de 1px y divisores |
+| **Línea fuerte** | `--line-strong` | `#383E46` | Bordes de botones outline, badges neutros y separadores |
+| **Tinta principal** | `--ink` | `#EDEFF2` | Titulares y cifras — máxima legibilidad |
+| **Tinta secundaria** | `--ink-soft` | `#B4BAC3` | Párrafos y descripciones |
+| **Tinta atenuada** | `--ink-mute` | `#78808C` | Metadatos, etiquetas y microcopy |
 
-### 4. Tabla Bipolar Antes/Después (`BeforeAfterSection`)
-Tabla de 2 columnas de alto contraste:
-- Columna izquierda: *Operación Manual Habitual* (iconos rojos `FaTimes`).
-- Columna derecha: *Operación con NexoBite* (iconos verdes `FaCheck`, fondo suave `rgba(28, 138, 118, 0.08)`).
+### Acentos
 
-### 5. Badges Operativos de Estado (`.badge`)
-- `.badge.b-active`: Micro-punto verde pulsante (`Respuesta inmediata 24/7`).
-- `.badge.b-completed`: Punto verde sólido (`Calificación automática de prospectos`).
-- `.badge.b-waiting`: Punto cobre tenue (`Integrado a tu número actual`).
+| Rol | Variable CSS | Valor | Uso principal |
+| --- | --- | --- | --- |
+| **Verde señal** | `--signal` | `#1C8A76` | CTAs, estado activo, checks, palabra destacada de titulares, foco |
+| **Verde señal profundo** | `--signal-deep` | `#146E5E` | Hover de botones verdes |
+| **Verde señal suave** | `--signal-soft` | `#142824` | Burbujas del asistente, badges activos |
+| **Cobre** | `--copper` | `#D6924E` | Cuellos de botella, plazos, chips de plan, corchetes `.instrument` |
+| **Cobre suave** | `--copper-soft` | `#2E2216` | Fondo de chips y badges de cobre |
+| **Alerta** | `--alert` | `#B23A34` | Cruces de la operación manual, acciones destructivas |
+| **Alerta suave** | `--alert-soft` | `#381A18` | Fondo de estados de error |
+| **Ámbar** | `--amber` / `--amber-soft` | `#C79A2E` / `#382C14` | Advertencias |
 
-### 6. Eyebrows Comerciales (`.eyebrow`)
-Prefijos de sección con numeración arquitectónica:
-- Formato: `01 · EL COSTO DE LA ATENCIÓN MANUAL`, `02 · ARQUITECTURA DE ATENCIÓN`, `07 · INVERSIÓN TRANSPARENTE`, etc.
-- Punto indicador verde señal (`.eyebrow-dot`).
+> Los tokens `paper-deep`, `card-hover`, `signal-hover` y `copper-deep` de versiones anteriores ya no forman parte del sistema.
 
-### 7. Botones Comerciales
-- **Radio de esquina**: 4px (`rounded-sm`), nunca redondeo completo (pill).
-- **Variante `signal`**: Fondo `#1C8A76`, texto `#0E1013` en negrita, icono `FaWhatsapp` o `FaArrowRight`.
-- **Variante `outline`**: Fondo transparente, borde fino `#373E47`, hover a `#EDEFF2`.
+### Proporción de uso
+Predominan el carbón y las tintas neutras; el verde señal se reserva para lo accionable y confirmado; el cobre, para lo que merece atención. Ningún acento debe ocupar superficies grandes.
 
 ---
 
-## Reglas de la Marca
+## Tipografía oficial
+
+| Uso | Fuente | Clase | Detalle |
+| --- | --- | --- | --- |
+| **Titulares** | Plus Jakarta Sans | `font-sans` / `font-display` | h1 54px bold; h2 36px semibold; h3 16px semibold; tracking -0.015em a -0.025em |
+| **Cuerpo** | Plus Jakarta Sans | `font-sans` | 16px, regular, interlineado 1.5, color `ink-soft` |
+| **Precios** | Plus Jakarta Sans extrabold | `font-display font-extrabold tnum` | 30–36px, números tabulares |
+| **Etiquetas técnicas** | JetBrains Mono | `font-mono` | Eyebrows, badges, chips, plazos, mensualidad, timestamps (10–11px) |
+
+### Números
+Usar `.tnum` (`font-variant-numeric: tabular-nums`) en precios (`$1.190.000`, `$1.890.000`, `$3.490.000`), mensualidades, plazos y porcentajes para que las cifras queden alineadas.
+
+### Énfasis en titulares
+Cada titular de sección cierra con una frase de color: **verde señal** en casi todo el sitio y **cobre** en la sección de problemas ("depende de responder a mano").
+
+---
+
+## Componentes y signos de identidad
+
+### 1. Corchetes de calibración (`.instrument`)
+Dos corchetes de cobre (esquina superior izquierda e inferior derecha) de **12px de brazo y 2px de grosor** sobre una tarjeta con borde fino.
+
+Úsalos solo en el elemento de mayor jerarquía de cada vista:
+1. El simulador de chat del Hero.
+2. La tarjeta del plan recomendado (`Plan Sales`).
+3. En páginas internas (propuesta comercial, contacto de condiciones del servicio), el plan u opción destacada.
+
+### 2. Interfaces de producto (mockups)
+- **Simulador de WhatsApp** (Hero y Demo): cabecera de estado, timestamps, mensaje del cliente en superficie `card`, respuestas del asistente en `signal-soft`, opciones rápidas y pie `TODO CONECTADO / HECHO AUTOMÁTICAMENTE`.
+- **Panel de la plataforma** (sección "Tu pantalla"): pestañas Chats, Agenda, Clientes y Resultados, siempre con la leyenda "Maqueta ilustrativa".
+
+### 3. Barra de métricas (`MetricsBar`)
+Cuatro mensajes de valor separados por líneas de 1px: `Automática`, `Fuera de horario`, `2 opciones`, `0 hrs`.
+
+### 4. Tabla Antes/Después
+Tres columnas: *Aspecto operativo*, *Atendiendo a mano* (cruces `×`) y *Con NexoBite* (checks `✓` en verde señal).
+
+### 5. Badges de estado (`.badge`)
+Pequeñas etiquetas mono con punto de color:
+- `b-active` / `b-completed`: verde señal (`Contesta de noche y fines de semana`, `Detecta quién sí quiere comprar`).
+- `b-waiting`: neutro (`Funciona con tu número actual`).
+- `b-delayed`: cobre. `b-failed`: alerta.
+
+### 6. Eyebrows (`.eyebrow`)
+Prefijo de sección en mono, verde señal, con una línea de 14px y numeración: `01 · LO QUE CUESTA ATENDER A MANO`, `04 · ANTES Y DESPUÉS`, `07 · INVERSIÓN TRANSPARENTE Y PLANES`, `09 · HABLEMOS`.
+
+### 7. Etiquetas de proceso
+Tarjetas numeradas en mono: `CUELLO 01–04` (cobre), `FASE 01–03`, `PASO 01–03` con chip de plazo y bloque `ENTREGABLE`.
+
+### 8. Botones
+- **Radio:** 4px (`rounded-sm`); nunca píldora.
+- **`signal`:** fondo `#1C8A76`, texto `#0E1013` semibold, hover `#146E5E`; icono `FaWhatsapp` o `FaArrowRight`.
+- **`outline`:** fondo `card`, borde `#383E46`, texto `#EDEFF2`; hover con borde `#EDEFF2`.
+- **`default`:** fondo `#EDEFF2` con texto `#0E1013`; hover a verde profundo.
+
+### 9. Header y chat
+- Header flotante de barra fina con logo, navegación, `Iniciar sesión` y el CTA `Revisión Gratis`.
+- Botón de chat circular de 56px en la esquina inferior derecha, en verde señal con icono blanco.
+
+---
+
+## Reglas de la marca
 
 ### Hacer
-- Mantener la aplicación estrictamente en modo oscuro (`<html className="dark">`).
-- Usar líneas finas de 1px (`border-line` = `#262B31`) para estructurar tablas, tarjetas y divisores.
-- Utilizar `JetBrains Mono` con `.tnum` para cualquier precio, moneda COP o tiempo de entrega.
-- Reservar los corchetes `.instrument` exclusivamente para los 3 elementos de máxima jerarquía.
-- Presentar precios transparentes y netos (desglosando implementación única de mensualidad), sin tachaduras artificiales.
-- Conservar los logotipos oficiales SVG (`logo-mark-dark.svg`, `logo-mark-light.svg`) intactos.
+- Mantener el sitio en modo oscuro (`<html className="dark">`).
+- Estructurar con líneas de 1px (`border-line`).
+- Usar `.tnum` en precios, plazos y porcentajes.
+- Mostrar precios netos en COP, separando implementación única y mensualidad, sin tachaduras.
+- Reservar `.instrument` para el elemento principal de cada vista.
+- Mostrar producto real (simuladores y maquetas) en lugar de arte decorativo.
+- Conservar los logotipos SVG sin alteraciones.
+- Escribir en lenguaje claro, sin tecnicismos.
 
-### No Hacer
-- No implementar modo claro ni selectores de tema.
-- No utilizar elementos gráficos de "hype de IA" (robots, cerebros digitales, redes neuronales, circuitos).
-- No utilizar animaciones de partículas en canvas (`ParticleField`) ni bucles continuos de GPU.
-- No mostrar telemetría ficticia de backend (`p95 118ms`, `tenant_id`) como argumento comercial.
-- No utilizar botones redondeados tipo píldora (`rounded-full`) para CTAs.
-- No utilizar gradientes estridentes ni halos de neón que rompan la sobriedad ejecutiva.
+### No hacer
+- No implementar modo claro ni selector de tema.
+- No usar gráficos de "hype de IA" (robots, cerebros, redes neuronales, circuitos).
+- No usar campos de partículas ni animaciones decorativas continuas.
+- No mostrar telemetría ficticia de backend (`p95`, `tenant_id`) como argumento comercial.
+- No usar botones tipo píldora.
+- No usar gradientes estridentes ni halos de neón.
+- No inventar testimonios ni descuentos: los testimonios se publican solo con casos reales validados.
+
+### Excepción vigente
+Las páginas `/politica-de-privacidad`, `/condiciones-del-servicio` y `/propuesta-template` todavía muestran un campo de partículas (`ParticleField`), contrario a estas reglas. Está registrado como deuda en la sección 7 de [`DESIGN.MD`](DESIGN.MD).
 
 ---
 
-**Versión:** 6.0 (Identidad Visual y de Producto "Instrumento")  
-**Sistema:** Dark Mode Exclusivo · Next.js 16 + Tailwind CSS v4  
+**Versión:** 6.1 (sincronizada con el código el 2026-10-15)
+**Sistema:** Modo oscuro exclusivo · Next.js 16 + Tailwind CSS v4
 **Autor:** NexoBite DIGITAL

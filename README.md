@@ -143,7 +143,7 @@ El repo incluye skills de diseño instalados con `npx skills` en `.agents/skills
 
 ## Documentación de diseño
 
-- [`IDENTIDAD-VISUAL.md`](IDENTIDAD-VISUAL.md): identidad de marca "Instrumento" (v6.0) y guía de UI de producto.
+- [`IDENTIDAD-VISUAL.md`](IDENTIDAD-VISUAL.md): identidad de marca "Instrumento" (v6.1), sincronizada con el código.
 - [`DESIGN.MD`](DESIGN.MD): sistema de diseño y arquitectura comercial.
 - [`docs/REPORTE-VINCULACION-SAAS.md`](docs/REPORTE-VINCULACION-SAAS.md): cómo se relacionan la landing y NexoBite SaaS.
 

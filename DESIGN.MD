@@ -1,26 +1,26 @@
 ---
-version: 6.0
+version: 6.1
 name: NexoBite-Instrumento-design-system
-description: NexoBite's design system "Instrumento" — a precision-engineered commercial and product UI aesthetic built on a dark carbon paper canvas (#0E1013), structured modular card surfaces (#16191D), hairline structural borders (#262B31), Signal Green operational action (#1C8A76), and secondary copper focus accents (#D6924E). The system focuses on software product UI, live conversation sandboxes, lead qualification workflows, and commercial conversion, eliminating generic AI clichés and pseudo-hardware telemetry.
+description: NexoBite's design system "Instrumento" — a precision-engineered commercial and product UI aesthetic built on a dark carbon paper canvas (#0E1013), modular card surfaces (#16191D), hairline structural borders (#262B31), Signal Green operational action (#1C8A76) and copper focus accents (#D6924E). Documented from the real implementation (app/globals.css, components/ui, components/*) and verified against the running landing at desktop (1024px) and mobile (375px) widths.
 
 colors:
   paper: "#0E1013"
-  paper-deep: "#08090B"
   card: "#16191D"
-  card-hover: "#1C2025"
+  secondary: "#1E2227"
   line: "#262B31"
-  line-strong: "#373E47"
+  line-strong: "#383E46"
   ink: "#EDEFF2"
-  ink-soft: "#9AA2AD"
-  ink-mute: "#5D6571"
+  ink-soft: "#B4BAC3"
+  ink-mute: "#78808C"
   signal: "#1C8A76"
-  signal-hover: "#146356"
-  signal-soft: "rgba(28, 138, 118, 0.12)"
+  signal-deep: "#146E5E"
+  signal-soft: "#142824"
   copper: "#D6924E"
-  copper-deep: "#B8763A"
-  copper-soft: "rgba(214, 146, 78, 0.12)"
+  copper-soft: "#2E2216"
   alert: "#B23A34"
   alert-soft: "#381A18"
+  amber: "#C79A2E"
+  amber-soft: "#382C14"
 
 typography:
   display-xxl:
@@ -28,161 +28,274 @@ typography:
     fontSize: 54px
     fontWeight: 700
     lineHeight: 1.1
-    letterSpacing: -0.03em
+    letterSpacing: -0.025em
+    usage: "h1 del Hero (text-[54px]); escala en móvil"
   display-xl:
     fontFamily: "Plus Jakarta Sans, sans-serif"
-    fontSize: 40px
+    fontSize: 36px
     fontWeight: 600
-    lineHeight: 1.15
-    letterSpacing: -0.02em
-  display-lg:
-    fontFamily: "Plus Jakarta Sans, sans-serif"
-    fontSize: 32px
-    fontWeight: 600
-    lineHeight: 1.2
-    letterSpacing: -0.02em
+    lineHeight: 1.11
+    letterSpacing: -0.015em
+    usage: "h2 de sección (text-4xl)"
   heading-md:
     fontFamily: "Plus Jakarta Sans, sans-serif"
-    fontSize: 20px
+    fontSize: 16px
     fontWeight: 600
-    lineHeight: 1.3
-    letterSpacing: -0.01em
+    lineHeight: 1.5
+    letterSpacing: -0.015em
+    usage: "h3 de tarjetas (la base de h1–h6 es 600 / -0.015em)"
   body-md:
     fontFamily: "Plus Jakarta Sans, sans-serif"
-    fontSize: 15px
-    fontWeight: 400
-    lineHeight: 1.6
-    letterSpacing: 0
-  body-sm:
-    fontFamily: "Plus Jakarta Sans, sans-serif"
-    fontSize: 13px
+    fontSize: 16px
     fontWeight: 400
     lineHeight: 1.5
-    letterSpacing: 0
-  mono-technical:
-    fontFamily: "JetBrains Mono, monospace"
-    fontSize: 12px
-    fontWeight: 500
-    lineHeight: 1.4
-    letterSpacing: 0.02em
-  mono-tabular:
-    fontFamily: "JetBrains Mono, monospace"
+    color: ink-soft
+  body-sm:
+    fontFamily: "Plus Jakarta Sans, sans-serif"
+    fontSize: 14px
+    fontWeight: 400
+    lineHeight: 1.5
+  price:
+    fontFamily: "Plus Jakarta Sans (font-display), sans-serif"
+    fontSize: 30px / 36px
+    fontWeight: 800
     fontVariantNumeric: "tabular-nums"
-    fontSize: 13px
+    letterSpacing: tight
+    usage: "Precios de los planes (text-3xl sm:text-4xl font-extrabold tnum)"
+  mono-eyebrow:
+    fontFamily: "JetBrains Mono, monospace"
+    fontSize: 11px
+    fontWeight: 600
+    letterSpacing: 0.06em
+    color: signal
+  mono-badge:
+    fontFamily: "JetBrains Mono, monospace"
+    fontSize: 11px
     fontWeight: 500
+  mono-micro:
+    fontFamily: "JetBrains Mono, monospace"
+    fontSize: 10px
+    fontWeight: 600
+    usage: "Chips de plan, etiquetas CUELLO/FASE/PASO, timestamps"
 
 spacing:
-  xxs: 2px
-  xs: 4px
-  sm: 8px
-  md: 12px
-  lg: 16px
-  xl: 24px
-  xxl: 32px
-  section: 80px
+  container-max: 1280px
+  container-gutter: "16px / 24px / 32px (base / sm / lg)"
+  section-y: 112px
+  card-padding: 24px
+  header-height: 56px
 
 rounded:
   sm: 4px
-  md: 6px
-  lg: 8px
+  md: 8px
+  lg: 12px
+
+shadows:
+  card: "0 1px 2px rgb(0 0 0 / 0.4)"
+  focus: "0 0 0 3px rgba(28, 138, 118, 0.25)"
 ---
 
-# NexoBite Design System: "Instrumento" (v6.0)
+# NexoBite Design System: "Instrumento" (v6.1)
 
-## 1. Executive Summary & Philosophy
+> **Fuente de verdad:** este documento describe lo que existe en el código. Los tokens viven en `app/globals.css` (`:root` y `@theme inline`), los botones en `components/ui/button.tsx` y las tarjetas en `components/ui/card.tsx`. Si cambias un valor en el código, actualiza este archivo. La sección 7 lista las diferencias conocidas entre la intención del sistema y el estado actual.
 
-NexoBite designs and deploys commercial automation systems, intelligent WhatsApp infrastructure, and conversion-focused websites for companies and SMEs. 
+## 1. Filosofía
 
-The visual identity, codenamed **"Instrumento"**, rejects both generic SaaS fluff (saturated purple gradients, soft pill buttons, consumer emojis) and **generic "AI Hype" aesthetics** (floating particle fields, glowing neon halos, vintage robot heads, server queue telemetry).
+NexoBite vende automatización comercial: asistentes de WhatsApp, páginas web que convierten y un panel donde el equipo opera todo. La identidad **"Instrumento"** parece el software que se vende: sobria, de bordes finos y legible, sin la estética de "hype de IA" (robots, neón, partículas, telemetría de servidores).
 
-Instead, "Instrumento" grounds itself in **real product interfaces, commercial workflows, and business outcomes**:
-- **Narrativa central de producto:** `Web que capta → Chatbot en WhatsApp que califica → CRM que organiza → Cierre de ventas`.
-- **Exclusive Dark Mode:** Lienzo de grafito profundo sin tintes azules (`#0E1013`) con superficies modulares (`#16191D`).
-- **Signal Green (`#1C8A76`):** Color semántico de acción, estado operativo activo, mensajes verificados y conversión comercial.
-- **Copper (`#D6924E`):** Acento secundario para focos de atención, plazos de entrega, cuellos de botella y marcos calibrados (`.instrument`).
-- **Hairline Geometry (`#262B31`):** Bordes nítidos de 1px que estructuran tablas, interfaces y simuladores de software.
-- **Tipografía Dual Estratégica:** `Plus Jakarta Sans` para lectura editorial de negocio + `JetBrains Mono` con números tabulares (`tnum`) para precios en COP, tasas de conversión y métricas.
+Principios:
 
----
+- **Modo oscuro exclusivo.** Lienzo grafito sin tinte azul (`#0E1013`) y superficies modulares (`#16191D`). No hay tema claro.
+- **Producto antes que decoración.** Se muestran simuladores y maquetas (chat de WhatsApp, panel de la plataforma) en lugar de ilustraciones.
+- **Verde Señal = acción y estado operativo.** CTAs, checks, "activo", texto destacado de los titulares.
+- **Cobre = atención y dato.** Cuellos de botella, plazos, precios secundarios, chips de plan y los corchetes `.instrument`.
+- **Líneas de 1px** (`border-line`) estructuran todo; casi no hay sombras.
+- **Lenguaje sin tecnicismos.** La copy habla de "atender, ordenar y vender", no de infraestructura.
 
-## 2. Color System
-
-### Base Palette (Dark Mode Only)
-- **`colors.paper` (`#0E1013`)**: Canvas de fondo principal. Carbón oscuro puro.
-- **`colors.paper-deep` (`#08090B`)**: Fondo de pantallas y ventanas simuladas de software.
-- **`colors.card` (`#16191D`)**: Superficies elevadas, paneles interactivos y módulos de servicio.
-- **`colors.card-hover` (`#1C2025`)**: Estado hover de módulos interactivos.
-- **`colors.line` (`#262B31` / `border-line`)**: Delimitador estructural de 1px.
-- **`colors.line-strong` (`#373E47`)**: Estados de foco, encabezados de tabla y bordes activos.
-- **`colors.ink` (`#EDEFF2`)**: Texto principal de alto contraste y valores numéricos de precio.
-- **`colors.ink-soft` (`#9AA2AD`)**: Texto descriptivo y explicaciones secundarias.
-- **`colors.ink-mute` (`#5D6571`)**: Metadatos, etiquetas de estado, timestamps de chat y microcopy.
-
-### Functional Accents
-- **`colors.signal` (`#1C8A76`)**: Botones principales CTA, checks de entregables, estado 24/7 y confirmación de eventos.
-- **`colors.signal-hover` (`#146356`)**: Estado hover de botones Signal.
-- **`colors.signal-soft` (`rgba(28, 138, 118, 0.12)`)**: Relleno suave para burbujas de respuesta del asistente y badges operativos.
-- **`colors.copper` (`#D6924E`)**: Badges de fases de proceso, agendamiento de citas, y brackets en el plan comercial recomendado.
-- **`colors.copper-soft` (`rgba(214, 146, 78, 0.12)`)**: Relleno de fondo para indicadores de cuellos de botella y notas de advertencia.
-- **`colors.alert` (`#B23A34`)**: Indicadores de operación manual deficiente y cruces de comparación (`FaTimes`).
+Narrativa del sitio: `Web que capta → Asistente de WhatsApp que atiende y califica → Pantalla donde el equipo opera → Cierre`.
 
 ---
 
-## 3. Typography & Numerical Data
+## 2. Sistema de color
 
-- **Headlines & Display:** Plus Jakarta Sans (`600`, `700`, `800`) con tracking `-0.02em` a `-0.03em`. Enfoque en claridad y tono conversacional directo sin hipérboles de marketing.
-- **Body & Paréntesis explicativos:** Plus Jakarta Sans (`400`, `500`) con interlineado generoso (`line-height: 1.6`) para máxima legibilidad ejecutiva.
-- **Datos Comerciales & Telemetría:** JetBrains Mono (`400`, `500`, `600`) obligatorio con `tabular-nums` (`.tnum`) en todos los precios en COP (`$1.190.000`, `$1.890.000`, `$3.490.000`), tiempos de entrega y porcentajes.
+Todos los tokens están definidos como variables CSS y expuestos a Tailwind v4 como `bg-*`, `text-*`, `border-*`.
 
----
+### Superficie y tinta
 
-## 4. UI Patterns & Component Guidelines
+| Token | Valor | Uso real |
+| --- | --- | --- |
+| `paper` | `#0E1013` | Fondo de `html`/`body` y de las secciones |
+| `card` | `#16191D` | Tarjetas, paneles, simuladores, botón `outline` |
+| `secondary` / `muted` | `#1E2227` | Fondos neutros de shadcn (botón `secondary`) |
+| `line` | `#262B31` | Borde estándar de 1px (también `--border`, `--input`) |
+| `line-strong` | `#383E46` | Bordes de botón `outline`, badges neutros y separadores |
+| `ink` | `#EDEFF2` | Titulares, cifras y texto de alto contraste |
+| `ink-soft` | `#B4BAC3` | Párrafos y descripciones |
+| `ink-mute` | `#78808C` | Metadatos, etiquetas, timestamps, microcopy |
 
-### 1. The Instrument Frame (`.instrument`)
-Brackets esquineros en color cobre (`#D6924E`) de 8px de brazo y 1.5px de grosor.  
-**Regla de uso estricta:** Reservado **únicamente** para:
-- El simulador de chat en vivo del Hero.
-- La tarjeta de precio del plan recomendado (`Plan Sales`).
-- El contenedor de diagnóstico del CTA final.
-*Prohibido aplicarlo en tarjetas genéricas para evitar ruido visual militar/sci-fi.*
+### Acentos
 
-### 2. Live Product Mockups (Simuladores de Interfaz)
-Sustituyen a cualquier ilustración abstracta o imagen decorativa:
-- **WhatsApp Cloud API Sandbox:** Ventana de chat real con cabecera de estado, timestamps (`10:42 PM`), burbujas de mensaje del cliente (`#20252B`) y respuestas del bot (`rgba(28, 138, 118, 0.15)`), chips de opción rápida y pie de integración CRM confirmada.
-- **Tablero CRM & Lead Pipeline:** Fichas de prospectos con estado, valor estimado y canal de origen.
+| Token | Valor | Uso real |
+| --- | --- | --- |
+| `signal` | `#1C8A76` | Botón `signal`, `eyebrow`, checks, palabra destacada del h1/h2, anillo de foco, launcher del chat |
+| `signal-deep` | `#146E5E` | Hover del botón `signal` y de los botones `default`/`primary` |
+| `signal-soft` | `#142824` | Relleno de burbujas del asistente, badges activos, chips |
+| `copper` | `#D6924E` | Iconos de "cuello de botella", plazos, chips de plan, corchetes `.instrument`, palabra destacada del h2 de Problemas |
+| `copper-soft` | `#2E2216` | Fondo de chips y badges de cobre |
+| `alert` | `#B23A34` | Cruces de la columna "a mano", botón `destructive` |
+| `alert-soft` | `#381A18` | Fondo del badge `.b-failed` |
+| `amber` / `amber-soft` | `#C79A2E` / `#382C14` | Advertencias; punto del badge `.b-delayed` |
 
-### 3. Métricas de Impacto de Negocio (`MetricsBar`)
-Franja horizontal con divisores de 1px en `#262B31`. Muestra cifras reales de valor de negocio (`< 3 seg`, `24/7`, `100% oficial`, `0 hrs`), reemplazando la regla de 70 divisiones obsoleta (`.ruler`).
+Variables semánticas shadcn: `--primary = signal`, `--accent = copper`, `--destructive = alert`, `--ring = signal`, `--border = line`, `--muted-foreground = ink-mute`.
 
-### 4. Tablas de Comparación Bipolar (`BeforeAfterSection`)
-Tabla de 2 columnas de alto contraste:
-- Columna izquierda: *Operación Manual Habitual* con iconos rojos `FaTimes` y fondo tenue.
-- Columna derecha: *Operación con NexoBite* con iconos verdes `FaCheck`, tipografía bold y fondo `rgba(28, 138, 118, 0.08)`.
-
-### 5. Arquitectura de Pricing Asimétrico (`PricingSection`)
-- **3 Planes Nucleares:** `01 · START` (Atención básica), `02 · SALES` (Calificación con IA y agenda - Destacado), y `03 · SCALE` (Web + WhatsApp + CRM).
-- **Desglose transparente:** Separación visible entre pago único de implementación y mensualidad de servidor/soporte en COP.
-- **Cero promociones artificiales:** Prohibidos precios tachados del tipo *"Antes $X / Ahora $Y"*.
-- **Matriz técnica colapsable:** Tabla interactiva desplegable para comparar capacidades fila por fila sin saturar el primer vistazo.
-
-### 6. Badges y Eyebrows
-- **Eyebrow:** `01 · EL COSTO DE LA ATENCIÓN MANUAL` en JetBrains Mono uppercase, letter-spacing `0.08em`.
-- **Status Badges (`.badge`):**
-  - `.badge.b-active`: Micro-punto verde con pulso sutil (ej: `Respuesta inmediata 24/7`).
-  - `.badge.b-completed`: Punto verde sólido (ej: `Calificación automática de prospectos`).
-  - `.badge.b-waiting`: Punto cobre tenue (ej: `Integrado a tu número actual`).
-
-### 7. Botones Comerciales
-- **`Button variant="signal"`**: 4px radius (`rounded-sm`), fondo `#1C8A76`, texto `#0E1013` en negrita, icono `FaWhatsapp` o `FaArrowRight`.
-- **`Button variant="outline"`**: 1px `#373E47`, fondo `#16191D`, texto `#EDEFF2`, hover a border `#EDEFF2`.
+> **Tokens que ya no existen:** `paper-deep`, `card-hover`, `signal-hover` y `copper-deep` aparecían en versiones anteriores de este documento pero no están definidos en el código. El hover del verde es `signal-deep`.
 
 ---
 
-## 5. Prohibited Elements (Anti-Patterns)
+## 3. Tipografía
 
-1. **NO "AI Hype" Visuals:** Quedan prohibidos robots, cerebros digitales, redes neuronales vectoriales, circuitos, planetas o ilustraciones de ciencia ficción.
-2. **NO Particle Canvas:** Prohibido el uso de `ParticleField` o bucles `requestAnimationFrame` que consuman CPU/GPU en decoraciones no funcionales.
-3. **NO Fake Server Telemetry:** Prohibido mostrar monitores de colas con latencia de red (`p95 118ms`, `tenant_id`, `QUEUE MONITOR`) como gancho comercial; la telemetría debe ser de métricas comerciales.
-4. **NO Artificial Discounts:** Prohibidas tachaduras promocionales o mensajes de escasez ficticia.
-5. **NO Pill Buttons:** Todos los botones interactivos mantienen radio cuadrado moderno de 4px (`rounded-sm`).
-6. **Dark Mode Exclusivo:** La identidad no implementa temas claros.
+Fuentes cargadas con `next/font/google` en `app/layout.tsx` (variable fonts, `display: swap`):
+
+- **Plus Jakarta Sans** → `--font-sans` y `--font-display` (`font-sans`, `font-display`). Titulares y texto corrido.
+- **JetBrains Mono** → `--font-mono` (`font-mono`). Eyebrows, badges, chips, etiquetas y texto "de instrumento".
+
+Escala observada:
+
+| Rol | Tamaño / peso | Notas |
+| --- | --- | --- |
+| h1 Hero | 54px · 700 · lh 1.1 · -0.025em | Una palabra o frase en `text-signal` |
+| h2 sección | 36px · 600 · lh 1.11 · -0.015em | Frase final destacada en `signal` (o `copper` en Problemas) |
+| h3 tarjeta | 16px · 600 | Base global de h1–h6: 600 con -0.015em |
+| Párrafo | 16px · 400 · lh 1.5 · `ink-soft` | |
+| Eyebrow | mono 11px · 600 · 0.06em · `signal` | Prefijo `—` de 14px×1px (`.eyebrow::before`) |
+| Badge | mono 11px · 500 | `.badge` |
+| Micro | mono 10–11px | Chips de plan, `CUELLO 01`, `FASE 01`, `PASO 01`, timestamps |
+
+**Números:** usa `.tnum` (`tabular-nums`) en precios, plazos y porcentajes. Los precios de los planes se renderizan en **Plus Jakarta Sans extrabold** (`font-display font-extrabold tnum`); la mensualidad y los plazos que los acompañan van en `font-mono`. Las cifras de la `MetricsBar` usan `font-display font-bold`.
+
+---
+
+## 4. Layout y espaciado
+
+- **Contenedor:** `max-w-7xl` (1280px) con gutter `px-4 sm:px-6 lg:px-8` (`components/container.tsx`; también `max-w-3xl`, `5xl`, `1400px`).
+- **Secciones:** `py-28` (112px) arriba y abajo; el Hero usa 112px arriba y 64px abajo y `MetricsBar` 40px. Las secciones con `id` tienen `scroll-margin-top: 100px` y la página `scroll-behavior: smooth`.
+- **Tarjetas:** `p-6` (24px) a `p-8`, `rounded-md` (8px), borde `line`, fondo `card`.
+- **Header:** fijo, `px-4 pt-4`, barra flotante `max-w-7xl` de 56px de alto con `backdrop-blur-sm` y borde fino.
+- **Responsive:** móvil a 375px sin scroll horizontal; el Hero apila texto y simulador, los botones pasan a ancho completo y la navegación se reduce a un botón de menú.
+
+Radios (`--radius-sm/md/lg`): 4px, 8px, 12px. `--radius` base de shadcn: 4px.
+
+---
+
+## 5. Componentes y patrones
+
+### Header (`header.tsx`)
+Barra flotante con logo (`BrandLogo`, `logo-mark-dark.svg`), navegación (`Qué hacemos · Míralo · Tu pantalla · Cómo Funciona · Servicios · Planes · Preguntas`), enlace `Iniciar sesión` (a `siteConfig.appLoginUrl`) y CTA `Revisión Gratis`. El enlace activo lleva subrayado de 2px en `signal`, que sigue la sección visible. En móvil, menú desplegable.
+
+### Botones (`components/ui/button.tsx`)
+Base: `rounded-sm`, `text-sm font-medium`, anillo de foco `ring-ring/50` de 3px. Tamaños: `default h-9`, `sm h-8`, `lg h-10`, `icon`.
+
+| Variante | Estilo |
+| --- | --- |
+| `signal` | Fondo `signal`, texto `paper`, semibold; hover `signal-deep`. CTA comercial (WhatsApp, `FaArrowRight`) |
+| `default` / `primary` | Fondo `ink`, texto `paper`; hover `signal-deep` con texto `ink` |
+| `outline` | Fondo `card`, borde `line-strong`, texto `ink`; hover borde `ink` |
+| `secondary` | Fondo `secondary`, borde `line` |
+| `ghost` | Transparente, texto `ink-soft`; hover fondo `card` |
+| `link` | Texto `ink`, subrayado `signal`; hover texto `signal` |
+| `destructive` | `alert/80`; hover `alert` |
+| `gradient` | Nombre heredado: es un botón `ink` con borde sutil, **no hay gradiente** |
+
+Prohibido el estilo píldora en botones. `rounded-full` solo se usa en puntos de estado, avatares e iconos circulares y en el botón flotante del chat.
+
+### Tarjetas (`components/ui/card.tsx`)
+`bg-card`, `rounded-md`, `border-line`, `shadow-xs`. La prop `instrument` añade los corchetes de cobre.
+
+### Marco "Instrument" (`.instrument`)
+Fondo `card`, borde `line`, `rounded-md` y **dos corchetes de cobre** (arriba-izquierda y abajo-derecha) de **12px de brazo y 2px de grosor**.
+
+Uso real en la landing:
+- El simulador de chat del Hero.
+- La tarjeta del plan recomendado (`Plan Sales`).
+
+También se aplica en `/propuesta-template` (`<Card instrument>` en los planes y opciones destacados) y en el contenedor de contacto de `/condiciones-del-servicio`. Reserva el marco para el elemento de mayor jerarquía de cada vista; no lo uses en tarjetas genéricas.
+
+### Eyebrow (`.eyebrow`)
+Mono 11px, `signal`, con línea de 14px antes del texto. Numerado: `01 · LO QUE CUESTA ATENDER A MANO`, `04 · ANTES Y DESPUÉS`, `07 · INVERSIÓN TRANSPARENTE Y PLANES`, `09 · HABLEMOS`. En el Hero va precedido de un punto de estado.
+
+### Badges (`.badge`)
+Mono 11px, `rounded-sm`, borde del color del estado, punto de 6px.
+
+| Clase | Aspecto | Ejemplo en la landing |
+| --- | --- | --- |
+| `.b-active` | `signal-soft`, borde `signal/40` | `Contesta de noche y fines de semana` |
+| `.b-completed` | Igual que activo | `Detecta quién sí quiere comprar` |
+| `.b-waiting` | `card`, borde `line-strong`, punto `ink-mute` | `Funciona con tu número actual` |
+| `.b-failed` | `alert-soft`, borde `alert/40` | Sin uso actual |
+| `.b-delayed` | `copper-soft`, borde `copper/40`, punto `amber` | Sin uso actual |
+
+Los puntos no tienen animación de pulso.
+
+### Secciones de la landing (orden en `app/page.tsx`)
+1. **Hero** — h1 con frase en `signal`, párrafo, tres badges, CTA `signal` + `outline` y nota "Sin costo · En 15 minutos…". A la derecha, simulador de WhatsApp con `.instrument`: burbuja del cliente (`card`/`paper`), burbujas del asistente en `signal-soft`, opciones rápidas, pie `TODO CONECTADO / HECHO AUTOMÁTICAMENTE`.
+2. **MetricsBar** — 4 cifras separadas por líneas de 1px: `Automática`, `Fuera de horario`, `2 opciones`, `0 hrs`.
+3. **Problemas** (`#problemas`) — 4 tarjetas `CUELLO 01–04` con icono en caja de `copper-soft`.
+4. **Solución** (`#solucion`) — 3 tarjetas `FASE 01–03` con línea de estado en mono y `✓ ACTIVO`; barra de CTA inferior.
+5. **Demo** (`#demo`, carga diferida) — pestañas (`Pedir un precio`, `Reservar una cita`, `Resolver dudas`) y simulador `Canal WhatsApp Verificado · Simulación Interactiva`.
+6. **Plataforma** (`#plataforma`) — pestañas (`Chats`, `Agenda`, `Clientes`, `Resultados`) con maqueta del panel y la leyenda "Maqueta ilustrativa"; CTA `Ver la pantalla en una demo` y `Ya soy cliente: iniciar sesión`.
+7. **Antes/Después** — tabla de 3 columnas (`ASPECTO OPERATIVO · ATENDIENDO A MANO · CON NEXOBITE`) con `×` en `copper`/`alert` y `✓` en `signal`.
+8. **Proceso** (`#proceso`) — 3 pasos con chip de plazo (`Día 1 a 3`, `Día 4 a 10`, `Día 11+`) y bloque `ENTREGABLE`.
+9. **Servicios** (`#servicios`) — 4 tarjetas (`Páginas Web`, `Asistente para WhatsApp e Instagram`, orden y automatización, a la medida) con etiqueta mono en la esquina y lista con checks.
+10. **Precios** (`#precios`, carga diferida) — selector de conexión (económica u oficial) con su panel de pros y contras, y 3 planes: `01 · START`, `02 · SALES` (recomendado, `.instrument`, elevado en escritorio), `03 · SCALE`. Cada plan muestra implementación (precio `tnum`), mensualidad en mono, plazo, lista `QUÉ INCLUYE` y un CTA que abre WhatsApp con mensaje precargado. Matriz de comparación colapsable.
+11. **Testimonios** — oculta hasta tener casos reales validados.
+12. **FAQ** (`#faq`) — acordeón renderizado en servidor desde `lib/faqs.ts`.
+13. **CTA** — eyebrow `09 · HABLEMOS`, botón `Hablar por WhatsApp` y formulario alterno (`LeadForm` → `/api/leads`).
+14. **Footer** — logo, datos de contacto, redes y enlaces legales.
+
+### Pricing
+- Tres planes con implementación única y mensualidad separadas, siempre en COP: Start `$1.190.000` + `$140.000`/mes; Sales `$1.890.000` + `$220.000`/mes; Scale `$3.490.000` + `$290.000`/mes.
+- Sin precios tachados, descuentos ni escasez ficticia.
+
+### Widget de chat (`chatbot-widget.tsx`)
+Botón flotante circular de 56px en la esquina inferior derecha (`signal`, icono blanco, offset 24px, pulso activado). El panel se carga desde `app.nexobite.com` dentro de un Shadow DOM; la landing inyecta overrides (altura 640px, sin marco doble, escala 0.88/0.8 en pantallas bajas). Los colores del panel se configuran en el canal webchat del SaaS.
+
+### Páginas de servicio
+`/servicios/automatizacion-whatsapp` y `/servicios/paginas-web-para-empresas`: Hero centrado con eyebrow, h1 con acento `signal`, dos CTAs y rejilla "Lo que incluye" de tarjetas con check. Mientras estén en borrador muestran una franja superior `BORRADOR DE SERVICIO · ESTADO: NO INDEXADO` en `copper`.
+
+### Movimiento
+- `AnimatedSection`: al entrar en viewport, fade-in con desplazamiento de 24px (`translate-y-6` → 0) en 500ms `ease-out`, con `delay` opcional; respeta `prefers-reduced-motion`.
+- `.hover-lift` (sube 2px y aclara el borde), `.hover-glow` y `.link-underline` (subrayado `signal` que crece en hover).
+- Keyframes disponibles: `pulse-glow` y `float` (definidos en `@theme`, sin uso en la landing).
+
+---
+
+## 6. Prohibiciones (anti-patrones)
+
+1. **Nada de estética "hype de IA":** robots, cerebros digitales, redes neuronales, circuitos, planetas o ciencia ficción.
+2. **Sin canvas animado decorativo** en la landing (hoy no hay ningún `<canvas>` en `/`). Ver deuda en la sección 7.
+3. **Sin telemetría falsa de servidores** (`p95`, `tenant_id`, monitores de cola); las métricas son de negocio.
+4. **Sin descuentos artificiales** ni escasez ficticia.
+5. **Sin botones tipo píldora** en CTAs.
+6. **Sin tema claro** ni selector de tema.
+7. **Sin gradientes estridentes ni halos de neón.**
+
+---
+
+## 7. Diferencias conocidas entre intención y código
+
+Estado verificado el 2026-10-15. Son deudas de implementación, no decisiones de diseño.
+
+| # | Hallazgo | Dónde | Acción sugerida |
+| --- | --- | --- | --- |
+| 1 | `ParticleField` (canvas con `requestAnimationFrame`) sigue montado | `/politica-de-privacidad`, `/condiciones-del-servicio`, `/propuesta-template` | Retirarlo y borrar `components/particle-field.tsx` |
+| 2 | Componentes huérfanos (no se importan en ninguna página) que además usan `ParticleField` | `mini-plans-section.tsx`, `packages-section.tsx`, `how-it-works-section.tsx` | Eliminar o reintegrar |
+| 3 | Clase inexistente `hover:bg-signal-hover` | `app/condiciones-del-servicio/page.tsx:200` | Cambiar a `hover:bg-signal-deep` |
+| 4 | Utilidad `.ruler` y keyframes `pulse-glow`/`float` sin uso | `app/globals.css` | Eliminar |
+| 5 | Comentarios y nombres de badges heredados de BullMQ (`b-waiting`, `b-delayed`, `b-failed`) | `app/globals.css` | Renombrar a estados de negocio cuando se refactorice |
+| 6 | Variante de botón `gradient` no tiene gradiente | `components/ui/button.tsx` | Renombrar o eliminar |
+| 7 | Tamaños fijos `text-[10px]`/`text-[11px]` (45 usos) en lugar de una escala | Varios componentes | Consolidar en tokens de texto |
+| 8 | `--font-display` apunta a Plus Jakarta Sans (no hay fuente de display distinta) | `app/globals.css` | Mantener; es solo un alias |
+
+---
+
+**Versión:** 6.1 (sincronizada con el código el 2026-10-15) · **Stack:** Next.js 16 · React 19 · Tailwind CSS v4 · shadcn/ui + Radix
