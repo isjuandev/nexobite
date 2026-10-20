@@ -366,11 +366,13 @@
 .gdeck .line {
       display: block;
       overflow: hidden;
-      padding-bottom: .08em
+      padding-bottom: .25em;
+      margin-bottom: -.2em
     }
 .gdeck .line>span {
       display: block;
-      transform: translateY(105%);
+      padding-bottom: .1em;
+      transform: translateY(115%);
       transition: transform 1.2s var(--ease)
     }
 .gdeck .slide.on .line>span {
@@ -406,7 +408,7 @@
 .gdeck h2 {
       font-family: var(--sans);
       font-weight: 700;
-      line-height: 1.06;
+      line-height: 1.12;
       letter-spacing: -.035em
     }
 .gdeck h1 {
@@ -1244,6 +1246,38 @@
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--gold)
+    }
+.gdeck .price-promo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+.gdeck .price-old {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink-3);
+      text-decoration: line-through;
+      text-decoration-color: rgba(214, 146, 78, .75);
+      text-decoration-thickness: 1.5px;
+      letter-spacing: -.01em;
+    }
+.gdeck .badge-promo {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 2.5px 8px;
+      border-radius: 999px;
+      background: rgba(34, 165, 140, .15);
+      border: 1px solid rgba(92, 206, 180, .35);
+      color: var(--gold-2);
+    }
+.gdeck .plan.feat .price {
+      margin-top: 6px;
     }
 .gdeck .price {
       display: flex;
