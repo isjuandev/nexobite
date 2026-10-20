@@ -872,10 +872,12 @@
       height: 100%;
       border-radius: 36px;
       overflow: hidden;
-      background: #0d0a07
+      background: #0d0a07;
+      container-type: size
     }
 .gdeck .scroller {
-      animation: gd-scrollsite 16s var(--ease) infinite alternate
+      padding-bottom: 64px;
+      animation: gd-scrollsite 12s var(--ease) infinite alternate
     }
 @keyframes gd-scrollsite {
 
@@ -886,7 +888,7 @@
 
       88%,
       100% {
-        transform: translateY(-560px)
+        transform: translateY(calc(100cqh - 100%))
       }
     }
 .gdeck .m-head {

@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 };
 
 // El marcado de la presentación vive en `deck.html`; para actualizar el contenido se edita ese archivo.
-const deckHtml = readFileSync(join(process.cwd(), "app/propuestas/la-guaca/deck.html"), "utf8");
-
 export default function PropuestaLaGuacaPage() {
+  const deckHtml = readFileSync(join(process.cwd(), "app/propuestas/la-guaca/deck.html"), "utf8");
+
   return <GuacaDeck html={deckHtml} />;
 }
